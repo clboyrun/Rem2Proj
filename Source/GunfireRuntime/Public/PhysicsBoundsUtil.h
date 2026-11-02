@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
-#include "EPhysicalSurface.h"
+#include "Chaos/ChaosEngineInterface.h"
 #include "Templates/SubclassOf.h"
 #include "PhysicsBoundsUtil.generated.h"
 

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EPhysicalSurface.h"
+#include "Chaos/ChaosEngineInterface.h"
 #include "Condition.h"
 #include "EGroundCheckType.h"
 #include "Templates/SubclassOf.h"

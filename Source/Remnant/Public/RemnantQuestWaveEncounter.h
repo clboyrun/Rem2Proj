@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "QuestNameDelegate__DelegateSignature.h"
-#include "QuestVoidDelegate__DelegateSignature.h"
+#include "QuestNameDelegateDelegate.h"
+#include "QuestVoidDelegateDelegate.h"
 #include "EncounterWave.h"
 #include "EventRegionCharacter.h"
 #include "RemnantQuestComponent.h"

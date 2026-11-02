@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "Components/ActorComponent.h"
-#include "VisualLoggerDebugSnapshotInterface.h"
+#include "VisualLogger/VisualLoggerDebugSnapshotInterface.h"
 #include "AudioVolumeClass.h"
 #include "EMapGenAttributeScope.h"
 #include "EMapGenState.h"

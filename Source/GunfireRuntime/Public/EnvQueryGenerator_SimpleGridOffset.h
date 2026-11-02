@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AIDataProviderFloatValue.h"
-#include "EnvQueryGenerator_SimpleGrid.h"
+#include "DataProviders/AIDataProvider.h"
+#include "EnvironmentQuery/Generators/EnvQueryGenerator_SimpleGrid.h"
 #include "EnvQueryGenerator_SimpleGridOffset.generated.h"
 
 UCLASS(Blueprintable, EditInlineNew)

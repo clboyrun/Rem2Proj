@@ -1,9 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "EButtonClickMethod.h"
-#include "EButtonPressMethod.h"
-#include "EButtonTouchMethod.h"
+#include "Types/SlateEnums.h"
 #include "Components/ContentWidget.h"
 #include "AdvButtonStyle.h"
 #include "OnAdvButtonClickedEventDelegate.h"

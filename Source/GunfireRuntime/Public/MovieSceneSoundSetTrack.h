@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MovieSceneNameableTrack.h"
-#include "MovieSceneTrackTemplateProducer.h"
+#include "Compilation/IMovieSceneTrackTemplateProducer.h"
 #include "MovieSceneSoundSetTrack.generated.h"
 
 class UMovieSceneSection;

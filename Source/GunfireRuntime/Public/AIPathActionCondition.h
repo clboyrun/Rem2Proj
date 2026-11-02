@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EPathFollowingAction.h"
+#include "Navigation/PathFollowingComponent.h"
 #include "Condition.h"
 #include "AIPathActionCondition.generated.h"
 

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "NavigationDataChunk.h"
+#include "AI/Navigation/NavigationDataChunk.h"
 #include "NavSvoStreamingData.generated.h"
 
 class ULevel;

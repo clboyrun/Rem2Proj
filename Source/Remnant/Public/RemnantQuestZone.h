@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "MapGenAttribute.h"
-#include "QuestVoidDelegate__DelegateSignature.h"
+#include "QuestVoidDelegateDelegate.h"
 #include "TileSpawnList.h"
 #include "QuestZonePlayerDelegateDelegate.h"
 #include "RemnantQuestComponent.h"

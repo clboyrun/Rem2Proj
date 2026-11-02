@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "ECollisionChannel.h"
+#include "Engine/EngineTypes.h"
 #include "AudioComponentGunfire.h"
 #include "ManagedTickInterface.h"
 #include "Templates/SubclassOf.h"

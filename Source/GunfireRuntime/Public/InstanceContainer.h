@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "StructUtils/InstancedStruct.h"
+#include "InstancedStruct.h"
 #include "InstanceContainer.generated.h"
 
 USTRUCT(BlueprintType)

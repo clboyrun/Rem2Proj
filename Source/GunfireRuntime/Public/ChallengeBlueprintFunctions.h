@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "BlueprintFunctionLibrary.h"
+#include "Kismet/BlueprintFunctionLibrary.h"
 #include "ChallengeEvent.h"
 #include "ChallengeObjectiveSelection.h"
 #include "ChallengeBlueprintFunctions.generated.h"

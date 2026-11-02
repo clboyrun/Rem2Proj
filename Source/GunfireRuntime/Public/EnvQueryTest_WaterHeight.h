@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "EnvironmentQuery/EnvQueryTest.h"
-#include "ECollisionChannel.h"
+#include "Engine/EngineTypes.h"
 #include "CompareOp.h"
 #include "EnvQueryTest_WaterHeight.generated.h"
 

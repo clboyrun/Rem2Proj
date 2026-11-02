@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "MovieSceneNameableTrack.h"
 #include "MovieSceneObjectBindingID.h"
-#include "MovieSceneTrackTemplateProducer.h"
-#include "EFireEventsAtPosition.h"
+#include "Compilation/IMovieSceneTrackTemplateProducer.h"
+#include "Tracks/MovieSceneEventTrack.h"
 #include "EventTreeTrackEventDelegate.h"
 #include "MovieSceneEventTreeTrack.generated.h"
 

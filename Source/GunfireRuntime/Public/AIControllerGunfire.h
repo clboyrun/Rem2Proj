@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "AIController.h"
-#include "EPathFollowingResult.h"
+#include "Navigation/PathFollowingComponent.h"
 #include "UObject/NoExportTypes.h"
 #include "AITacticalPoint.h"
 #include "EAwarenessSignal.h"

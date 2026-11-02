@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "EEndPlayReason.h"
+#include "Engine/EngineTypes.h"
 #include "SummonerActionEventDelegate.h"
 #include "SummonerEventDelegate.h"
 #include "Templates/SubclassOf.h"

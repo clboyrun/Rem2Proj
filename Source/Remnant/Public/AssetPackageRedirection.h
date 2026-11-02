@@ -1,6 +1,5 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DirectoryPath.h"
 #include "UObject/NoExportTypes.h"
 #include "AssetPackageRedirection.generated.h"
 

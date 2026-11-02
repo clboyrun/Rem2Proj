@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AIDataProviderFloatValue.h"
+#include "DataProviders/AIDataProvider.h"
 #include "EnvironmentQuery/EnvQueryTest.h"
 #include "Templates/SubclassOf.h"
 #include "EnvQueryTest_FieldOfView.generated.h"

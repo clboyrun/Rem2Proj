@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "QuestManager.h"
-#include "QuestManagerQuestDelegate__DelegateSignature.h"
-#include "QuestVoidDelegate__DelegateSignature.h"
+#include "QuestManagerQuestDelegateDelegate.h"
+#include "QuestVoidDelegateDelegate.h"
 #include "EQuestMode.h"
 #include "RemnantQuestEntry.h"
 #include "RemnantQuestManager.generated.h"

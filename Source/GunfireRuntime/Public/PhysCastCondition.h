@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ECollisionChannel.h"
-#include "EPhysicalSurface.h"
+#include "Engine/EngineTypes.h"
+#include "Chaos/ChaosEngineInterface.h"
 #include "Condition.h"
 #include "Templates/SubclassOf.h"
 #include "PhysCastCondition.generated.h"

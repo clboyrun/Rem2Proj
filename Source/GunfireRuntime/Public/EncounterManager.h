@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
 #include "Engine/NetSerialization.h"
-#include "VisualLoggerDebugSnapshotInterface.h"
+#include "VisualLogger/VisualLoggerDebugSnapshotInterface.h"
 #include "DamageInfo.h"
 #include "EncounterSpawn.h"
 #include "SoundGunfire.h"

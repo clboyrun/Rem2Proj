@@ -1,5 +1,5 @@
 #include "EnvQueryGenerator_AITacticalPoint.h"
-#include "EnvQueryContext_Querier.h"
+#include "EnvironmentQuery/Contexts/EnvQueryContext_Querier.h"
 #include "EnvQueryItemType_AITacticalPoint.h"
 
 UEnvQueryGenerator_AITacticalPoint::UEnvQueryGenerator_AITacticalPoint() {

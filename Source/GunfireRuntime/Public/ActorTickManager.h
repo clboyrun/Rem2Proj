@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "WorldSubsystem.h"
+#include "Subsystems/WorldSubsystem.h"
 #include "ActorManagedTickEntry.h"
 #include "ActorTickManager.generated.h"
 

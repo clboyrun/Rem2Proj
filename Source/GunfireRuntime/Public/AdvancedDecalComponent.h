@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "Components/DecalComponent.h"
-#include "EAttachLocation.h"
+#include "Engine/EngineTypes.h"
 #include "AdvancedDecalComponent.generated.h"
 
 class UAdvancedDecalComponent;

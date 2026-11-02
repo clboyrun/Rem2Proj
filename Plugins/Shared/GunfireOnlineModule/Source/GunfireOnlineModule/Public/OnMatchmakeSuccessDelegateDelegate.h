@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "BlueprintSessionResult.h"
+#include "FindSessionsCallbackProxy.h"
 #include "ESessionSearchType.h"
 #include "OnMatchmakeSuccessDelegateDelegate.generated.h"
 

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ECollisionChannel.h"
-#include "EPlaneConstraintAxisSetting.h"
+#include "Engine/EngineTypes.h"
+#include "GameFramework/MovementComponent.h"
 #include "BoidSettings.generated.h"
 
 USTRUCT(BlueprintType)

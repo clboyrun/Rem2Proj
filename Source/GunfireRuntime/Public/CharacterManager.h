@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "WorldSubsystem.h"
+#include "Subsystems/WorldSubsystem.h"
 #include "CharacterManager.generated.h"
 
 class AActor;

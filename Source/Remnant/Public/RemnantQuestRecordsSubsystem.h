@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameInstanceSubsystem.h"
+#include "Subsystems/GameInstanceSubsystem.h"
 #include "TopPlayerRecordData.h"
 #include "EQuestMode.h"
 #include "EQuestRecordsActiveState.h"

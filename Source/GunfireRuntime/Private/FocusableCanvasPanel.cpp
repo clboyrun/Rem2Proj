@@ -1,8 +1,7 @@
 #include "FocusableCanvasPanel.h"
-#include "ESlateVisibility.h"
+#include "Components/SlateWrapperTypes.h"
 
 UFocusableCanvasPanel::UFocusableCanvasPanel() {
-    this->bPreventsFocusChecks = true;
     this->Visibility = ESlateVisibility::Visible;
 }
 

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "CanvasIcon.h"
+#include "Engine/Canvas.h"
 #include "ReticulePiece.h"
 #include "ReticuleIcon.generated.h"
 

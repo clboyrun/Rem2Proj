@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
 #include "UObject/NoExportTypes.h"
-#include "ECollisionChannel.h"
+#include "Engine/EngineTypes.h"
 #include "Engine/HitResult.h"
 #include "CachedPhysicsComponent.h"
 #include "Templates/SubclassOf.h"

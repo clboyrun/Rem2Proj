@@ -1,5 +1,5 @@
 #include "Gunfire3DNavData.h"
-#include "ERuntimeGenerationType.h"
+#include "NavigationData.h"
 
 AGunfire3DNavData::AGunfire3DNavData(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->RuntimeGeneration = ERuntimeGenerationType::Dynamic;

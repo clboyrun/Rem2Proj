@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
 #include "UObject/NoExportTypes.h"
-#include "ECollisionChannel.h"
+#include "Engine/EngineTypes.h"
 #include "EVaultDirectionType.h"
 #include "EVaultQueryType.h"
 #include "Templates/SubclassOf.h"

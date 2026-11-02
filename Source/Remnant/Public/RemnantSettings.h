@@ -1,9 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "DirectoryPath.h"
 #include "UObject/Object.h"
-#include "EMouseLockMode.h"
+#include "Engine/EngineBaseTypes.h"
 #include "CursorSettings.h"
 #include "EPlayerTravelState.h"
 #include "RemnantSettings.generated.h"

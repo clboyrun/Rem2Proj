@@ -1,5 +1,5 @@
 #include "ExplorableMinimapTooltip.h"
-#include "EWidgetSpace.h"
+#include "Components/WidgetComponent.h"
 
 UExplorableMinimapTooltip::UExplorableMinimapTooltip(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->Space = EWidgetSpace::Screen;

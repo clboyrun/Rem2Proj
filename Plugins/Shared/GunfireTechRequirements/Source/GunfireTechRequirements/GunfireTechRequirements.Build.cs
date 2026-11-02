@@ -42,6 +42,7 @@ public class GunfireTechRequirements : ModuleRules {
             "TypedElementFramework",
             "TypedElementRuntime",
             "UMG",
+            "OnlineSubsystem",
             "OnlineSubsystemUtils",
         });
     }

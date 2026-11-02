@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "TickFunction.h"
+#include "Engine/EngineBaseTypes.h"
 #include "TweenComponentDuringPhysicsTickFunction.generated.h"
 
 USTRUCT(BlueprintType)

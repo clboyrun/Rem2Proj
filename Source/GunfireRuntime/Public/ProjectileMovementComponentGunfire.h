@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "ECollisionChannel.h"
+#include "Engine/EngineTypes.h"
 #include "Engine/HitResult.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "ProjectileMovementComponentGunfire.generated.h"

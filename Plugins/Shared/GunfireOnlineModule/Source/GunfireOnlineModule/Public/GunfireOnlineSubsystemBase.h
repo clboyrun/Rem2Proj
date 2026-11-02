@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameInstanceSubsystem.h"
+#include "Subsystems/GameInstanceSubsystem.h"
 #include "EGunfireOnlineEvent.h"
 #include "OnOnlineFailEventDelegate.h"
 #include "OnOnlineSessionWaitDialogDelegate.h"

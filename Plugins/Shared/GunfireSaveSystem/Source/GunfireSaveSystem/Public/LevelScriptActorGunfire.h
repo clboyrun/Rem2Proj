@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "LevelScriptActor.h"
+#include "Engine/LevelScriptActor.h"
 #include "LevelScriptActorGunfire.generated.h"
 
 UCLASS(Blueprintable)

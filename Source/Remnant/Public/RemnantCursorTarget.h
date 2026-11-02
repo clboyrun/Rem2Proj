@@ -3,7 +3,7 @@
 #include "UObject/NoExportTypes.h"
 #include "EAnimationState.h"
 #include "Components/Border.h"
-#include "ESlateVisibility.h"
+#include "Components/SlateWrapperTypes.h"
 #include "OnCursorTargetEventDelegate.h"
 #include "RemnantCursorTarget.generated.h"
 

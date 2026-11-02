@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "Navigation/NavRelevantInterface.h"
+#include "AI/Navigation/NavRelevantInterface.h"
 #include "Components/SceneComponent.h"
 #include "ENavModifierGunfireShape.h"
 #include "Templates/SubclassOf.h"

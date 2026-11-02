@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EUINavigation.h"
+#include "Types/SlateEnums.h"
 #include "OnNavigationDelegateDelegate.generated.h"
 
 class UWidget;

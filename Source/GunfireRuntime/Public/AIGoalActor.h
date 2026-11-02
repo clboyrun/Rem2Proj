@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "NavAgentInterface.h"
+#include "AI/Navigation/NavAgentInterface.h"
 #include "AIGoalActor.generated.h"
 
 class APawn;

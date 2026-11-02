@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EmptyOnlineDelegate__DelegateSignature.h"
+#include "Net/OnlineBlueprintCallProxyBase.h"
 #include "GameFramework/OnlineReplStructs.h"
-#include "BlueprintSessionResult.h"
+#include "FindSessionsCallbackProxy.h"
 #include "EGunfireOnlineEvent.h"
 #include "EOnlineCanJoinResult.h"
 #include "EOnlineSessionType.h"

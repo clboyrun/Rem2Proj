@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "InteriorSettings.h"
-#include "ReverbSettings.h"
+#include "Sound/AudioVolume.h"
+#include "Sound/ReverbSettings.h"
 #include "Templates/SubclassOf.h"
 #include "WorldSound.h"
 #include "AudioState.generated.h"

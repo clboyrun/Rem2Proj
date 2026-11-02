@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MovieSceneNameableTrack.h"
-#include "MovieSceneTrackTemplateProducer.h"
-#include "EFireEventsAtPosition.h"
+#include "Compilation/IMovieSceneTrackTemplateProducer.h"
+#include "Tracks/MovieSceneEventTrack.h"
 #include "MovieSceneEquipmentTrack.generated.h"
 
 class UMovieSceneSection;

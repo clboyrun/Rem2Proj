@@ -3,9 +3,7 @@
 #include "UObject/Object.h"
 #include "UObject/NoExportTypes.h"
 #include "Engine/EngineTypes.h"
-#include "ECollisionChannel.h"
-#include "ECollisionResponse.h"
-#include "ERelativeTransformSpace.h"
+#include "Components/SceneComponent.h"
 #include "AnimationUtil.generated.h"
 
 class AActor;

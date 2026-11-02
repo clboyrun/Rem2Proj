@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
-#include "BlueprintSessionResult.h"
+#include "FindSessionsCallbackProxy.h"
 #include "OnlineSessionDetailsRemnant.h"
 #include "RemnantOnlineUtil.generated.h"
 

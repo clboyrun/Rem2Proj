@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "CanvasIcon.h"
+#include "Engine/Canvas.h"
 #include "Engine/DataAsset.h"
 #include "HierarchicalEditInterface.h"
 #include "TargetingColorParams.h"

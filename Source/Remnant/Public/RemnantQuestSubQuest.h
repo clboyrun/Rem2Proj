@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "EQuestResult.h"
-#include "QuestCompleteDelegate__DelegateSignature.h"
+#include "QuestCompleteDelegateDelegate.h"
 #include "ERemnantQuestType.h"
 #include "RemnantQuestComponent.h"
 #include "Templates/SubclassOf.h"

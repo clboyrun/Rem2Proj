@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "BlueprintFunctionLibrary.h"
+#include "Kismet/BlueprintFunctionLibrary.h"
 #include "DamageInfo.h"
 #include "ReplicatedDamageInfo.h"
 #include "DamageInfoFunctionLibrary.generated.h"

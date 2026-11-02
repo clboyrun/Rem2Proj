@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameInstanceSubsystem.h"
+#include "Subsystems/GameInstanceSubsystem.h"
 #include "GameFramework/OnlineReplStructs.h"
 #include "ActiveControllerSetDelegate.h"
 #include "ActiveProfileSetDelegate.h"

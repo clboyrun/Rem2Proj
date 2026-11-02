@@ -1,5 +1,6 @@
 #include "RopeActor.h"
 #include "Components/SphereComponent.h"
+#include "PhysicsEngine/PhysicsConstraintComponent.h"
 
 ARopeActor::ARopeActor(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->EndpointRopeAttachment = CreateDefaultSubobject<USphereComponent>(TEXT("EndpointRopeAttachment"));

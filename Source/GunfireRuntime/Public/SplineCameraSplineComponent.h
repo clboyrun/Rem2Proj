@@ -1,7 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "ESplineCoordinateSpace.h"
 #include "Components/SplineComponent.h"
 #include "SplineCameraSplineComponent.generated.h"
 

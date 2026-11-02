@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "ECollisionChannel.h"
+#include "Engine/EngineTypes.h"
 #include "GunObstructionParameters.generated.h"
 
 USTRUCT(BlueprintType)

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "BlueprintFunctionLibrary.h"
+#include "Kismet/BlueprintFunctionLibrary.h"
 #include "PersistentReference.h"
 #include "PersistenceBlueprintFunctionLibrary.generated.h"
 

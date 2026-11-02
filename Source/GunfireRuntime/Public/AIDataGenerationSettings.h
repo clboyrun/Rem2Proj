@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
-#include "ECollisionChannel.h"
+#include "Engine/EngineTypes.h"
 #include "SpawnGenerator.h"
 #include "Templates/SubclassOf.h"
 #include "AIDataGenerationSettings.generated.h"

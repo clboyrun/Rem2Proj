@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ECollisionChannel.h"
+#include "Engine/EngineTypes.h"
 #include "HeuristicBoundsTraceParams.generated.h"
 
 USTRUCT(BlueprintType)

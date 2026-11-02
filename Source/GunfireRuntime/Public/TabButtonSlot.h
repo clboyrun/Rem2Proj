@@ -1,7 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EHorizontalAlignment.h"
-#include "EVerticalAlignment.h"
+#include "Types/SlateEnums.h"
 #include "Layout/Margin.h"
 #include "Components/PanelSlot.h"
 #include "TabButtonSlot.generated.h"

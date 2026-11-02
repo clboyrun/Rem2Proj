@@ -1,7 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ECollisionChannel.h"
-#include "ECollisionResponse.h"
+#include "Engine/EngineTypes.h"
 #include "CollisionResponseOverride.generated.h"
 
 USTRUCT(BlueprintType)

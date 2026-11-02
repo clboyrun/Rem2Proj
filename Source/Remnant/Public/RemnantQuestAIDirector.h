@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "EncounterGroup.h"
-#include "QuestActorDelegate__DelegateSignature.h"
-#include "QuestManagerVoidDelegate__DelegateSignature.h"
+#include "QuestActorDelegateDelegate.h"
+#include "QuestManagerVoidDelegateDelegate.h"
 #include "EventRegionCharacter.h"
 #include "QuestAIDirectorNamedEventDelegate.h"
 #include "RemnantQuestComponent.h"

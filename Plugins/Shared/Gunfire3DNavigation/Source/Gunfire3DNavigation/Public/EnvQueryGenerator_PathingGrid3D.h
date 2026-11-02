@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AIDataProviderFloatValue.h"
+#include "DataProviders/AIDataProvider.h"
 #include "EnvironmentQuery/EnvQueryGenerator.h"
 #include "Templates/SubclassOf.h"
 #include "EnvQueryGenerator_PathingGrid3D.generated.h"

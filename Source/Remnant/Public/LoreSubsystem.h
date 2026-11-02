@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "EEndPlayReason.h"
-#include "WorldSubsystem.h"
+#include "Engine/EngineTypes.h"
+#include "Subsystems/WorldSubsystem.h"
 #include "LoreImageSetData.h"
 #include "OnLoreImageSetLoadedDelegate.h"
 #include "Templates/SubclassOf.h"

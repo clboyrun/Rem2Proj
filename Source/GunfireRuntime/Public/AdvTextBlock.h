@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "ETextJustify.h"
+#include "Framework/Text/TextLayout.h"
 #include "Layout/Margin.h"
 #include "Fonts/SlateFontInfo.h"
 #include "Components/Widget.h"

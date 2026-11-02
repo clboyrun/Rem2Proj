@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "NavigationLinkBase.h"
+#include "AI/Navigation/NavLinkDefinition.h"
 #include "AINavigationLink.generated.h"
 
 USTRUCT(BlueprintType)

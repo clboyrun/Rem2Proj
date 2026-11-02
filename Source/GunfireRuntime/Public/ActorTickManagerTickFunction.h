@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "TickFunction.h"
+#include "Engine/EngineBaseTypes.h"
 #include "ActorTickManagerTickFunction.generated.h"
 
 USTRUCT(BlueprintType)

@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "EnvironmentQuery/EnvQueryTest.h"
-#include "ECollisionChannel.h"
-#include "EPhysicalSurface.h"
+#include "Engine/EngineTypes.h"
+#include "Chaos/ChaosEngineInterface.h"
 #include "EnvQueryTest_GroundMaterial.generated.h"
 
 UCLASS(Blueprintable)

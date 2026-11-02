@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "Camera/CameraComponent.h"
-#include "ECollisionChannel.h"
+#include "Engine/EngineTypes.h"
 #include "Camera/CameraTypes.h"
 #include "ButtonEvent.h"
 #include "OnCameraStateChangedDelegateDelegate.h"

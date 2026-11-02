@@ -10,7 +10,6 @@
 #include "WeaponPhantomComponent.h"
 
 ACharacterGunfire::ACharacterGunfire(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer.SetDefaultSubobjectClass<USkeletalMeshComponentBudgeted>(TEXT("CharacterMesh0")).SetDefaultSubobjectClass<UCharacterMovementComponentGunfire>(TEXT("CharMoveComp"))) {
-    this->bReplicateRootMotion = false;
     this->StatsComp = CreateDefaultSubobject<UStatsComponent>(TEXT("StatsComp"));
     this->ActionComp = CreateDefaultSubobject<UActionComponent>(TEXT("ActionComp"));
     this->WeaponPhantomProviderComp = CreateDefaultSubobject<UWeaponPhantomComponent>(TEXT("WeaponPhantomProviderComp"));

@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "GameFramework/AudioVolume.h"
-#include "EAttenuationShape.h"
+#include "Sound/AudioVolume.h"
+#include "Engine/Attenuation.h"
 #include "AudioState.h"
 #include "Templates/SubclassOf.h"
 #include "WorldSound.h"

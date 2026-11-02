@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EFireEventsAtPosition.h"
+#include "Tracks/MovieSceneEventTrack.h"
 #include "Tracks/MovieSceneFadeTrack.h"
 #include "MovieScenePriorityFadeTrack.generated.h"
 

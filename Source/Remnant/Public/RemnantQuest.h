@@ -4,7 +4,7 @@
 #include "EQuestResult.h"
 #include "EntitlementInterface.h"
 #include "Quest.h"
-#include "QuestVoidDelegate__DelegateSignature.h"
+#include "QuestVoidDelegateDelegate.h"
 #include "EQuestMode.h"
 #include "ERemnantQuestDebugState.h"
 #include "ERemnantQuestRarity.h"

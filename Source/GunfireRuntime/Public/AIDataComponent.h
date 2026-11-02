@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "Navigation/NavRelevantInterface.h"
+#include "AI/Navigation/NavRelevantInterface.h"
 #include "NavLinkHostInterface.h"
 #include "AITacticalPointContainerInterface.h"
 #include "AIDataComponent.generated.h"

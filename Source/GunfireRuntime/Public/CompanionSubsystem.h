@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "WorldSubsystem.h"
+#include "Subsystems/WorldSubsystem.h"
 #include "CompanionDelegateDelegate.h"
 #include "CompanionEventDelegate.h"
 #include "CompanionSubsystem.generated.h"

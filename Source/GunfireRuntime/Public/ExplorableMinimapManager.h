@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "TickableWorldSubsystem.h"
+#include "Subsystems/WorldSubsystem.h"
 #include "MinimapEntityRegistrationChangedDelegate.h"
 #include "MinimapEntitySpawnRegisteredDelegate.h"
 #include "ExplorableMinimapManager.generated.h"

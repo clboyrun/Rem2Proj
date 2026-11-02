@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameViewportClient.h"
+#include "Engine/GameViewportClient.h"
 #include "GameViewportFocusDelegateDelegate.h"
 #include "GameViewportClientGunfire.generated.h"
 

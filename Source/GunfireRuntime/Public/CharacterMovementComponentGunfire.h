@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "GameFramework/CharacterMovementComponent.h"
-#include "EMovementMode.h"
+#include "Engine/EngineTypes.h"
 #include "ENavigationType.h"
 #include "ESoftCollisionMode.h"
 #include "OnPhysicsBoundsChangedDelegateDelegate.h"

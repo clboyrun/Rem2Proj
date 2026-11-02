@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "WorldSubsystem.h"
+#include "Subsystems/WorldSubsystem.h"
 #include "PortalSubsystem.generated.h"
 
 class APortal;

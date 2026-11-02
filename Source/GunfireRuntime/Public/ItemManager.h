@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "GameInstanceSubsystem.h"
+#include "Subsystems/GameInstanceSubsystem.h"
 #include "ItemManager.generated.h"
 
 class AItem;

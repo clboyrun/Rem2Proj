@@ -1,5 +1,5 @@
 #include "EnvQueryTest_Jump.h"
-#include "EnvQueryContext_Querier.h"
+#include "EnvironmentQuery/Contexts/EnvQueryContext_Querier.h"
 
 UEnvQueryTest_Jump::UEnvQueryTest_Jump() {
     this->TestPurpose = EEnvTestPurpose::Filter;

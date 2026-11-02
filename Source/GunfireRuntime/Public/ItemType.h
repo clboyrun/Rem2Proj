@@ -42,17 +42,18 @@ public:
     int32 SortPriority;
     
     UItemType();
+
     UFUNCTION(BlueprintCallable, BlueprintPure=false)
-    static void SortQueryResults(const TArray<UInventoryComponent*>& Inventories, TArray<FItemQueryResult>& Results, const TArray<EItemQuerySortMethod>& SortMethods);
+    static void SortQueryResults(const TArray<UInventoryComponent*>& Inventories, TArray<FItemQueryResult>& Results, const TArray<EItemQuerySortMethod>& SortMethods) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure=false)
-    static TArray<FItemQueryResult> QueryRelevantItemsEx(const TArray<UInventoryComponent*>& Inventories, const FItemQueryFilter& Filter, TArray<EItemQuerySortMethod> SortMethods);
+    static TArray<FItemQueryResult> QueryRelevantItemsEx(const TArray<UInventoryComponent*>& Inventories, const FItemQueryFilter& Filter, TArray<EItemQuerySortMethod> SortMethods) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure=false)
-    static TArray<FItemQueryResult> QueryRelevantItems(const TArray<UInventoryComponent*>& Inventories, const FItemQueryFilter& Filter, EItemQuerySortMethod SortMethod);
+    static TArray<FItemQueryResult> QueryRelevantItems(const TArray<UInventoryComponent*>& Inventories, const FItemQueryFilter& Filter, EItemQuerySortMethod SortMethod) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    static TArray<UInventoryComponent*> GetRelevantInventoriesForType(AActor* Actor, TSubclassOf<UItemType> Type);
+    static TArray<UInventoryComponent*> GetRelevantInventoriesForType(AActor* Actor, TSubclassOf<UItemType> Type) const;
     
 };
 

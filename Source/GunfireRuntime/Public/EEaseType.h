@@ -7,5 +7,6 @@ enum class EEaseType : uint8 {
     EaseIn,
     EaseOut,
     EaseInOut,
+    NoEase,
 };
 

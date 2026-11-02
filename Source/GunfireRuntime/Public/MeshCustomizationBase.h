@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UMeshCustomizationBase : public USceneCustomization {
     GENERATED_BODY()
 public:
     UMeshCustomizationBase();
+
 };
 

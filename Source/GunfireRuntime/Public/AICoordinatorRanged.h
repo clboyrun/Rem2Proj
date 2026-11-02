@@ -7,6 +7,7 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class GUNFIRERUNTIME_API UAICoordinatorRanged : public UAICoordinatorBase {
     GENERATED_BODY()
 public:
-    UAICoordinatorRanged();
+    UAICoordinatorRanged(const FObjectInitializer& ObjectInitializer);
+
 };
 

@@ -1,6 +1,12 @@
 #include "GameUtil.h"
 #include "Templates/SubclassOf.h"
 
+UGameUtil::UGameUtil() {
+}
+
+void UGameUtil::XSSCollectGarbageIfNeeded() {
+}
+
 bool UGameUtil::WasComponentRecentlyRenderedOnScreen(UPrimitiveComponent* Component, float Tolerance) {
     return false;
 }
@@ -217,6 +223,10 @@ bool UGameUtil::IsHDREnabled() {
     return false;
 }
 
+bool UGameUtil::IsActorInPersistentLevel(AActor* Actor) {
+    return false;
+}
+
 FVector UGameUtil::InvokeVectorGetter(UObject* Object, FName EventName) {
     return FVector{};
 }
@@ -236,7 +246,7 @@ bool UGameUtil::InvokeCondition(UObject* Object, FName EventName) {
     return false;
 }
 
-TArray<USceneComponent*> UGameUtil::HideVisibleComponents(AActor* Actor, TSubclassOf<USceneComponent> ComponentClass, bool RecurseChildren) {
+TArray<USceneComponent*> UGameUtil::HideVisibleComponents(AActor* Actor, TSubclassOf<USceneComponent> ComponentClass, bool RecurseChildren, const TArray<TSoftClassPtr<AActor>>& IgnoreClasses) {
     return TArray<USceneComponent*>();
 }
 
@@ -246,6 +256,10 @@ bool UGameUtil::GetWaterSubmergeDepth(AActor* Actor, float& OutSubmergeDepth) {
 
 EVideoDeviceVendor UGameUtil::GetVideoDeviceVendor() {
     return EVideoDeviceVendor::UNKNOWN;
+}
+
+APlayerState* UGameUtil::GetServerPlayerState(const UObject* WorldContextObject) {
+    return NULL;
 }
 
 FString UGameUtil::GetScriptStack() {
@@ -355,11 +369,19 @@ EBuildType UGameUtil::GetBuildType() {
     return EBuildType::Debug;
 }
 
+FString UGameUtil::GetBuildNumberString() {
+    return TEXT("");
+}
+
 int32 UGameUtil::GetBuildNumber() {
     return 0;
 }
 
 AActor* UGameUtil::GetBestWaterBounds(AActor* Actor, bool bConstrainToFluidFilled) {
+    return NULL;
+}
+
+ACharacter* UGameUtil::GetBestOwningCharacterForActor(AActor* Actor) {
     return NULL;
 }
 
@@ -426,7 +448,7 @@ bool UGameUtil::CharacterHasWindowOrTag(ACharacterGunfire* Character, FName Requ
 void UGameUtil::CenterViewportCursor(const APlayerController* PlayerController) {
 }
 
-FVector UGameUtil::CalculateTraversableTeleportLocation(const UObject* WorldContextObject, ACharacter* Character, FVector AimStart, FVector AimEnd, float AimObstacleTolerance, float GroundDistance, float CliffTolerance, bool bConstrainToLedges, float ProbeDistance, float StuckCheckHeightOffset, float FlatSurfaceDistance, bool bDebugDraw) {
+FVector UGameUtil::CalculateTraversableTeleportLocation(const UObject* WorldContextObject, ACharacter* Character, FVector AimStart, FVector AimEnd, const TArray<TEnumAsByte<ETraceTypeQuery>>& AdditionalChannels, float AimObstacleTolerance, float GroundDistance, float CliffTolerance, bool bConstrainToLedges, float ProbeDistance, float StuckCheckHeightOffset, float FlatSurfaceDistance, bool bDebugDraw) {
     return FVector{};
 }
 
@@ -451,6 +473,4 @@ void UGameUtil::ActivateSceneComponents(AActor* Actor, FName Slot, FName Tag, bo
 void UGameUtil::ActivateSceneComponent(USceneComponent* SceneComponent, bool Active, bool ActivateChildren, bool UseVisibility) {
 }
 
-UGameUtil::UGameUtil() {
-}
 

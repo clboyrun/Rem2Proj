@@ -45,7 +45,8 @@ protected:
     TArray<FQueuedExceptionInfo> ExceptionQueue;
     
 public:
-    URemnantValidationComponent();
+    URemnantValidationComponent(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void ValidateTraits(URemnantTraitsComponent* CachedTraits);

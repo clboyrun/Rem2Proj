@@ -101,5 +101,6 @@ private:
     
 public:
     UAnimNotifyState_WeaponPhantom();
+
 };
 

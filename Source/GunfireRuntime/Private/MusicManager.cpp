@@ -1,5 +1,10 @@
 #include "MusicManager.h"
 
+UMusicManager::UMusicManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->AutomatedState = EMusicState::Ambient;
+    this->ManualState = EMusicState::None;
+}
+
 void UMusicManager::PostMusicEvent(EMusicEvent Event) {
 }
 
@@ -21,8 +26,4 @@ void UMusicManager::DeactivateMusicSet(UMusicSetAsset* MusicSet, UObject* Instig
 void UMusicManager::ActivateMusicSet(UMusicSetAsset* MusicSet, UObject* Instigator) {
 }
 
-UMusicManager::UMusicManager() {
-    this->AutomatedState = EMusicState::Ambient;
-    this->ManualState = EMusicState::None;
-}
 

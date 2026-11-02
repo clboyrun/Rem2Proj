@@ -1,6 +1,7 @@
 #include "TextDebugComponent.h"
 
-UTextDebugComponent::UTextDebugComponent() {
+UTextDebugComponent::UTextDebugComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->QueryDelay = 0.50f;
 }
+
 

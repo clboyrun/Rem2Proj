@@ -11,5 +11,6 @@ public:
     bool bAllowed;
     
     UEventTreeNode_SetMultipleSpeakers();
+
 };
 

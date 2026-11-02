@@ -31,10 +31,11 @@ public:
     
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    UImageSet* ImageSet;
+    TArray<UImageSet*> ImageSets;
     
 public:
     UInputDeviceManager();
+
     UFUNCTION(BlueprintCallable)
     void ResetKeyboardIconCache();
     
@@ -54,9 +55,6 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsUsingGamepad();
-    
-    UFUNCTION(BlueprintCallable)
-    bool IsUsingAltImageSet();
     
     UFUNCTION(BlueprintCallable)
     static UInputDeviceManager* GetInstance();

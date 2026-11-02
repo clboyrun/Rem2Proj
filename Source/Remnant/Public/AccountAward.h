@@ -31,5 +31,6 @@ public:
     bool bNotifyOnlyOnInitialAward;
     
     UAccountAward();
+
 };
 

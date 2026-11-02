@@ -11,5 +11,9 @@ UClampVelocityDecorator::UClampVelocityDecorator() {
     this->bClampOnEntry = true;
     this->bClampOnExit = true;
     this->bClampOnUpdate = false;
+    this->AdditionalBrakeFriction = 0.00f;
+    this->AdditionalBrakeDeceleration = 0.00f;
+    this->BrakeFrictionType = EClampVelocityBrakeType::Full;
 }
+
 

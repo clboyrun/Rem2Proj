@@ -12,6 +12,7 @@ class GUNFIRERUNTIME_API UAimingUtil : public UObject {
     GENERATED_BODY()
 public:
     UAimingUtil();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool ShouldShowProjectileVisualization(AActor* Aimable);
     

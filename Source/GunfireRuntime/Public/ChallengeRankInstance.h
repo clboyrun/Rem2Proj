@@ -22,6 +22,7 @@ public:
     int32 RankId;
     
     UChallengeRankInstance();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsComplete() const;
     

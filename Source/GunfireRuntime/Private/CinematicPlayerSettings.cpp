@@ -8,6 +8,7 @@ FCinematicPlayerSettings::FCinematicPlayerSettings() {
     this->DefaultToPlayerCameraOnFinish = false;
     this->UseLocalAreaRelevance = false;
     this->OnlyShowCameraToInstigator = false;
+    this->bCanPlaySequencesConcurrently = false;
     this->InstigatorPawn = NULL;
     this->RequiredReplicatedActorsToStart = 0;
     this->IsNetworkedCinematic = false;

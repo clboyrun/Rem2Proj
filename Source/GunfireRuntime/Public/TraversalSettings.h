@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
-#include "Engine/EngineTypes.h"
+#include "ECollisionChannel.h"
 #include "ClimbAppendageSettings.h"
 #include "TraversalSettings.generated.h"
 
 class AActor;
 
-UCLASS(Blueprintable, Config=Engine, DefaultConfig)
+UCLASS(Blueprintable, DefaultConfig, Config=Engine)
 class GUNFIRERUNTIME_API UTraversalSettings : public UObject {
     GENERATED_BODY()
 public:
@@ -128,5 +128,6 @@ public:
     TArray<FClimbAppendageSettings> ClimbingAppendages;
     
     UTraversalSettings();
+
 };
 

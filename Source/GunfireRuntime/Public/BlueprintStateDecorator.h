@@ -12,6 +12,7 @@ class GUNFIRERUNTIME_API UBlueprintStateDecorator : public UActorStateDecorator 
     GENERATED_BODY()
 public:
     UBlueprintStateDecorator();
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool OnValidate(UStateMachineComponent* StateMachine, AActor* Actor) const;
     

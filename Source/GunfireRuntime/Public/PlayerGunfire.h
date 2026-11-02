@@ -12,7 +12,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UInputStateComponent* InputStateComponent;
     
-    APlayerGunfire();
+    APlayerGunfire(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     bool IsPlayerTargeted();
     

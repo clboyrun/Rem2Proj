@@ -8,3 +8,4 @@ UClimbingStateBase::UClimbingStateBase() {
     this->DirectionalTolerance = 10.00f;
 }
 
+

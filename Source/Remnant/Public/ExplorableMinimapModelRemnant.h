@@ -14,6 +14,7 @@ protected:
     AZoneActor* VisitedCoordinatesOwner;
     
 public:
-    AExplorableMinimapModelRemnant();
+    AExplorableMinimapModelRemnant(const FObjectInitializer& ObjectInitializer);
+
 };
 

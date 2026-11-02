@@ -1,6 +1,13 @@
 #include "RemnantValidationComponent.h"
 #include "Templates/SubclassOf.h"
 
+URemnantValidationComponent::URemnantValidationComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->ValidationTable = NULL;
+    this->ExceptionTimeOutSeconds = 30.00f;
+    this->ValidationManager = NULL;
+    this->LocalValidationPawn = NULL;
+}
+
 void URemnantValidationComponent::ValidateTraits(URemnantTraitsComponent* CachedTraits) {
 }
 
@@ -37,10 +44,4 @@ void URemnantValidationComponent::AddEquipmentModException(int32 ModID, bool bIs
 void URemnantValidationComponent::AddCraftingRecipeExceptions(const FRecipeInfo& RecipeInfo, int32 UpgradeItemID) {
 }
 
-URemnantValidationComponent::URemnantValidationComponent() {
-    this->ValidationTable = NULL;
-    this->ExceptionTimeOutSeconds = 30.00f;
-    this->ValidationManager = NULL;
-    this->LocalValidationPawn = NULL;
-}
 

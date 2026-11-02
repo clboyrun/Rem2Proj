@@ -15,15 +15,16 @@ protected:
     float UpdateFrequency;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FName InfiniteStaminaTag;
+    TArray<FName> OutOfCombatTags;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_HasInfiniteStamina, meta=(AllowPrivateAccess=true))
     bool bHasInfiniteStamina;
     
 public:
     UActionInfiniteStamina();
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
 protected:
     UFUNCTION(BlueprintCallable)
     void UpdateInfiniteStamina();

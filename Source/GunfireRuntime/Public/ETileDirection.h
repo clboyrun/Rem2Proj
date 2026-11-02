@@ -7,7 +7,7 @@ enum class ETileDirection : uint8 {
     None,
     North,
     East,
-    South = 0x4,
-    West = 0x8,
+    South = 4,
+    West = 8,
 };
 

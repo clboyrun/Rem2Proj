@@ -8,6 +8,7 @@ class GUNFIRERUNTIME_API UXRUtil : public UObject {
     GENERATED_BODY()
 public:
     UXRUtil();
+
     UFUNCTION(BlueprintCallable)
     static bool IsStereoEnabled();
     

@@ -32,5 +32,6 @@ public:
     uint8 bAllowLooping: 1;
     
     UAnimNotify_StateSound();
+
 };
 

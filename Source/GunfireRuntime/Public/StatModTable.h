@@ -14,6 +14,7 @@ class GUNFIRERUNTIME_API UStatModTable : public UObject {
     GENERATED_BODY()
 public:
     UStatModTable();
+
     UFUNCTION(BlueprintCallable)
     static bool IsModifierValidForContext(AActor* SourceActor, UDataTable* Table, int32 ModifierLevel, TSubclassOf<UActorModifier> ModifierBP, UObject* TableContextObject, bool UnequippedIsValid);
     

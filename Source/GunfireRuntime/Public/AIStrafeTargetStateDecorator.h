@@ -43,5 +43,6 @@ private:
     
 public:
     UAIStrafeTargetStateDecorator();
+
 };
 

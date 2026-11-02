@@ -2,15 +2,15 @@
 #include "CoreMinimal.h"
 #include "MovieSceneNameableTrack.h"
 #include "MovieSceneObjectBindingID.h"
-#include "Compilation/IMovieSceneTrackTemplateProducer.h"
-#include "Tracks/MovieSceneEventTrack.h"
+#include "MovieSceneTrackTemplateProducer.h"
+#include "EFireEventsAtPosition.h"
 #include "EventTreeTrackEventDelegate.h"
 #include "MovieSceneEventTreeTrack.generated.h"
 
 class UMovieSceneSection;
 
 UCLASS(Blueprintable, MinimalAPI)
-class UMovieSceneEventTreeTrack : public UMovieSceneNameableTrack/*, public IMovieSceneTrackTemplateProducer*/ {
+class UMovieSceneEventTreeTrack : public UMovieSceneNameableTrack, public IMovieSceneTrackTemplateProducer {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -34,7 +34,8 @@ private:
     
 public:
     UMovieSceneEventTreeTrack();
-    
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

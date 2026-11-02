@@ -6,3 +6,4 @@ UAnimNotify_AnimatedCameraCutFOVTransition::UAnimNotify_AnimatedCameraCutFOVTran
     this->FOVPercentCurve = NULL;
 }
 
+

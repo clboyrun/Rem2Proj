@@ -1,7 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "Engine/EngineTypes.h"
+#include "EEndPlayReason.h"
+#include "SummonerActionEventDelegate.h"
 #include "SummonerEventDelegate.h"
 #include "Templates/SubclassOf.h"
 #include "SummonerComponent.generated.h"
@@ -13,12 +14,16 @@ class REMNANT_API USummonerComponent : public UActorComponent {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSummonerActionEvent OnSummonActionEvent;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSummonerEvent OnSummonAdded;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSummonerEvent OnSummonRemoved;
     
-    USummonerComponent();
+    USummonerComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void RemoveSummon(AActor* Summon);
     
@@ -39,6 +44,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetNumSummonsOfType(TSubclassOf<AActor> SummonClass);
+    
+    UFUNCTION(BlueprintCallable)
+    void BroadcastSummonActionEvent(AActor* Summon, FName EventName, AActor* RelevantEventTarget);
     
 };
 

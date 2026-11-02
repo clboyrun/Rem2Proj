@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DataProviders/AIDataProvider.h"
-#include "DataProviders/AIDataProvider.h"
+#include "AIDataProviderBoolValue.h"
+#include "AIDataProviderFloatValue.h"
 #include "EnvironmentQuery/EnvQueryGenerator.h"
 #include "Templates/SubclassOf.h"
 #include "EnvQueryGenerator_AITacticalPoint.generated.h"
@@ -33,5 +33,6 @@ private:
     
 public:
     UEnvQueryGenerator_AITacticalPoint();
+
 };
 

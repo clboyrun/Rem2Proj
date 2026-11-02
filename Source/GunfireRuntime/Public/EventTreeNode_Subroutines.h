@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UEventTreeNode_Subroutines : public UEventTreeNode_Bran
     GENERATED_BODY()
 public:
     UEventTreeNode_Subroutines();
+
 };
 

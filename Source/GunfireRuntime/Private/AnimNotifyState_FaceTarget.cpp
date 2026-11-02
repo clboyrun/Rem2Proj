@@ -8,3 +8,4 @@ UAnimNotifyState_FaceTarget::UAnimNotifyState_FaceTarget() {
     this->TurnSpeed = 360.00f;
 }
 
+

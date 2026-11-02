@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "AI/Navigation/NavRelevantInterface.h"
+#include "Navigation/NavRelevantInterface.h"
 #include "NavLinkHostInterface.h"
 #include "AITacticalPointContainerInterface.h"
 #include "AIData.generated.h"
@@ -26,8 +26,9 @@ protected:
     UAIDataContainer* Data;
     
 public:
-    AAIData();
-    
+    AAIData(const FObjectInitializer& ObjectInitializer);
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

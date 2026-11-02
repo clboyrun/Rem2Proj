@@ -1,6 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "DialogEndEventDelegate.h"
+#include "DialogNodeEventDelegate.h"
 #include "DialogVoidDelegateDelegate.h"
 #include "EventTreeContext.h"
 #include "EventTreeStage.h"
@@ -21,6 +23,12 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDialogVoidDelegate OnEnd;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FDialogEndEvent OnEventTreeEnding;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FDialogNodeEvent OnNodeStomp;
+    
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FEventTreeStageEvent OnSetStage;
     
@@ -32,7 +40,8 @@ protected:
     TArray<FEventTreeStage> StageStack;
     
 public:
-    UEventTreeComponent();
+    UEventTreeComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void Stop();
     
@@ -50,6 +59,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void PopStage();
+    
+    UFUNCTION(BlueprintCallable)
+    void OnTreeEnding();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UEventTreeNode* K2_PeekNextNode() const;

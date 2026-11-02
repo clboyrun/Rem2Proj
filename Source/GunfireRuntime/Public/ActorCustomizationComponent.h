@@ -58,9 +58,10 @@ protected:
     TArray<UObject*> CachedAssets;
     
 public:
-    UActorCustomizationComponent();
+    UActorCustomizationComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void UpdateSlots();
     
@@ -80,6 +81,9 @@ public:
     void SetCustomization(FName SlotID, FName CustomizationID);
     
     UFUNCTION(BlueprintCallable)
+    void RemoveBPCustomizationTags(const TArray<FName>& InTags);
+    
+    UFUNCTION(BlueprintCallable)
     void PlayCustomizationEffect(FName NameID, bool bCache);
     
 protected:
@@ -90,6 +94,9 @@ protected:
     void OnCustomizationLoaded(FName SlotID, FName CustomizationID, bool bCleared);
     
 public:
+    UFUNCTION(BlueprintCallable)
+    void LoadCustomization(FName SlotID, FName CustomizationID);
+    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasOutstandingStreamingRequests();
     
@@ -119,6 +126,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void ClearCustomization(FName SlotID);
+    
+    UFUNCTION(BlueprintCallable)
+    void AddBPCustomizationTags(const TArray<FName>& InTags);
     
 };
 

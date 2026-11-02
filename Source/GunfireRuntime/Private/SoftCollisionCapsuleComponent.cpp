@@ -1,5 +1,9 @@
 #include "SoftCollisionCapsuleComponent.h"
 
+USoftCollisionCapsuleComponent::USoftCollisionCapsuleComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->SoftCharacterCollisionWeight = 9999.00f;
+}
+
 bool USoftCollisionCapsuleComponent::ShouldIgnoreActor(AActor* Actor) const {
     return false;
 }
@@ -14,7 +18,4 @@ bool USoftCollisionCapsuleComponent::IsEnabled() const {
     return false;
 }
 
-USoftCollisionCapsuleComponent::USoftCollisionCapsuleComponent() {
-    this->SoftCharacterCollisionWeight = 9999.00f;
-}
 

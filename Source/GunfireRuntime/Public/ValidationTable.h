@@ -13,5 +13,6 @@ public:
     TArray<UValidationListBase*> ValidationList;
     
     UValidationTable();
+
 };
 

@@ -32,7 +32,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UPhysicsTweenComponent* PhysicsTween;
     
-    ARopeActorBase();
+    ARopeActorBase(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void OnAttachedSourceToComponent(USceneComponent* Component, const FTransform& Transform, FName SocketName, bool bSimulatePhysics, float AttachTime, UPrimitiveComponent* AttachPrimitive);

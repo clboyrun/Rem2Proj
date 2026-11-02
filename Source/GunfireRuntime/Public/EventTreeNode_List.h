@@ -11,5 +11,6 @@ public:
     TArray<UEventTreeNode*> Nodes;
     
     UEventTreeNode_List();
+
 };
 

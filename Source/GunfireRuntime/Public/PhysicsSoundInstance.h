@@ -13,6 +13,7 @@ public:
     FAudioComponentGunfire CurrentComponent;
     
     UPhysicsSoundInstance();
+
     UFUNCTION(BlueprintCallable)
     void OnImpactTimerExpired();
     

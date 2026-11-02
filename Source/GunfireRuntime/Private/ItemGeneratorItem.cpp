@@ -5,3 +5,4 @@ UItemGeneratorItem::UItemGeneratorItem() {
     this->QuantityMax = 1;
 }
 
+

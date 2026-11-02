@@ -16,5 +16,6 @@ public:
     TArray<UActorCustomizationEffect*> Nodes;
     
     UActorCustomizationEffectEntry();
+
 };
 

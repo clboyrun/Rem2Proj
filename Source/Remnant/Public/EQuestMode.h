@@ -6,7 +6,8 @@ UENUM(BlueprintType)
 enum class EQuestMode : uint8 {
     Campaign,
     Adventure,
-    Debug,
+    BossRush,
+    Survival,
     None,
 };
 

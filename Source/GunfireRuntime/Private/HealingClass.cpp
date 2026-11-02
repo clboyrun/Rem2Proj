@@ -4,3 +4,4 @@ UHealingClass::UHealingClass() {
     this->Action = NULL;
 }
 
+

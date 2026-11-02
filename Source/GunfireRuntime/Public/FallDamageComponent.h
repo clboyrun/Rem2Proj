@@ -81,7 +81,8 @@ protected:
     UCharacterMovementComponent* MovementComponent;
     
 public:
-    UFallDamageComponent();
+    UFallDamageComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void TriggerFallDeath();
     

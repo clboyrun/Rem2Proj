@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DataProviders/AIDataProvider.h"
+#include "AIDataProviderFloatValue.h"
 #include "EnvironmentQuery/EnvQueryGenerator.h"
 #include "Templates/SubclassOf.h"
 #include "EnvQueryGenerator_PathingGrid3D.generated.h"
@@ -29,5 +29,6 @@ private:
     
 public:
     UEnvQueryGenerator_PathingGrid3D();
+
 };
 

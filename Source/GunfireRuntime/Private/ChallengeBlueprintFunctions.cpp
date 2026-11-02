@@ -1,15 +1,18 @@
 #include "ChallengeBlueprintFunctions.h"
 
-void UChallengeBlueprintFunctions::UnlockChallenges(UObject* WorldContextObject, FChallengeEvent ObjectiveId) {
+UChallengeBlueprintFunctions::UChallengeBlueprintFunctions() {
 }
 
-void UChallengeBlueprintFunctions::IncrementObjectivesFromObject(UObject* WorldContextObject, FChallengeEvent ObjectiveId, UObject* Object, const TArray<FName>& AdditionalTags, int32 Amount) {
+void UChallengeBlueprintFunctions::UnlockChallenges(UObject* WorldContextObject, FChallengeEvent ObjectiveID) {
 }
 
-void UChallengeBlueprintFunctions::IncrementObjectivesFor(APlayerController* Controller, FChallengeEvent ObjectiveId, const TArray<FName>& Tags, int32 Amount) {
+void UChallengeBlueprintFunctions::IncrementObjectivesFromObject(UObject* WorldContextObject, FChallengeEvent ObjectiveID, UObject* Object, const TArray<FName>& AdditionalTags, int32 Amount) {
 }
 
-void UChallengeBlueprintFunctions::IncrementObjectives(UObject* WorldContextObject, FChallengeEvent ObjectiveId, const TArray<FName>& Tags, int32 Amount) {
+void UChallengeBlueprintFunctions::IncrementObjectivesFor(APlayerController* Controller, FChallengeEvent ObjectiveID, const TArray<FName>& Tags, int32 Amount) {
+}
+
+void UChallengeBlueprintFunctions::IncrementObjectives(UObject* WorldContextObject, FChallengeEvent ObjectiveID, const TArray<FName>& Tags, int32 Amount) {
 }
 
 void UChallengeBlueprintFunctions::IncrementObjective(UObject* WorldContextObject, FChallengeObjectiveSelection ObjectiveSelection, int32 Amount) {
@@ -23,6 +26,4 @@ TArray<UChallenge*> UChallengeBlueprintFunctions::GetAllChallenges(UObject* Worl
     return TArray<UChallenge*>();
 }
 
-UChallengeBlueprintFunctions::UChallengeBlueprintFunctions() {
-}
 

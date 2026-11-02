@@ -3,7 +3,7 @@
 #include "UObject/NoExportTypes.h"
 #include "EAnimationState.h"
 #include "Components/Border.h"
-#include "Components/SlateWrapperTypes.h"
+#include "ESlateVisibility.h"
 #include "OnCursorTargetEventDelegate.h"
 #include "RemnantCursorTarget.generated.h"
 
@@ -46,6 +46,7 @@ protected:
     
 public:
     URemnantCursorTarget();
+
     UFUNCTION(BlueprintCallable)
     void ForceRefreshCachedVisibility();
     

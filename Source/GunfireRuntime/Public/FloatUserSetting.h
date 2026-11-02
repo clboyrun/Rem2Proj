@@ -28,6 +28,7 @@ protected:
     
 public:
     UFloatUserSetting();
+
     UFUNCTION(BlueprintCallable)
     void SetValue(float Value);
     

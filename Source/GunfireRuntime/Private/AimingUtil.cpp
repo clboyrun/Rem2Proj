@@ -1,5 +1,8 @@
 #include "AimingUtil.h"
 
+UAimingUtil::UAimingUtil() {
+}
+
 bool UAimingUtil::ShouldShowProjectileVisualization(AActor* Aimable) {
     return false;
 }
@@ -28,6 +31,4 @@ bool UAimingUtil::CanAim(AActor* Aimable) {
     return false;
 }
 
-UAimingUtil::UAimingUtil() {
-}
 

@@ -11,6 +11,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FPushIKAppendage> Appendages;
     
-    UPushableIKSettings();
+    UPushableIKSettings(const FObjectInitializer& ObjectInitializer);
+
 };
 

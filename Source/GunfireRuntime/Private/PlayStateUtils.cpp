@@ -1,5 +1,8 @@
 #include "PlayStateUtils.h"
 
+UPlayStateUtils::UPlayStateUtils() {
+}
+
 void UPlayStateUtils::RequestPlayStates(const TArray<FName>& StateNames, UObject* Context, FName Reason) {
 }
 
@@ -28,6 +31,4 @@ void UPlayStateUtils::ClearRequestedPlayStatesForAllReasons(UObject* Context) {
 void UPlayStateUtils::ClearRequestedPlayState(UObject* Context, FName Reason) {
 }
 
-UPlayStateUtils::UPlayStateUtils() {
-}
 

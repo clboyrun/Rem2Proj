@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
 #include "UObject/NoExportTypes.h"
-#include "Engine/EngineTypes.h"
+#include "ECollisionChannel.h"
 #include "EVaultDirectionType.h"
 #include "EVaultQueryType.h"
 #include "Templates/SubclassOf.h"
@@ -111,5 +111,6 @@ public:
     bool bRequiresClimbingData;
     
     UVaultSettings();
+
 };
 

@@ -279,5 +279,6 @@ public:
     uint32 AIAttackPressure;
     
     URangedWeaponProfile();
+
 };
 

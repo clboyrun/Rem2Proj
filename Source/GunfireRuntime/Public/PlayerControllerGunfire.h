@@ -1,8 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "GameFramework/PlayerController.h"
 #include "CinematicDelegateDelegate.h"
 #include "EPlayerJoinState.h"
@@ -13,6 +11,7 @@
 class AActor;
 class APawn;
 class APlayerStateGunfire;
+class UDamageValidationComponent;
 class UInputMappingContext;
 class UObject;
 class UPlayStateComponent;
@@ -43,9 +42,13 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UPlayStateComponent* PlayState;
     
-    APlayerControllerGunfire();
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UDamageValidationComponent* DamageValidationComponent;
     
+    APlayerControllerGunfire(const FObjectInitializer& ObjectInitializer);
+
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+
     UFUNCTION(BlueprintCallable)
     void SpectateTarget(AActor* Actor);
     
@@ -135,6 +138,9 @@ public:
     bool IsJoiningAsSpectator() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsJoiningAsPlayer() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsJoining() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -148,6 +154,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsDisconnected() const;
+    
+    UFUNCTION(BlueprintCallable)
+    bool HasLicense(const FString& License);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasJoined() const;

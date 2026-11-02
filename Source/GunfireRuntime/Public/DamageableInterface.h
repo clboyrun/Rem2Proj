@@ -20,7 +20,7 @@ public:
     void ModifyIncomingDamage(UPARAM(Ref) FDamageInfo& Info);
     
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
-    void FilterIncomingHealing(const FHealingInfo& HealingInfo, float& HealingOut, bool& ShouldApplyDamagHealing);
+    void FilterIncomingHealing(const FHealingInfo& HealingInfo, float& HealingOut, bool& ShouldApplyHealing);
     
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void FilterIncomingDamage(const FDamageInfo& DamageInfo, float& DamageOut, bool& ShouldApplyDamage);

@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API USoundID : public UInheritableNameTagObject {
     GENERATED_BODY()
 public:
     USoundID();
+
 };
 

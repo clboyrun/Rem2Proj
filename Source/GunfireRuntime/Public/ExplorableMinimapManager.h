@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Subsystems/WorldSubsystem.h"
+#include "TickableWorldSubsystem.h"
 #include "MinimapEntityRegistrationChangedDelegate.h"
 #include "MinimapEntitySpawnRegisteredDelegate.h"
 #include "ExplorableMinimapManager.generated.h"
@@ -33,6 +33,7 @@ protected:
     
 public:
     UExplorableMinimapManager();
+
     UFUNCTION(BlueprintCallable)
     void ShutdownMinimap();
     
@@ -71,8 +72,6 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void EnableFogOfWar(bool bEnable);
-
-    virtual TStatId GetStatId() const override;
     
 };
 

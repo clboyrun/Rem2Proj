@@ -1,5 +1,20 @@
 #include "FallDamageComponent.h"
 
+UFallDamageComponent::UFallDamageComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bStartEnabled = true;
+    this->bSimulateOnOwningClient = false;
+    this->bRequiresAllowFallDamageTag = true;
+    this->bServerAuthoritative = false;
+    this->LandDamageCurve = NULL;
+    this->LandHealthPercent = 0.25f;
+    this->FallDamageType = NULL;
+    this->LandDamageType = NULL;
+    this->DoDamageOnLand = true;
+    this->bSkipDamageWhileInWater = false;
+    this->StatsComponent = NULL;
+    this->MovementComponent = NULL;
+}
+
 void UFallDamageComponent::TriggerFallDeath() {
 }
 
@@ -23,18 +38,4 @@ float UFallDamageComponent::GetCurrentFallDistance() const {
 void UFallDamageComponent::DisableUntilGrounded(bool bDisable) {
 }
 
-UFallDamageComponent::UFallDamageComponent() {
-    this->bStartEnabled = true;
-    this->bSimulateOnOwningClient = false;
-    this->bRequiresAllowFallDamageTag = true;
-    this->bServerAuthoritative = false;
-    this->LandDamageCurve = NULL;
-    this->LandHealthPercent = 0.25f;
-    this->FallDamageType = NULL;
-    this->LandDamageType = NULL;
-    this->DoDamageOnLand = true;
-    this->bSkipDamageWhileInWater = false;
-    this->StatsComponent = NULL;
-    this->MovementComponent = NULL;
-}
 

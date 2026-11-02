@@ -24,5 +24,6 @@ public:
     TArray<FOwnedAIData> OwnedInfo;
     
     UAIDataContainer();
+
 };
 

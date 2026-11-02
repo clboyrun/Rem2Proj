@@ -25,5 +25,6 @@ public:
     bool OnlyFireInWater;
     
     UAnimNotify_CameraEffect();
+
 };
 

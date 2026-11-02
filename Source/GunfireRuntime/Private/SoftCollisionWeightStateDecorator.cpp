@@ -5,3 +5,4 @@ USoftCollisionWeightStateDecorator::USoftCollisionWeightStateDecorator() {
     this->bShouldRestorePreviousWeight = true;
 }
 
+

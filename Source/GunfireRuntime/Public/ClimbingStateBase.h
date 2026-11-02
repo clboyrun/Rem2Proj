@@ -37,5 +37,6 @@ public:
     float DirectionalTolerance;
     
     UClimbingStateBase();
+
 };
 

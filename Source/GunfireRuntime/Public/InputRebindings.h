@@ -27,6 +27,7 @@ public:
     UInputMappingContext* RemovedMappingContexts;
     
     UInputRebindings();
+
     UFUNCTION(BlueprintCallable)
     static void ResetInputRebindings();
     

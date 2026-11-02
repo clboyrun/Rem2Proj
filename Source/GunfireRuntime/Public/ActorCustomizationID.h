@@ -37,7 +37,8 @@ public:
     TMap<FName, FLinearColor> ColorsByID;
     
     UActorCustomizationID();
-    
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

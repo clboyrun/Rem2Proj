@@ -1,5 +1,8 @@
 #include "AdvancedDecalComponent.h"
 
+UAdvancedDecalComponent::UAdvancedDecalComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+}
+
 UAdvancedDecalComponent* UAdvancedDecalComponent::SpawnAdvancedDecalAttached(UMaterialInterface* DecalMaterialIn, FVector DecalSizeIn, USceneComponent* AttachToComponent, FName AttachPointName, FVector Location, FRotator Rotation, TEnumAsByte<EAttachLocation::Type> LocationType, float LifeSpan, UCurveFloat* EmissiveCurve, UCurveFloat* OpacityCurve, bool bSetLifespan) {
     return NULL;
 }
@@ -8,6 +11,4 @@ UAdvancedDecalComponent* UAdvancedDecalComponent::SpawnAdvancedDecalAtLocation(c
     return NULL;
 }
 
-UAdvancedDecalComponent::UAdvancedDecalComponent() {
-}
 

@@ -22,5 +22,6 @@ public:
     int32 QuantityMax;
     
     USpawnTableLink();
+
 };
 

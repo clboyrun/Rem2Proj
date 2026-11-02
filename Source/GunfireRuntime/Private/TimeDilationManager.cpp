@@ -1,5 +1,8 @@
 #include "TimeDilationManager.h"
 
+UTimeDilationManager::UTimeDilationManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+}
+
 void UTimeDilationManager::SetTimeDilationMode(AActor* InActor, ETimeDilationMode NewMode) {
 }
 
@@ -61,6 +64,4 @@ void UTimeDilationManager::ClearGlobalTimeDilation(UObject* WorldContextObject, 
 void UTimeDilationManager::ClearAllTimeDilation(UObject* WorldContextObject) {
 }
 
-UTimeDilationManager::UTimeDilationManager() {
-}
 

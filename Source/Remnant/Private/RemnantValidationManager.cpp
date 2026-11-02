@@ -1,5 +1,8 @@
 #include "RemnantValidationManager.h"
 
+URemnantValidationManager::URemnantValidationManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+}
+
 void URemnantValidationManager::QueueSoftTraitException(TSoftClassPtr<UTrait> SoftTraitBP, int32 LevelChange, bool bIsRemovingTrait) {
 }
 
@@ -17,6 +20,4 @@ bool URemnantValidationManager::CanDoCheatValidation(AActor* ValidatedActor) {
     return false;
 }
 
-URemnantValidationManager::URemnantValidationManager() {
-}
 

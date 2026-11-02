@@ -1,11 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "Components/ActorComponent.h"
-#include "Engine/EngineTypes.h"
-#include "Engine/EngineTypes.h"
+#include "ECollisionChannel.h"
+#include "ECollisionResponse.h"
 #include "RopeAttachPoint.h"
 #include "RopeSegmentComponents.h"
 #include "RopeComponent.generated.h"
@@ -94,7 +92,8 @@ protected:
     TArray<FRopeSegmentComponents> RopeSegments;
     
 public:
-    URopeComponent();
+    URopeComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void UpdateSegmentLengths(int32 StartingIndex, float DeltaTime);
     

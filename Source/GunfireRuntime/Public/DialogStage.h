@@ -27,7 +27,8 @@ protected:
     TArray<UCinematicInstance_Base*> RunningCinematicInstances;
     
 public:
-    ADialogStage();
+    ADialogStage(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void SetupStage(const FEventTreeStage& Stage);
     

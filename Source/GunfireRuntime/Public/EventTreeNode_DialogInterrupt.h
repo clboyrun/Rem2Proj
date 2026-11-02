@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UEventTreeNode_DialogInterrupt : public UEventTreeNode 
     GENERATED_BODY()
 public:
     UEventTreeNode_DialogInterrupt();
+
 };
 

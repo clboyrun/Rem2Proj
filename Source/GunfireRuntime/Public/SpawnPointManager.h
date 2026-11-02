@@ -1,8 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "Components/ActorComponent.h"
 #include "QueuedSpawn.h"
 #include "SpawnEntry.h"
@@ -38,7 +36,8 @@ protected:
     ARecastNavMesh* NavMesh;
     
 public:
-    USpawnPointManager();
+    USpawnPointManager(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SpawnCharacter(const FSpawnEntry& Entry, AActor* Owner, const FVector& SpawnPos, bool Transient);
     

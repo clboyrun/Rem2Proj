@@ -4,3 +4,4 @@ UAIPathActionCondition::UAIPathActionCondition() {
     this->Action = EPathFollowingAction::PathToGoal;
 }
 
+

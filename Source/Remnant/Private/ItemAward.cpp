@@ -5,3 +5,4 @@ UItemAward::UItemAward() {
     this->bAutoEquip = true;
 }
 
+

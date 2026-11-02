@@ -1,5 +1,11 @@
 #include "ChallengeRankInstance.h"
 
+UChallengeRankInstance::UChallengeRankInstance() {
+    this->ChallengeInstance = NULL;
+    this->Rank = NULL;
+    this->RankId = 0;
+}
+
 bool UChallengeRankInstance::IsComplete() const {
     return false;
 }
@@ -16,9 +22,4 @@ FChallengeObjectiveInstance UChallengeRankInstance::GetObjectiveInstance(UChalle
     return FChallengeObjectiveInstance{};
 }
 
-UChallengeRankInstance::UChallengeRankInstance() {
-    this->ChallengeInstance = NULL;
-    this->Rank = NULL;
-    this->RankId = 0;
-}
 

@@ -5,3 +5,4 @@ UCanStopCondition::UCanStopCondition() {
     this->bStopOnPendingInterrupt = false;
 }
 
+

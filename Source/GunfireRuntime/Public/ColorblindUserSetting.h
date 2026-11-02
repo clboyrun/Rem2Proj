@@ -15,6 +15,7 @@ public:
     bool bWraps;
     
     UColorblindUserSetting();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetValueEnumCVD(FEnumCVDUserSettingEntry& OutEntry);
     

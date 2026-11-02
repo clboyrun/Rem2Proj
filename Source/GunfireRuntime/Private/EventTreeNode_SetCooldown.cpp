@@ -6,3 +6,4 @@ UEventTreeNode_SetCooldown::UEventTreeNode_SetCooldown() {
     this->CooldownMax = 1.50f;
 }
 
+

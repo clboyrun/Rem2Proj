@@ -1,5 +1,6 @@
 #include "AICustomTacticalPoint.h"
 
-AAICustomTacticalPoint::AAICustomTacticalPoint() {
+AAICustomTacticalPoint::AAICustomTacticalPoint(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

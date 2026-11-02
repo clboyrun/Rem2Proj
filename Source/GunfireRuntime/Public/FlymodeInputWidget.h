@@ -12,6 +12,7 @@ public:
     bool IsPreviewMode;
     
     UFlymodeInputWidget();
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ToggleWaypointDisplay();
     

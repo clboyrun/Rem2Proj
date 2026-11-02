@@ -2,14 +2,12 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "UObject/Object.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "Engine/EngineTypes.h"
-#include "Camera/CameraTypes.h"
-#include "Engine/EngineTypes.h"
-#include "Components/SceneComponent.h"
-#include "Engine/EngineTypes.h"
+#include "EAttachmentRule.h"
+#include "ECameraShakePlaySpace.h"
+#include "ECollisionChannel.h"
+#include "ERelativeTransformSpace.h"
+#include "ESpawnActorCollisionHandlingMethod.h"
+#include "ETraceTypeQuery.h"
 #include "Engine/HitResult.h"
 #include "ActorQueryFilter.h"
 #include "ActorQueryResult.h"
@@ -50,6 +48,10 @@ class GUNFIRERUNTIME_API UGameUtil : public UObject {
     GENERATED_BODY()
 public:
     UGameUtil();
+
+    UFUNCTION(BlueprintCallable)
+    static void XSSCollectGarbageIfNeeded();
+    
     UFUNCTION(BlueprintCallable)
     static bool WasComponentRecentlyRenderedOnScreen(UPrimitiveComponent* Component, float Tolerance);
     
@@ -237,6 +239,9 @@ public:
     static bool IsHDREnabled();
     
     UFUNCTION(BlueprintCallable)
+    static bool IsActorInPersistentLevel(AActor* Actor);
+    
+    UFUNCTION(BlueprintCallable)
     static FVector InvokeVectorGetter(UObject* Object, FName EventName);
     
     UFUNCTION(BlueprintCallable)
@@ -252,13 +257,16 @@ public:
     static bool InvokeCondition(UObject* Object, FName EventName);
     
     UFUNCTION(BlueprintCallable)
-    static TArray<USceneComponent*> HideVisibleComponents(AActor* Actor, TSubclassOf<USceneComponent> ComponentClass, bool RecurseChildren);
+    static TArray<USceneComponent*> HideVisibleComponents(AActor* Actor, TSubclassOf<USceneComponent> ComponentClass, bool RecurseChildren, const TArray<TSoftClassPtr<AActor>>& IgnoreClasses);
     
     UFUNCTION(BlueprintCallable)
     static bool GetWaterSubmergeDepth(AActor* Actor, float& OutSubmergeDepth);
     
     UFUNCTION(BlueprintCallable)
     static EVideoDeviceVendor GetVideoDeviceVendor();
+    
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
+    static APlayerState* GetServerPlayerState(const UObject* WorldContextObject);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FString GetScriptStack();
@@ -342,10 +350,16 @@ public:
     static EBuildType GetBuildType();
     
     UFUNCTION(BlueprintCallable)
+    static FString GetBuildNumberString();
+    
+    UFUNCTION(BlueprintCallable)
     static int32 GetBuildNumber();
     
     UFUNCTION(BlueprintCallable)
     static AActor* GetBestWaterBounds(AActor* Actor, bool bConstrainToFluidFilled);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static ACharacter* GetBestOwningCharacterForActor(AActor* Actor);
     
     UFUNCTION(BlueprintCallable)
     static EBasePlatform GetBasePlatform();
@@ -402,7 +416,7 @@ public:
     static void CenterViewportCursor(const APlayerController* PlayerController);
     
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
-    static FVector CalculateTraversableTeleportLocation(const UObject* WorldContextObject, ACharacter* Character, FVector AimStart, FVector AimEnd, float AimObstacleTolerance, float GroundDistance, float CliffTolerance, bool bConstrainToLedges, float ProbeDistance, float StuckCheckHeightOffset, float FlatSurfaceDistance, bool bDebugDraw);
+    static FVector CalculateTraversableTeleportLocation(const UObject* WorldContextObject, ACharacter* Character, FVector AimStart, FVector AimEnd, const TArray<TEnumAsByte<ETraceTypeQuery>>& AdditionalChannels, float AimObstacleTolerance, float GroundDistance, float CliffTolerance, bool bConstrainToLedges, float ProbeDistance, float StuckCheckHeightOffset, float FlatSurfaceDistance, bool bDebugDraw);
     
     UFUNCTION(BlueprintCallable)
     static float CalculateCharacterGroundSlope(const ACharacter* Character, float MoveHeading);

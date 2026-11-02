@@ -15,6 +15,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnEndActiveSound OnEndActiveSound;
     
-    UAmbientAudioComponent();
+    UAmbientAudioComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

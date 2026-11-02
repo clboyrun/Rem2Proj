@@ -24,6 +24,7 @@ public:
     FName Emote;
     
     UEmoteInstance();
+
     UFUNCTION(BlueprintCallable)
     void CompleteAndRemove();
     

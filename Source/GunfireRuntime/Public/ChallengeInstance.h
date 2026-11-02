@@ -25,6 +25,7 @@ protected:
     
 public:
     UChallengeInstance();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsComplete() const;
     

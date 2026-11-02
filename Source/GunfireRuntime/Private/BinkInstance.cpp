@@ -4,3 +4,4 @@ UBinkInstance::UBinkInstance() {
     this->BinkTextureTarget = NULL;
 }
 
+

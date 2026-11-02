@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "GameFramework/CharacterMovementComponent.h"
-#include "Engine/EngineTypes.h"
+#include "EMovementMode.h"
 #include "ENavigationType.h"
 #include "ESoftCollisionMode.h"
 #include "OnPhysicsBoundsChangedDelegateDelegate.h"
@@ -194,7 +194,11 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bStartWithSwimmingDisabled;
     
-    UCharacterMovementComponentGunfire();
+    UCharacterMovementComponentGunfire(const FObjectInitializer& ObjectInitializer);
+
+    UFUNCTION(BlueprintCallable)
+    void SetUseAccelerationForPaths(bool Enabled);
+    
     UFUNCTION(BlueprintCallable)
     void SetSwingConstraint(bool Enabled, const FVector& SwingPoint, float RopeLength);
     
@@ -239,6 +243,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool CanDoSoftCharacterCollision() const;
+    
+    UFUNCTION(BlueprintCallable)
+    void ApplyExternalVelocityBraking(float DeltaTime, float Friction, float Deceleration);
     
     UFUNCTION(BlueprintCallable)
     void AddExternalVelocity(FVector ExternalVelocityIn);

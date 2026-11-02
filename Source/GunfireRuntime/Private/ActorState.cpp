@@ -8,3 +8,4 @@ UActorState::UActorState() {
     this->InterruptChance = 10;
 }
 
+

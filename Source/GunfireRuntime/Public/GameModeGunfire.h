@@ -38,7 +38,8 @@ protected:
     AGameRules* GameRules;
     
 public:
-    AGameModeGunfire();
+    AGameModeGunfire(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void PostApplyDamage(UPARAM(Ref) FDamageInfo& DamageInfo);
     

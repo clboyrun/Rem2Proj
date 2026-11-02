@@ -1,5 +1,6 @@
 #include "SplineCameraComponent.h"
 
-USplineCameraComponent::USplineCameraComponent() {
+USplineCameraComponent::USplineCameraComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

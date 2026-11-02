@@ -7,6 +7,5 @@ enum class EAttackType : uint8 {
     AttackType_None,
     AttackType_Melee,
     AttackType_Ranged,
-    AttackType_MAX UMETA(Hidden),
 };
 

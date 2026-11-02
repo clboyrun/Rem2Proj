@@ -5,3 +5,4 @@ UAnimNotify_ActionEvent::UAnimNotify_ActionEvent() {
     this->bStateTransient = false;
 }
 
+

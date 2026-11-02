@@ -13,5 +13,6 @@ public:
     TSoftClassPtr<AItem> ItemBP;
     
     UEventTreeNode_ItemTrigger();
+
 };
 

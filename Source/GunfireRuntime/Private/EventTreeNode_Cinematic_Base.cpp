@@ -1,5 +1,18 @@
 #include "EventTreeNode_Cinematic_Base.h"
 
+UEventTreeNode_Cinematic_Base::UEventTreeNode_Cinematic_Base() {
+    this->HideOtherPlayers = true;
+    this->ResetNonMVPs = true;
+    this->ResetCameraOnComplete = false;
+    this->ShowSkipCinematic = true;
+    this->DefaultToPlayerCameraOnFinish = false;
+    this->UseLocalAreaRelevance = false;
+    this->OnlyShowCameraToInstigator = false;
+    this->bCanPlaySequencesConcurrently = false;
+    this->bNodeIsFireAndForget = false;
+    this->StoredComponent = NULL;
+}
+
 void UEventTreeNode_Cinematic_Base::OnSequenceTriggerForEventTree(FName TriggerName) {
 }
 
@@ -12,14 +25,4 @@ void UEventTreeNode_Cinematic_Base::OnCinematicSkipVoteEvent(UObject* CinematicA
 void UEventTreeNode_Cinematic_Base::OnCinematicFinishedCallback(UCinematicInstance_Base* CinematicInstance) {
 }
 
-UEventTreeNode_Cinematic_Base::UEventTreeNode_Cinematic_Base() {
-    this->HideOtherPlayers = true;
-    this->ResetNonMVPs = true;
-    this->ResetCameraOnComplete = false;
-    this->ShowSkipCinematic = true;
-    this->DefaultToPlayerCameraOnFinish = false;
-    this->UseLocalAreaRelevance = false;
-    this->OnlyShowCameraToInstigator = false;
-    this->StoredComponent = NULL;
-}
 

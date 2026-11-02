@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UFocusableCanvasPanel : public UCanvasPanel {
     GENERATED_BODY()
 public:
     UFocusableCanvasPanel();
+
 };
 

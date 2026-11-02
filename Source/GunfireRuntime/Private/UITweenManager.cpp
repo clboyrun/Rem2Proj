@@ -1,5 +1,8 @@
 #include "UITweenManager.h"
 
+UUITweenManager::UUITweenManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+}
+
 bool UUITweenManager::StopTween(int32 TweenID) {
     return false;
 }
@@ -59,6 +62,4 @@ int32 UUITweenManager::AnimateAlpha(UWidget* Widget, float ToAlpha, float Time, 
     return 0;
 }
 
-UUITweenManager::UUITweenManager() {
-}
 

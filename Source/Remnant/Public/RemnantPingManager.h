@@ -89,7 +89,8 @@ private:
     float PingCooldownDuration;
     
 public:
-    URemnantPingManager();
+    URemnantPingManager(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     bool IsCharacterOnVOCooldown(AActor* Character);
     

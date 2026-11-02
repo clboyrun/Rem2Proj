@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UTraversalSurfaceCondition : public UCondition {
     GENERATED_BODY()
 public:
     UTraversalSurfaceCondition();
+
 };
 

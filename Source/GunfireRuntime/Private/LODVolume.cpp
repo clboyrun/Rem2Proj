@@ -1,10 +1,9 @@
 #include "LODVolume.h"
 #include "Components/BoxComponent.h"
+#include "Components/SceneComponent.h"
 
-void ALODVolume::SetLODVisibility(ELODVolumeVisibility LODType) {
-}
-
-ALODVolume::ALODVolume() {
+ALODVolume::ALODVolume(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Base"));
     this->Update = false;
     this->UpdateManuallyOnly = false;
     this->VolumePriority = -1.00f;
@@ -30,5 +29,10 @@ ALODVolume::ALODVolume() {
     this->CurrentPendingHiddenIndex = 0;
     this->bEmptyPendingVisible = false;
     this->bEmptyPendingHidden = false;
+    this->Volume->SetupAttachment(RootComponent);
 }
+
+void ALODVolume::SetLODVisibility(ELODVolumeVisibility LODType) {
+}
+
 

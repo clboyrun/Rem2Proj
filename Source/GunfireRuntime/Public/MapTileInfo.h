@@ -2,6 +2,7 @@
 #include "CoreMinimal.h"
 #include "ETileDirection.h"
 #include "MapTileBase.h"
+#include "SpawnRelevanceInfo.h"
 #include "MapTileInfo.generated.h"
 
 class AActor;
@@ -27,6 +28,9 @@ public:
     FName SpawnTag;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float ResourceDensity;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ETileDirection Direction;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -39,8 +43,12 @@ public:
     int32 PathCost;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSpawnRelevanceInfo SpawnRelevanceInfoTileOverride;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     AActor* OriginPointActor;
     
-    AMapTileInfo();
+    AMapTileInfo(const FObjectInitializer& ObjectInitializer);
+
 };
 

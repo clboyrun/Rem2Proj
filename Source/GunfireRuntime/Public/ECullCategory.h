@@ -7,7 +7,7 @@ enum class ECullCategory : uint8 {
     NONE,
     TRACERS,
     SOUNDS_ATTACHED,
-    DECAL = 0x4,
-    PROJECTILES = 0x8,
+    DECAL = 4,
+    PROJECTILES = 8,
 };
 

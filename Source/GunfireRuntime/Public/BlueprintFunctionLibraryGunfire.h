@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Kismet/BlueprintFunctionLibrary.h"
+#include "BlueprintFunctionLibrary.h"
 #include "AudioComponentGunfire.h"
 #include "DamageInfo.h"
 #include "SoundGunfire.h"
@@ -23,6 +23,7 @@ class GUNFIRERUNTIME_API UBlueprintFunctionLibraryGunfire : public UBlueprintFun
     GENERATED_BODY()
 public:
     UBlueprintFunctionLibraryGunfire();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static UAkGameObject* Conv_AudioComponentGunfireToAkGameObject(FAudioComponentGunfire AudioComponentGunfire);
     

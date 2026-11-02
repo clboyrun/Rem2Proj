@@ -22,13 +22,16 @@ public:
     float Max;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool ResourceDensityIsAbsolute;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USpawnTable* SpawnTable;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FName> SpawnTags;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FName SpawnPointTag;
+    TArray<FName> SpawnPointTags;
     
     GUNFIRERUNTIME_API FResourceType();
 };

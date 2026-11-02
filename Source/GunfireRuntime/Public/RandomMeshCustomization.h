@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API URandomMeshCustomization : public UMeshCustomizationBas
     GENERATED_BODY()
 public:
     URandomMeshCustomization();
+
 };
 

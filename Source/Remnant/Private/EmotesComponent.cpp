@@ -2,6 +2,9 @@
 #include "Net/UnrealNetwork.h"
 #include "Templates/SubclassOf.h"
 
+UEmotesComponent::UEmotesComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+}
+
 void UEmotesComponent::UnlockEmote(TSubclassOf<UEmote> NewEmote) {
 }
 
@@ -52,6 +55,4 @@ void UEmotesComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Out
     DOREPLIFETIME(UEmotesComponent, UnlockedEmotes);
 }
 
-UEmotesComponent::UEmotesComponent() {
-}
 

@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UAnimMetaDataGunfire : public UAnimMetaData {
     GENERATED_BODY()
 public:
     UAnimMetaDataGunfire();
+
 };
 

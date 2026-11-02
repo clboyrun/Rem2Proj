@@ -60,6 +60,9 @@ private:
     float AcceptanceRadius;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool Use3DDistance;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MovingAcceptanceRadius;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -67,5 +70,6 @@ private:
     
 public:
     UAIFollowTargetStateDecorator();
+
 };
 

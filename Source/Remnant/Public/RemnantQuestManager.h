@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "QuestManager.h"
-#include "QuestManagerQuestDelegateDelegate.h"
-#include "QuestVoidDelegateDelegate.h"
+#include "QuestManagerQuestDelegate__DelegateSignature.h"
+#include "QuestVoidDelegate__DelegateSignature.h"
 #include "EQuestMode.h"
 #include "RemnantQuestEntry.h"
 #include "RemnantQuestManager.generated.h"
@@ -23,19 +23,35 @@ public:
     FQuestManagerQuestDelegate OnQuestLoaded;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FQuestManagerQuestDelegate OnQuestFailedToLoad;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FQuestVoidDelegate OnQuestCheckpointSet;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FQuestManagerQuestDelegate OnRootQuestActivated;
     
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FRemnantQuestEntry> RegisteredQuests;
     
 public:
-    URemnantQuestManager();
+    URemnantQuestManager(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static TArray<FRemnantQuestEntry> SortQuestList(const TArray<FRemnantQuestEntry>& QuestList);
     
     UFUNCTION(BlueprintCallable)
+    void ResetTransientRootQuests();
+    
+    UFUNCTION(BlueprintCallable)
+    void MarkOneShotRolled(const FRemnantQuestEntry& Quest);
+    
+    UFUNCTION(BlueprintCallable)
     bool IsQuestValid(ARemnantQuest* Quest, AActor* Actor);
+    
+    UFUNCTION(BlueprintCallable)
+    bool IsOneShotRolled(const FRemnantQuestEntry& Quest);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<ARemnantQuest*> GetRootQuests() const;
@@ -54,6 +70,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FRemnantQuestEntry GetRegisteredQuestByID(const FString& QuestID);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    FRemnantQuestEntry GetRegisteredQuestByClass(TSoftClassPtr<ARemnantQuest> QuestBP);
     
     UFUNCTION(BlueprintCallable)
     void GetQuestsForActor(AActor* Actor, bool IncludeInjectedQuests, TArray<ARemnantQuest*>& Rtn);

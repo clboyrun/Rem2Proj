@@ -1,5 +1,8 @@
 #include "WeaponComponent.h"
 
+UWeaponComponent::UWeaponComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+}
+
 void UWeaponComponent::NotifyHitTarget_Implementation(const FDamageInfo& DamageInfo) {
 }
 
@@ -12,6 +15,4 @@ void UWeaponComponent::ModifyDamage_Implementation(FDamageInfo& Info) {
 void UWeaponComponent::ComputeStats_Implementation(UStatsComponent* Stats) {
 }
 
-UWeaponComponent::UWeaponComponent() {
-}
 

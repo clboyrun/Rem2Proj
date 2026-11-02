@@ -1,10 +1,8 @@
 #include "NavModifierGunfireComponent.h"
 #include "NavAreas/NavArea_Null.h"
 
-void UNavModifierGunfireComponent::SetState(bool Enabled) {
-}
-
-UNavModifierGunfireComponent::UNavModifierGunfireComponent() {
+UNavModifierGunfireComponent::UNavModifierGunfireComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bCanEverAffectNavigation = true;
     this->EnabledAreaClass = UNavArea_Null::StaticClass();
     this->DisabledAreaClass = UNavArea_Null::StaticClass();
     this->Shape = ENavModifierGunfireShape::Box;
@@ -12,4 +10,8 @@ UNavModifierGunfireComponent::UNavModifierGunfireComponent() {
     this->CylinderHeight = 100.00f;
     this->IsEnabled = true;
 }
+
+void UNavModifierGunfireComponent::SetState(bool Enabled) {
+}
+
 

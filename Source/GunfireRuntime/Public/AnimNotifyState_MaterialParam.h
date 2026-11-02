@@ -34,5 +34,6 @@ private:
     
 public:
     UAnimNotifyState_MaterialParam();
+
 };
 

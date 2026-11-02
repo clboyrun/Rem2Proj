@@ -1,6 +1,22 @@
 #include "DamageableActor.h"
 #include "Net/UnrealNetwork.h"
 
+ADamageableActor::ADamageableActor(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->NetDormancy = DORM_Initial;
+    this->Invincible = false;
+    this->InvincibleMethod = EInvincibleHandlingMethod::DamageFails;
+    this->BeginNetDormant = true;
+    this->HealthMax = 100.00f;
+    this->Faction = NULL;
+    this->DisablePersistence = false;
+    this->UseLevelScaling = false;
+    this->DamageableLevel = 1;
+    this->Health = -1.00f;
+    this->DamageState = 0;
+    this->AimTargetComponent = NULL;
+    this->DamageStats = NULL;
+}
+
 void ADamageableActor::UpdateVisualState(FName TransitionTag) {
 }
 
@@ -58,18 +74,4 @@ void ADamageableActor::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Out
     DOREPLIFETIME(ADamageableActor, Health);
 }
 
-ADamageableActor::ADamageableActor() {
-    this->Invincible = false;
-    this->InvincibleMethod = EInvincibleHandlingMethod::DamageFails;
-    this->BeginNetDormant = true;
-    this->HealthMax = 100.00f;
-    this->Faction = NULL;
-    this->DisablePersistence = false;
-    this->UseLevelScaling = false;
-    this->DamageableLevel = 1;
-    this->Health = -1.00f;
-    this->DamageState = 0;
-    this->AimTargetComponent = NULL;
-    this->DamageStats = NULL;
-}
 

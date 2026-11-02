@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UValidationTableEntry : public UValidationEntryBase {
     GENERATED_BODY()
 public:
     UValidationTableEntry();
+
 };
 

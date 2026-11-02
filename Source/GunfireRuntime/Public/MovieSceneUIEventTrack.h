@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MovieSceneNameableTrack.h"
-#include "Compilation/IMovieSceneTrackTemplateProducer.h"
+#include "MovieSceneTrackTemplateProducer.h"
 #include "MovieSceneUIEventTrack.generated.h"
 
 class UMovieSceneSection;
 
 UCLASS(Blueprintable)
-class GUNFIRERUNTIME_API UMovieSceneUIEventTrack : public UMovieSceneNameableTrack/*, public IMovieSceneTrackTemplateProducer*/ {
+class GUNFIRERUNTIME_API UMovieSceneUIEventTrack : public UMovieSceneNameableTrack, public IMovieSceneTrackTemplateProducer {
     GENERATED_BODY()
 public:
 private:
@@ -16,7 +16,8 @@ private:
     
 public:
     UMovieSceneUIEventTrack();
-    
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

@@ -14,5 +14,6 @@ public:
     FText Description;
     
     URemnantGameType();
+
 };
 

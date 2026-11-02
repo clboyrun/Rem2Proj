@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UEventTreeNode_Switch : public UEventTreeNode_Branch {
     GENERATED_BODY()
 public:
     UEventTreeNode_Switch();
+
 };
 

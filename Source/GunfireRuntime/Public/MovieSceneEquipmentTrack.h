@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MovieSceneNameableTrack.h"
-#include "Compilation/IMovieSceneTrackTemplateProducer.h"
-#include "Tracks/MovieSceneEventTrack.h"
+#include "MovieSceneTrackTemplateProducer.h"
+#include "EFireEventsAtPosition.h"
 #include "MovieSceneEquipmentTrack.generated.h"
 
 class UMovieSceneSection;
 
 UCLASS(Blueprintable, MinimalAPI)
-class UMovieSceneEquipmentTrack : public UMovieSceneNameableTrack/*, public IMovieSceneTrackTemplateProducer*/ {
+class UMovieSceneEquipmentTrack : public UMovieSceneNameableTrack, public IMovieSceneTrackTemplateProducer {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -20,7 +20,8 @@ private:
     
 public:
     UMovieSceneEquipmentTrack();
-    
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

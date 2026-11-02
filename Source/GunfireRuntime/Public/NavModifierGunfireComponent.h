@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "AI/Navigation/NavRelevantInterface.h"
+#include "Navigation/NavRelevantInterface.h"
 #include "Components/SceneComponent.h"
 #include "ENavModifierGunfireShape.h"
 #include "Templates/SubclassOf.h"
@@ -36,11 +36,12 @@ protected:
     bool IsEnabled;
     
 public:
-    UNavModifierGunfireComponent();
+    UNavModifierGunfireComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SetState(bool Enabled);
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

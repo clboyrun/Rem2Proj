@@ -1,5 +1,12 @@
 #include "AIDirector.h"
 
+UAIDirector::UAIDirector(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->Level = 1;
+    this->Suspended = false;
+    this->IntensityState = EIntensityState::BuildUp;
+    this->IntensityStateChangeLockout = 0.00f;
+}
+
 void UAIDirector::Suspend() {
 }
 
@@ -43,10 +50,4 @@ int32 UAIDirector::GetAIDirectorDebugState() {
 void UAIDirector::ClearAllGroups(bool DestroyActiveSpawns) {
 }
 
-UAIDirector::UAIDirector() {
-    this->Level = 1;
-    this->Suspended = false;
-    this->IntensityState = EIntensityState::BuildUp;
-    this->IntensityStateChangeLockout = 0.00f;
-}
 

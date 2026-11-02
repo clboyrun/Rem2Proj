@@ -16,5 +16,6 @@ public:
     TArray<FSaveGameAchievementProgress> AchievementProgress;
     
     USaveGameProfile();
+
 };
 

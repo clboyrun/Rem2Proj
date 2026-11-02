@@ -13,5 +13,6 @@ public:
     TSoftClassPtr<AItem> ItemClass;
     
     URemnantValidationItemClass();
+
 };
 

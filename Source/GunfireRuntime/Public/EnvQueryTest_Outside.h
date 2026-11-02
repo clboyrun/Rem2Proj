@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "EnvironmentQuery/EnvQueryTest.h"
-#include "Engine/EngineTypes.h"
+#include "ECollisionChannel.h"
 #include "EnvQueryTest_Outside.generated.h"
 
 UCLASS(Blueprintable)
@@ -23,5 +23,6 @@ private:
     
 public:
     UEnvQueryTest_Outside();
+
 };
 

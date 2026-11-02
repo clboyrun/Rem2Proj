@@ -4,3 +4,4 @@ UWoundedCondition::UWoundedCondition() {
     this->WoundedState = EWoundedState::None;
 }
 
+

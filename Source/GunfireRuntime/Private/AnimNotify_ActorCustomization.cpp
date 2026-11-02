@@ -5,3 +5,4 @@ UAnimNotify_ActorCustomization::UAnimNotify_ActorCustomization() {
     this->UseEquipmentCustomizationSet = true;
 }
 
+

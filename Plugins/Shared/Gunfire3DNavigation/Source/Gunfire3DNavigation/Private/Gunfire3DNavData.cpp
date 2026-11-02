@@ -1,6 +1,8 @@
 #include "Gunfire3DNavData.h"
+#include "ERuntimeGenerationType.h"
 
-AGunfire3DNavData::AGunfire3DNavData() {
+AGunfire3DNavData::AGunfire3DNavData(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->RuntimeGeneration = ERuntimeGenerationType::Dynamic;
     this->bDrawShell = true;
     this->bDrawOctree = false;
     this->DrawType = ENav3DDrawType::Blocked;
@@ -18,4 +20,5 @@ AGunfire3DNavData::AGunfire3DNavData() {
     this->DefaultHeuristicScale = 2.00f;
     this->DefaultBaseTraversalCost = 1.00f;
 }
+
 

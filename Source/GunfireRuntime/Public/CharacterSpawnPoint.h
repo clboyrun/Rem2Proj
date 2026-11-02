@@ -4,6 +4,7 @@
 #include "CharacterDiedEventDelegate.h"
 #include "CharacterSpawnedEventDelegate.h"
 #include "SpawnPoint.h"
+#include "SpawnRelevanceInfo.h"
 #include "Templates/SubclassOf.h"
 #include "CharacterSpawnPoint.generated.h"
 
@@ -53,6 +54,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ThreatToApply;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSpawnRelevanceInfo SpawnRelevanceInfo;
+    
     UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bUsesDeferredSpawnOptimization;
     
@@ -73,7 +77,8 @@ protected:
     TArray<ACharacterGunfire*> SpawnedCharactersList;
     
 public:
-    ACharacterSpawnPoint();
+    ACharacterSpawnPoint(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Spawn(bool bUseDeferredOptimization);
     

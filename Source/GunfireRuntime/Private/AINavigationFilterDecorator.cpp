@@ -4,3 +4,4 @@ UAINavigationFilterDecorator::UAINavigationFilterDecorator() {
     this->FilterOverride = NULL;
 }
 
+

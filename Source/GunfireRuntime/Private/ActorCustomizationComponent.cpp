@@ -1,6 +1,12 @@
 #include "ActorCustomizationComponent.h"
 #include "Net/UnrealNetwork.h"
 
+UActorCustomizationComponent::UActorCustomizationComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->Seed = 0;
+    this->CustomizationSet = NULL;
+    this->bUsesValidChildMeshes = false;
+}
+
 void UActorCustomizationComponent::UpdateSlots() {
 }
 
@@ -19,6 +25,9 @@ void UActorCustomizationComponent::SetCustomizationAt(FName SlotID, int32 Idx) {
 void UActorCustomizationComponent::SetCustomization(FName SlotID, FName CustomizationID) {
 }
 
+void UActorCustomizationComponent::RemoveBPCustomizationTags(const TArray<FName>& InTags) {
+}
+
 void UActorCustomizationComponent::PlayCustomizationEffect(FName NameID, bool bCache) {
 }
 
@@ -26,6 +35,9 @@ void UActorCustomizationComponent::OnRep_Seed() {
 }
 
 void UActorCustomizationComponent::OnCustomizationLoaded(FName SlotID, FName CustomizationID, bool bCleared) {
+}
+
+void UActorCustomizationComponent::LoadCustomization(FName SlotID, FName CustomizationID) {
 }
 
 bool UActorCustomizationComponent::HasOutstandingStreamingRequests() {
@@ -67,6 +79,9 @@ bool UActorCustomizationComponent::GetAllCustomizationsForSlot(FName SlotID, TAr
 void UActorCustomizationComponent::ClearCustomization(FName SlotID) {
 }
 
+void UActorCustomizationComponent::AddBPCustomizationTags(const TArray<FName>& InTags) {
+}
+
 void UActorCustomizationComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);
     
@@ -74,9 +89,4 @@ void UActorCustomizationComponent::GetLifetimeReplicatedProps(TArray<FLifetimePr
     DOREPLIFETIME(UActorCustomizationComponent, Slots);
 }
 
-UActorCustomizationComponent::UActorCustomizationComponent() {
-    this->Seed = 0;
-    this->CustomizationSet = NULL;
-    this->bUsesValidChildMeshes = false;
-}
 

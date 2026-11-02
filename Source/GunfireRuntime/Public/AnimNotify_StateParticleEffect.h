@@ -26,7 +26,8 @@ public:
     FConditions Conditions;
     
     UAnimNotify_StateParticleEffect();
-    
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

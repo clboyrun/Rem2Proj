@@ -16,5 +16,6 @@ public:
     TArray<UUserSetting*> Children;
     
     UUserSettingCategory();
+
 };
 

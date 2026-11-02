@@ -5,3 +5,4 @@ UStateElapsedCondition::UStateElapsedCondition() {
     this->Normalized = true;
 }
 
+

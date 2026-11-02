@@ -1,5 +1,10 @@
 #include "InputRebindings.h"
 
+UInputRebindings::UInputRebindings() {
+    this->ActionRebindings.AddDefaulted(35);
+    this->AxisRebindings.AddDefaulted(5);
+}
+
 void UInputRebindings::ResetInputRebindings() {
 }
 
@@ -21,8 +26,4 @@ void UInputRebindings::AddAxisRebinding(const FInputAxisKeyMapping& Axis) {
 void UInputRebindings::AddActionRebinding(const FInputActionKeyMapping& Action) {
 }
 
-UInputRebindings::UInputRebindings() {
-    this->ActionRebindings.AddDefaulted(31);
-    this->AxisRebindings.AddDefaulted(5);
-}
 

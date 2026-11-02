@@ -1,5 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "EMatchmakingRegions.h"
 #include "EMatchmakingPlatform.h"
 #include "EQuestMode.h"
 #include "ERemnantCharacterType.h"
@@ -37,6 +38,12 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EMatchmakingPlatform Platform;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool CrossplayEnabled;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    EMatchmakingRegions MatchmakingRegion;
     
     REMNANT_API FOnlineSessionDetailsRemnant();
 };

@@ -5,14 +5,25 @@
 
 class APlayerController;
 class UEventTreeComponent;
+class UEventTreeNode;
 
 UCLASS(Abstract, Blueprintable)
 class GUNFIRERUNTIME_API UEventTreeNode : public UEventTreeNode_Base {
     GENERATED_BODY()
 public:
     UEventTreeNode();
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool Validate(UEventTreeComponent* Component) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    void OnRestoreState(UEventTreeComponent* Component) const;
+    
+    UFUNCTION(BlueprintCallable)
+    void OnNodeStompEventCallback(const UEventTreeNode* InStompingNode, UEventTreeComponent* Component);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnEndCallback(UEventTreeComponent* Component);
     
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void Loop(UEventTreeComponent* Component) const;
@@ -25,6 +36,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void End(UEventTreeComponent* Component) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    bool CanRestore(UEventTreeComponent* Component) const;
     
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void Begin(UEventTreeComponent* Component) const;

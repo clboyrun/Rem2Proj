@@ -9,6 +9,7 @@ class GUNFIRERUNTIME_API UClimbingUtil : public UObject {
     GENERATED_BODY()
 public:
     UClimbingUtil();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static EClimbDirectionBias GetOppositeSide(EClimbDirectionBias Side);
     

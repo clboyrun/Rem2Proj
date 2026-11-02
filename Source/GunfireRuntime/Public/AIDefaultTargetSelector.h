@@ -25,5 +25,6 @@ public:
     UConditionList* TargetingConditions;
     
     UAIDefaultTargetSelector();
+
 };
 

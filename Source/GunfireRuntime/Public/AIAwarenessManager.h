@@ -32,7 +32,8 @@ protected:
     TArray<UAIAwarenessComponent*> AwarenessComponentsToUpdate;
     
 public:
-    UAIAwarenessManager();
+    UAIAwarenessManager(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SendAwarenessSignalSegment(EAwarenessSignal Type, AActor* Source, const FVector& From, const FVector& To, float Radius);
     

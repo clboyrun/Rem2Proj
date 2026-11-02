@@ -7,6 +7,7 @@ UCLASS(Blueprintable, EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnable
 class GUNFIRE3DNAVIGATION_API UGunfire3DNavRenderingComponent : public UPrimitiveComponent {
     GENERATED_BODY()
 public:
-    UGunfire3DNavRenderingComponent();
+    UGunfire3DNavRenderingComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

@@ -8,3 +8,4 @@ UHasItemByTypeCondition::UHasItemByTypeCondition() {
     this->InHand = EYesNo::DontCare;
 }
 
+

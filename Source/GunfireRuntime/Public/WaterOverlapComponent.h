@@ -35,7 +35,8 @@ protected:
     UPrimitiveComponent* CachedComponent;
     
 public:
-    UWaterOverlapComponent();
+    UWaterOverlapComponent(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnEndOverlap(AActor* OverlappedActor, AActor* OtherActor);

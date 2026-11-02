@@ -1,6 +1,9 @@
 #include "PhysicsBoundsUtil.h"
 #include "Templates/SubclassOf.h"
 
+UPhysicsBoundsUtil::UPhysicsBoundsUtil() {
+}
+
 bool UPhysicsBoundsUtil::IsWaterBounds(AActor* Bounds) {
     return false;
 }
@@ -17,6 +20,4 @@ TSubclassOf<UPhysicsBoundsType> UPhysicsBoundsUtil::GetBoundsType(AActor* Bounds
     return NULL;
 }
 
-UPhysicsBoundsUtil::UPhysicsBoundsUtil() {
-}
 

@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Animation/AnimNodeBase.h"
-#include "Animation/AnimationAsset.h"
-#include "AlphaBlend.h"
+#include "Animation/BlendSpace.h"
+#include "EAlphaBlendOption.h"
 #include "Animation/AnimNodeBase.h"
 #include "AnimNode_BlendByAnimationID_Anim.h"
 #include "AnimNode_BlendByAnimationID_Animation.h"

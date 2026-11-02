@@ -1,5 +1,18 @@
 #include "RemnantGameState.h"
 #include "Net/UnrealNetwork.h"
+#include "RemnantSequencerManager.h"
+
+ARemnantGameState::ARemnantGameState(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer.SetDefaultSubobjectClass<URemnantSequencerManager>(TEXT("SequencerManager"))) {
+    this->bTestMap = false;
+    this->TravelCountdownAdditionalDistance = 200.00f;
+    this->PingManager = NULL;
+    this->PingManagerType = NULL;
+    this->ActivatedCheckpoint = NULL;
+    this->DeactivatingCheckpoint = NULL;
+    this->TwitchIntegrationManager = NULL;
+    this->PreviouslyActivatingCheckpoint = NULL;
+    this->TravelCountdownSource = NULL;
+}
 
 void ARemnantGameState::OnRep_ZoneTravelState() {
 }
@@ -42,14 +55,4 @@ void ARemnantGameState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Ou
     DOREPLIFETIME(ARemnantGameState, ActivatedCheckpoint);
 }
 
-ARemnantGameState::ARemnantGameState() {
-    this->bTestMap = false;
-    this->TravelCountdownAdditionalDistance = 200.00f;
-    this->PingManager = NULL;
-    this->PingManagerType = NULL;
-    this->ActivatedCheckpoint = NULL;
-    this->DeactivatingCheckpoint = NULL;
-    this->PreviouslyActivatingCheckpoint = NULL;
-    this->TravelCountdownSource = NULL;
-}
 

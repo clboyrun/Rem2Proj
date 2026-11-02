@@ -8,5 +8,6 @@ class UPooledActor : public UPooledItem {
     GENERATED_BODY()
 public:
     UPooledActor();
+
 };
 

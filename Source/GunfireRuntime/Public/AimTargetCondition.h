@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UAimTargetCondition : public UCondition {
     GENERATED_BODY()
 public:
     UAimTargetCondition();
+
 };
 

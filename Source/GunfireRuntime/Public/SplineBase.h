@@ -10,6 +10,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bInstanceToBeMerged;
     
-    ASplineBase();
+    ASplineBase(const FObjectInitializer& ObjectInitializer);
+
 };
 

@@ -1,5 +1,11 @@
 #include "ChallengeInstance.h"
 
+UChallengeInstance::UChallengeInstance() {
+    this->Challenge = NULL;
+    this->Component = NULL;
+    this->CurrentRank = -1;
+}
+
 bool UChallengeInstance::IsComplete() const {
     return false;
 }
@@ -48,9 +54,4 @@ UChallengeRankInstance* UChallengeInstance::CreateRankInstance(int32 RankId) con
     return NULL;
 }
 
-UChallengeInstance::UChallengeInstance() {
-    this->Challenge = NULL;
-    this->Component = NULL;
-    this->CurrentRank = -1;
-}
 

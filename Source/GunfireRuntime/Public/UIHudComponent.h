@@ -14,7 +14,8 @@ protected:
     bool bVisible;
     
 public:
-    UUIHudComponent();
+    UUIHudComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SetVisibility(bool Visible);
     

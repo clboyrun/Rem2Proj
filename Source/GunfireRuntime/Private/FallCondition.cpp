@@ -5,3 +5,4 @@ UFallCondition::UFallCondition() {
     this->MinimumFallDistance = 0.00f;
 }
 
+

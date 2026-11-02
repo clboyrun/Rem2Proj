@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UAchievementController : public UObject {
     GENERATED_BODY()
 public:
     UAchievementController();
+
 };
 

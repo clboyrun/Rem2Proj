@@ -1,5 +1,8 @@
 #include "DebugDrawUtil.h"
 
+UDebugDrawUtil::UDebugDrawUtil() {
+}
+
 FColor UDebugDrawUtil::GetUniqueColor(int32 ColorIndex) {
     return FColor{};
 }
@@ -22,6 +25,4 @@ void UDebugDrawUtil::DebugDrawCollisionWithOrientation(const UObject* WorldConte
 void UDebugDrawUtil::DebugDrawCollision(const UObject* WorldContextObject, const UPrimitiveComponent* Primitive, const FColor& Color, bool bPersistentLines, float Lifetime, uint8 DepthPriority, float Thickness) {
 }
 
-UDebugDrawUtil::UDebugDrawUtil() {
-}
 

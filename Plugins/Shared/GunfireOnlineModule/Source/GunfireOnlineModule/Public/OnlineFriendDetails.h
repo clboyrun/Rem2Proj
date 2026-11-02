@@ -36,6 +36,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EOnlineSessionSearchState FriendState;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FString Platform;
+    
     GUNFIREONLINEMODULE_API FOnlineFriendDetails();
 };
 

@@ -4,6 +4,46 @@
 #include "Components/SceneComponent.h"
 #include "Net/UnrealNetwork.h"
 
+APortal::APortal(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bReplicates = true;
+    const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
+    (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
+    this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
+    this->SceneCapture = CreateDefaultSubobject<USceneCaptureComponent2D>(TEXT("SceneCapture"));
+    this->PortalRoot = (USceneComponent*)RootComponent;
+    this->PortalTriggerBox = CreateDefaultSubobject<UBoxComponent>(TEXT("PortalTriggerBox"));
+    this->UprightCosineThreshold = 0.50f;
+    this->DefaultEnterTime = 0.40f;
+    this->DefaultExitTime = 0.40f;
+    this->CoplanarAlignmentAlpha = 0.80f;
+    this->EnterScaleStartAlpha = 0.20f;
+    this->EnterScaleStopAlpha = 0.80f;
+    this->ExitScaleStartAlpha = 0.20f;
+    this->ExitScaleStopAlpha = 0.80f;
+    this->bAllowAICharacterTraversal = true;
+    this->CharacterCooldown = 1.00f;
+    this->MaximumEntryDistance = 0.00f;
+    this->EnterRadius = 0.00f;
+    this->EnterCosineThresh = -0.80f;
+    this->bSquareRenderTarget = false;
+    this->MaximumRenderDistance = 0.00f;
+    this->DrawRadius = 0.00f;
+    this->CharacterSnapToGroundDistance = 0.00f;
+    this->CharacterMinimumEnterHeightScale = 0.00f;
+    this->bValidateExitCollision = true;
+    this->DefaultEnterVFX = NULL;
+    this->DefaultExitVFX = NULL;
+    this->bIgnoreHitscanImpactEffects = true;
+    this->DefaultHitscanEnterVFX = NULL;
+    this->DefaultHitscanExitVFX = NULL;
+    this->bPoolRenderTarget = false;
+    this->TargetPortal = NULL;
+    this->RenderTarget = NULL;
+    this->AttachComponent = NULL;
+    this->SceneCapture->SetupAttachment(RootComponent);
+    this->PortalTriggerBox->SetupAttachment(RootComponent);
+}
+
 
 FRotator APortal::TransformRotationBetweenPortals(FRotator Rotation, APortal* EntryPortal, APortal* ExitPortal) {
     return FRotator{};
@@ -116,36 +156,4 @@ void APortal::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeP
     DOREPLIFETIME(APortal, RelativeAttachTransform);
 }
 
-APortal::APortal() {
-    this->SceneCapture = CreateDefaultSubobject<USceneCaptureComponent2D>(TEXT("SceneCapture"));
-    this->PortalRoot = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
-    this->PortalTriggerBox = CreateDefaultSubobject<UBoxComponent>(TEXT("PortalTriggerBox"));
-    this->UprightCosineThreshold = 0.50f;
-    this->DefaultEnterTime = 0.40f;
-    this->DefaultExitTime = 0.40f;
-    this->CoplanarAlignmentAlpha = 0.80f;
-    this->EnterScaleStartAlpha = 0.20f;
-    this->EnterScaleStopAlpha = 0.80f;
-    this->ExitScaleStartAlpha = 0.20f;
-    this->ExitScaleStopAlpha = 0.80f;
-    this->bAllowAICharacterTraversal = true;
-    this->CharacterCooldown = 1.00f;
-    this->MaximumEntryDistance = 0.00f;
-    this->EnterRadius = 0.00f;
-    this->EnterCosineThresh = -0.80f;
-    this->bSquareRenderTarget = false;
-    this->MaximumRenderDistance = 0.00f;
-    this->DrawRadius = 0.00f;
-    this->CharacterSnapToGroundDistance = 0.00f;
-    this->CharacterMinimumEnterHeightScale = 0.00f;
-    this->bValidateExitCollision = true;
-    this->DefaultEnterVFX = NULL;
-    this->DefaultExitVFX = NULL;
-    this->bIgnoreHitscanImpactEffects = true;
-    this->DefaultHitscanEnterVFX = NULL;
-    this->DefaultHitscanExitVFX = NULL;
-    this->TargetPortal = NULL;
-    this->RenderTarget = NULL;
-    this->AttachComponent = NULL;
-}
 

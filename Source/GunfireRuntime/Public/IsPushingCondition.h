@@ -29,5 +29,6 @@ public:
     EYesNo AlternateMovementMode;
     
     UIsPushingCondition();
+
 };
 

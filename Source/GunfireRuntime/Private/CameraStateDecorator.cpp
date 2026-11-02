@@ -5,3 +5,4 @@ UCameraStateDecorator::UCameraStateDecorator() {
     this->BlendTime = -1.00f;
 }
 
+

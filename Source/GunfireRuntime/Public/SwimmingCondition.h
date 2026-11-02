@@ -20,6 +20,7 @@ private:
     
 public:
     USwimmingCondition();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static ESwimmingType GetSwimmingState(UStateMachineComponent* StateMachine);
     

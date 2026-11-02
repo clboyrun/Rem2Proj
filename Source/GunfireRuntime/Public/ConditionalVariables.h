@@ -12,5 +12,6 @@ public:
     TArray<FConditionalVariableDef> Variables;
     
     UConditionalVariables();
+
 };
 

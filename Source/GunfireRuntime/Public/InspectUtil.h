@@ -6,11 +6,14 @@
 #include "InspectStat.h"
 #include "InspectUtil.generated.h"
 
+class UStatInfoSet;
+
 UCLASS(Blueprintable)
 class GUNFIRERUNTIME_API UInspectUtil : public UObject {
     GENERATED_BODY()
 public:
     UInspectUtil();
+
     UFUNCTION(BlueprintCallable)
     static void SetInspectStat(UPARAM(Ref) FInspectInfo& Info, FName NameID, const FInspectStat& Stat);
     
@@ -22,6 +25,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool GetInspectMod(const FInspectInfo& Info, FName NameID, FInspectMod& OutMod);
+    
+    UFUNCTION(BlueprintCallable)
+    static FInspectInfo GetInspectBaseInfoForStat(UStatInfoSet* Stats, FName StatName);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static void ClearStats(UPARAM(Ref) FInspectInfo& Info);

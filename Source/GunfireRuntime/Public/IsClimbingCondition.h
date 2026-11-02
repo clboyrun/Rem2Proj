@@ -39,5 +39,6 @@ public:
     TArray<FName> SurfaceTags;
     
     UIsClimbingCondition();
+
 };
 

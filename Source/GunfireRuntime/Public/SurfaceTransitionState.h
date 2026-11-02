@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API USurfaceTransitionState : public UClimbingStateBase {
     GENERATED_BODY()
 public:
     USurfaceTransitionState();
+
 };
 

@@ -14,3 +14,4 @@ UEncounterGroupInstance::UEncounterGroupInstance() {
     this->Valid = false;
 }
 
+

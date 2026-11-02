@@ -1,5 +1,10 @@
 #include "LODVolumeManager.h"
 
+ULODVolumeManager::ULODVolumeManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->MaxUpdateInterval = 1.00f;
+    this->OnCooldown = false;
+}
+
 void ULODVolumeManager::UpdateVolumesVisibility() {
 }
 
@@ -20,8 +25,4 @@ ULODVolumeManager* ULODVolumeManager::GetInstance(UObject* WorldContextObject) {
     return NULL;
 }
 
-ULODVolumeManager::ULODVolumeManager() {
-    this->MaxUpdateInterval = 1.00f;
-    this->OnCooldown = false;
-}
 

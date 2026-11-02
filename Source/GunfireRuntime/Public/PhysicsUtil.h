@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
 #include "UObject/NoExportTypes.h"
-#include "Engine/EngineTypes.h"
+#include "ECollisionChannel.h"
 #include "Engine/HitResult.h"
 #include "CachedPhysicsComponent.h"
 #include "Templates/SubclassOf.h"
@@ -18,6 +18,7 @@ class GUNFIRERUNTIME_API UPhysicsUtil : public UObject {
     GENERATED_BODY()
 public:
     UPhysicsUtil();
+
     UFUNCTION(BlueprintCallable)
     static void RestoreRigidBodies(UPARAM(Ref) TArray<FCachedPhysicsComponent>& CachedComponents);
     

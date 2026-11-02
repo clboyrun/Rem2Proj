@@ -1,6 +1,9 @@
 #include "InteractableUtil.h"
 #include "Templates/SubclassOf.h"
 
+UInteractableUtil::UInteractableUtil() {
+}
+
 void UInteractableUtil::TriggerInteractableActors(const UObject* WorldContextObject, const TArray<FInteractableActorReference>& Interactables, TSubclassOf<UInteractableStateBase> DefaultState) {
 }
 
@@ -21,6 +24,4 @@ bool UInteractableUtil::CheckTriggerState(const UInteractableStateBase* State, T
     return false;
 }
 
-UInteractableUtil::UInteractableUtil() {
-}
 

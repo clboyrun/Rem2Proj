@@ -1,8 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "Components/ActorComponent.h"
 #include "EEaseType.h"
 #include "PhysicsTweenEventDelegate.h"
@@ -24,7 +22,8 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FPhysicsTweenEvent OnTweenFailed;
     
-    UPhysicsTweenComponent();
+    UPhysicsTweenComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     bool StopTweenAndInvalidateHandle(UPARAM(Ref) int32& TweenID);
     

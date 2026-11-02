@@ -20,3 +20,4 @@ UHitReactionState::UHitReactionState() {
     this->IgnoreMPHealthScaling = false;
 }
 
+

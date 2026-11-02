@@ -5,3 +5,4 @@ UAnimNotify_AnimatedCameraAbort::UAnimNotify_AnimatedCameraAbort() {
     this->BlendTime = -1.00f;
 }
 
+

@@ -18,7 +18,8 @@ protected:
     TArray<FWorldSound> AudioList;
     
 public:
-    UWorldSoundComponent();
+    UWorldSoundComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SetAudioList(const TArray<FWorldSound>& NewAudioList, bool bReset);
     

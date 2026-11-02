@@ -9,7 +9,8 @@ UCLASS(Blueprintable)
 class REMNANT_API ACheckpoint : public AManagedActor {
     GENERATED_BODY()
 public:
-    ACheckpoint();
+    ACheckpoint(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void TransitionToMenu(ARemnantCharacter* Character);
     

@@ -1,6 +1,19 @@
 #include "StateMachineComponent.h"
 #include "Net/UnrealNetwork.h"
 
+UStateMachineComponent::UStateMachineComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bAutoActivate = true;
+    this->StateMachine = NULL;
+    this->AnimationLayer = TEXT("Base");
+    this->FlinchAnimationLayer = TEXT("Flinch");
+    this->Secondary = false;
+    this->Character = NULL;
+    this->CurrentState = NULL;
+    this->OverrideAnimInstance = NULL;
+    this->AnimInstance = NULL;
+    this->CachedInteractCullComponent = NULL;
+}
+
 void UStateMachineComponent::SetWindow(const FName& Name) {
 }
 
@@ -56,10 +69,19 @@ bool UStateMachineComponent::ResetStateToDefault(bool bOnlySetIfValid) {
 void UStateMachineComponent::OnRep_CurrentStateInfo() {
 }
 
+void UStateMachineComponent::OnPrimaryMeshAnimInitialized() {
+}
+
 void UStateMachineComponent::OnPostComputeStats() {
 }
 
+void UStateMachineComponent::MulticastDoFlinchWithHitLocationIgnoreClient_Implementation(UHitReactionState* HitReaction, const FName& HitLocation) {
+}
+
 void UStateMachineComponent::MulticastDoFlinchWithHitLocation_Implementation(UHitReactionState* HitReaction, const FName& HitLocation) {
+}
+
+void UStateMachineComponent::MulticastDoFlinchIgnoreClient_Implementation(UHitReactionState* HitReaction) {
 }
 
 void UStateMachineComponent::MulticastDoFlinch_Implementation(UHitReactionState* HitReaction) {
@@ -149,15 +171,4 @@ void UStateMachineComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty
     DOREPLIFETIME(UStateMachineComponent, CurrentStateInfo);
 }
 
-UStateMachineComponent::UStateMachineComponent() {
-    this->StateMachine = NULL;
-    this->AnimationLayer = TEXT("Base");
-    this->FlinchAnimationLayer = TEXT("Flinch");
-    this->Secondary = false;
-    this->Character = NULL;
-    this->CurrentState = NULL;
-    this->OverrideAnimInstance = NULL;
-    this->AnimInstance = NULL;
-    this->CachedInteractCullComponent = NULL;
-}
 

@@ -26,5 +26,6 @@ public:
     FGunfireAudioAttachParams AttachParams;
     
     UAnimNotify_PlaySoundParameter();
+
 };
 

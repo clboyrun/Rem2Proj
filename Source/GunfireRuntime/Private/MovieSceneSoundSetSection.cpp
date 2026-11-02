@@ -6,3 +6,4 @@ UMovieSceneSoundSetSection::UMovieSceneSoundSetSection() {
     this->UseFacialAnimation = true;
 }
 
+

@@ -16,6 +16,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bApplyFalloff;
     
-    UBreakableImpulseComponent();
+    UBreakableImpulseComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

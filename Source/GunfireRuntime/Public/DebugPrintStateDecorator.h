@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UDebugPrintStateDecorator : public UActorStateDecorator
     GENERATED_BODY()
 public:
     UDebugPrintStateDecorator();
+
 };
 

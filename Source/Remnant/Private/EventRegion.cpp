@@ -2,6 +2,22 @@
 #include "PersistenceComponent.h"
 #include "Net/UnrealNetwork.h"
 
+AEventRegion::AEventRegion(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bAlwaysRelevant = true;
+    this->NetDormancy = DORM_DormantAll;
+    this->PersistenceComponent = CreateDefaultSubobject<UPersistenceComponent>(TEXT("Persistence"));
+    this->MusicSet = NULL;
+    this->MusicState = EMusicState::Ambient;
+    this->AutoStartEvent = false;
+    this->AutoEndEvent = true;
+    this->DisableCommitsWhenActive = true;
+    this->StartsActive = false;
+    this->Complete = false;
+    this->RegionHasUniqueAggroGroup = true;
+    this->Active = false;
+    this->Locked = false;
+}
+
 void AEventRegion::PlayerExit(ARemnantCharacter* Character) {
 }
 
@@ -102,17 +118,4 @@ void AEventRegion::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLife
     DOREPLIFETIME(AEventRegion, Players);
 }
 
-AEventRegion::AEventRegion() {
-    this->PersistenceComponent = CreateDefaultSubobject<UPersistenceComponent>(TEXT("Persistence"));
-    this->MusicSet = NULL;
-    this->MusicState = EMusicState::Ambient;
-    this->AutoStartEvent = false;
-    this->AutoEndEvent = true;
-    this->DisableCommitsWhenActive = true;
-    this->StartsActive = false;
-    this->Complete = false;
-    this->RegionHasUniqueAggroGroup = true;
-    this->Active = false;
-    this->Locked = false;
-}
 

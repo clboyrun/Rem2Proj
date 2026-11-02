@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
-#include "Chaos/ChaosEngineInterface.h"
+#include "EPhysicalSurface.h"
 #include "Templates/SubclassOf.h"
 #include "PhysicsBoundsUtil.generated.h"
 
@@ -13,6 +13,7 @@ class GUNFIRERUNTIME_API UPhysicsBoundsUtil : public UObject {
     GENERATED_BODY()
 public:
     UPhysicsBoundsUtil();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsWaterBounds(AActor* Bounds);
     

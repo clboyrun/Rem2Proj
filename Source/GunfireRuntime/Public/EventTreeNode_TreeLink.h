@@ -13,5 +13,6 @@ public:
     UEventTree* Tree;
     
     UEventTreeNode_TreeLink();
+
 };
 

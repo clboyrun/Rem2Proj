@@ -28,6 +28,7 @@ public:
     float CameraCollisionInterpSpeed;
     
     UCameraState();
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     AActor* ValidateCameraActor(UStateCameraComponent* CameraManager, AActor* CameraActor);
     

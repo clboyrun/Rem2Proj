@@ -57,14 +57,15 @@ protected:
     bool bHasWaypointAccess;
     
 public:
-    UZoneLinkComponent();
+    UZoneLinkComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
+    void TravelToWaypoint(FName Context, const FName& LinkNameID);
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
-    void TravelToWaypoint(const FName& LinkNameID);
-    
-    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
-    void TravelToDestinationZone(bool Force, bool Instant);
+    void TravelToDestinationZone(FName Context, bool Force, bool Instant);
     
     UFUNCTION(BlueprintCallable)
     void SetLinkDisabled(bool Disabled);

@@ -1,5 +1,6 @@
 #include "QuestLocation.h"
 
-UQuestLocation::UQuestLocation() {
+UQuestLocation::UQuestLocation(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

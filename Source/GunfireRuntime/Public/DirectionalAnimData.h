@@ -82,5 +82,6 @@ protected:
     
 public:
     UDirectionalAnimData();
+
 };
 

@@ -17,7 +17,8 @@ public:
     TArray<UContextualDialogResponse*> Responses;
     
     UContextualDialogTrigger();
-    
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

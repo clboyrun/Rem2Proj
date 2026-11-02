@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
 #include "Engine/NetSerialization.h"
-#include "VisualLogger/VisualLoggerDebugSnapshotInterface.h"
+#include "VisualLoggerDebugSnapshotInterface.h"
 #include "DamageInfo.h"
 #include "EncounterSpawn.h"
 #include "SoundGunfire.h"
@@ -30,8 +30,12 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<FEncounterSpawn> ActiveSpawns;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UEncounterInstance* DebugInstance;
+    
 public:
-    UEncounterManager();
+    UEncounterManager(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void StopEncounter(int32 encounterid);
     
@@ -79,7 +83,7 @@ public:
     UFUNCTION(BlueprintCallable)
     UEncounterInstance* DoEncounter(USpawnTable* SpawnTable, int32 Level, int32 Rating, const TArray<FName>& Tags, AActor* Target, int32 Flags);
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

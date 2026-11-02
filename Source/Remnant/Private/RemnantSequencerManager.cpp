@@ -1,5 +1,6 @@
 #include "RemnantSequencerManager.h"
 
-URemnantSequencerManager::URemnantSequencerManager() {
+URemnantSequencerManager::URemnantSequencerManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

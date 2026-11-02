@@ -11,6 +11,7 @@ class GUNFIRERUNTIME_API UUIUtil : public UObject {
     GENERATED_BODY()
 public:
     UUIUtil();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool ShouldBeVisible(UWidget* Widget);
     

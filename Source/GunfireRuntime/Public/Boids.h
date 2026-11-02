@@ -29,7 +29,8 @@ protected:
     TArray<AActor*> Boids;
     
 public:
-    ABoids();
+    ABoids(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     AActor* SpawnBoid();
     

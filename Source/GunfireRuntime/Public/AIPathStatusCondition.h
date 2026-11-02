@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Navigation/PathFollowingComponent.h"
+#include "EPathFollowingStatus.h"
 #include "Condition.h"
 #include "AIPathStatusCondition.generated.h"
 
@@ -14,5 +14,6 @@ private:
     
 public:
     UAIPathStatusCondition();
+
 };
 

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Chaos/ChaosEngineInterface.h"
+#include "EPhysicalSurface.h"
 #include "Condition.h"
 #include "EGroundCheckType.h"
 #include "Templates/SubclassOf.h"
@@ -33,5 +33,6 @@ private:
     
 public:
     UOnGroundCondition();
+
 };
 

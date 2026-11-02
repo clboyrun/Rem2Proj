@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UDEPRECATED_HasTargetCondition : public UCondition {
     GENERATED_BODY()
 public:
     UDEPRECATED_HasTargetCondition();
+
 };
 

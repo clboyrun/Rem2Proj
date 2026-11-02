@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UFocusManInputAxisHandler : public UObject {
     GENERATED_BODY()
 public:
     UFocusManInputAxisHandler();
+
 };
 

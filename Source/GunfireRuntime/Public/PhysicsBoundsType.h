@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
-#include "Chaos/ChaosEngineInterface.h"
+#include "EPhysicalSurface.h"
 #include "PhysicsBoundsType.generated.h"
 
 UCLASS(Abstract, Blueprintable, Const, MinimalAPI)
@@ -15,5 +15,6 @@ public:
     TEnumAsByte<EPhysicalSurface> WaterSurfaceType;
     
     UPhysicsBoundsType();
+
 };
 

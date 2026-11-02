@@ -1,5 +1,9 @@
 #include "AimingComponent.h"
 
+UAimingComponent::UAimingComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bAutoActivateWhileAiming = true;
+}
+
 bool UAimingComponent::UsesProjectileVisualization() const {
     return false;
 }
@@ -15,6 +19,10 @@ FProjectileVisualizationContext UAimingComponent::GetProjectileVisualization() c
 }
 
 FHitResult UAimingComponent::GetMuzzleObstruction() {
+    return FHitResult{};
+}
+
+FHitResult UAimingComponent::GetFirstNonPiercedAimTarget(bool bInitialSegmentOnly) const {
     return FHitResult{};
 }
 
@@ -40,7 +48,4 @@ FAimingParameters UAimingComponent::GetAimingParameters() const {
 void UAimingComponent::ClearAimingParametersOverride() {
 }
 
-UAimingComponent::UAimingComponent() {
-    this->bAutoActivateWhileAiming = true;
-}
 

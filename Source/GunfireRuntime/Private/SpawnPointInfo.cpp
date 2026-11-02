@@ -4,5 +4,6 @@ FSpawnPointInfo::FSpawnPointInfo() {
     this->ID = 0;
     this->SpawnPointBP = NULL;
     this->SpawnPoint = NULL;
+    this->SpawnPointInfoOverrideLevel = NULL;
 }
 

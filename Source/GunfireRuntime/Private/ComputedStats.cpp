@@ -1,5 +1,9 @@
 #include "ComputedStats.h"
 
+UComputedStats::UComputedStats() {
+    this->StatsComponent = NULL;
+}
+
 float UComputedStats::ScaleValueByLevel(int32 Level, float Value, float Inc, float Exp) const {
     return 0.0f;
 }
@@ -34,7 +38,4 @@ void UComputedStats::ComputeStats(UStatsComponent* Stats) {
 void UComputedStats::ComputeDerivedStats(UStatsComponent* Stats) {
 }
 
-UComputedStats::UComputedStats() {
-    this->StatsComponent = NULL;
-}
 

@@ -8,3 +8,4 @@ UAnimNotifyState_SetCameraState::UAnimNotifyState_SetCameraState() {
     this->OldState = NULL;
 }
 
+

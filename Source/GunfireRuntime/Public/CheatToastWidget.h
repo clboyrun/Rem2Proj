@@ -10,6 +10,7 @@ class GUNFIRERUNTIME_API UCheatToastWidget : public UUserWidget {
     GENERATED_BODY()
 public:
     UCheatToastWidget();
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void InitializeCheat(const FCheatInputAction& Cheat, const TArray<FKey>& ActivationKeys);
     

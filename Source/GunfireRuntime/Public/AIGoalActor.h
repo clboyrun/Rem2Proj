@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "AI/Navigation/NavAgentInterface.h"
+#include "NavAgentInterface.h"
 #include "AIGoalActor.generated.h"
 
 class APawn;
@@ -15,8 +15,9 @@ private:
     APawn* Pawn;
     
 public:
-    AAIGoalActor();
-    
+    AAIGoalActor(const FObjectInitializer& ObjectInitializer);
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

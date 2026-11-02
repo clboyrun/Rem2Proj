@@ -7,6 +7,7 @@ UCLASS(Blueprintable)
 class GUNFIRERUNTIME_API ARopeActor : public ARopeActorBase {
     GENERATED_BODY()
 public:
-    ARopeActor();
+    ARopeActor(const FObjectInitializer& ObjectInitializer);
+
 };
 

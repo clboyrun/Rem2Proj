@@ -1,6 +1,14 @@
 #include "AttributesComponent.h"
 #include "Net/UnrealNetwork.h"
 
+UAttributesComponent::UAttributesComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->AttributePointsPerLevel = 0;
+    this->AttributePoints = 0;
+    this->AttributePointsSpent = 0;
+    this->AttributePointsStats = NULL;
+    this->PreviewAttributePointsSpent = 0;
+}
+
 void UAttributesComponent::SetAttributePoints(int32 AvailablePoints) {
 }
 
@@ -81,11 +89,4 @@ void UAttributesComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>&
     DOREPLIFETIME(UAttributesComponent, AttributePointsSpent);
 }
 
-UAttributesComponent::UAttributesComponent() {
-    this->AttributePointsPerLevel = 0;
-    this->AttributePoints = 0;
-    this->AttributePointsSpent = 0;
-    this->AttributePointsStats = NULL;
-    this->PreviewAttributePointsSpent = 0;
-}
 

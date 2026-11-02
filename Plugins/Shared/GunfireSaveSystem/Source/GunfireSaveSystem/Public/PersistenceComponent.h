@@ -24,6 +24,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool PersistDestroyed;
     
-    UPersistenceComponent();
+    UPersistenceComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

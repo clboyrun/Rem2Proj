@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UBranch_Switch : public UBranch {
     GENERATED_BODY()
 public:
     UBranch_Switch();
+
 };
 

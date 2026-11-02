@@ -15,6 +15,7 @@ public:
     FBlueprintHasSaveResultDelegate OnComplete;
     
     UHasSaveCallbackProxy();
+
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static UHasSaveCallbackProxy* HasSave(UObject* WorldContextObject, int32 Slot);
     

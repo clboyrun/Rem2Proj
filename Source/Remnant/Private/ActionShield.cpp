@@ -1,6 +1,24 @@
 #include "ActionShield.h"
 #include "Net/UnrealNetwork.h"
 
+UActionShield::UActionShield() {
+    this->ShieldMax = 100.00f;
+    this->ShieldValue = 0.00f;
+    this->ShieldMaxIsPercentageOfMaxHP = true;
+    this->InitialApplierObject = NULL;
+    this->IncomingDamageScalar = 1.00f;
+    this->PhysMatOverride = NULL;
+    this->PhysMatAnimationTweenTime = 2.00f;
+    this->PhysMatAnimationExponent = 2.00f;
+    this->ShieldMaterialMinValue = 0.55f;
+    this->ShieldMaterialMaxValue = 1.00f;
+    this->ShieldBreakStateName = TEXT("ShieldBreak");
+    this->FinishActionOnBroken = true;
+    this->ShouldDecay = false;
+    this->DecayRate = 0.00f;
+    this->ShouldRegen = false;
+}
+
 void UActionShield::ShieldBreak() {
 }
 
@@ -33,6 +51,10 @@ void UActionShield::DamageShieldMatAmount(float Amount) {
 void UActionShield::ClientShieldHit_Implementation() {
 }
 
+float UActionShield::ClampShieldValue_Implementation() {
+    return 0.0f;
+}
+
 void UActionShield::ApplyShieldDelta(float Delta) {
 }
 
@@ -47,21 +69,7 @@ void UActionShield::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLif
     
     DOREPLIFETIME(UActionShield, ShieldMax);
     DOREPLIFETIME(UActionShield, ShieldValue);
+    DOREPLIFETIME(UActionShield, ShieldMaxIsPercentageOfMaxHP);
 }
 
-UActionShield::UActionShield() {
-    this->ShieldMax = 5.00f;
-    this->ShieldValue = 0.00f;
-    this->IncomingDamageScalar = 1.00f;
-    this->PhysMatOverride = NULL;
-    this->PhysMatAnimationTweenTime = 2.00f;
-    this->PhysMatAnimationExponent = 2.00f;
-    this->ShieldMaterialMinValue = 0.55f;
-    this->ShieldMaterialMaxValue = 1.00f;
-    this->ShieldBreakStateName = TEXT("ShieldBreak");
-    this->FinishActionOnBroken = true;
-    this->ShouldDecay = false;
-    this->DecayRate = 0.00f;
-    this->ShouldRegen = false;
-}
 

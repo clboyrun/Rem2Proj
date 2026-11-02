@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/EngineTypes.h"
+#include "EMovementMode.h"
 #include "StateTransientAnimNotify.h"
 #include "AnimNotify_SetMovementMode.generated.h"
 
@@ -17,5 +17,6 @@ private:
     
 public:
     UAnimNotify_SetMovementMode();
+
 };
 

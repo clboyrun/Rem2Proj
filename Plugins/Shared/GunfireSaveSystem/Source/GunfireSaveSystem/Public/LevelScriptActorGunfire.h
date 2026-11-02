@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/LevelScriptActor.h"
+#include "LevelScriptActor.h"
 #include "LevelScriptActorGunfire.generated.h"
 
 UCLASS(Blueprintable)
@@ -12,6 +12,7 @@ private:
     uint64 UniqueIDGenerator;
     
 public:
-    ALevelScriptActorGunfire();
+    ALevelScriptActorGunfire(const FObjectInitializer& ObjectInitializer);
+
 };
 

@@ -47,6 +47,7 @@ protected:
     
 public:
     UMoveDetachedCameraState();
+
     UFUNCTION(BlueprintCallable)
     void Snap(UStateCameraComponent* CameraComponent, bool UseInputDir);
     

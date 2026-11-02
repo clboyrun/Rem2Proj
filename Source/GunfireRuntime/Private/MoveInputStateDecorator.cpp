@@ -7,3 +7,4 @@ UMoveInputStateDecorator::UMoveInputStateDecorator() {
     this->MoveInputMethod = EMoveInputMethod::CameraRelativeYawAndPitch;
 }
 
+

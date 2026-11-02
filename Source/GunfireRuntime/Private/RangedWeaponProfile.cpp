@@ -92,3 +92,4 @@ URangedWeaponProfile::URangedWeaponProfile() {
     this->AIAttackPressure = 3;
 }
 
+

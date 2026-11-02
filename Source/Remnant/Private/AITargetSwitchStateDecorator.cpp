@@ -8,3 +8,4 @@ UAITargetSwitchStateDecorator::UAITargetSwitchStateDecorator() {
     this->CooldownMax = 1.00f;
 }
 
+

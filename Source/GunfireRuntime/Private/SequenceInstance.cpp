@@ -1,5 +1,8 @@
 #include "SequenceInstance.h"
 
+USequenceInstance::USequenceInstance() {
+}
+
 void USequenceInstance::OnEventTreeTrackTriggerNotified(FName TriggerName) {
 }
 
@@ -7,6 +10,4 @@ float USequenceInstance::GetElapsedDetails(float& OutStartTime, float& OutDurati
     return 0.0f;
 }
 
-USequenceInstance::USequenceInstance() {
-}
 

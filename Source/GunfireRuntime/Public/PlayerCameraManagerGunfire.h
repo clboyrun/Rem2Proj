@@ -4,9 +4,11 @@
 #include "CameraEffect.h"
 #include "OnStopCameraFadeDelegateDelegate.h"
 #include "OnViewTargetChangeDelegateDelegate.h"
+#include "Templates/SubclassOf.h"
 #include "PlayerCameraManagerGunfire.generated.h"
 
 class AActor;
+class UCameraShakeBase;
 class UGameUserSettingsGunfire;
 
 UCLASS(Blueprintable, NonTransient)
@@ -30,7 +32,8 @@ protected:
     TArray<FCameraEffect> CurrentEffects;
     
 public:
-    APlayerCameraManagerGunfire();
+    APlayerCameraManagerGunfire(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void SettingsRebuilt(UGameUserSettingsGunfire* UserSettings);
@@ -38,6 +41,9 @@ protected:
 public:
     UFUNCTION(BlueprintCallable)
     void RemoveCameraEffect(int32 HandleID);
+    
+    UFUNCTION(BlueprintCallable)
+    void ModifyCameraShakeScale(TSubclassOf<UCameraShakeBase> ShakeClass, float Scale);
     
     UFUNCTION(BlueprintCallable)
     void ModifyCameraEffectIntensity(int32 HandleID, FName ParticleIntensityParam, float ParticleIntensity, bool ResetSystem);

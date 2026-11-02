@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UGroundCheckParams_Default : public UGroundCheckParams 
     GENERATED_BODY()
 public:
     UGroundCheckParams_Default();
+
 };
 

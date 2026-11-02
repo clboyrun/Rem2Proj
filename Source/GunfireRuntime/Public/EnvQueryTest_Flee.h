@@ -30,5 +30,6 @@ public:
     float FleeOuterRadius;
     
     UEnvQueryTest_Flee();
+
 };
 

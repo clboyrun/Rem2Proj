@@ -4,3 +4,4 @@ UAIPOIType::UAIPOIType() {
     this->Priority = 1;
 }
 
+

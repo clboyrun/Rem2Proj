@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UAIIsJumpComplete : public UCondition {
     GENERATED_BODY()
 public:
     UAIIsJumpComplete();
+
 };
 

@@ -37,6 +37,9 @@ public:
     FStatValue VitalityPerSec;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FStatValue VitalityPerSecScalar;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 VitalityLockFrame;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -52,5 +55,6 @@ public:
     FConditions Conditions;
     
     UVitalityStateDecorator();
+
 };
 

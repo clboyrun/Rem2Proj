@@ -1,6 +1,10 @@
 #include "QuestManager.h"
 #include "Templates/SubclassOf.h"
 
+UQuestManager::UQuestManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->QuestIDGen = 0;
+}
+
 void UQuestManager::SetupQuestVariables(UEventTreeComponent* EventTreeComponent) {
 }
 
@@ -38,7 +42,4 @@ AQuest* UQuestManager::CreateQuest(TSubclassOf<AQuest> QuestBP, int32 SeedOverri
     return NULL;
 }
 
-UQuestManager::UQuestManager() {
-    this->QuestIDGen = 0;
-}
 

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
-#include "Chaos/ChaosEngineInterface.h"
+#include "EPhysicalSurface.h"
 #include "EGroundCheckType.h"
 #include "GroundCheckParams.generated.h"
 
@@ -25,5 +25,6 @@ public:
     float MinGroundDistance;
     
     UGroundCheckParams();
+
 };
 

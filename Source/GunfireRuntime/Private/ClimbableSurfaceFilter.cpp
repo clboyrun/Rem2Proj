@@ -17,3 +17,4 @@ UClimbableSurfaceFilter::UClimbableSurfaceFilter() {
     this->DismountCameraBlendTime = -1.00f;
 }
 
+

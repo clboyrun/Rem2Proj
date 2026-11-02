@@ -1,5 +1,6 @@
 #include "RemnantSilhouetteComponent.h"
 
-URemnantSilhouetteComponent::URemnantSilhouetteComponent() {
+URemnantSilhouetteComponent::URemnantSilhouetteComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

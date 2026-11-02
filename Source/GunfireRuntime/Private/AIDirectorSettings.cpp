@@ -1,5 +1,6 @@
 #include "AIDirectorSettings.h"
 
-AAIDirectorSettings::AAIDirectorSettings() {
+AAIDirectorSettings::AAIDirectorSettings(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

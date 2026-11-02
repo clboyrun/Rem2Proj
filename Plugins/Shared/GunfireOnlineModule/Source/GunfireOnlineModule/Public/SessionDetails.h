@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "FindSessionsCallbackProxy.h"
+#include "BlueprintSessionResult.h"
 #include "SessionDetails.generated.h"
 
 USTRUCT(BlueprintType)

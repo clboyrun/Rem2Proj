@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Subsystems/GameInstanceSubsystem.h"
+#include "GameInstanceSubsystem.h"
 #include "BoidManager.generated.h"
 
 class UBoidComponent;
@@ -15,5 +15,6 @@ protected:
     
 public:
     UBoidManager();
+
 };
 

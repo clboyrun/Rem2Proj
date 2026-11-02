@@ -1,6 +1,20 @@
 #include "RemnantGameBoardComponent.h"
 #include "Net/UnrealNetwork.h"
 
+URemnantGameBoardComponent::URemnantGameBoardComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->PlayerPieceBase = NULL;
+    this->PlayerPotentialMoveVisualBase = NULL;
+    this->AIPieceBase = NULL;
+    this->bAllowDiagonalMovement = false;
+    this->bSlotInfoDeterminesDiagonalMovement = false;
+    this->bScaleRulesByDifficulty = false;
+    this->bUseDefaultConfiguration = false;
+    this->bIsPlaying = false;
+    this->CurrentTurn = EBoardUser::None;
+    this->CurrentAI = NULL;
+    this->CurrentPlayer = NULL;
+}
+
 void URemnantGameBoardComponent::UpdatePieceActorLocations() {
 }
 
@@ -37,17 +51,4 @@ void URemnantGameBoardComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProp
     DOREPLIFETIME(URemnantGameBoardComponent, CurrentPlayer);
 }
 
-URemnantGameBoardComponent::URemnantGameBoardComponent() {
-    this->PlayerPieceBase = NULL;
-    this->PlayerPotentialMoveVisualBase = NULL;
-    this->AIPieceBase = NULL;
-    this->bAllowDiagonalMovement = false;
-    this->bSlotInfoDeterminesDiagonalMovement = false;
-    this->bScaleRulesByDifficulty = false;
-    this->bUseDefaultConfiguration = false;
-    this->bIsPlaying = false;
-    this->CurrentTurn = EBoardUser::None;
-    this->CurrentAI = NULL;
-    this->CurrentPlayer = NULL;
-}
 

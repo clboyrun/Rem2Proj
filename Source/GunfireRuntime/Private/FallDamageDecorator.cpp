@@ -6,3 +6,4 @@ UFallDamageDecorator::UFallDamageDecorator() {
     this->bResetOnExit = false;
 }
 
+

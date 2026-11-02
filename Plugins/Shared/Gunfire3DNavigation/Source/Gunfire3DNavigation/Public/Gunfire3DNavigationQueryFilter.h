@@ -17,5 +17,6 @@ public:
     float NodeBaseTraversalCost;
     
     UGunfire3DNavigationQueryFilter();
+
 };
 

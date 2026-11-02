@@ -9,6 +9,7 @@ class GUNFIRERUNTIME_API UHealingInfoUtil : public UObject {
     GENERATED_BODY()
 public:
     UHealingInfoUtil();
+
     UFUNCTION(BlueprintCallable)
     static void SetHealing(UPARAM(Ref) FHealingInfo& Info, float Healing);
     

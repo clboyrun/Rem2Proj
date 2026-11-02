@@ -8,5 +8,6 @@ class UEnvQueryItemType_AITacticalPoint : public UEnvQueryItemType_VectorBase {
     GENERATED_BODY()
 public:
     UEnvQueryItemType_AITacticalPoint();
+
 };
 

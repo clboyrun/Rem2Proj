@@ -13,6 +13,7 @@ class GUNFIRERUNTIME_API USpawnUtil : public UObject {
     GENERATED_BODY()
 public:
     USpawnUtil();
+
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static bool PickSingleItem(UObject* WorldContextObject, USpawnTable* SpawnTable, int32 Level, const TArray<FName>& SpawnTags, FSpawnEntry& Out);
     

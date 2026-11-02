@@ -1,6 +1,10 @@
 #include "RemnantGameBoardUserComponent.h"
 #include "Net/UnrealNetwork.h"
 
+URemnantGameBoardUserComponent::URemnantGameBoardUserComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->GameBoard = NULL;
+}
+
 void URemnantGameBoardUserComponent::ServerHandleGamePieceFocusEvent_Implementation(AActor* Actor, const FGraphPosition& TargetPosition, const FGraphPosition& RootPosition) {
 }
 bool URemnantGameBoardUserComponent::ServerHandleGamePieceFocusEvent_Validate(AActor* Actor, const FGraphPosition& TargetPosition, const FGraphPosition& RootPosition) {
@@ -34,7 +38,4 @@ void URemnantGameBoardUserComponent::GetLifetimeReplicatedProps(TArray<FLifetime
     DOREPLIFETIME(URemnantGameBoardUserComponent, GameBoard);
 }
 
-URemnantGameBoardUserComponent::URemnantGameBoardUserComponent() {
-    this->GameBoard = NULL;
-}
 

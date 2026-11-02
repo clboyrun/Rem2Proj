@@ -28,6 +28,10 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bAutoBlendOutOverride;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bPlayTimeExcludesBlendOut;
+    
     UAnimationAssetTagged();
+
 };
 

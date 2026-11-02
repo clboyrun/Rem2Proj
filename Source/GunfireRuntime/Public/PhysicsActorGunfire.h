@@ -30,7 +30,8 @@ private:
     int32 LowVelocityEncountered;
     
 public:
-    APhysicsActorGunfire();
+    APhysicsActorGunfire(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable)
     void SoundInstanceFinished(UPhysicsSoundInstance* SoundInstanceObject);

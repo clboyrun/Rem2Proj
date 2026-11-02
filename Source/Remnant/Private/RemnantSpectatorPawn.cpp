@@ -1,5 +1,10 @@
 #include "RemnantSpectatorPawn.h"
 
+ARemnantSpectatorPawn::ARemnantSpectatorPawn(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->CurrentSpectatorTarget = NULL;
+    this->PrevViewTarget = NULL;
+}
+
 
 void ARemnantSpectatorPawn::OnTargetUnavailable(USpectatorTargetComponent* SpectatorTarget) {
 }
@@ -24,8 +29,4 @@ AActor* ARemnantSpectatorPawn::GetCurrentTarget(bool bOnlyIfValid) const {
     return NULL;
 }
 
-ARemnantSpectatorPawn::ARemnantSpectatorPawn() {
-    this->CurrentSpectatorTarget = NULL;
-    this->PrevViewTarget = NULL;
-}
 

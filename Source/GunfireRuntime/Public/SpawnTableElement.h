@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API USpawnTableElement : public USpawnTableEntry {
     GENERATED_BODY()
 public:
     USpawnTableElement();
+
 };
 

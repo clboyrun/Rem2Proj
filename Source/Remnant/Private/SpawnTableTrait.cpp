@@ -4,3 +4,4 @@ USpawnTableTrait::USpawnTableTrait() {
     this->TraitBP = NULL;
 }
 
+

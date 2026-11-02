@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Kismet/BlueprintFunctionLibrary.h"
+#include "BlueprintFunctionLibrary.h"
 #include "PersistentReference.h"
 #include "PersistenceBlueprintFunctionLibrary.generated.h"
 
@@ -15,6 +15,7 @@ class GUNFIRESAVESYSTEM_API UPersistenceBlueprintFunctionLibrary : public UBluep
     GENERATED_BODY()
 public:
     UPersistenceBlueprintFunctionLibrary();
+
     UFUNCTION(BlueprintCallable)
     static void SetReference(UPARAM(Ref) FPersistentReference& Reference, AActor* InActor);
     
@@ -41,6 +42,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     static void ClearReference(UPARAM(Ref) FPersistentReference& Reference);
+    
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
+    static void ClearAllCommitLocks(const UObject* WorldContextObject);
     
 };
 

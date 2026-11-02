@@ -22,7 +22,8 @@ protected:
     TSet<ERecipeType> ClientPrevRequestedLoads;
     
 public:
-    UCraftingComponent();
+    UCraftingComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void UpgradeItem(AActor* Source, int32 ItemId, FGuid RecipeID);
     
@@ -62,7 +63,13 @@ public:
     FRecipeInfo GetRecipeInfo(AActor* Source, FGuid RecipeID);
     
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
+    void DowngradeItem(AActor* Source, int32 ItemId);
+    
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void CraftItem(AActor* Source, FGuid RecipeID);
+    
+    UFUNCTION(BlueprintCallable)
+    bool CanDowngrade(AActor* Source, int32 ItemId, FRecipeInfo& OutDowngradeInfo);
     
 };
 

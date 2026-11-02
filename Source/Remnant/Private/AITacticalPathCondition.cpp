@@ -4,3 +4,4 @@ UAITacticalPathCondition::UAITacticalPathCondition() {
     this->Params = NULL;
 }
 
+

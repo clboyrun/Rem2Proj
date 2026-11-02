@@ -2,7 +2,6 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "UObject/Object.h"
-#include "UObject/NoExportTypes.h"
 #include "ETileDirection.h"
 #include "MapTileEdgeInfo.h"
 #include "MapTileInfoAsset.generated.h"
@@ -34,6 +33,9 @@ public:
     FName SpawnTag;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float ResourceDensity;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 Flags;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -61,5 +63,6 @@ public:
     TArray<FVector> Connectors;
     
     UMapTileInfoAsset();
+
 };
 

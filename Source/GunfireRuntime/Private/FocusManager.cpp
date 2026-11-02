@@ -1,5 +1,11 @@
 #include "FocusManager.h"
 
+UFocusManager::UFocusManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->InputComponent = NULL;
+    this->PlayerController = NULL;
+    this->GivenSoleFocus = false;
+}
+
 bool UFocusManager::RestorePanelFocus(APlayerController* Controller, UWidget* Widget) {
     return false;
 }
@@ -44,9 +50,4 @@ bool UFocusManager::AttemptSetButtonFocus(APlayerController* Controller, UFocusB
     return false;
 }
 
-UFocusManager::UFocusManager() {
-    this->InputComponent = NULL;
-    this->PlayerController = NULL;
-    this->GivenSoleFocus = false;
-}
 

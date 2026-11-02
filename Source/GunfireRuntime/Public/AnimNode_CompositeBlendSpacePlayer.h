@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "AlphaBlend.h"
 #include "Animation/AnimNode_AssetPlayerBase.h"
-#include "AlphaBlend.h"
+#include "EAlphaBlendOption.h"
 #include "AnimNode_CompositeBlendSpacePlayer.generated.h"
 
 class UBlendProfile;

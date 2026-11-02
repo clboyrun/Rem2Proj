@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UUnCrouchCondition : public UCondition {
     GENERATED_BODY()
 public:
     UUnCrouchCondition();
+
 };
 

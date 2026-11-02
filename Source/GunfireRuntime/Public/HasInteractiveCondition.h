@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UHasInteractiveCondition : public UCondition {
     GENERATED_BODY()
 public:
     UHasInteractiveCondition();
+
 };
 

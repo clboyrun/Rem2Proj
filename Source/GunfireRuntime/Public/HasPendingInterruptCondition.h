@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UHasPendingInterruptCondition : public UCondition {
     GENERATED_BODY()
 public:
     UHasPendingInterruptCondition();
+
 };
 

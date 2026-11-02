@@ -17,6 +17,7 @@ protected:
     
 public:
     UCheatManagerGunfire();
+
     UFUNCTION(BlueprintCallable, Exec)
     void UnlockAllTraitsOfType(const FString& NameOfTypeBP, int32 StartingLevel);
     
@@ -60,6 +61,9 @@ public:
     void ResyncChallenges();
     
     UFUNCTION(BlueprintCallable, Exec)
+    void ResetTimedEvents() const;
+    
+    UFUNCTION(BlueprintCallable, Exec)
     void ResetChallenges();
     
     UFUNCTION(BlueprintCallable, Exec)
@@ -70,6 +74,12 @@ public:
     
     UFUNCTION(BlueprintCallable, Exec)
     void RemoveAllItems();
+    
+    UFUNCTION(BlueprintCallable, Exec)
+    void PrintActiveTimedEvents() const;
+    
+    UFUNCTION(BlueprintCallable, Exec)
+    void LogChallengeProgress();
     
     UFUNCTION(BlueprintCallable, Exec)
     void KillNearbyEnemies();
@@ -99,7 +109,13 @@ public:
     TArray<FString> GetConsoleCommandCategories();
     
     UFUNCTION(BlueprintCallable, Exec)
+    void ForceHitch(float Seconds);
+    
+    UFUNCTION(BlueprintCallable, Exec)
     void ForceCrash();
+    
+    UFUNCTION(BlueprintCallable, Exec)
+    void FlushNetDriverReferences();
     
     UFUNCTION(BlueprintCallable, Exec)
     void EnablePrimaryFlyCamera();
@@ -115,6 +131,9 @@ public:
     
     UFUNCTION(BlueprintCallable, Exec)
     void AddTrait(const FString& NameOfBP, int32 Level);
+    
+    UFUNCTION(BlueprintCallable, Exec)
+    void AddTimedEvent(FName EventName, const FString& Tags) const;
     
 };
 

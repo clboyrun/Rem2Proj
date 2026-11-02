@@ -1,9 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "Components/DecalComponent.h"
-#include "Engine/EngineTypes.h"
+#include "EAttachLocation.h"
 #include "AdvancedDecalComponent.generated.h"
 
 class UAdvancedDecalComponent;
@@ -16,7 +15,8 @@ UCLASS(Blueprintable, EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnable
 class GUNFIRERUNTIME_API UAdvancedDecalComponent : public UDecalComponent {
     GENERATED_BODY()
 public:
-    UAdvancedDecalComponent();
+    UAdvancedDecalComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     static UAdvancedDecalComponent* SpawnAdvancedDecalAttached(UMaterialInterface* DecalMaterialIn, FVector DecalSizeIn, USceneComponent* AttachToComponent, FName AttachPointName, FVector Location, FRotator Rotation, TEnumAsByte<EAttachLocation::Type> LocationType, float LifeSpan, UCurveFloat* EmissiveCurve, UCurveFloat* OpacityCurve, bool bSetLifespan);
     

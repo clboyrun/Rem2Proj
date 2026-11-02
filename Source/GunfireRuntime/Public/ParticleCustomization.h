@@ -1,7 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "SceneCustomization.h"
 #include "ParticleCustomization.generated.h"
 
@@ -45,5 +44,6 @@ public:
     bool bStateSoftDestroy;
     
     UParticleCustomization();
+
 };
 

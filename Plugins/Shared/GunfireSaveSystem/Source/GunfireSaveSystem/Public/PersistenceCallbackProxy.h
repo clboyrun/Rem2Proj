@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Kismet/BlueprintAsyncActionBase.h"
+#include "BlueprintAsyncActionBase.h"
 #include "PersistenceCallbackProxy.generated.h"
 
 class UPersistenceManager;
@@ -15,5 +15,6 @@ protected:
     
 public:
     UPersistenceCallbackProxy();
+
 };
 

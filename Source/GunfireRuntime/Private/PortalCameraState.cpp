@@ -17,3 +17,4 @@ UPortalCameraState::UPortalCameraState() {
     this->ExitPortal = NULL;
 }
 
+

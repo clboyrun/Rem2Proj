@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Chaos/ChaosEngineInterface.h"
+#include "EPhysicalSurface.h"
 #include "ImpactFXDecalCurves.h"
 #include "SoftSoundGunfire.h"
 #include "SoundGunfire.h"

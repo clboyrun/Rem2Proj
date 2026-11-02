@@ -6,3 +6,4 @@ UStationarySpectatorCameraState::UStationarySpectatorCameraState() {
     this->LockRoll = false;
 }
 
+

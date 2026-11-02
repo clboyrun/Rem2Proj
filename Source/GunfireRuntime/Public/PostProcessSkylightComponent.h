@@ -4,6 +4,8 @@
 #include "Templates/SubclassOf.h"
 #include "PostProcessSkylightComponent.generated.h"
 
+class AActor;
+class USkyLightComponent;
 
 UCLASS(Blueprintable, CollapseCategories, EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class GUNFIRERUNTIME_API UPostProcessSkylightComponent : public UPostProcessComponent {
@@ -17,18 +19,10 @@ protected:
     USkyLightComponent* SkyLight;
     
 public:
-    UPostProcessSkylightComponent();
+    UPostProcessSkylightComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     USkyLightComponent* GetCurrentSkylight();
-
-
-protected:
-
-    virtual void OnRegister() override;
-    virtual void OnUnregister() override;
-
-    //~ Begin UObject Interface
-    virtual void Serialize(FArchive& Ar) override;
-    //~ End UObject Interface
+    
 };
 

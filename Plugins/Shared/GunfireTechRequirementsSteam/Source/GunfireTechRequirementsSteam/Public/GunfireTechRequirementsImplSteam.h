@@ -8,5 +8,6 @@ class GUNFIRETECHREQUIREMENTSSTEAM_API UGunfireTechRequirementsImplSteam : publi
     GENERATED_BODY()
 public:
     UGunfireTechRequirementsImplSteam();
+
 };
 

@@ -7,6 +7,7 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class REMNANT_API URemnantSequencerManager : public USequencerManager {
     GENERATED_BODY()
 public:
-    URemnantSequencerManager();
+    URemnantSequencerManager(const FObjectInitializer& ObjectInitializer);
+
 };
 

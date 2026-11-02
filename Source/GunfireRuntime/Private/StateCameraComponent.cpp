@@ -1,6 +1,31 @@
 #include "StateCameraComponent.h"
 #include "Templates/SubclassOf.h"
 
+UStateCameraComponent::UStateCameraComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->DefaultCameraState = NULL;
+    this->FlyCameraState = NULL;
+    this->FixedCameraState = NULL;
+    this->CinematicTransitionCameraState = NULL;
+    this->AimBoneScale = 1.00f;
+    this->MinControllerSensitivityScalar = 0.12f;
+    this->MaxControllerSensitivityScalar = 8.00f;
+    this->MinMouseSensitivityScalar = 0.12f;
+    this->MaxMouseSensitivityScalar = 8.00f;
+    this->DefaultCollisionInterpSpeed = 0.00f;
+    this->bOverrideSwimmingCameraChannel = false;
+    this->SwimmingCameraChannel = ECC_Camera;
+    this->MaxRecoveryAngle = -1.00f;
+    this->MaxPlatformCamPivotSmoothTime = 0.00f;
+    this->bIsBlendingFov = false;
+    this->Character = NULL;
+    this->CurrentCamera = NULL;
+    this->LockedCamera = NULL;
+    this->UnlockedCamera = NULL;
+    this->ActiveCameraActor = NULL;
+    this->HMDComponent = NULL;
+    this->AnimatedCameraActor = NULL;
+}
+
 void UStateCameraComponent::UnlockCameraState(float BlendTime) {
 }
 
@@ -29,6 +54,9 @@ void UStateCameraComponent::ResetFromCurrentView(float BlendTime) {
 }
 
 void UStateCameraComponent::OnCinematicExitMoveEvent() {
+}
+
+void UStateCameraComponent::OnCinematicExitInputEvent(const FName& ButtonName, ButtonEvent Event) {
 }
 
 void UStateCameraComponent::LockCameraState() {
@@ -90,28 +118,4 @@ void UStateCameraComponent::BlendFromCurrentParams(float BlendTime) {
 void UStateCameraComponent::AnimatedCameraCut(AActor* RefActor, const FName& CameraBone, float CameraFOV) {
 }
 
-UStateCameraComponent::UStateCameraComponent() {
-    this->DefaultCameraState = NULL;
-    this->FlyCameraState = NULL;
-    this->FixedCameraState = NULL;
-    this->CinematicTransitionCameraState = NULL;
-    this->AimBoneScale = 1.00f;
-    this->MinControllerSensitivityScalar = 0.12f;
-    this->MaxControllerSensitivityScalar = 8.00f;
-    this->MinMouseSensitivityScalar = 0.12f;
-    this->MaxMouseSensitivityScalar = 8.00f;
-    this->DefaultCollisionInterpSpeed = 0.00f;
-    this->bOverrideSwimmingCameraChannel = false;
-    this->SwimmingCameraChannel = ECC_Camera;
-    this->MaxRecoveryAngle = -1.00f;
-    this->MaxPlatformCamPivotSmoothTime = 0.00f;
-    this->bIsBlendingFov = false;
-    this->Character = NULL;
-    this->CurrentCamera = NULL;
-    this->LockedCamera = NULL;
-    this->UnlockedCamera = NULL;
-    this->ActiveCameraActor = NULL;
-    this->HMDComponent = NULL;
-    this->AnimatedCameraActor = NULL;
-}
 

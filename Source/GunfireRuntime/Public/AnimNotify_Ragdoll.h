@@ -14,5 +14,6 @@ public:
     FName RootBoneName;
     
     UAnimNotify_Ragdoll();
+
 };
 

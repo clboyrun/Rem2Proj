@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Types/SlateEnums.h"
-#include "Types/SlateEnums.h"
+#include "EHorizontalAlignment.h"
+#include "EVerticalAlignment.h"
 #include "Layout/Margin.h"
 #include "Components/PanelSlot.h"
 #include "FocusButtonSlot.generated.h"
@@ -20,6 +20,7 @@ public:
     TEnumAsByte<EVerticalAlignment> VerticalAlignment;
     
     UFocusButtonSlot();
+
     UFUNCTION(BlueprintCallable)
     void SetVerticalAlignment(TEnumAsByte<EVerticalAlignment> InVerticalAlignment);
     

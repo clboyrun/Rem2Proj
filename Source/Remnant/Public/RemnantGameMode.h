@@ -16,6 +16,7 @@ class AQuest;
 class ARemnantPlayerController;
 class ARemnantQuest;
 class UEntitlementType;
+class UObject;
 class URemnantQuestZone;
 class URemnantQuestZoneLink;
 
@@ -25,6 +26,9 @@ class REMNANT_API ARemnantGameMode : public AGameModeGunfire {
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<ARemnantQuest> BaseQuest;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSoftClassPtr<ARemnantQuest> IntroQuest;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<ARemnantQuest> AutoLoadQuest;
@@ -55,6 +59,9 @@ protected:
     ARemnantQuest* DebugQuestInstance;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FOnAllPlayersDeadDelegate OnAllPlayersDeadPreTryRespawn;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnAllPlayersDeadDelegate OnAllPlayersDead;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -69,13 +76,13 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ZoneTravelDelay;
     
+public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FWorldResetDelegate OnWorldReset;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FWorldResetDelegate OnWorldResetComplete;
     
-public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FTravelCountdownCompleteDelegate OnTravelCountdownComplete;
     
@@ -93,17 +100,18 @@ private:
     TArray<ARemnantPlayerController*> WorldResetPlayers;
     
 public:
-    ARemnantGameMode();
+    ARemnantGameMode(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void TryRespawnPlayersPostDeath();
     
 public:
     UFUNCTION(BlueprintCallable)
-    void TravelToZone(int32 DestZoneID, const FName& DestLink, AActor* Source, bool bForce, bool bInstant);
+    void TravelToZone(FName Context, int32 DestZoneID, const FName& DestLink, AActor* Source, bool bForce, bool bInstant);
     
     UFUNCTION(BlueprintCallable)
-    void TravelToLastCheckpoint(AActor* Source);
+    void TravelToLastCheckpoint(FName Context, AActor* Source);
     
 protected:
     UFUNCTION(BlueprintCallable)
@@ -119,14 +127,27 @@ public:
     UFUNCTION(BlueprintCallable)
     bool SetAsRespawnZoneLink(const FZoneLinkInfo& NewZoneLink, bool bIgnoreWorldState);
     
+protected:
+    UFUNCTION(BlueprintCallable)
+    void RespawnDeadPlayersNearLivingPlayers(float RetryDelay);
+    
+public:
     UFUNCTION(BlueprintCallable)
     void OnStateDebugQuestLoaded(AQuest* Quest);
     
     UFUNCTION(BlueprintCallable)
     void OnSpawnDebugQuestLoaded(AQuest* Quest);
     
+protected:
     UFUNCTION(BlueprintCallable)
     void OnFullGameAvailable();
+    
+public:
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
+    static bool IsIntroQuestDisabled(const UObject* WorldContextObject);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
+    static bool IsIntroQuestComplete(const UObject* WorldContextObject);
     
     UFUNCTION(BlueprintCallable)
     bool IsEveryoneEntitled(TSubclassOf<UEntitlementType> RequiredEntitlement, bool ShowFailDialog, bool KickUnentitled);
@@ -135,7 +156,7 @@ public:
     void IncrementAllPlayersBossCounters();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    FZoneLinkInfo GetRespawnZoneLink();
+    FZoneLinkInfo GetRespawnZoneLink() const;
     
     UFUNCTION(BlueprintCallable)
     void ActivateCheckpoint(ACheckpoint* Checkpoint);

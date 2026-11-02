@@ -7,6 +7,7 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class GUNFIRERUNTIME_API UPathFollowingComponentGunfire : public UPathFollowingComponent {
     GENERATED_BODY()
 public:
-    UPathFollowingComponentGunfire();
+    UPathFollowingComponentGunfire(const FObjectInitializer& ObjectInitializer);
+
 };
 

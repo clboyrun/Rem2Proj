@@ -29,6 +29,7 @@ public:
     FText SubtitleText;
     
     UEmote();
+
     UFUNCTION(BlueprintCallable)
     UTexture2D* GetIcon(UEmotesComponent* Emotes, FName Reason);
     

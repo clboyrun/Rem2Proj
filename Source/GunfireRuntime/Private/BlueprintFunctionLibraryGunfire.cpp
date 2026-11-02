@@ -1,5 +1,8 @@
 #include "BlueprintFunctionLibraryGunfire.h"
 
+UBlueprintFunctionLibraryGunfire::UBlueprintFunctionLibraryGunfire() {
+}
+
 UAkGameObject* UBlueprintFunctionLibraryGunfire::Conv_AudioComponentGunfireToAkGameObject(FAudioComponentGunfire AudioComponentGunfire) {
     return NULL;
 }
@@ -125,6 +128,4 @@ bool UBlueprintFunctionLibraryGunfire::GetDamageInfoVariableBool(FDamageInfo& Da
     return false;
 }
 
-UBlueprintFunctionLibraryGunfire::UBlueprintFunctionLibraryGunfire() {
-}
 

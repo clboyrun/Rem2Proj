@@ -5,3 +5,4 @@ UFixedCameraState::UFixedCameraState() {
     this->bSimulateHMD = false;
 }
 
+

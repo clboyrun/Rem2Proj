@@ -4,3 +4,4 @@ USpawnTableAccountAward::USpawnTableAccountAward() {
     this->bHardcoreOnly = false;
 }
 
+

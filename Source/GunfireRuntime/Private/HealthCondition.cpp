@@ -6,3 +6,4 @@ UHealthCondition::UHealthCondition() {
     this->Normalized = true;
 }
 
+

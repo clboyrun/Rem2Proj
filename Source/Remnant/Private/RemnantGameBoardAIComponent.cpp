@@ -1,8 +1,9 @@
 #include "RemnantGameBoardAIComponent.h"
 
-URemnantGameBoardAIComponent::URemnantGameBoardAIComponent() {
+URemnantGameBoardAIComponent::URemnantGameBoardAIComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->RandomMovePercent = 0;
     this->bScaleWithDifficulty = false;
     this->DifficultyModifier = -1;
 }
+
 

@@ -6,3 +6,4 @@ UAnimNotify_ImpactEffect::UAnimNotify_ImpactEffect() {
     this->UpTraceOffset = 0.00f;
 }
 
+

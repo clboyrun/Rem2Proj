@@ -15,5 +15,6 @@ public:
     FColor DebugColor;
     
     UInteractableStateBase();
+
 };
 

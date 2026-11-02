@@ -1,8 +1,5 @@
 #include "ThirdPersonCameraState.h"
 
-void UThirdPersonCameraState::LookAt(USceneComponent* Target, float BlendTime) {
-}
-
 UThirdPersonCameraState::UThirdPersonCameraState() {
     this->AimType = ETPSAimType::None;
     this->PitchMin = -70.00f;
@@ -62,4 +59,8 @@ UThirdPersonCameraState::UThirdPersonCameraState() {
     this->ScopedWeapon = NULL;
     this->ScopePostProcess = NULL;
 }
+
+void UThirdPersonCameraState::LookAt(USceneComponent* Target, float BlendTime) {
+}
+
 

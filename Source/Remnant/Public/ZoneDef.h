@@ -38,5 +38,6 @@ public:
     TArray<FMapGenAttribute> Attributes;
     
     UZoneDef();
+
 };
 

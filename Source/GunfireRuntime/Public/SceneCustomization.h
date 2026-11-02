@@ -14,5 +14,6 @@ public:
     TArray<FName> RequiredSoundTags;
     
     USceneCustomization();
+
 };
 

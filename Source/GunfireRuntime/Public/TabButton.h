@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "Components/ContentWidget.h"
-#include "Components/Button.h"
-#include "Components/Button.h"
+#include "OnButtonPressedEvent__DelegateSignature.h"
+#include "OnButtonReleasedEvent__DelegateSignature.h"
 #include "AdvButtonStyle.h"
 #include "OnTabFocusDelegateDelegate.h"
 #include "TabButton.generated.h"
@@ -56,6 +56,7 @@ protected:
     
 public:
     UTabButton();
+
     UFUNCTION(BlueprintCallable)
     void SetTexture(UTexture2D* Texture);
     

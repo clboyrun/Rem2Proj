@@ -7,6 +7,7 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class GUNFIRERUNTIME_API UAICoordinatorMelee : public UAICoordinatorBase {
     GENERATED_BODY()
 public:
-    UAICoordinatorMelee();
+    UAICoordinatorMelee(const FObjectInitializer& ObjectInitializer);
+
 };
 

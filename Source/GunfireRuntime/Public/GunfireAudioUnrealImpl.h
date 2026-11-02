@@ -11,11 +11,12 @@ class GUNFIRERUNTIME_API UGunfireAudioUnrealImpl : public UObject, public IGunfi
     GENERATED_BODY()
 public:
     UGunfireAudioUnrealImpl();
+
 private:
     UFUNCTION(BlueprintCallable)
     void OnAudioFinished(UAudioComponent* UnrealAudioComponent);
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

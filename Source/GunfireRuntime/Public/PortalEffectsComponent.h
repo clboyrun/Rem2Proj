@@ -1,7 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "Components/ActorComponent.h"
 #include "SoundGunfire.h"
 #include "PortalEffectsComponent.generated.h"
@@ -87,6 +86,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName UprightPortalEnterState;
     
-    UPortalEffectsComponent();
+    UPortalEffectsComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

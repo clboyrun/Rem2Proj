@@ -1,5 +1,18 @@
 #include "ProjectileMovementComponentGunfire.h"
 
+UProjectileMovementComponentGunfire::UProjectileMovementComponentGunfire(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->Penetrate = false;
+    this->ZeroPenetrationAdjustment = false;
+    this->AntiPenetrateSpeed = 600.00f;
+    this->bMaintainInitialRelativeRotation = false;
+    this->bApplyPostBounceGravityScale = false;
+    this->PostBounceGravityScale = 1.00f;
+    this->BounceNormalAlignmentAlpha = 0.00f;
+    this->NormalAlignmentUpwardsCosineThresh = 0.00f;
+    this->UpwardsBounceNormalAlignmentAlpha = 0.00f;
+    this->bApplyPostBounceVelocityClamp = false;
+}
+
 FVector UProjectileMovementComponentGunfire::SimulateBounce(FVector CurrentVelocity, const FHitResult& Hit, float& OutGravityScale) {
     return FVector{};
 }
@@ -17,15 +30,4 @@ void UProjectileMovementComponentGunfire::SetMaintainCurrentRelativeRotation() {
 void UProjectileMovementComponentGunfire::SetIgnoreNextPenetrate(bool bShouldIgnore) {
 }
 
-UProjectileMovementComponentGunfire::UProjectileMovementComponentGunfire() {
-    this->Penetrate = false;
-    this->AntiPenetrateSpeed = 600.00f;
-    this->bMaintainInitialRelativeRotation = false;
-    this->bApplyPostBounceGravityScale = false;
-    this->PostBounceGravityScale = 1.00f;
-    this->BounceNormalAlignmentAlpha = 0.00f;
-    this->NormalAlignmentUpwardsCosineThresh = 0.00f;
-    this->UpwardsBounceNormalAlignmentAlpha = 0.00f;
-    this->bApplyPostBounceVelocityClamp = false;
-}
 

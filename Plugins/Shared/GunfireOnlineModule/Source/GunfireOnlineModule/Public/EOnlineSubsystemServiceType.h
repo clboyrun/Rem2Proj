@@ -6,5 +6,6 @@ UENUM(BlueprintType)
 enum class EOnlineSubsystemServiceType : uint8 {
     DefaultPlatformService,
     NativePlatformService,
+    Count,
 };
 

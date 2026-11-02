@@ -30,6 +30,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAudioVolumeSelector AudioVolumeOverride;
     
-    AMapGenSettings();
+    AMapGenSettings(const FObjectInitializer& ObjectInitializer);
+
 };
 

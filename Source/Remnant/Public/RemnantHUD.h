@@ -20,7 +20,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     AActor* ContextActor;
     
-    ARemnantHUD();
+    ARemnantHUD(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     AUIActor* ShowUtilityRadial();

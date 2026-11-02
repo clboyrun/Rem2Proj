@@ -16,7 +16,8 @@ protected:
     
 public:
     UStatInfoSet();
-    
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

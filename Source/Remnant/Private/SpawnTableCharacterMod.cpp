@@ -4,3 +4,4 @@ USpawnTableCharacterMod::USpawnTableCharacterMod() {
     this->Modifier = NULL;
 }
 
+

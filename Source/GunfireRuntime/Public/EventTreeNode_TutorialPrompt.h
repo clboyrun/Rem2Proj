@@ -19,5 +19,6 @@ private:
     
 public:
     UEventTreeNode_TutorialPrompt();
+
 };
 

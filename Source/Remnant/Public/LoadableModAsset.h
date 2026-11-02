@@ -22,7 +22,7 @@ public:
     UObject* Reference;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    TObjectPtr<UClass> ClassReference;
+    UClass* ClassReference;
     
     REMNANT_API FLoadableModAsset();
 };

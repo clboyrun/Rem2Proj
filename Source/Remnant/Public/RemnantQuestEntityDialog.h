@@ -14,12 +14,16 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UEventTree* Dialog;
     
-    URemnantQuestEntityDialog();
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool ShouldBeContextProviderForDefaultTree;
+    
+    URemnantQuestEntityDialog(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnActorSpawned(AActor* Actor);
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

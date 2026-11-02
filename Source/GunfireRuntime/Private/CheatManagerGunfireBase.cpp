@@ -1,5 +1,11 @@
 #include "CheatManagerGunfireBase.h"
 
+UCheatManagerGunfireBase::UCheatManagerGunfireBase() {
+    this->CheatInputComponent = NULL;
+    this->SpawnedUIActor = NULL;
+    this->FlyWidget = NULL;
+}
+
 void UCheatManagerGunfireBase::ToggleFlyCheatWaypointDisplay() {
 }
 
@@ -116,9 +122,4 @@ bool UCheatManagerGunfireBase::AreCheatsEnabled() {
     return false;
 }
 
-UCheatManagerGunfireBase::UCheatManagerGunfireBase() {
-    this->CheatInputComponent = NULL;
-    this->SpawnedUIActor = NULL;
-    this->FlyWidget = NULL;
-}
 

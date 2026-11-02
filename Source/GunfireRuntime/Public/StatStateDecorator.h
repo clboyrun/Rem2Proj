@@ -20,6 +20,7 @@ private:
     
 public:
     UStatStateDecorator();
+
 private:
     UFUNCTION(BlueprintCallable)
     void ComputeStats(AActor* Actor);

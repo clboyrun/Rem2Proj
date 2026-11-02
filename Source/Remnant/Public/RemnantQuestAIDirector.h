@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "EncounterGroup.h"
-#include "QuestActorDelegateDelegate.h"
-#include "QuestManagerVoidDelegateDelegate.h"
+#include "QuestActorDelegate__DelegateSignature.h"
+#include "QuestManagerVoidDelegate__DelegateSignature.h"
 #include "EventRegionCharacter.h"
 #include "QuestAIDirectorNamedEventDelegate.h"
 #include "RemnantQuestComponent.h"
@@ -37,7 +37,8 @@ private:
     FQuestAIDirectorNamedEvent OnEncounterEvent;
     
 public:
-    URemnantQuestAIDirector();
+    URemnantQuestAIDirector(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable)
     void StopAllGroups(bool DestroyActiveSpawns);
@@ -69,7 +70,7 @@ private:
     UFUNCTION(BlueprintCallable)
     void EventEncounterEvent(UEncounterGroupInstance* EncounterGroup, FName EventName);
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

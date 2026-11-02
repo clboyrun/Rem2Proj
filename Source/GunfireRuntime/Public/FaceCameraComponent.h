@@ -10,6 +10,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool Enabled;
     
-    UFaceCameraComponent();
+    UFaceCameraComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

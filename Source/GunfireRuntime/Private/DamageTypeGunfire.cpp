@@ -1,14 +1,6 @@
 #include "DamageTypeGunfire.h"
 #include "Templates/SubclassOf.h"
 
-TSubclassOf<UDamageClass> UDamageTypeGunfire::GetDamageSubclass(TSubclassOf<UDamageType> DamageType, TSubclassOf<UDamageClass> ParentClass) {
-    return NULL;
-}
-
-TArray<TSubclassOf<UDamageClass>> UDamageTypeGunfire::GetDamageClassesForType(TSubclassOf<UDamageType> DamageType) {
-    return TArray<TSubclassOf<UDamageClass>>();
-}
-
 UDamageTypeGunfire::UDamageTypeGunfire() {
     this->Power = 1;
     this->DamageMod = 0.00f;
@@ -21,6 +13,7 @@ UDamageTypeGunfire::UDamageTypeGunfire() {
     this->NoBlockCounter = false;
     this->Evadable = true;
     this->HitFriendly = false;
+    this->CanBeLethal = true;
     this->Modifiable = true;
     this->FriendlyDamageScalar = 0.25f;
     this->FriendlyDamageScalarOverridesGameScalar = false;
@@ -51,4 +44,13 @@ UDamageTypeGunfire::UDamageTypeGunfire() {
     this->bIgnoreResistVisuals = false;
     this->bIgnoreReticuleHitIndicators = false;
 }
+
+TSubclassOf<UDamageClass> UDamageTypeGunfire::GetDamageSubclass(TSubclassOf<UDamageType> DamageType, TSubclassOf<UDamageClass> ParentClass) const {
+    return NULL;
+}
+
+TArray<TSubclassOf<UDamageClass>> UDamageTypeGunfire::GetDamageClassesForType(TSubclassOf<UDamageType> DamageType) const {
+    return TArray<TSubclassOf<UDamageClass>>();
+}
+
 

@@ -6,3 +6,4 @@ UTrailCustomizationEffect::UTrailCustomizationEffect() {
     this->Lifetime = 1.00f;
 }
 
+

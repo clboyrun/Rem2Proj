@@ -4,3 +4,4 @@ UStaticMeshCustomization::UStaticMeshCustomization() {
     this->bResetMaterialsOnApply = true;
 }
 
+

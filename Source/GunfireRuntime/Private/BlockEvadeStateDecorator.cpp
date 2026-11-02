@@ -1,8 +1,5 @@
 #include "BlockEvadeStateDecorator.h"
 
-void UBlockEvadeStateDecorator::SimulateDodge(const FDamageInfo& DamageInfo) {
-}
-
 UBlockEvadeStateDecorator::UBlockEvadeStateDecorator() {
     this->Evade = false;
     this->EvadeWindow = 0.44f;
@@ -13,4 +10,8 @@ UBlockEvadeStateDecorator::UBlockEvadeStateDecorator() {
     this->BlockCounterWindow = 0.25f;
     this->CounterAttackLockOut = 1.00f;
 }
+
+void UBlockEvadeStateDecorator::SimulateDodge(const FDamageInfo& DamageInfo) {
+}
+
 

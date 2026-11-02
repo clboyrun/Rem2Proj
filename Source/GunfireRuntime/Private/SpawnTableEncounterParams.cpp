@@ -8,3 +8,4 @@ USpawnTableEncounterParams::USpawnTableEncounterParams() {
     this->SpawnDelayMax = 0.00f;
 }
 
+

@@ -73,6 +73,7 @@ protected:
     
 public:
     UEncounterInstance();
+
     UFUNCTION(BlueprintCallable)
     void StopEncounter(bool DestroyActiveSpawns);
     

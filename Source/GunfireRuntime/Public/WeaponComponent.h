@@ -12,7 +12,8 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class GUNFIRERUNTIME_API UWeaponComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UWeaponComponent();
+    UWeaponComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void NotifyHitTarget(const FDamageInfo& DamageInfo);
     

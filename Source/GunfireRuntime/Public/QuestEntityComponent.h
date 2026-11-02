@@ -7,6 +7,7 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class GUNFIRERUNTIME_API UQuestEntityComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UQuestEntityComponent();
+    UQuestEntityComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

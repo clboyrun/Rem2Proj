@@ -8,3 +8,4 @@ UParticleCustomization::UParticleCustomization() {
     this->bStateSoftDestroy = true;
 }
 
+

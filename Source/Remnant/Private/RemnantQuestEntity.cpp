@@ -1,6 +1,16 @@
 #include "RemnantQuestEntity.h"
 #include "Templates/SubclassOf.h"
 
+URemnantQuestEntity::URemnantQuestEntity(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->SpawnTable = NULL;
+    this->Transient = false;
+    this->ForceSpawnIfNotFound = false;
+    this->WarpToSpawnPointOnLoad = false;
+    this->PersistDestroyed = true;
+    this->LootSpawnTable = NULL;
+    this->Faction = NULL;
+}
+
 void URemnantQuestEntity::ZoneUnloaded() {
 }
 
@@ -54,12 +64,4 @@ TArray<AActor*> URemnantQuestEntity::GetActors() {
     return TArray<AActor*>();
 }
 
-URemnantQuestEntity::URemnantQuestEntity() {
-    this->SpawnTable = NULL;
-    this->Transient = false;
-    this->ForceSpawnIfNotFound = false;
-    this->PersistDestroyed = true;
-    this->LootSpawnTable = NULL;
-    this->Faction = NULL;
-}
 

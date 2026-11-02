@@ -23,6 +23,7 @@ protected:
     
 public:
     UPlayStateEffect_ScreenFade();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsHidingScreen() const;
     

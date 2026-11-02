@@ -9,3 +9,4 @@ UAnimNotify_PlaySoundSetSound::UAnimNotify_PlaySoundSetSound() {
     this->EquipmentSocketIndex = -1;
 }
 
+

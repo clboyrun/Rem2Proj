@@ -2,13 +2,14 @@
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "InspectInfo.h"
+#include "ItemFilterRowData.h"
 #include "Templates/SubclassOf.h"
 #include "ItemUtil.generated.h"
 
 class AActor;
 class AItem;
+class UDataTable;
 class UInventoryComponent;
 class USpawnTable;
 
@@ -17,6 +18,7 @@ class GUNFIRERUNTIME_API UItemUtil : public UObject {
     GENERATED_BODY()
 public:
     UItemUtil();
+
     UFUNCTION(BlueprintCallable)
     static bool ValidateDropPosition(AActor* Source, const FVector& Position, FVector& OutPosition, bool SnapToGround, bool TestStaticCollision);
     
@@ -43,6 +45,15 @@ public:
     
     UFUNCTION(BlueprintCallable)
     static FInspectInfo GetInspectInfo(AActor* InspectActor, TSubclassOf<AItem> ItemBP, int32 Level);
+    
+    UFUNCTION(BlueprintCallable)
+    static FItemFilterRowData GetFilterInfoForFilterID(UDataTable* Table, FName FilterID);
+    
+    UFUNCTION(BlueprintCallable)
+    static TArray<UClass*> GetAllItemClasses();
+    
+    UFUNCTION(BlueprintCallable)
+    static TArray<FName> GetAllFilterIDsForTable(UDataTable* Table);
     
     UFUNCTION(BlueprintCallable)
     static void DropLootAtLocation(AActor* Source, AActor* Cause, USpawnTable* SpawnTable, const FVector& Location, const TArray<FName>& Tags, int32 Rating, bool bAsync, bool bForce, bool Transient);

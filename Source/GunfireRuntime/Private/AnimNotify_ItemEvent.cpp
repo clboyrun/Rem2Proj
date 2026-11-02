@@ -8,3 +8,4 @@ UAnimNotify_ItemEvent::UAnimNotify_ItemEvent() {
     this->bStateTransient = false;
 }
 
+

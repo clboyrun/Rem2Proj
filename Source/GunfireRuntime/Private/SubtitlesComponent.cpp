@@ -1,5 +1,8 @@
 #include "SubtitlesComponent.h"
 
+USubtitlesComponent::USubtitlesComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+}
+
 void USubtitlesComponent::ServerRemoveSubtitle_Implementation(int32 ID) {
 }
 bool USubtitlesComponent::ServerRemoveSubtitle_Validate(int32 ID) {
@@ -38,6 +41,4 @@ UEmoteInstance* USubtitlesComponent::AddEmoteInstance(AActor* Source, UActorComp
     return NULL;
 }
 
-USubtitlesComponent::USubtitlesComponent() {
-}
 

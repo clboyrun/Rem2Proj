@@ -1,11 +1,54 @@
 #include "CharacterGunfire.h"
+#include "SkeletalMeshComponentBudgeted.h"
 #include "ActionComponent.h"
+#include "CharacterMovementComponentGunfire.h"
 #include "HitLogComponent.h"
 #include "Net/UnrealNetwork.h"
 #include "ReplicatedMovementComponent.h"
 #include "StatsComponent.h"
 #include "Templates/SubclassOf.h"
 #include "WeaponPhantomComponent.h"
+
+ACharacterGunfire::ACharacterGunfire(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer.SetDefaultSubobjectClass<USkeletalMeshComponentBudgeted>(TEXT("CharacterMesh0")).SetDefaultSubobjectClass<UCharacterMovementComponentGunfire>(TEXT("CharMoveComp"))) {
+    this->bReplicateRootMotion = false;
+    this->StatsComp = CreateDefaultSubobject<UStatsComponent>(TEXT("StatsComp"));
+    this->ActionComp = CreateDefaultSubobject<UActionComponent>(TEXT("ActionComp"));
+    this->WeaponPhantomProviderComp = CreateDefaultSubobject<UWeaponPhantomComponent>(TEXT("WeaponPhantomProviderComp"));
+    this->HitLogComp = CreateDefaultSubobject<UHitLogComponent>(TEXT("HitLogComp"));
+    this->ReplicatedMovementComp = CreateDefaultSubobject<UReplicatedMovementComponent>(TEXT("ReplicatedMovement"));
+    this->InspectStats = NULL;
+    this->Faction = NULL;
+    this->DefaultDamageType = NULL;
+    this->GlobalFootImpactOffset = 0.00f;
+    this->ReceiveDecals = EDecalReceiverType::Inherit;
+    this->NetNotifyHitTarget = false;
+    this->Level = 1;
+    this->Seed = 0;
+    this->HealthNormalized = 1000.00f;
+    this->EnableCharacterOptimizations = false;
+    this->EnableAnimOptimizations = true;
+    this->EnableAnimSignificanceOptimizations = true;
+    this->AnimSignificanceScalar = 1.00f;
+    this->SuspendClothWhenNotVisible = true;
+    this->UpdateRateDistanceMultiplier = true;
+    this->ActivationHalfHeightInflation = 60.00f;
+    this->ActivationRadiusInflation = 60.00f;
+    this->MinimumTimeDilation = 0.00f;
+    this->RemoveNetRepReferencesOnDestroy = true;
+    this->CachedStateMachine = NULL;
+    this->CachedInventory = NULL;
+    this->Target = NULL;
+    this->CharacterTarget = NULL;
+    this->AimTarget = NULL;
+    this->DeathCauseActor = NULL;
+    this->OldController = NULL;
+    this->bPauseClothSimulationOnTimeDilation = true;
+    this->bResetAnimDynamicsOnResumeClothingSim = false;
+    this->ClothSimulationPauseThreshold = 0.05f;
+    this->CharacterManager = NULL;
+    const FProperty* p_Mesh = GetClass()->FindPropertyByName("Mesh");
+    (*p_Mesh->ContainerPtrToValuePtr<USkeletalMeshComponent*>(this))->SetupAttachment(RootComponent);
+}
 
 void ACharacterGunfire::StopWeaponPhantom(UPrimitiveComponent* Shape) {
 }
@@ -74,6 +117,9 @@ void ACharacterGunfire::RemoveTag(const FName& Tag, bool bRemoveAll) {
 }
 
 void ACharacterGunfire::ReinitializeCloth() {
+}
+
+void ACharacterGunfire::RegenerateHealth(float Delta) {
 }
 
 bool ACharacterGunfire::ReduceCooldown(FName Cooldown, float Time) {
@@ -150,6 +196,10 @@ FRotator ACharacterGunfire::GetViewRotation() const {
 
 AActor* ACharacterGunfire::GetTarget() {
     return NULL;
+}
+
+float ACharacterGunfire::GetStatIfExists(FName Stat, bool ApplyMod, bool& OutStatExists, float FallbackValueIfNotExists) {
+    return 0.0f;
 }
 
 UStateMachineComponent* ACharacterGunfire::GetStateMachine() const {
@@ -284,46 +334,11 @@ void ACharacterGunfire::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Ou
     DOREPLIFETIME(ACharacterGunfire, Faction);
     DOREPLIFETIME(ACharacterGunfire, Level);
     DOREPLIFETIME(ACharacterGunfire, Seed);
+    DOREPLIFETIME(ACharacterGunfire, InitialCharacterTags);
     DOREPLIFETIME(ACharacterGunfire, HealthNormalized);
     DOREPLIFETIME(ACharacterGunfire, Target);
     DOREPLIFETIME(ACharacterGunfire, AimTarget);
     DOREPLIFETIME(ACharacterGunfire, ConsumedEntitlements);
 }
 
-ACharacterGunfire::ACharacterGunfire() {
-    this->StatsComp = CreateDefaultSubobject<UStatsComponent>(TEXT("StatsComp"));
-    this->ActionComp = CreateDefaultSubobject<UActionComponent>(TEXT("ActionComp"));
-    this->WeaponPhantomProviderComp = CreateDefaultSubobject<UWeaponPhantomComponent>(TEXT("WeaponPhantomProviderComp"));
-    this->HitLogComp = CreateDefaultSubobject<UHitLogComponent>(TEXT("HitLogComp"));
-    this->ReplicatedMovementComp = CreateDefaultSubobject<UReplicatedMovementComponent>(TEXT("ReplicatedMovement"));
-    this->InspectStats = NULL;
-    this->Faction = NULL;
-    this->DefaultDamageType = NULL;
-    this->GlobalFootImpactOffset = 0.00f;
-    this->ReceiveDecals = EDecalReceiverType::Inherit;
-    this->NetNotifyHitTarget = false;
-    this->Level = 1;
-    this->Seed = 0;
-    this->HealthNormalized = 1000.00f;
-    this->EnableCharacterOptimizations = false;
-    this->EnableAnimOptimizations = true;
-    this->EnableAnimSignificanceOptimizations = true;
-    this->AnimSignificanceScalar = 1.00f;
-    this->SuspendClothWhenNotVisible = true;
-    this->UpdateRateDistanceMultiplier = true;
-    this->ActivationHalfHeightInflation = 60.00f;
-    this->ActivationRadiusInflation = 60.00f;
-    this->MinimumTimeDilation = 0.00f;
-    this->CachedStateMachine = NULL;
-    this->CachedInventory = NULL;
-    this->Target = NULL;
-    this->CharacterTarget = NULL;
-    this->AimTarget = NULL;
-    this->DeathCauseActor = NULL;
-    this->OldController = NULL;
-    this->bPauseClothSimulationOnTimeDilation = true;
-    this->bResetAnimDynamicsOnResumeClothingSim = false;
-    this->ClothSimulationPauseThreshold = 0.05f;
-    this->CharacterManager = NULL;
-}
 

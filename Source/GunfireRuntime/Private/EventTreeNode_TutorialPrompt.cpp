@@ -5,3 +5,4 @@ UEventTreeNode_TutorialPrompt::UEventTreeNode_TutorialPrompt() {
     this->DurationOverride = -1.00f;
 }
 
+

@@ -1,5 +1,8 @@
 #include "NotificationWidget.h"
 
+UNotificationWidget::UNotificationWidget() : UUserWidget(FObjectInitializer::Get()) {
+}
+
 
 void UNotificationWidget::OnStatusChangeEvent(ETechReqStatusChange StatusChangeEvent) {
 }
@@ -19,6 +22,4 @@ void UNotificationWidget::OnDismissed(UWidget* Unused) {
 void UNotificationWidget::OnCinematic(APlayerControllerGunfire* Player, bool bIsInCinematicMode) {
 }
 
-UNotificationWidget::UNotificationWidget() : UUserWidget(FObjectInitializer::Get()) {
-}
 

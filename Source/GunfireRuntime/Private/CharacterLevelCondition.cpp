@@ -4,3 +4,4 @@ UCharacterLevelCondition::UCharacterLevelCondition() {
     this->RequiredCharacterLevel = 0;
 }
 
+

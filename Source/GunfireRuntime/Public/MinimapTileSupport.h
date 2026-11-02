@@ -25,6 +25,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     TArray<int32> RevealedHiddenAreasIDs;
     
-    AMinimapTileSupport();
+    AMinimapTileSupport(const FObjectInitializer& ObjectInitializer);
+
 };
 

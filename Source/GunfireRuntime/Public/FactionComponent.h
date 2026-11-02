@@ -39,9 +39,10 @@ protected:
     TArray<FFactionDamageTracker> DamageTrackers;
     
 public:
-    UFactionComponent();
+    UFactionComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
 protected:
     UFUNCTION(BlueprintCallable)
     void TakeDamage(const FDamageInfo& DamageInfo);

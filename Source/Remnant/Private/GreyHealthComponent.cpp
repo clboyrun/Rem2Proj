@@ -1,10 +1,20 @@
 #include "GreyHealthComponent.h"
 #include "Net/UnrealNetwork.h"
 
+UGreyHealthComponent::UGreyHealthComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->InitialGreyhealthSegments = 1;
+    this->TimeThresholdForMultiHitGrouping = 0.10f;
+    this->TimeAfterHitForRegenStart = 0.20f;
+    this->GreyHealthDisabled = false;
+}
+
 void UGreyHealthComponent::Reset(float InitialValue, bool Notify) {
 }
 
 void UGreyHealthComponent::OnRep_GreyHealth(const TArray<float>& PreviousSegments) {
+}
+
+void UGreyHealthComponent::OnPostComputeStats() {
 }
 
 void UGreyHealthComponent::OnOwnerHealthRegen(ACharacterGunfire* Character, float RegenAmount) {
@@ -28,11 +38,19 @@ int32 UGreyHealthComponent::GetMaxSegments() const {
     return 0;
 }
 
+float UGreyHealthComponent::GetHealableGreyHealth() const {
+    return 0.0f;
+}
+
 UGreyHealthComponent* UGreyHealthComponent::GetGreyHealthComponent(AActor* Actor) {
     return NULL;
 }
 
 float UGreyHealthComponent::GetGreyHealth() const {
+    return 0.0f;
+}
+
+float UGreyHealthComponent::GetForcedGreyHealthPercent() const {
     return 0.0f;
 }
 
@@ -59,10 +77,4 @@ void UGreyHealthComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>&
     DOREPLIFETIME(UGreyHealthComponent, GreyHealthSegments);
 }
 
-UGreyHealthComponent::UGreyHealthComponent() {
-    this->InitialGreyhealthSegments = 1;
-    this->TimeThresholdForMultiHitGrouping = 0.10f;
-    this->TimeAfterHitForRegenStart = 0.20f;
-    this->GreyHealthDisabled = false;
-}
 

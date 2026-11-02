@@ -14,5 +14,6 @@ public:
     bool bSimulateHMD;
     
     UFixedCameraState();
+
 };
 

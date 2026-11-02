@@ -2,10 +2,16 @@
 #include "Net/UnrealNetwork.h"
 #include "Templates/SubclassOf.h"
 
+UActionComponent::UActionComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+}
+
 void UActionComponent::StopActionByType(TSubclassOf<UActionBase> ActionBP) {
 }
 
 void UActionComponent::StopAction(int32 ActionID) {
+}
+
+void UActionComponent::RemoveAnyActionAppliedListener(const FOnAnyActionAppliedDelegate& Event) {
 }
 
 void UActionComponent::OnRep_Actions() {
@@ -27,6 +33,10 @@ void UActionComponent::InvokeEventOnAll(FName EventName) {
 }
 
 void UActionComponent::InvokeEvent(TSubclassOf<UActionBase> ActionType, FName EventName) {
+}
+
+UActionBase* UActionComponent::GetSoftActionOfType(TSoftClassPtr<UActionBase> ActionBP) const {
+    return NULL;
 }
 
 int32 UActionComponent::GetNumActionsOfType(TSubclassOf<UActionBase> ActionBP) const {
@@ -57,12 +67,13 @@ bool UActionComponent::CanDoActionInternal(TSubclassOf<UActionBase> ActionBP, co
     return false;
 }
 
+void UActionComponent::AddAnyActionAppliedListener(const FOnAnyActionAppliedDelegate& Event) {
+}
+
 void UActionComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);
     
     DOREPLIFETIME(UActionComponent, Actions);
 }
 
-UActionComponent::UActionComponent() {
-}
 

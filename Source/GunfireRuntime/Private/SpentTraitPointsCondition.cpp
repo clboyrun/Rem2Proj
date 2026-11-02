@@ -4,3 +4,4 @@ USpentTraitPointsCondition::USpentTraitPointsCondition() {
     this->RequiredTraitPointsSpent = 1;
 }
 
+

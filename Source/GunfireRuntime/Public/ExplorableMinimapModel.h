@@ -1,8 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "GameFramework/Actor.h"
 #include "RegisteredEntity.h"
 #include "ExplorableMinimapModel.generated.h"
@@ -71,7 +69,8 @@ protected:
     TMap<AActor*, FRegisteredEntity> RegisteredEntityMap;
     
 public:
-    AExplorableMinimapModel();
+    AExplorableMinimapModel(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SetFullscreenOverlayWidget(UUserWidget* OverlayWidget);
     

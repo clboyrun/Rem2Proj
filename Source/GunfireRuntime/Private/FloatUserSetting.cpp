@@ -1,5 +1,14 @@
 #include "FloatUserSetting.h"
 
+UFloatUserSetting::UFloatUserSetting() {
+    this->DefaultValue = 1.00f;
+    this->MinValue = 0.00f;
+    this->MaxValue = 1.00f;
+    this->Increment = 0.10f;
+    this->ShowAsPercent = true;
+    this->NumDecimals = 0;
+}
+
 void UFloatUserSetting::SetValue(float Value) {
 }
 
@@ -31,12 +40,4 @@ float UFloatUserSetting::DecrementValue() {
     return 0.0f;
 }
 
-UFloatUserSetting::UFloatUserSetting() {
-    this->DefaultValue = 1.00f;
-    this->MinValue = 0.00f;
-    this->MaxValue = 1.00f;
-    this->Increment = 0.10f;
-    this->ShowAsPercent = true;
-    this->NumDecimals = 0;
-}
 

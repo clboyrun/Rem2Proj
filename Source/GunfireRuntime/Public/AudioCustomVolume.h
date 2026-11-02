@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "Sound/AudioVolume.h"
-#include "Engine/Attenuation.h"
+#include "GameFramework/AudioVolume.h"
+#include "EAttenuationShape.h"
 #include "AudioState.h"
 #include "Templates/SubclassOf.h"
 #include "WorldSound.h"
@@ -75,7 +75,8 @@ private:
     UWorldSoundComponent* WorldSoundComponent;
     
 public:
-    AAudioCustomVolume();
+    AAudioCustomVolume(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SetState(TSubclassOf<UAudioStateID> StateID, bool bPlayTransitions);
     

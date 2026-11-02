@@ -1,6 +1,9 @@
 #include "LoreSubsystem.h"
 #include "Templates/SubclassOf.h"
 
+ULoreSubsystem::ULoreSubsystem() {
+}
+
 void ULoreSubsystem::OnImageSetLoaded(AActor* ContextActor, FSoftObjectPath ImageSetPath) {
 }
 
@@ -14,6 +17,4 @@ ULoreSubsystem* ULoreSubsystem::GetInstance(const UObject* WorldContextObject) {
     return NULL;
 }
 
-ULoreSubsystem::ULoreSubsystem() {
-}
 

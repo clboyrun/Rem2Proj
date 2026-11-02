@@ -1,7 +1,8 @@
 #include "NavSvoDebugActor.h"
 #include "Components/SceneComponent.h"
 
-ANavSvoDebugActor::ANavSvoDebugActor() {
+ANavSvoDebugActor::ANavSvoDebugActor(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("RootComponent"));
     this->AgentRadius = 0.00f;
     this->AgentHeight = 0.00f;
     this->MaxPathSearchNodes = 2048;
@@ -40,5 +41,8 @@ ANavSvoDebugActor::ANavSvoDebugActor() {
     this->NavData = NULL;
     this->StartSprite = NULL;
     this->EndSprite = NULL;
+    this->StartPosition->SetupAttachment(RootComponent);
+    this->EndPosition->SetupAttachment(RootComponent);
 }
+
 

@@ -5,3 +5,4 @@ URayCastCondition::URayCastCondition() {
     this->HeightOffset = 0.00f;
 }
 
+

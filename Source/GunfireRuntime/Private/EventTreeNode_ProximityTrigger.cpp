@@ -9,3 +9,4 @@ UEventTreeNode_ProximityTrigger::UEventTreeNode_ProximityTrigger() {
     this->InView = EYesNo::DontCare;
 }
 
+

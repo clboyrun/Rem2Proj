@@ -12,6 +12,7 @@ public:
     FOnSequenceInstanceEventTreeTrigger OnEventTreeSequenceTrigger;
     
     USequenceInstance();
+
     UFUNCTION(BlueprintCallable)
     void OnEventTreeTrackTriggerNotified(FName TriggerName);
     

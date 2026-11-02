@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UEnvQueryContext_TargetLastKnownPosition : public UEnvQ
     GENERATED_BODY()
 public:
     UEnvQueryContext_TargetLastKnownPosition();
+
 };
 

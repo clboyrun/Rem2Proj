@@ -10,3 +10,4 @@ USpawnTableSmartAmmo::USpawnTableSmartAmmo() {
     this->AmmoProximityRadius = 1500.00f;
 }
 
+

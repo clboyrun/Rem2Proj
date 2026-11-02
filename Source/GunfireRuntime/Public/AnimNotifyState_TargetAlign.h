@@ -17,5 +17,6 @@ public:
     FName AlignBoneOverride;
     
     UAnimNotifyState_TargetAlign();
+
 };
 

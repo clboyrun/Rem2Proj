@@ -21,7 +21,8 @@ public:
     int32 Points;
     
     UChallengeRank();
-    
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

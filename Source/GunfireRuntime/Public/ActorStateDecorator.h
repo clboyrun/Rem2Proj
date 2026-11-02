@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UActorStateDecorator : public UInheritableObject {
     GENERATED_BODY()
 public:
     UActorStateDecorator();
+
 };
 

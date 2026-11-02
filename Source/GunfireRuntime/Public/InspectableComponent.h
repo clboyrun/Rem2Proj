@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "Camera/PlayerCameraManager.h"
+#include "EViewTargetBlendFunction.h"
 #include "InspectableEventDelegate.h"
 #include "InspectablePlayerEventDelegate.h"
 #include "InspectableComponent.generated.h"
@@ -68,9 +68,10 @@ protected:
     APlayerController* ActivePlayer;
     
 public:
-    UInspectableComponent();
+    UInspectableComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void StartInspect(APlayerController* PlayerController);
     

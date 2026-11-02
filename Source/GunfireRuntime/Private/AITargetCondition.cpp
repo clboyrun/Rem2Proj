@@ -5,3 +5,4 @@ UAITargetCondition::UAITargetCondition() {
     this->AwarenessState = EAwarenessState::Aware;
 }
 
+

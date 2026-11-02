@@ -55,6 +55,9 @@ public:
     bool HitFriendly;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool CanBeLethal;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool Modifiable;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -157,11 +160,12 @@ public:
     bool bIgnoreReticuleHitIndicators;
     
     UDamageTypeGunfire();
+
     UFUNCTION(BlueprintCallable, BlueprintPure=false)
-    static TSubclassOf<UDamageClass> GetDamageSubclass(TSubclassOf<UDamageType> DamageType, TSubclassOf<UDamageClass> ParentClass);
+    static TSubclassOf<UDamageClass> GetDamageSubclass(TSubclassOf<UDamageType> DamageType, TSubclassOf<UDamageClass> ParentClass) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure=false)
-    static TArray<TSubclassOf<UDamageClass>> GetDamageClassesForType(TSubclassOf<UDamageType> DamageType);
+    static TArray<TSubclassOf<UDamageClass>> GetDamageClassesForType(TSubclassOf<UDamageType> DamageType) const;
     
 };
 

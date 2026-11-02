@@ -1,5 +1,8 @@
 #include "CraftingComponent.h"
 
+UCraftingComponent::UCraftingComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+}
+
 void UCraftingComponent::UpgradeItem_Implementation(AActor* Source, int32 ItemId, FGuid RecipeID) {
 }
 bool UCraftingComponent::UpgradeItem_Validate(AActor* Source, int32 ItemId, FGuid RecipeID) {
@@ -49,12 +52,20 @@ FRecipeInfo UCraftingComponent::GetRecipeInfo(AActor* Source, FGuid RecipeID) {
     return FRecipeInfo{};
 }
 
+void UCraftingComponent::DowngradeItem_Implementation(AActor* Source, int32 ItemId) {
+}
+bool UCraftingComponent::DowngradeItem_Validate(AActor* Source, int32 ItemId) {
+    return true;
+}
+
 void UCraftingComponent::CraftItem_Implementation(AActor* Source, FGuid RecipeID) {
 }
 bool UCraftingComponent::CraftItem_Validate(AActor* Source, FGuid RecipeID) {
     return true;
 }
 
-UCraftingComponent::UCraftingComponent() {
+bool UCraftingComponent::CanDowngrade(AActor* Source, int32 ItemId, FRecipeInfo& OutDowngradeInfo) {
+    return false;
 }
+
 

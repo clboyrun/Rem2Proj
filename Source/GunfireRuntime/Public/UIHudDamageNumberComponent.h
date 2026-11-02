@@ -1,7 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "DamageInfo.h"
 #include "DamageNumberParameters.h"
 #include "UIHudComponent.h"
@@ -85,7 +84,8 @@ protected:
     APlayerControllerGunfire* CachedController;
     
 public:
-    UUIHudDamageNumberComponent();
+    UUIHudDamageNumberComponent(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnNotifyHitTarget(const FDamageInfo& DamageInfo);

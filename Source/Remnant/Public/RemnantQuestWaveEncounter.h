@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "QuestNameDelegateDelegate.h"
-#include "QuestVoidDelegateDelegate.h"
+#include "QuestNameDelegate__DelegateSignature.h"
+#include "QuestVoidDelegate__DelegateSignature.h"
 #include "EncounterWave.h"
 #include "EventRegionCharacter.h"
 #include "RemnantQuestComponent.h"
@@ -40,7 +40,8 @@ protected:
     UEncounterInstance* EncounterInstance;
     
 public:
-    URemnantQuestWaveEncounter();
+    URemnantQuestWaveEncounter(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void WaveComplete(UEncounterInstance* Instance);

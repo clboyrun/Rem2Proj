@@ -1,5 +1,19 @@
 #include "TargetableComponent.h"
 
+UTargetableComponent::UTargetableComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->Priority = 1;
+    this->MaximumTargetDistance = 0.00f;
+    this->MinimumTargetDistance = 0.00f;
+    this->SnapRadiusScale = 1.00f;
+    this->TargetPitch = 0.00f;
+    this->TargetType = ETargetType::Any;
+    this->RangeTolerance = 0.00f;
+    this->bCanBeTargeted = true;
+    this->AllowSoftTarget = true;
+    this->AllowLockTarget = true;
+    this->bAllowSnaping = true;
+}
+
 void UTargetableComponent::SetCanBeTargeted(bool bNewCanBeTargeted) {
 }
 
@@ -23,17 +37,4 @@ bool UTargetableComponent::CanBeTargeted() const {
     return false;
 }
 
-UTargetableComponent::UTargetableComponent() {
-    this->Priority = 1;
-    this->MaximumTargetDistance = 0.00f;
-    this->MinimumTargetDistance = 0.00f;
-    this->SnapRadiusScale = 1.00f;
-    this->TargetPitch = 0.00f;
-    this->TargetType = ETargetType::Any;
-    this->RangeTolerance = 0.00f;
-    this->bCanBeTargeted = true;
-    this->AllowSoftTarget = true;
-    this->AllowLockTarget = true;
-    this->bAllowSnaping = true;
-}
 

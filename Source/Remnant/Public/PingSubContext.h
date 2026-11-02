@@ -40,6 +40,7 @@ public:
     FText SubtitleText;
     
     UPingSubContext();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsValidForPingType(EGamePingType Type) const;
     

@@ -1,6 +1,16 @@
 #include "InputStateComponent.h"
 #include "Net/UnrealNetwork.h"
 
+UInputStateComponent::UInputStateComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bRefreshButtonStatesOnSetup = false;
+    this->MoveInputMethod = EMoveInputMethod::CameraRelativeYaw;
+    this->StickyMovement = false;
+    this->StickyMovementThreshold = 1.00f;
+    this->MaxWalkingInput = 0.30f;
+    this->LastCameraRelativeInputDirection = 0.00f;
+    this->LastCameraRelativeVerticalInputDirection = 0.00f;
+}
+
 void UInputStateComponent::SetWalking(bool InIsWalking) {
 }
 
@@ -83,6 +93,10 @@ ButtonEvent UInputStateComponent::GetButtonStateByName(const FName& Name) const 
     return ButtonEvent::None;
 }
 
+bool UInputStateComponent::CheckForEventByName(const FName& Name, ButtonEvent Event, float Window) const {
+    return false;
+}
+
 void UInputStateComponent::AddButtonListener(const FName& Name, const FInputButtonDelegate& Event) {
 }
 
@@ -93,13 +107,4 @@ void UInputStateComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>&
     DOREPLIFETIME(UInputStateComponent, LastCameraRelativeVerticalInputDirection);
 }
 
-UInputStateComponent::UInputStateComponent() {
-    this->bRefreshButtonStatesOnSetup = false;
-    this->MoveInputMethod = EMoveInputMethod::CameraRelativeYaw;
-    this->StickyMovement = false;
-    this->StickyMovementThreshold = 1.00f;
-    this->MaxWalkingInput = 0.30f;
-    this->LastCameraRelativeInputDirection = 0.00f;
-    this->LastCameraRelativeVerticalInputDirection = 0.00f;
-}
 

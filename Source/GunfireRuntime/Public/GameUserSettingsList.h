@@ -14,7 +14,8 @@ public:
     TArray<UUserSetting_Base*> Settings;
     
     UGameUserSettingsList();
-    
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

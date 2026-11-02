@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AI/Navigation/NavigationDataChunk.h"
+#include "NavigationDataChunk.h"
 #include "NavSvoStreamingData.generated.h"
 
 class ULevel;
@@ -13,5 +13,6 @@ public:
     ULevel* Level;
     
     UNavSvoStreamingData();
+
 };
 

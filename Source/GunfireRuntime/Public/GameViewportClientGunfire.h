@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/GameViewportClient.h"
+#include "GameViewportClient.h"
 #include "GameViewportFocusDelegateDelegate.h"
 #include "GameViewportClientGunfire.generated.h"
 
@@ -14,6 +14,7 @@ public:
     FGameViewportFocusDelegate OnGameViewportFocusEvent;
     
     UGameViewportClientGunfire();
+
     UFUNCTION(BlueprintCallable)
     void AdjustCameraFoVForAspect(bool bIgnoreFovSlider, UCameraComponent* CameraComponent);
     

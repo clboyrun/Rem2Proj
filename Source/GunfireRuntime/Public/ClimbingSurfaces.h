@@ -13,6 +13,7 @@ protected:
     TArray<FClimbableLedge> Ledges;
     
 public:
-    AClimbingSurfaces();
+    AClimbingSurfaces(const FObjectInitializer& ObjectInitializer);
+
 };
 

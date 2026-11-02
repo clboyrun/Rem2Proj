@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UTraversalCondition : public UCondition {
     GENERATED_BODY()
 public:
     UTraversalCondition();
+
 };
 

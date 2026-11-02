@@ -1,5 +1,9 @@
 #include "StateMachine.h"
 
+UStateMachine::UStateMachine() {
+    this->DefaultState = TEXT("Default");
+}
+
 UActorState* UStateMachine::GetStateParent(UActorState* State) const {
     return NULL;
 }
@@ -12,7 +16,4 @@ UActorState* UStateMachine::GetRootState(UActorState* State) const {
     return NULL;
 }
 
-UStateMachine::UStateMachine() {
-    this->DefaultState = TEXT("Default");
-}
 

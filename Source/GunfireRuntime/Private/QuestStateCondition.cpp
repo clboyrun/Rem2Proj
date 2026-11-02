@@ -4,3 +4,4 @@ UQuestStateCondition::UQuestStateCondition() {
     this->QuestState = EQuestState::Complete;
 }
 
+

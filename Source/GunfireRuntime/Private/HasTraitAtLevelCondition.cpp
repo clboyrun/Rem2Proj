@@ -5,3 +5,4 @@ UHasTraitAtLevelCondition::UHasTraitAtLevelCondition() {
     this->FilterOnlyArchetypes = false;
 }
 
+

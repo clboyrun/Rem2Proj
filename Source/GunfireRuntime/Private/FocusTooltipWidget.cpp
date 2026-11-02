@@ -5,3 +5,14 @@ UFocusTooltipWidget::UFocusTooltipWidget() : UUserWidget(FObjectInitializer::Get
     this->ParentWidgetFocusButton = NULL;
 }
 
+void UFocusTooltipWidget::OnParentShowTooltip(UWidget* SourceWidget) {
+}
+
+void UFocusTooltipWidget::OnParentHideTooltip(UWidget* SourceWidget) {
+}
+
+bool UFocusTooltipWidget::IsTooltipShowing() const {
+    return false;
+}
+
+

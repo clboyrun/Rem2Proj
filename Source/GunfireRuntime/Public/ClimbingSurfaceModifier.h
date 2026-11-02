@@ -19,7 +19,8 @@ protected:
     UBoxComponent* ModifierBox;
     
 public:
-    AClimbingSurfaceModifier();
+    AClimbingSurfaceModifier(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsPointInModifier(const FVector& Point) const;
     

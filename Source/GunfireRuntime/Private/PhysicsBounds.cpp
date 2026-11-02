@@ -1,17 +1,7 @@
 #include "PhysicsBounds.h"
 #include "Components/StaticMeshComponent.h"
 
-void APhysicsBounds::OnEndAffectCharacter_Implementation(ACharacter* Character, AActor* NewBounds) {
-}
-
-void APhysicsBounds::OnBeginAffectCharacter_Implementation(ACharacter* Character, AActor* OldBounds) {
-}
-
-float APhysicsBounds::GetForceToApplyScale_Implementation(ACharacter* Character) {
-    return 0.0f;
-}
-
-APhysicsBounds::APhysicsBounds() {
+APhysicsBounds::APhysicsBounds(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->Type = NULL;
     this->MeshBounds = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MeshBounds"));
     this->TerminalVelocity = 4000.00f;
@@ -52,4 +42,15 @@ APhysicsBounds::APhysicsBounds() {
     this->bLimitZMaxVelocity = false;
     this->ZMaxVelocity = 0.00f;
 }
+
+void APhysicsBounds::OnEndAffectCharacter_Implementation(ACharacter* Character, AActor* NewBounds) {
+}
+
+void APhysicsBounds::OnBeginAffectCharacter_Implementation(ACharacter* Character, AActor* OldBounds) {
+}
+
+float APhysicsBounds::GetForceToApplyScale_Implementation(ACharacter* Character) {
+    return 0.0f;
+}
+
 

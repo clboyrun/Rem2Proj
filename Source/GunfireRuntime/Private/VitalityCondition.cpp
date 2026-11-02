@@ -6,3 +6,4 @@ UVitalityCondition::UVitalityCondition() {
     this->Normalized = false;
 }
 
+

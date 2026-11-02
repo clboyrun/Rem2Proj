@@ -7,3 +7,4 @@ USpawnTableActor::USpawnTableActor() {
     this->SpawnAccessibleOnly = true;
 }
 
+

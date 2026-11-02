@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
-#include "Engine/EngineTypes.h"
+#include "ECollisionChannel.h"
 #include "SpawnGenerator.h"
 #include "Templates/SubclassOf.h"
 #include "AIDataGenerationSettings.generated.h"
@@ -9,7 +9,7 @@
 class UAINavArea;
 class UVaultSettings;
 
-UCLASS(Blueprintable, Config=Engine, DefaultConfig)
+UCLASS(Blueprintable, DefaultConfig, Config=Engine)
 class GUNFIRERUNTIME_API UAIDataGenerationSettings : public UObject {
     GENERATED_BODY()
 public:
@@ -75,5 +75,6 @@ public:
     TArray<FSpawnGenerator> SpawnGenerators;
     
     UAIDataGenerationSettings();
+
 };
 

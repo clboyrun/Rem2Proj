@@ -12,5 +12,6 @@ public:
     EPIESelectionGender GenderSelection;
     
     URemnantCharacterSettings();
+
 };
 

@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EClimbingTransitionRequiredInput.generated.h"
 
-UENUM(BlueprintType)
-enum class EClimbingTransitionRequiredInput : uint8 {
+UENUM()
+enum class EClimbingTransitionRequiredInput : int32 {
     Any,
     None,
     MoveInputOnly,

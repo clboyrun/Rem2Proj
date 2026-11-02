@@ -7,6 +7,7 @@ UCLASS(Blueprintable, EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnable
 class GUNFIRERUNTIME_API UAIDataRenderingComponent : public UPrimitiveComponent {
     GENERATED_BODY()
 public:
-    UAIDataRenderingComponent();
+    UAIDataRenderingComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

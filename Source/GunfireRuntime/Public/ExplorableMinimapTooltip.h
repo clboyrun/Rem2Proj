@@ -13,6 +13,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float TooltipHideDelay;
     
-    UExplorableMinimapTooltip();
+    UExplorableMinimapTooltip(const FObjectInitializer& ObjectInitializer);
+
 };
 

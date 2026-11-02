@@ -1,5 +1,6 @@
 #include "PathFollowingComponentGunfire.h"
 
-UPathFollowingComponentGunfire::UPathFollowingComponentGunfire() {
+UPathFollowingComponentGunfire::UPathFollowingComponentGunfire(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

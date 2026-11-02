@@ -15,6 +15,7 @@ public:
     TSoftClassPtr<URemnantArchetype> Archetype;
     
     UArchetypeAward();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     TSoftClassPtr<AItem> GetEngramItem() const;
     

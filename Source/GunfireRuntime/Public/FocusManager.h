@@ -56,7 +56,8 @@ protected:
     bool GivenSoleFocus;
     
 public:
-    UFocusManager();
+    UFocusManager(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     static bool RestorePanelFocus(APlayerController* Controller, UWidget* Widget);
     

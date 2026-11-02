@@ -5,3 +5,4 @@ UGunfireUserInterfaceSettings::UGunfireUserInterfaceSettings() {
     this->MinResolutionForHighResCursor = 2160.00f;
 }
 
+

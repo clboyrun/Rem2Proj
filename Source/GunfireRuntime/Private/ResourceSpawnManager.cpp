@@ -1,5 +1,11 @@
 #include "ResourceSpawnManager.h"
 
+UResourceSpawnManager::UResourceSpawnManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->ResourceDef = NULL;
+    this->Level = -1;
+    this->Generated = false;
+}
+
 void UResourceSpawnManager::OnUninitialize() {
 }
 
@@ -12,9 +18,4 @@ void UResourceSpawnManager::OnSetTileActive(int32 TileID, bool Active) {
 void UResourceSpawnManager::OnGenerateResources() {
 }
 
-UResourceSpawnManager::UResourceSpawnManager() {
-    this->ResourceDef = NULL;
-    this->Level = -1;
-    this->Generated = false;
-}
 

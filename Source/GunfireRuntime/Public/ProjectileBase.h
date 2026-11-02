@@ -1,7 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "GameFramework/Actor.h"
 #include "Engine/HitResult.h"
 #include "AudioComponentGunfire.h"
@@ -20,6 +19,7 @@ class UActionBase;
 class UActionComponent;
 class UCameraShakeBase;
 class UDamageTypeGunfire;
+class UFXSystemComponent;
 class UForceFeedbackAttenuation;
 class UForceFeedbackEffect;
 class UNiagaraSystem;
@@ -34,6 +34,9 @@ class GUNFIRERUNTIME_API AProjectileBase : public AActor, public IDamageableInte
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
     AActor* Cause;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    FVector Origin;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MaxLifetime;
@@ -99,6 +102,9 @@ protected:
     UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float AdditionalActivateRadius;
     
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float ActivateSimulationTime;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool ApplyDamage;
     
@@ -116,6 +122,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool Evadable;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool SoftDeactivatePooledFXComponents;
     
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -209,9 +218,10 @@ protected:
     bool bAlignToClientCameraTransform;
     
 public:
-    AProjectileBase();
+    AProjectileBase(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool ValidateHit(const FHitResult& Hit, bool bSimulating);
     
@@ -279,13 +289,18 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetClientCameraTransform(FVector& CameraLocation, FRotator& CameraRotation) const;
     
+protected:
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    TArray<UFXSystemComponent*> GatherPooledProjectileComponentsForDeactivation();
+    
+public:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void FilterIncomingDamage(const FDamageInfo& DamageInfo, float& DamageOut, bool& ShouldApplyDamage);
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void AttachToHitObject(const FHitResult& Hit);
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

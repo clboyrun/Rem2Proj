@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UAIHasPatrolPathCondition : public UCondition {
     GENERATED_BODY()
 public:
     UAIHasPatrolPathCondition();
+
 };
 

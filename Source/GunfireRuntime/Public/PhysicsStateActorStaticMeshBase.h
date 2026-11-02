@@ -17,7 +17,8 @@ protected:
     UStaticMeshComponent* KinematicCollisionMesh;
     
 public:
-    APhysicsStateActorStaticMeshBase();
+    APhysicsStateActorStaticMeshBase(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UStaticMeshComponent* GetStaticMeshComponent() const;
     

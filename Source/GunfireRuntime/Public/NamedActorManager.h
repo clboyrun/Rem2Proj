@@ -18,7 +18,8 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FNamedActorDelegate OnActorUnregistered;
     
-    UNamedActorManager();
+    UNamedActorManager(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void RemoveActor(const FName& NameID, AActor* Actor);
     

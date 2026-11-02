@@ -17,7 +17,8 @@ protected:
     USphereComponent* KinematicCollisionSphere;
     
 public:
-    APhysicsStateActorSphereBase();
+    APhysicsStateActorSphereBase(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     USphereComponent* GetSphereComponent() const;
     

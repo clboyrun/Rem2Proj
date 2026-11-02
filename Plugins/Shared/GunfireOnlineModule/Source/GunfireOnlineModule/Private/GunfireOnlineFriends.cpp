@@ -1,6 +1,12 @@
 #include "GunfireOnlineFriends.h"
 
+UGunfireOnlineFriends::UGunfireOnlineFriends() {
+}
+
 void UGunfireOnlineFriends::UpdateFriendsList() {
+}
+
+void UGunfireOnlineFriends::ShowFriendsOverlay() const {
 }
 
 void UGunfireOnlineFriends::RejectInvite(const FString& FriendId) {
@@ -49,6 +55,4 @@ bool UGunfireOnlineFriends::AcceptInvite(const FString& FriendId, bool SuppressN
     return false;
 }
 
-UGunfireOnlineFriends::UGunfireOnlineFriends() {
-}
 

@@ -12,5 +12,6 @@ public:
     TArray<FResourceType> ResourceTypes;
     
     UResourceDef();
+
 };
 

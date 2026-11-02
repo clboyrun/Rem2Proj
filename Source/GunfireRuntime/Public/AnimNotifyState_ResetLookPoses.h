@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UAnimNotifyState_ResetLookPoses : public UConditionalAn
     GENERATED_BODY()
 public:
     UAnimNotifyState_ResetLookPoses();
+
 };
 

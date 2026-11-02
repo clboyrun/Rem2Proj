@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "EnvironmentQuery/EnvQueryTest.h"
-#include "Engine/EngineTypes.h"
-#include "Chaos/ChaosEngineInterface.h"
+#include "ECollisionChannel.h"
+#include "EPhysicalSurface.h"
 #include "EnvQueryTest_GroundMaterial.generated.h"
 
 UCLASS(Blueprintable)
@@ -45,5 +45,6 @@ private:
     
 public:
     UEnvQueryTest_GroundMaterial();
+
 };
 

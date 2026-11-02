@@ -11,3 +11,4 @@ UVitalityStateDecorator::UVitalityStateDecorator() {
     this->VitalityRegenScalar = 1.00f;
 }
 
+

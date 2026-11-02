@@ -48,3 +48,4 @@ UPlatformCameraState::UPlatformCameraState() {
     this->CameraAvoidanceAngleThresh = 100.00f;
 }
 
+

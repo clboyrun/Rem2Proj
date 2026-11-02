@@ -4,6 +4,7 @@
 #include "GunfireAudioAttachParams.h"
 #include "GunfireAudioPlayParams.h"
 #include "GunfireAudioPlayingID.h"
+#include "OnPlaySoundDelegateDelegate.h"
 #include "SoftSoundGunfire.h"
 #include "SoundGunfire.h"
 #include "SoundSetComponent.generated.h"
@@ -18,6 +19,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USoundSet* SoundSet;
     
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FOnPlaySoundDelegate OnPlaySound;
+    
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FName> SoundTags;
@@ -26,7 +30,8 @@ protected:
     UMeshComponent* MeshComp;
     
 public:
-    USoundSetComponent();
+    USoundSetComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void RemoveSoundTag(FName SoundTag);
     

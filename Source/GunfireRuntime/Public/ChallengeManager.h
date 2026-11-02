@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Subsystems/GameInstanceSubsystem.h"
+#include "GameInstanceSubsystem.h"
 #include "ChallengeManager.generated.h"
 
 class UChallengeComponent;
@@ -29,5 +29,6 @@ private:
     
 public:
     UChallengeManager();
+
 };
 

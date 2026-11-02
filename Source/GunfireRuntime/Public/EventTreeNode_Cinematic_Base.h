@@ -38,6 +38,12 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool OnlyShowCameraToInstigator;
     
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bCanPlaySequencesConcurrently;
+    
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bNodeIsFireAndForget;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FMovieSceneSequencePlaybackSettings PlaybackSettings;
     
@@ -48,6 +54,7 @@ public:
     UEventTreeComponent* StoredComponent;
     
     UEventTreeNode_Cinematic_Base();
+
     UFUNCTION(BlueprintCallable)
     void OnSequenceTriggerForEventTree(FName TriggerName);
     

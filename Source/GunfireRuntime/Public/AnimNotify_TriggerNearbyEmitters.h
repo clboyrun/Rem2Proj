@@ -25,5 +25,6 @@ private:
     
 public:
     UAnimNotify_TriggerNearbyEmitters();
+
 };
 

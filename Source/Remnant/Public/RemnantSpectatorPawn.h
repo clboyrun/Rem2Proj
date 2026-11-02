@@ -18,7 +18,8 @@ protected:
     AActor* PrevViewTarget;
     
 public:
-    ARemnantSpectatorPawn();
+    ARemnantSpectatorPawn(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnValidTarget();
     

@@ -62,7 +62,8 @@ protected:
     ACharacterGunfire* CachedCharacter;
     
 public:
-    UUIHudReticuleComponent();
+    UUIHudReticuleComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void ShowHitIndicator(bool bIsCritical);
     

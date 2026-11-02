@@ -5,3 +5,4 @@ USphereCastCondition::USphereCastCondition() {
     this->Radius = 10.00f;
 }
 
+

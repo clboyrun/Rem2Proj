@@ -5,3 +5,4 @@ UDEPRECATED_StaminaCondition::UDEPRECATED_StaminaCondition() {
     this->Value = 0.00f;
 }
 
+

@@ -6,3 +6,4 @@ UAITacticalPointCondition::UAITacticalPointCondition() {
     this->Range = 200.00f;
 }
 
+

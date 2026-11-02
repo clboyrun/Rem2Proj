@@ -1,5 +1,9 @@
 #include "FlashlightLOSTaggingComponent.h"
 
+UFlashlightLOSTaggingComponent::UFlashlightLOSTaggingComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->OverlapComponent = NULL;
+}
+
 bool UFlashlightLOSTaggingComponent::LightEndOverlap(AActor* Actor) {
     return false;
 }
@@ -13,7 +17,4 @@ void UFlashlightLOSTaggingComponent::EnableOverlapCheck(UPrimitiveComponent* Pri
 void UFlashlightLOSTaggingComponent::DisableOverlapCheck() {
 }
 
-UFlashlightLOSTaggingComponent::UFlashlightLOSTaggingComponent() {
-    this->OverlapComponent = NULL;
-}
 

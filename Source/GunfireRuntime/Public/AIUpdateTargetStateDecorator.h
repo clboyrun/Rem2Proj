@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UAIUpdateTargetStateDecorator : public UActorStateDecor
     GENERATED_BODY()
 public:
     UAIUpdateTargetStateDecorator();
+
 };
 

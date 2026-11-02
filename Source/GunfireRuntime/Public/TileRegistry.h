@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Subsystems/GameInstanceSubsystem.h"
+#include "GameInstanceSubsystem.h"
 #include "TileRegistry.generated.h"
 
 class UMapTileInfoAsset;
@@ -19,5 +19,6 @@ protected:
     
 public:
     UTileRegistry();
+
 };
 

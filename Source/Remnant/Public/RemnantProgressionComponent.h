@@ -13,6 +13,7 @@ protected:
     FOnExperienceGained OnExperienceGained;
     
 public:
-    URemnantProgressionComponent();
+    URemnantProgressionComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

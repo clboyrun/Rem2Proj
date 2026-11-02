@@ -14,7 +14,8 @@ public:
     TArray<UInheritableNamedObject*> Entries;
     
     UInheritableNamedAsset();
-    
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

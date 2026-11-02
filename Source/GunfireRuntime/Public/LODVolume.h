@@ -106,7 +106,8 @@ private:
     bool bEmptyPendingHidden;
     
 public:
-    ALODVolume();
+    ALODVolume(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SetLODVisibility(ELODVolumeVisibility LODType);
     

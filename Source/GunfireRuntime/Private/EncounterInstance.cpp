@@ -1,5 +1,14 @@
 #include "EncounterInstance.h"
 
+UEncounterInstance::UEncounterInstance() {
+    this->EncounterManager = NULL;
+    this->NumSpawned = 0;
+    this->Counter = 0.00f;
+    this->Streaming = false;
+    this->Paused = false;
+    this->PerpetualSpawnCount = -1;
+}
+
 void UEncounterInstance::StopEncounter(bool DestroyActiveSpawns) {
 }
 
@@ -31,12 +40,4 @@ TArray<AActor*> UEncounterInstance::GetSpawnedActors() {
     return TArray<AActor*>();
 }
 
-UEncounterInstance::UEncounterInstance() {
-    this->EncounterManager = NULL;
-    this->NumSpawned = 0;
-    this->Counter = 0.00f;
-    this->Streaming = false;
-    this->Paused = false;
-    this->PerpetualSpawnCount = -1;
-}
 

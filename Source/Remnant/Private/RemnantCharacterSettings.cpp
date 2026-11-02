@@ -4,3 +4,4 @@ URemnantCharacterSettings::URemnantCharacterSettings() {
     this->GenderSelection = EPIESelectionGender::Random;
 }
 
+

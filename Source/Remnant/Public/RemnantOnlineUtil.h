@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
-#include "FindSessionsCallbackProxy.h"
+#include "BlueprintSessionResult.h"
 #include "OnlineSessionDetailsRemnant.h"
 #include "RemnantOnlineUtil.generated.h"
 
@@ -10,6 +10,10 @@ class REMNANT_API URemnantOnlineUtil : public UObject {
     GENERATED_BODY()
 public:
     URemnantOnlineUtil();
+
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
+    static void UpdateSessionCrossplayPlatformSetting(const UObject* WorldContextObject);
+    
     UFUNCTION(BlueprintCallable)
     static void SetModeFilter(int32 Mode);
     

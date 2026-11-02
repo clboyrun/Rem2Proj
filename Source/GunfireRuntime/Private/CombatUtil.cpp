@@ -1,6 +1,9 @@
 #include "CombatUtil.h"
 #include "Templates/SubclassOf.h"
 
+UCombatUtil::UCombatUtil() {
+}
+
 void UCombatUtil::WeaponTraceEx(AActor* Cause, const FVector& StartTrace, const FVector& EndTrace, FWeaponTracePath& OutPath) {
 }
 
@@ -37,6 +40,14 @@ AActor* UCombatUtil::ResolveDamageOwner(AActor* Cause) {
 
 FVector UCombatUtil::PredictLocation(ACharacter* Querier, ACharacter* Target, float Time, float Offset) {
     return FVector{};
+}
+
+bool UCombatUtil::IsViewTargetedPlayerInRangeOf(UObject* WorldContextObject, const FVector& ReferencePoint, float Range, bool UseNavDistance, APawn* OptionalNavAgentOverride) {
+    return false;
+}
+
+bool UCombatUtil::IsViewTargetedPlayerInBoundsOf(UObject* WorldContextObject, const FVector& ReferencePoint, const FVector& BoundsExtent) {
+    return false;
 }
 
 bool UCombatUtil::IsValidAimTarget(AActor* TestTarget, const AActor* AimingOwner) {
@@ -79,7 +90,11 @@ bool UCombatUtil::GetReticuleLocation(APawn* Pawn, float Range, float Radius, FR
     return false;
 }
 
-FName UCombatUtil::GetRandomHitPhantomThatIsntInvulnerable(const UObject* WorldContextObject, const AActor* Actor, const FVector& ImpactPoint, float Radius) {
+TArray<ARangedWeapon*> UCombatUtil::GetRangedWeaponsForCharacter(AActor* Target, EEquipmentTarget WeaponTarget, FName TargetSlotNameID) {
+    return TArray<ARangedWeapon*>();
+}
+
+FName UCombatUtil::GetRandomHitPhantomThatIsntInvulnerable(const UObject* WorldContextObject, const AActor* Actor, const FVector& ImpactPoint, const FVector& Origin, float Radius) {
     return NAME_None;
 }
 
@@ -109,6 +124,10 @@ TSubclassOf<UFaction> UCombatUtil::GetFaction(const AActor* Actor) {
 
 FVector UCombatUtil::GetEyePos(ACharacter* Character) {
     return FVector{};
+}
+
+AEquipment* UCombatUtil::GetEquippedItemForCharacter(AActor* Target, FName EquipmentSlot) {
+    return NULL;
 }
 
 float UCombatUtil::GetDamageReductionFromResistanceByDamageClass(const UDamageClass* DamageClass, float DamageResistance, float AttackerLevel) {
@@ -166,6 +185,102 @@ float UCombatUtil::ComputeDamageFalloff(const FVector& Source, AActor* Target, f
     return 0.0f;
 }
 
+bool UCombatUtil::CharActivation_SphereTraceSingleForObjects(const UObject* WorldContextObject, const FVector& Start, const FVector& End, float Radius, const TArray<TEnumAsByte<EObjectTypeQuery>>& ObjectTypes, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime) {
+    return false;
+}
+
+bool UCombatUtil::CharActivation_SphereTraceSingleByProfile(const UObject* WorldContextObject, const FVector& Start, const FVector& End, float Radius, FName ProfileName, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime) {
+    return false;
+}
+
+bool UCombatUtil::CharActivation_SphereTraceSingle(const UObject* WorldContextObject, const FVector& Start, const FVector& End, float Radius, TEnumAsByte<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime) {
+    return false;
+}
+
+bool UCombatUtil::CharActivation_SphereTraceMultiForObjects(const UObject* WorldContextObject, const FVector& Start, const FVector& End, float Radius, const TArray<TEnumAsByte<EObjectTypeQuery>>& ObjectTypes, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime) {
+    return false;
+}
+
+bool UCombatUtil::CharActivation_SphereTraceMultiByProfile(const UObject* WorldContextObject, const FVector& Start, const FVector& End, float Radius, FName ProfileName, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime) {
+    return false;
+}
+
+bool UCombatUtil::CharActivation_SphereTraceMulti(const UObject* WorldContextObject, const FVector& Start, const FVector& End, float Radius, TEnumAsByte<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime) {
+    return false;
+}
+
+bool UCombatUtil::CharActivation_LineTraceSingleForObjects(const UObject* WorldContextObject, const FVector& Start, const FVector& End, const TArray<TEnumAsByte<EObjectTypeQuery>>& ObjectTypes, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime) {
+    return false;
+}
+
+bool UCombatUtil::CharActivation_LineTraceSingleByProfile(const UObject* WorldContextObject, const FVector& Start, const FVector& End, FName ProfileName, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime) {
+    return false;
+}
+
+bool UCombatUtil::CharActivation_LineTraceSingle(const UObject* WorldContextObject, const FVector& Start, const FVector& End, TEnumAsByte<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime) {
+    return false;
+}
+
+bool UCombatUtil::CharActivation_LineTraceMultiForObjects(const UObject* WorldContextObject, const FVector& Start, const FVector& End, const TArray<TEnumAsByte<EObjectTypeQuery>>& ObjectTypes, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime) {
+    return false;
+}
+
+bool UCombatUtil::CharActivation_LineTraceMultiByProfile(const UObject* WorldContextObject, const FVector& Start, const FVector& End, FName ProfileName, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime) {
+    return false;
+}
+
+bool UCombatUtil::CharActivation_LineTraceMulti(const UObject* WorldContextObject, const FVector& Start, const FVector& End, TEnumAsByte<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime) {
+    return false;
+}
+
+bool UCombatUtil::CharActivation_CapsuleTraceSingleForObjects(const UObject* WorldContextObject, const FVector& Start, const FVector& End, float Radius, float HalfHeight, const TArray<TEnumAsByte<EObjectTypeQuery>>& ObjectTypes, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime) {
+    return false;
+}
+
+bool UCombatUtil::CharActivation_CapsuleTraceSingleByProfile(const UObject* WorldContextObject, const FVector& Start, const FVector& End, float Radius, float HalfHeight, FName ProfileName, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime) {
+    return false;
+}
+
+bool UCombatUtil::CharActivation_CapsuleTraceSingle(const UObject* WorldContextObject, const FVector& Start, const FVector& End, float Radius, float HalfHeight, TEnumAsByte<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime) {
+    return false;
+}
+
+bool UCombatUtil::CharActivation_CapsuleTraceMultiForObjects(const UObject* WorldContextObject, const FVector& Start, const FVector& End, float Radius, float HalfHeight, const TArray<TEnumAsByte<EObjectTypeQuery>>& ObjectTypes, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime) {
+    return false;
+}
+
+bool UCombatUtil::CharActivation_CapsuleTraceMultiByProfile(const UObject* WorldContextObject, const FVector& Start, const FVector& End, float Radius, float HalfHeight, FName ProfileName, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime) {
+    return false;
+}
+
+bool UCombatUtil::CharActivation_CapsuleTraceMulti(const UObject* WorldContextObject, const FVector& Start, const FVector& End, float Radius, float HalfHeight, TEnumAsByte<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime) {
+    return false;
+}
+
+bool UCombatUtil::CharActivation_BoxTraceSingleForObjects(const UObject* WorldContextObject, const FVector& Start, const FVector& End, const FVector HalfSize, const FRotator Orientation, const TArray<TEnumAsByte<EObjectTypeQuery>>& ObjectTypes, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime) {
+    return false;
+}
+
+bool UCombatUtil::CharActivation_BoxTraceSingleByProfile(const UObject* WorldContextObject, const FVector& Start, const FVector& End, const FVector HalfSize, const FRotator Orientation, FName ProfileName, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime) {
+    return false;
+}
+
+bool UCombatUtil::CharActivation_BoxTraceSingle(const UObject* WorldContextObject, const FVector& Start, const FVector& End, const FVector HalfSize, const FRotator Orientation, TEnumAsByte<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime) {
+    return false;
+}
+
+bool UCombatUtil::CharActivation_BoxTraceMultiForObjects(const UObject* WorldContextObject, const FVector& Start, const FVector& End, const FVector HalfSize, const FRotator Orientation, const TArray<TEnumAsByte<EObjectTypeQuery>>& ObjectTypes, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime) {
+    return false;
+}
+
+bool UCombatUtil::CharActivation_BoxTraceMultiByProfile(const UObject* WorldContextObject, const FVector& Start, const FVector& End, FVector HalfSize, const FRotator Orientation, FName ProfileName, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime) {
+    return false;
+}
+
+bool UCombatUtil::CharActivation_BoxTraceMulti(const UObject* WorldContextObject, const FVector& Start, const FVector& End, FVector HalfSize, const FRotator Orientation, TEnumAsByte<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime) {
+    return false;
+}
+
 FVector UCombatUtil::CalculateArcVelocity(const FVector& Start, const FVector& End, float Gravity, float Speed, float ArcHeight, float& TravelTime, EAutoArcType Type) {
     return FVector{};
 }
@@ -186,7 +301,7 @@ void UCombatUtil::ApplyDamageInfo(UObject* WorldContextObject, FDamageInfo Damag
 void UCombatUtil::ApplyDamage(AActor* CauseActor, AActor* TargetActor, float Damage, float DamageMod, float DamageScalar, int32 PowerOverride, TSubclassOf<UDamageTypeGunfire> DamageType) {
 }
 
-TArray<FVector> UCombatUtil::ApplyCustomWeaponSpread(AActor* Cause, const FVector& Origin, const FVector& End, int32 SprayCount, float Spread, FRandomStream& RandomStream, FCustomWeaponSpread& CustomSpread) {
+TArray<FVector> UCombatUtil::ApplyCustomWeaponSpread(AActor* Cause, const FVector& Origin, const FVector& End, int32 SprayCount, float Spread, FRandomStream& RandomStream, const FCustomWeaponSpread& CustomSpread) {
     return TArray<FVector>();
 }
 
@@ -206,6 +321,7 @@ bool UCombatUtil::AllowAction(ACharacterGunfire* Character) {
     return false;
 }
 
-UCombatUtil::UCombatUtil() {
+void UCombatUtil::ActivateCharactersAlongSegment(const UObject* WorldContextObject, const FVector& Start, const FVector& End) {
 }
+
 

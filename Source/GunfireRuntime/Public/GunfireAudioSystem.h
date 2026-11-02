@@ -25,6 +25,7 @@ private:
     
 public:
     UGunfireAudioSystem();
+
     UFUNCTION(BlueprintCallable)
     static bool UseSound();
     

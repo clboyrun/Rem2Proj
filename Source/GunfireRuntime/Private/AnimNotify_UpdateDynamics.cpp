@@ -6,3 +6,4 @@ UAnimNotify_UpdateDynamics::UAnimNotify_UpdateDynamics() {
     this->Teleport = false;
 }
 
+

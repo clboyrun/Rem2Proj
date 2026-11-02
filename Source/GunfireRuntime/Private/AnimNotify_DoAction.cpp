@@ -6,3 +6,4 @@ UAnimNotify_DoAction::UAnimNotify_DoAction() {
     this->bStateTransient = false;
 }
 
+

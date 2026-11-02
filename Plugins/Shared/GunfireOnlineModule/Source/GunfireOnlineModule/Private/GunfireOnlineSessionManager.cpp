@@ -1,12 +1,16 @@
 #include "GunfireOnlineSessionManager.h"
 
+UGunfireOnlineSessionManager::UGunfireOnlineSessionManager() {
+    this->SessionType = EOnlineSessionType::Offline;
+}
+
 void UGunfireOnlineSessionManager::UpdateSession() {
 }
 
 void UGunfireOnlineSessionManager::ShowSessionGamertagInfo(FBlueprintSessionResult SessionInfo) {
 }
 
-void UGunfireOnlineSessionManager::SetSessionJoinability(bool IsJoinable) {
+void UGunfireOnlineSessionManager::SetSessionJoinability(bool IsJoinable, EGunfireOnlineEvent CustomOnlineEvent, bool ShowAsMinorNotify) {
 }
 
 void UGunfireOnlineSessionManager::OnPostGameplayMainMenuLoaded() {
@@ -39,12 +43,19 @@ bool UGunfireOnlineSessionManager::HasPlayerBeenBanned(const FUniqueNetIdRepl& U
     return false;
 }
 
+bool UGunfireOnlineSessionManager::GetSessionJoinability() {
+    return false;
+}
+
 FSessionDetails UGunfireOnlineSessionManager::GetSessionDetails(const FBlueprintSessionResult& Session) {
     return FSessionDetails{};
 }
 
 TArray<FSessionDetails> UGunfireOnlineSessionManager::GetRecentlyJoinedSessions() {
     return TArray<FSessionDetails>();
+}
+
+void UGunfireOnlineSessionManager::GetNatType(FText& OutName, FText& OutDescription) {
 }
 
 UGunfireOnlineSessionManager* UGunfireOnlineSessionManager::GetGunfireOnlineSessionManager(const UObject* WorldContextObject) {
@@ -68,7 +79,4 @@ bool UGunfireOnlineSessionManager::CanChangeSessiontype() {
     return false;
 }
 
-UGunfireOnlineSessionManager::UGunfireOnlineSessionManager() {
-    this->SessionType = EOnlineSessionType::Offline;
-}
 

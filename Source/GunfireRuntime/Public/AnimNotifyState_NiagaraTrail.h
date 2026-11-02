@@ -48,7 +48,8 @@ private:
     
 public:
     UAnimNotifyState_NiagaraTrail();
-    
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

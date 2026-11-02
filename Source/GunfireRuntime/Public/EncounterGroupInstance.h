@@ -51,5 +51,6 @@ public:
     TArray<APlayerController*> Players;
     
     UEncounterGroupInstance();
+
 };
 

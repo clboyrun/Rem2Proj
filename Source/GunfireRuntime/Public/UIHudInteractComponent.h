@@ -121,7 +121,8 @@ protected:
     TArray<FHudInteractive> Interactives;
     
 public:
-    UUIHudInteractComponent();
+    UUIHudInteractComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void OnInteractCancel();
     

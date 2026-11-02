@@ -1,5 +1,9 @@
 #include "UIHudComponent.h"
 
+UUIHudComponent::UUIHudComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bVisible = true;
+}
+
 void UUIHudComponent::SetVisibility(bool Visible) {
 }
 
@@ -14,7 +18,4 @@ APawn* UUIHudComponent::GetControllingPawn() const {
     return NULL;
 }
 
-UUIHudComponent::UUIHudComponent() {
-    this->bVisible = true;
-}
 

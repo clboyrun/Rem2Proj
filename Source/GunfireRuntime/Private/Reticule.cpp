@@ -8,3 +8,4 @@ UReticule::UReticule() {
     this->WorldReticuleSize = 1000.00f;
 }
 
+

@@ -1,5 +1,8 @@
 #include "GlobalObjectPool.h"
 
+UGlobalObjectPool::UGlobalObjectPool(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+}
+
 UGlobalObjectPool* UGlobalObjectPool::GetInstance(UWorld* World) {
     return NULL;
 }
@@ -7,6 +10,4 @@ UGlobalObjectPool* UGlobalObjectPool::GetInstance(UWorld* World) {
 void UGlobalObjectPool::Empty() {
 }
 
-UGlobalObjectPool::UGlobalObjectPool() {
-}
 

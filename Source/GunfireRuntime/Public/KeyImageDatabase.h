@@ -17,6 +17,7 @@ private:
     
 public:
     UKeyImageDatabase();
+
 private:
     UFUNCTION(BlueprintCallable)
     UTexture2D* GetTexture(FKey Key, float& AngleOut);

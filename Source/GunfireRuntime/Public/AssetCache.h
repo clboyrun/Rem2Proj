@@ -26,6 +26,7 @@ private:
     
 public:
     UAssetCache();
+
     UFUNCTION(BlueprintCallable)
     static void PreloadAssets();
     

@@ -1,12 +1,6 @@
 #include "UIHudDamageNumberComponent.h"
 
-void UUIHudDamageNumberComponent::OnNotifyHitTarget(const FDamageInfo& DamageInfo) {
-}
-
-void UUIHudDamageNumberComponent::ClearNumberQueue() {
-}
-
-UUIHudDamageNumberComponent::UUIHudDamageNumberComponent() {
+UUIHudDamageNumberComponent::UUIHudDamageNumberComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->bInterpolateColorsOnOverlap = false;
     this->bUseCriticalParameters = false;
     this->bUseWeakSpotParameters = false;
@@ -18,4 +12,11 @@ UUIHudDamageNumberComponent::UUIHudDamageNumberComponent() {
     this->CachedCharacter = NULL;
     this->CachedController = NULL;
 }
+
+void UUIHudDamageNumberComponent::OnNotifyHitTarget(const FDamageInfo& DamageInfo) {
+}
+
+void UUIHudDamageNumberComponent::ClearNumberQueue() {
+}
+
 

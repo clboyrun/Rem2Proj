@@ -1,5 +1,21 @@
 #include "AIPointOfInterest.h"
 
+AAIPointOfInterest::AAIPointOfInterest(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->Enabled = true;
+    this->Type = NULL;
+    this->MinUseTime = -1.00f;
+    this->MaxUseTime = -1.00f;
+    this->CooldownMin = 5.00f;
+    this->CooldownMax = 20.00f;
+    this->MaxDistance = 2000.00f;
+    this->MaxDistanceToPOI = -1.00f;
+    this->UsePathDistance = false;
+    this->ScopedToLevel = true;
+    this->PatrolPath = NULL;
+    this->AllowSnapping = true;
+    this->Occupant = NULL;
+}
+
 void AAIPointOfInterest::SetEnabled(bool IsEnabled) {
 }
 
@@ -16,18 +32,4 @@ void AAIPointOfInterest::EndUse(bool SetCooldown) {
 void AAIPointOfInterest::BeginUse() {
 }
 
-AAIPointOfInterest::AAIPointOfInterest() {
-    this->Enabled = true;
-    this->Type = NULL;
-    this->MinUseTime = -1.00f;
-    this->MaxUseTime = -1.00f;
-    this->CooldownMin = 5.00f;
-    this->CooldownMax = 20.00f;
-    this->MaxDistance = 2000.00f;
-    this->UsePathDistance = false;
-    this->ScopedToLevel = true;
-    this->PatrolPath = NULL;
-    this->AllowSnapping = true;
-    this->Occupant = NULL;
-}
 

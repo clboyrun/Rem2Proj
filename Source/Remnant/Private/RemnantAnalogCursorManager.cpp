@@ -1,5 +1,9 @@
 #include "RemnantAnalogCursorManager.h"
 
+URemnantAnalogCursorManager::URemnantAnalogCursorManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->CachedSnapWidget = NULL;
+}
+
 void URemnantAnalogCursorManager::UpdateCachedCursorLockMode() {
 }
 
@@ -10,7 +14,4 @@ URemnantAnalogCursorManager* URemnantAnalogCursorManager::GetInstance(const UObj
     return NULL;
 }
 
-URemnantAnalogCursorManager::URemnantAnalogCursorManager() {
-    this->CachedSnapWidget = NULL;
-}
 

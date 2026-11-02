@@ -1,5 +1,8 @@
 #include "PhysicsTweenComponent.h"
 
+UPhysicsTweenComponent::UPhysicsTweenComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+}
+
 bool UPhysicsTweenComponent::StopTweenAndInvalidateHandle(int32& TweenID) {
     return false;
 }
@@ -46,6 +49,4 @@ int32 UPhysicsTweenComponent::AttachComponents(UPrimitiveComponent* Primitive, U
     return 0;
 }
 
-UPhysicsTweenComponent::UPhysicsTweenComponent() {
-}
 

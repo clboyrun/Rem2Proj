@@ -1,6 +1,7 @@
 #include "FactionSettings.h"
 
 UFactionSettings::UFactionSettings() {
-    this->Affiliatons.AddDefaulted(14);
+    this->Affiliatons.AddDefaulted(16);
 }
+
 

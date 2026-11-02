@@ -29,6 +29,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bSnapToInitialDestination;
     
-    UAIPointOfInterestComponent();
+    UAIPointOfInterestComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

@@ -7,7 +7,7 @@ struct FBlackboardClassValue {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TObjectPtr<UClass> Value;
+    UClass* Value;
     
     GUNFIRERUNTIME_API FBlackboardClassValue();
 };

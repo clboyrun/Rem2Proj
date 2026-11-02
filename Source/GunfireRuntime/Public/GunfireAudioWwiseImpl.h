@@ -11,6 +11,7 @@ class GUNFIRERUNTIME_API UGunfireAudioWwiseImpl : public UObject, public IGunfir
     GENERATED_BODY()
 public:
     UGunfireAudioWwiseImpl();
+
     UFUNCTION(BlueprintCallable)
     void UnregisterForDoppler(int64 GameObjectId, int32 PlayingID);
     
@@ -68,7 +69,7 @@ public:
     UFUNCTION(BlueprintCallable)
     static FAudioComponentGunfire GetAudioComponentByGameObjectId(int64 GameObjectId);
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

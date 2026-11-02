@@ -1,5 +1,11 @@
 #include "ChallengeObjectiveBase.h"
 
+UChallengeObjectiveBase::UChallengeObjectiveBase() {
+    this->Challenge = NULL;
+    this->ChallengeManager = NULL;
+    this->RankIdx = 0;
+}
+
 EObjectiveType UChallengeObjectiveBase::GetObjectiveType() const {
     return EObjectiveType::Standard;
 }
@@ -16,9 +22,4 @@ bool UChallengeObjectiveBase::CanIncrement() const {
     return false;
 }
 
-UChallengeObjectiveBase::UChallengeObjectiveBase() {
-    this->Challenge = NULL;
-    this->ChallengeManager = NULL;
-    this->RankIdx = 0;
-}
 

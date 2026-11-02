@@ -19,7 +19,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName OutlineExclusionTag;
     
-    UMeshOutlinerComponent();
+    UMeshOutlinerComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SetOwnerOutlined(bool bEnable);
     

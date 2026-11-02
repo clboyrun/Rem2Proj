@@ -1,6 +1,7 @@
 #include "ExplorableMinimapModelRemnant.h"
 
-AExplorableMinimapModelRemnant::AExplorableMinimapModelRemnant() {
+AExplorableMinimapModelRemnant::AExplorableMinimapModelRemnant(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->VisitedCoordinatesOwner = NULL;
 }
+
 

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "Subsystems/WorldSubsystem.h"
+#include "WorldSubsystem.h"
 #include "CharacterManager.generated.h"
 
 class AActor;
@@ -24,6 +24,7 @@ protected:
     
 public:
     UCharacterManager();
+
     UFUNCTION(BlueprintCallable)
     void KillAllCharactersForOwner(AActor* Owner);
     

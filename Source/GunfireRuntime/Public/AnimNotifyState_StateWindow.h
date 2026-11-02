@@ -11,5 +11,6 @@ public:
     FName Window;
     
     UAnimNotifyState_StateWindow();
+
 };
 

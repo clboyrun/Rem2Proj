@@ -13,3 +13,4 @@ UCollisionModeStateDecorator::UCollisionModeStateDecorator() {
     this->SoftCollisionOnExit = ESoftCollisionMode::Disabled;
 }
 
+

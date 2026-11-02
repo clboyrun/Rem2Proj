@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "EnvironmentQuery/EnvQueryTest.h"
-#include "Engine/EngineTypes.h"
+#include "ECollisionChannel.h"
 #include "CompareOp.h"
 #include "EnvQueryTest_WaterHeight.generated.h"
 
@@ -21,5 +21,6 @@ private:
     
 public:
     UEnvQueryTest_WaterHeight();
+
 };
 

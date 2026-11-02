@@ -7,6 +7,7 @@ UCLASS(Blueprintable, EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnable
 class GUNFIRERUNTIME_API UCustomSphereComponent : public USphereComponent {
     GENERATED_BODY()
 public:
-    UCustomSphereComponent();
+    UCustomSphereComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

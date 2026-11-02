@@ -8,5 +8,6 @@ class REMNANT_API URemnantAssetManager : public UAssetManager {
     GENERATED_BODY()
 public:
     URemnantAssetManager();
+
 };
 

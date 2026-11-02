@@ -1,6 +1,17 @@
 #include "QuestObjective.h"
 #include "Net/UnrealNetwork.h"
 
+UQuestObjective::UQuestObjective(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->CounterMax = 0;
+    this->Hidden = false;
+    this->Pinned = false;
+    this->State = EQuestState::None;
+    this->Result = EQuestResult::Success;
+    this->Counter = 0;
+    this->Timer = 0.00f;
+    this->RefActor = NULL;
+}
+
 void UQuestObjective::SetTimer(float Time) {
 }
 
@@ -61,14 +72,4 @@ void UQuestObjective::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutL
     DOREPLIFETIME(UQuestObjective, RefActor);
 }
 
-UQuestObjective::UQuestObjective() {
-    this->CounterMax = 0;
-    this->Hidden = false;
-    this->Pinned = false;
-    this->State = EQuestState::None;
-    this->Result = EQuestResult::Success;
-    this->Counter = 0;
-    this->Timer = 0.00f;
-    this->RefActor = NULL;
-}
 

@@ -2,9 +2,6 @@
 #include "Dialog_Emote.h"
 #include "Dialog_Speaker.h"
 
-void UEventTreeNode_Dialog::Complete(UEventTreeComponent* Component) const {
-}
-
 UEventTreeNode_Dialog::UEventTreeNode_Dialog() {
     this->Speaker = UDialog_Speaker::StaticClass();
     this->Emote = UDialog_Emote::StaticClass();
@@ -15,4 +12,8 @@ UEventTreeNode_Dialog::UEventTreeNode_Dialog() {
     this->IsDefaultSpeaker = true;
     this->IsDefaultVocalRange = true;
 }
+
+void UEventTreeNode_Dialog::Complete(UEventTreeComponent* Component) const {
+}
+
 

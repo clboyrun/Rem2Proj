@@ -12,7 +12,8 @@ protected:
     bool bIsInCutscene;
     
 public:
-    ACutsceneTransientActor();
+    ACutsceneTransientActor(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnEventCinematic(bool Start, const TArray<FName>& CinematicTags);

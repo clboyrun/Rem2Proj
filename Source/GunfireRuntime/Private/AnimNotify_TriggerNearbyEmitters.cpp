@@ -7,3 +7,4 @@ UAnimNotify_TriggerNearbyEmitters::UAnimNotify_TriggerNearbyEmitters() {
     this->MaxCount = 1;
 }
 
+

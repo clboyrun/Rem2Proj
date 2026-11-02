@@ -1,8 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "Components/ActorComponent.h"
 #include "EEaseType.h"
 #include "ETweenRoot.h"
@@ -29,7 +27,8 @@ protected:
     FTweenComponentDuringPhysicsTickFunction DuringPhysicsTickFunction;
     
 public:
-    UTweenComponent();
+    UTweenComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void StopTween(int32 ID);
     

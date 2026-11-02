@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UWaterEntryDecorator : public UActorStateDecorator {
     GENERATED_BODY()
 public:
     UWaterEntryDecorator();
+
 };
 

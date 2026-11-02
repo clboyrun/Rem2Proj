@@ -5,3 +5,4 @@ URemnantValidationTraitEntry::URemnantValidationTraitEntry() {
     this->LevelValidation = EQuantityValidationType::ValidateAnyChange;
 }
 
+

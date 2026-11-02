@@ -12,3 +12,4 @@ ULandingPredictionConditionParams::ULandingPredictionConditionParams() {
     this->PlatformCapsuleRadiusScale = 1.00f;
 }
 
+

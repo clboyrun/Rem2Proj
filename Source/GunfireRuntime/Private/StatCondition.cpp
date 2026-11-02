@@ -6,3 +6,4 @@ UStatCondition::UStatCondition() {
     this->ApplyModifiers = false;
 }
 
+

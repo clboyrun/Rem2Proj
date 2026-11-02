@@ -4,3 +4,4 @@ UVaultState::UVaultState() {
     this->VaultSettings = NULL;
 }
 
+

@@ -20,6 +20,7 @@ public:
     TArray<UActorState*> HitReactions;
     
     UStateMachine();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UActorState* GetStateParent(UActorState* State) const;
     
@@ -29,7 +30,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UActorState* GetRootState(UActorState* State) const;
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

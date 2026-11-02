@@ -7,5 +7,6 @@ enum class ETagLocation : uint8 {
     Character,
     Anim,
     TacticalPoint,
+    BestOwningCharacter,
 };
 

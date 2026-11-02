@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UMiniMapImage : public UImage {
     GENERATED_BODY()
 public:
     UMiniMapImage();
+
 };
 

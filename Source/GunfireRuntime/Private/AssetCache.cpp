@@ -1,5 +1,9 @@
 #include "AssetCache.h"
 
+UAssetCache::UAssetCache() {
+    this->PreloadMethod = EAssetCachePreloadMethod::OnGameInstanceInit;
+}
+
 void UAssetCache::PreloadAssets() {
 }
 
@@ -11,7 +15,4 @@ UAssetCache* UAssetCache::GetInstance() {
     return NULL;
 }
 
-UAssetCache::UAssetCache() {
-    this->PreloadMethod = EAssetCachePreloadMethod::OnGameInstanceInit;
-}
 

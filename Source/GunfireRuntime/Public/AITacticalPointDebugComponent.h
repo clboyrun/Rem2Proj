@@ -7,6 +7,7 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class GUNFIRERUNTIME_API UAITacticalPointDebugComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UAITacticalPointDebugComponent();
+    UAITacticalPointDebugComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

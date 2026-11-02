@@ -1,5 +1,10 @@
 #include "AmbientSpawnManager.h"
 
+UAmbientSpawnManager::UAmbientSpawnManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->Preload = false;
+    this->Generated = false;
+}
+
 void UAmbientSpawnManager::OnUninitialize() {
 }
 
@@ -30,8 +35,4 @@ int32 UAmbientSpawnManager::GetActiveCharacterCount() {
     return 0;
 }
 
-UAmbientSpawnManager::UAmbientSpawnManager() {
-    this->Preload = false;
-    this->Generated = false;
-}
 

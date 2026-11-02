@@ -15,5 +15,6 @@ public:
     FStatValue RootMotionScalar;
     
     URootMotionScalarStateDecorator();
+
 };
 

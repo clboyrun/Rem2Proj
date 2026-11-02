@@ -12,6 +12,7 @@ public:
     FName NameID;
     
     UAdvImage();
+
     UFUNCTION(BlueprintCallable)
     void SetNameID(FName InNameID);
     

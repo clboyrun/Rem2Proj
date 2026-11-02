@@ -15,9 +15,10 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_MusicIntensity, meta=(AllowPrivateAccess=true))
     EMusicIntensity MusicIntensity;
     
-    UMusicDirector();
+    UMusicDirector(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnRep_MusicIntensity();

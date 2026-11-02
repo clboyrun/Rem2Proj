@@ -5,3 +5,4 @@ UAnimNotify_SetMovementMode::UAnimNotify_SetMovementMode() {
     this->bIsStateTransient = false;
 }
 
+

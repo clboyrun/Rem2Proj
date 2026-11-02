@@ -4,3 +4,4 @@ UAIPathStatusCondition::UAIPathStatusCondition() {
     this->Status = EPathFollowingStatus::Idle;
 }
 
+

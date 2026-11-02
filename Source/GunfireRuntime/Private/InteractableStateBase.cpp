@@ -4,3 +4,4 @@ UInteractableStateBase::UInteractableStateBase() {
     this->bInitialState = false;
 }
 
+

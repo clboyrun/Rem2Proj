@@ -20,3 +20,4 @@ UCliffConditionParams::UCliffConditionParams() {
     this->WallCheckSlideAngle = 30.00f;
 }
 
+

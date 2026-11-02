@@ -1,6 +1,10 @@
 #include "GunfireAudioSystem.h"
 #include "Templates/SubclassOf.h"
 
+UGunfireAudioSystem::UGunfireAudioSystem() {
+    this->PImpl = NULL;
+}
+
 bool UGunfireAudioSystem::UseSound() {
     return false;
 }
@@ -149,7 +153,4 @@ void UGunfireAudioSystem::AudioComponent_ForceInternalTransformUpdate(FAudioComp
 void UGunfireAudioSystem::AudioComponent_AdjustVolume(FAudioComponentGunfire& AudioComponent, float AdjustVolumeDuration, float AdjustVolumeLevel) {
 }
 
-UGunfireAudioSystem::UGunfireAudioSystem() {
-    this->PImpl = NULL;
-}
 

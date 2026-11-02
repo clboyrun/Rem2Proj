@@ -13,7 +13,8 @@ public:
     FWorldSound Sound;
     
     UWorldSoundEntry();
-    
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

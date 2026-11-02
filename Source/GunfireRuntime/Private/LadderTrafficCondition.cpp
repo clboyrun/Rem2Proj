@@ -7,3 +7,4 @@ ULadderTrafficCondition::ULadderTrafficCondition() {
     this->Value = 0.00f;
 }
 
+

@@ -1,25 +1,12 @@
 #include "PostProcessSkylightComponent.h"
 
-USkyLightComponent* UPostProcessSkylightComponent::GetCurrentSkylight() {
-    return NULL;
-}
-
-UPostProcessSkylightComponent::UPostProcessSkylightComponent() {
+UPostProcessSkylightComponent::UPostProcessSkylightComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->SkyLightActorCls = NULL;
     this->SkyLight = NULL;
 }
 
-void UPostProcessSkylightComponent::OnRegister()
-{
-
+USkyLightComponent* UPostProcessSkylightComponent::GetCurrentSkylight() {
+    return NULL;
 }
 
-void UPostProcessSkylightComponent::OnUnregister()
-{
 
-}
-
-void UPostProcessSkylightComponent::Serialize(FArchive& Ar)
-{
-
-}

@@ -51,6 +51,7 @@ public:
     TArray<FName> UITags;
     
     URemnantArchetype();
+
     UFUNCTION(BlueprintCallable)
     static TSoftClassPtr<AItem> GetEngramItem(TSoftClassPtr<URemnantArchetype> ArchetypeSoft);
     

@@ -48,6 +48,7 @@ protected:
     
 public:
     URemnantCharacterManager();
+
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
     static bool ShouldAwardHardcoreRewards(const UObject* WorldContextObject);
     

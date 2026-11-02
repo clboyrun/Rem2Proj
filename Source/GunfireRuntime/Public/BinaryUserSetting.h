@@ -20,6 +20,7 @@ public:
     bool bInvertConsoleVariable;
     
     UBinaryUserSetting();
+
     UFUNCTION(BlueprintCallable)
     void SetValue(bool Value);
     

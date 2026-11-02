@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/EngineTypes.h"
-#include "Chaos/ChaosEngineInterface.h"
+#include "ECollisionChannel.h"
+#include "EPhysicalSurface.h"
 #include "Condition.h"
 #include "Templates/SubclassOf.h"
 #include "PhysCastCondition.generated.h"
@@ -31,5 +31,6 @@ public:
     TArray<TEnumAsByte<EPhysicalSurface>> ValidSurfaceTypes;
     
     UPhysCastCondition();
+
 };
 

@@ -8,5 +8,6 @@ class UPooledTracer : public UPooledActor {
     GENERATED_BODY()
 public:
     UPooledTracer();
+
 };
 

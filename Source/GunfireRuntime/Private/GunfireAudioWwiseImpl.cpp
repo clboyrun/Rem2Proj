@@ -1,5 +1,8 @@
 #include "GunfireAudioWwiseImpl.h"
 
+UGunfireAudioWwiseImpl::UGunfireAudioWwiseImpl() {
+}
+
 void UGunfireAudioWwiseImpl::UnregisterForDoppler(int64 GameObjectId, int32 PlayingID) {
 }
 
@@ -32,6 +35,4 @@ FAudioComponentGunfire UGunfireAudioWwiseImpl::GetAudioComponentByGameObjectId(i
     return FAudioComponentGunfire{};
 }
 
-UGunfireAudioWwiseImpl::UGunfireAudioWwiseImpl() {
-}
 

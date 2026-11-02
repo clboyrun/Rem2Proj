@@ -31,5 +31,6 @@ public:
     bool bDisableGravityUntilJumpImpulse;
     
     UJumpState();
+
 };
 

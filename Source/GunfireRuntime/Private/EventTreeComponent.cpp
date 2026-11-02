@@ -1,5 +1,8 @@
 #include "EventTreeComponent.h"
 
+UEventTreeComponent::UEventTreeComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+}
+
 void UEventTreeComponent::Stop() {
 }
 
@@ -16,6 +19,9 @@ void UEventTreeComponent::PushStage(const FEventTreeStage& Stage) {
 }
 
 void UEventTreeComponent::PopStage() {
+}
+
+void UEventTreeComponent::OnTreeEnding() {
 }
 
 UEventTreeNode* UEventTreeComponent::K2_PeekNextNode() const {
@@ -55,6 +61,4 @@ void UEventTreeComponent::Clear(bool ForceComplete) {
 void UEventTreeComponent::BeginEventTree(UEventTree* EventTree, bool DeferredStart) {
 }
 
-UEventTreeComponent::UEventTreeComponent() {
-}
 

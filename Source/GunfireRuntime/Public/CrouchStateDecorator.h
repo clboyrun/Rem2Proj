@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UCrouchStateDecorator : public UActorStateDecorator {
     GENERATED_BODY()
 public:
     UCrouchStateDecorator();
+
 };
 

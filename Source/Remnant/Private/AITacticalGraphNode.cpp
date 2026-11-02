@@ -1,6 +1,6 @@
 #include "AITacticalGraphNode.h"
 
-AAITacticalGraphNode::AAITacticalGraphNode() {
+AAITacticalGraphNode::AAITacticalGraphNode(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->bStitchNeighbors = true;
     this->bDeferStitchUntilRequested = true;
     this->bValidateJump = false;
@@ -14,4 +14,5 @@ AAITacticalGraphNode::AAITacticalGraphNode() {
     this->RetractDistance = 30.00f;
     this->NodeStatus = ETacticalGraphNodeStatus::Dirty;
 }
+
 

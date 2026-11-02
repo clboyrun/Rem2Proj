@@ -6,7 +6,7 @@
 
 class UVaultSettings;
 
-UCLASS(Blueprintable, Config=Engine, DefaultConfig)
+UCLASS(Blueprintable, DefaultConfig, Config=Engine)
 class GUNFIRERUNTIME_API UClimbingSettings : public UObject {
     GENERATED_BODY()
 public:
@@ -74,5 +74,6 @@ public:
     float SinglePointExpandLength;
     
     UClimbingSettings();
+
 };
 

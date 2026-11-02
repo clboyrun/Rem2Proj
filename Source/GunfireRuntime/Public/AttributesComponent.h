@@ -51,9 +51,10 @@ protected:
     int32 PreviewAttributePointsSpent;
     
 public:
-    UAttributesComponent();
+    UAttributesComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void SetAttributePoints(int32 AvailablePoints);
     

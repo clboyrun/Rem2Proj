@@ -51,5 +51,6 @@ public:
     TArray<FName> TargetTagsOnRelease;
     
     UMovieScenePossessableTrack();
+
 };
 

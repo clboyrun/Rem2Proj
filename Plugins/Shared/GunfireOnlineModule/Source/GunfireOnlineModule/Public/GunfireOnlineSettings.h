@@ -3,7 +3,7 @@
 #include "Engine/DeveloperSettings.h"
 #include "GunfireOnlineSettings.generated.h"
 
-UCLASS(Blueprintable, Config=Engine, DefaultConfig)
+UCLASS(Blueprintable, DefaultConfig, Config=Engine)
 class GUNFIREONLINEMODULE_API UGunfireOnlineSettings : public UDeveloperSettings {
     GENERATED_BODY()
 public:
@@ -11,5 +11,6 @@ public:
     bool bSupportsSessionsInMainMenu;
     
     UGunfireOnlineSettings();
+
 };
 

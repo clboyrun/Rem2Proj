@@ -1,5 +1,23 @@
 #include "FocusButtonWidget.h"
 
+UFocusButtonWidget::UFocusButtonWidget() {
+    this->ClickMethod = EButtonClickMethod::DownAndUp;
+    this->TouchMethod = EButtonTouchMethod::DownAndUp;
+    this->PressMethod = EButtonPressMethod::DownAndUp;
+    this->FocusOnMouseEnter = false;
+    this->IsFocusable = true;
+    this->AutoNavigateFocus = true;
+    this->AllowMouseClick = true;
+    this->AllowKeyClick = true;
+    this->AllowCursorHover = true;
+    this->bIgnoreRepeatPresses = false;
+    this->bScrollWithInputAxis = false;
+    this->bScrollOnlyWhenFocused = false;
+    this->ScrollVelocityPerSecond = 600.00f;
+    this->bNotifyInactiveFocusLossOnChange = false;
+    this->CachedFocusManager = NULL;
+}
+
 void UFocusButtonWidget::SetTexture(UTexture2D* Texture) {
 }
 
@@ -49,21 +67,4 @@ FVector2D UFocusButtonWidget::GetAbsoluteCoords() const {
 void UFocusButtonWidget::ClickButton() {
 }
 
-UFocusButtonWidget::UFocusButtonWidget() {
-    this->ClickMethod = EButtonClickMethod::DownAndUp;
-    this->TouchMethod = EButtonTouchMethod::DownAndUp;
-    this->PressMethod = EButtonPressMethod::DownAndUp;
-    this->FocusOnMouseEnter = false;
-    this->IsFocusable = true;
-    this->AutoNavigateFocus = true;
-    this->AllowMouseClick = true;
-    this->AllowKeyClick = true;
-    this->AllowCursorHover = true;
-    this->bIgnoreRepeatPresses = false;
-    this->bScrollWithInputAxis = false;
-    this->bScrollOnlyWhenFocused = false;
-    this->ScrollVelocityPerSecond = 600.00f;
-    this->bNotifyInactiveFocusLossOnChange = false;
-    this->CachedFocusManager = NULL;
-}
 

@@ -43,7 +43,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float SpawnPointGroundCastDistance;
     
-    ASpawnPoint();
+    ASpawnPoint(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void StartPreSpawn(AActor* Actor);
     

@@ -1,6 +1,15 @@
 #include "ActorModifier.h"
 #include "Net/UnrealNetwork.h"
 
+UActorModifier::UActorModifier() {
+    this->Scope = EActorModifierScope::StatsOnly;
+    this->Level = 0;
+    this->Icon = NULL;
+    this->InspectStats = NULL;
+    this->Owner = NULL;
+    this->StatsComponent = NULL;
+}
+
 void UActorModifier::SetOwner(AActor* NewOwner) {
 }
 
@@ -91,12 +100,4 @@ void UActorModifier::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLi
     DOREPLIFETIME(UActorModifier, Level);
 }
 
-UActorModifier::UActorModifier() {
-    this->Scope = EActorModifierScope::StatsOnly;
-    this->Level = 0;
-    this->Icon = NULL;
-    this->InspectStats = NULL;
-    this->Owner = NULL;
-    this->StatsComponent = NULL;
-}
 

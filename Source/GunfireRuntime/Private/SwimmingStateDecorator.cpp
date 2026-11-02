@@ -6,3 +6,4 @@ USwimmingStateDecorator::USwimmingStateDecorator() {
     this->bHandleWaterEntry = true;
 }
 
+

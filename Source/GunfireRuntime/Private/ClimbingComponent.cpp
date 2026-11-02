@@ -1,6 +1,49 @@
 #include "ClimbingComponent.h"
 #include "Net/UnrealNetwork.h"
 
+UClimbingComponent::UClimbingComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->GrabHeight = 120.00f;
+    this->GrabWidth = 25.00f;
+    this->GrabSplineOffset = 50.00f;
+    this->SurfaceNormalIterationDistance = 15.00f;
+    this->MinimumTranslationMovement = 60.00f;
+    this->MinimumDirectionalMovement = 10.00f;
+    this->TraceRadius = 30.00f;
+    this->TraceHalfHeight = 55.00f;
+    this->ContiguousSurfaceDistanceThreshold = 40.00f;
+    this->ContiguousSurfaceIterationDistance = 50.00f;
+    this->OccupancyCapsleRadius = 20.00f;
+    this->OccupancyCapsleHalfHeight = 50.00f;
+    this->OccupancyPathRadius = 20.00f;
+    this->SplineWeightDistanceScalar = 0.25f;
+    this->MinimumSplineWeight = 0.10f;
+    this->RandomWeight = 1.00f;
+    this->MaxAnimationUsagePenalty = 15.00f;
+    this->AnimationWeightMaxIncreaseWhenUnused = 10.00f;
+    this->TranslationWeightScale = 1.00f;
+    this->RotationWeightScale = 1.00f;
+    this->LeadDirectionWeight = 0.20f;
+    this->VerticalClimbCosineThresh = 0.10f;
+    this->NeighboringPointGrabWidthScalar = 2.00f;
+    this->LimbMatchingMandatoryAppendageBonus = 4.00f;
+    this->LimbMatchingOptionalAppendageBonus = 1.00f;
+    this->AnimationTypeBonusWeight = 10.00f;
+    this->InputPrerequisiteCosineThresh = 0.87f;
+    this->DefaultMinimumBlendTime = -1.00f;
+    this->InteractInputDuration = 0.30f;
+    this->InteractionIcon = NULL;
+    this->DefaultMountingCamera = NULL;
+    this->MountingCameraBlendTime = -1.00f;
+    this->DefaultClimbingCamera = NULL;
+    this->ClimbingCameraBlendTime = -1.00f;
+    this->DefaultDismountCamera = NULL;
+    this->DismountCameraBlendTime = -1.00f;
+    this->bEnableAimOffset = false;
+    this->AimOffsetBlendInSpeed = 2.00f;
+    this->AimOffsetBlendOutSpeed = 2.00f;
+    this->MinAppendageDistanceForRecalculate = 50.00f;
+}
+
 void UClimbingComponent::ServerSetTargetLocation_Implementation(const FReplicatedLocation& NewLocation) {
 }
 bool UClimbingComponent::ServerSetTargetLocation_Validate(const FReplicatedLocation& NewLocation) {
@@ -74,46 +117,4 @@ void UClimbingComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& O
     DOREPLIFETIME(UClimbingComponent, TargetLocation);
 }
 
-UClimbingComponent::UClimbingComponent() {
-    this->GrabHeight = 120.00f;
-    this->GrabWidth = 25.00f;
-    this->GrabSplineOffset = 50.00f;
-    this->SurfaceNormalIterationDistance = 15.00f;
-    this->MinimumTranslationMovement = 60.00f;
-    this->MinimumDirectionalMovement = 10.00f;
-    this->TraceRadius = 30.00f;
-    this->TraceHalfHeight = 55.00f;
-    this->ContiguousSurfaceDistanceThreshold = 40.00f;
-    this->ContiguousSurfaceIterationDistance = 50.00f;
-    this->OccupancyCapsleRadius = 20.00f;
-    this->OccupancyCapsleHalfHeight = 50.00f;
-    this->OccupancyPathRadius = 20.00f;
-    this->SplineWeightDistanceScalar = 0.25f;
-    this->MinimumSplineWeight = 0.10f;
-    this->RandomWeight = 1.00f;
-    this->MaxAnimationUsagePenalty = 15.00f;
-    this->AnimationWeightMaxIncreaseWhenUnused = 10.00f;
-    this->TranslationWeightScale = 1.00f;
-    this->RotationWeightScale = 1.00f;
-    this->LeadDirectionWeight = 0.20f;
-    this->VerticalClimbCosineThresh = 0.10f;
-    this->NeighboringPointGrabWidthScalar = 2.00f;
-    this->LimbMatchingMandatoryAppendageBonus = 4.00f;
-    this->LimbMatchingOptionalAppendageBonus = 1.00f;
-    this->AnimationTypeBonusWeight = 10.00f;
-    this->InputPrerequisiteCosineThresh = 0.87f;
-    this->DefaultMinimumBlendTime = -1.00f;
-    this->InteractInputDuration = 0.30f;
-    this->InteractionIcon = NULL;
-    this->DefaultMountingCamera = NULL;
-    this->MountingCameraBlendTime = -1.00f;
-    this->DefaultClimbingCamera = NULL;
-    this->ClimbingCameraBlendTime = -1.00f;
-    this->DefaultDismountCamera = NULL;
-    this->DismountCameraBlendTime = -1.00f;
-    this->bEnableAimOffset = false;
-    this->AimOffsetBlendInSpeed = 2.00f;
-    this->AimOffsetBlendOutSpeed = 2.00f;
-    this->MinAppendageDistanceForRecalculate = 50.00f;
-}
 

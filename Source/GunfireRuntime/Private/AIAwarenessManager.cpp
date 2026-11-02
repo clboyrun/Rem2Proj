@@ -1,5 +1,10 @@
 #include "AIAwarenessManager.h"
 
+UAIAwarenessManager::UAIAwarenessManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->MaxUpdatesPerFrame = 2;
+    this->bShouldUpdateAwareness = true;
+}
+
 void UAIAwarenessManager::SendAwarenessSignalSegment(EAwarenessSignal Type, AActor* Source, const FVector& From, const FVector& To, float Radius) {
 }
 
@@ -10,8 +15,4 @@ UAIAwarenessManager* UAIAwarenessManager::GetInstance(UObject* WorldContextObjec
     return NULL;
 }
 
-UAIAwarenessManager::UAIAwarenessManager() {
-    this->MaxUpdatesPerFrame = 2;
-    this->bShouldUpdateAwareness = true;
-}
 

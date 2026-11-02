@@ -11,5 +11,6 @@ public:
     FName AnimationTag;
     
     UDialog_Emote();
+
 };
 

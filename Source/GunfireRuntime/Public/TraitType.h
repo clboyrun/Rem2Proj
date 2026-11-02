@@ -8,5 +8,6 @@ class UTraitType : public UObject {
     GENERATED_BODY()
 public:
     UTraitType();
+
 };
 

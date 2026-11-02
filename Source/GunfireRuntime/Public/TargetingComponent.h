@@ -50,7 +50,8 @@ private:
     UTargetManager* CachedTargetManager;
     
 public:
-    UTargetingComponent();
+    UTargetingComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void OnNewTargetSet(FHeuristicBoundsHitResult& NewTargetHitResult);
     

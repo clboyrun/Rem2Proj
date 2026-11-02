@@ -1,5 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "EMatchmakingRegions.h"
 #include "SaveGameProfile.h"
 #include "AccountCurrencyInstance.h"
 #include "ArchetypeEntitlement.h"
@@ -30,6 +31,12 @@ public:
     bool bNeedsCheatedSaveConfirmation;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
+    FString CachedTwitchJWT;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
+    EMatchmakingRegions SavedMatchmakingRegion;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     TArray<TSubclassOf<UAccountAward>> AccountAwards;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -57,6 +64,7 @@ public:
     TMap<TSoftClassPtr<AQuest>, int32> SurvivalWorldBossQuestsCompleteMap;
     
     URemnantSaveGameProfile();
+
     UFUNCTION(BlueprintCallable)
     bool UpdateAccountCurrency(TSubclassOf<AItem> CurrencyType, int32 Quantity);
     

@@ -12,5 +12,6 @@ public:
     TArray<FClimbTransitionRule> Transitions;
     
     UClimbingTransitionSet();
+
 };
 

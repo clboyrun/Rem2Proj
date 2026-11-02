@@ -7,5 +7,7 @@ UAnimationAssetTagged::UAnimationAssetTagged() {
     this->BlendOutOverride = 0.20f;
     this->bShouldOverrideAutoBlendOut = false;
     this->bAutoBlendOutOverride = false;
+    this->bPlayTimeExcludesBlendOut = false;
 }
+
 

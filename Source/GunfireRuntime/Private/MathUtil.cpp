@@ -1,4 +1,7 @@
-#include "GunfireRuntime/Public/MathUtil.h"
+#include "MathUtil.h"
+
+UMathUtil::UMathUtil() {
+}
 
 int32 UMathUtil::StableRandomInteger(AActor* Actor) {
     return 0;
@@ -118,6 +121,4 @@ float UMathUtil::ApplyMod(float Value, float Mod, float Scalar) {
     return 0.0f;
 }
 
-UMathUtil::UMathUtil() {
-}
 

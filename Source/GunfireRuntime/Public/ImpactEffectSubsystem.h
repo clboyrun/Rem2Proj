@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Subsystems/EngineSubsystem.h"
+#include "EngineSubsystem.h"
 #include "ImpactEffectSubsystem.generated.h"
 
 class UDataTable;
@@ -18,5 +18,6 @@ private:
     
 public:
     UImpactEffectSubsystem();
+
 };
 

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/EngineTypes.h"
+#include "EMovementMode.h"
 #include "ActorStateDecorator.h"
 #include "MovementTypeDecorator.generated.h"
 
@@ -17,5 +17,6 @@ private:
     
 public:
     UMovementTypeDecorator();
+
 };
 

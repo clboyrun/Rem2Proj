@@ -1,5 +1,8 @@
 #include "InputDeviceManager.h"
 
+UInputDeviceManager::UInputDeviceManager() {
+}
+
 void UInputDeviceManager::ResetKeyboardIconCache() {
 }
 
@@ -19,10 +22,6 @@ bool UInputDeviceManager::IsUsingGamepadAnalogCursor(const UObject* WorldContext
 }
 
 bool UInputDeviceManager::IsUsingGamepad() {
-    return false;
-}
-
-bool UInputDeviceManager::IsUsingAltImageSet() {
     return false;
 }
 
@@ -46,7 +45,4 @@ bool UInputDeviceManager::CheckInputAction(const APlayerController* PlayerContro
     return false;
 }
 
-UInputDeviceManager::UInputDeviceManager() {
-    this->ImageSet = NULL;
-}
 

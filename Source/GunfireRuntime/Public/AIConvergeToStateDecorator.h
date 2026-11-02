@@ -51,5 +51,6 @@ private:
     
 public:
     UAIConvergeToStateDecorator();
+
 };
 

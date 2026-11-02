@@ -6,3 +6,4 @@ UTacticalGraphQueryParams::UTacticalGraphQueryParams() {
     this->bApplyRangeRestriction = false;
 }
 
+

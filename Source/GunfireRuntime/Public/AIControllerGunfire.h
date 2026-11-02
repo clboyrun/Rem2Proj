@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "AIController.h"
-#include "Navigation/PathFollowingComponent.h"
+#include "EPathFollowingResult.h"
 #include "UObject/NoExportTypes.h"
 #include "AITacticalPoint.h"
 #include "EAwarenessSignal.h"
@@ -142,7 +142,8 @@ protected:
     AAIPathPoint* PathPoint;
     
 public:
-    AAIControllerGunfire();
+    AAIControllerGunfire(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void UpdateAwareness(float DeltaSeconds);
     
@@ -195,6 +196,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsTargetLocked() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsActorCurrentlyRelevant(AActor* TestActor) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasLineOfSightToAnyPlayer() const;

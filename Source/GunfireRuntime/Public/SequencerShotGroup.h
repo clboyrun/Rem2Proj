@@ -20,7 +20,8 @@ public:
     uint8 TargetTypes;
     
     USequencerShotGroup();
-    
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

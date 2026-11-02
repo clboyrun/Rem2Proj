@@ -14,5 +14,6 @@ public:
     FName AnimationTag;
     
     UAIPOIType();
+
 };
 

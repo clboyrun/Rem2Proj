@@ -16,6 +16,7 @@ public:
     bool AutoCompleteDialog;
     
     UEventTreeNode_DialogOptions();
+
     UFUNCTION(BlueprintCallable, BlueprintPure=false)
     void SelectOption(UEventTreeComponent* Component, uint8 Option) const;
     

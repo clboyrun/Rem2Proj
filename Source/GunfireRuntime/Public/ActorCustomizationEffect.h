@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UActorCustomizationEffect : public UActorCustomizationB
     GENERATED_BODY()
 public:
     UActorCustomizationEffect();
+
 };
 

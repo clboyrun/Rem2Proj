@@ -13,6 +13,7 @@ class UHitPauseUtil : public UObject {
     GENERATED_BODY()
 public:
     UHitPauseUtil();
+
     UFUNCTION(BlueprintCallable)
     static void ApplyHitPause(AActor* Actor, TSubclassOf<UDamageTypeGunfire> DamageTypeClass, float DurationScalar);
     

@@ -17,3 +17,4 @@ UAIShootStateDecorator::UAIShootStateDecorator() {
     this->ArcPitchOffset = -20.00f;
 }
 
+

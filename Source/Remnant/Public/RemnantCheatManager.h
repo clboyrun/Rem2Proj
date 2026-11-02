@@ -10,6 +10,7 @@ class REMNANT_API URemnantCheatManager : public UCheatManagerGunfire {
     GENERATED_BODY()
 public:
     URemnantCheatManager();
+
 private:
     UFUNCTION(BlueprintCallable, Exec)
     void UnlockAllWaypoints();
@@ -47,6 +48,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
     static bool IsSettingArchetypeFromCheat(const UObject* WorldContextObject);
+    
+    UFUNCTION(BlueprintCallable, Exec)
+    void GivePrismSegment(const FString& NameOfSegment, int32 LevelOverride);
     
 private:
     UFUNCTION(BlueprintCallable, Exec)

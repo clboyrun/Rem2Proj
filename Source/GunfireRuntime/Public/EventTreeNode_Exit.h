@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UEventTreeNode_Exit : public UEventTreeNode {
     GENERATED_BODY()
 public:
     UEventTreeNode_Exit();
+
 };
 

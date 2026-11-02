@@ -8,3 +8,4 @@ UDamageClass::UDamageClass() {
     this->Action = NULL;
 }
 
+

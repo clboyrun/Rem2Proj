@@ -3,6 +3,7 @@
 #include "UObject/NoExportTypes.h"
 #include "DialogInitiatorInterface.h"
 #include "PlayerGunfire.h"
+#include "SpawningOwnerInterface.h"
 #include "PersistenceKey.h"
 #include "EGender.h"
 #include "GunObstructionParameters.h"
@@ -32,7 +33,7 @@ class USkeletalMesh;
 class UUserSetting;
 
 UCLASS(Blueprintable)
-class REMNANT_API ARemnantCharacter : public APlayerGunfire, public IDialogInitiatorInterface {
+class REMNANT_API ARemnantCharacter : public APlayerGunfire, public IDialogInitiatorInterface, public ISpawningOwnerInterface {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
@@ -61,6 +62,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, meta=(AllowPrivateAccess=true))
     bool bHasAggro;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, meta=(AllowPrivateAccess=true))
+    bool bHasCloseAggro;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<ACharacterGunfire*> ProxyAggroCharacters;
@@ -137,9 +141,10 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<TSubclassOf<UDamageClass>> ExitDialogDamageClasses;
     
-    ARemnantCharacter();
+    ARemnantCharacter(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void UpdatePlayerInfoTags();
     
@@ -199,9 +204,15 @@ protected:
     UFUNCTION(BlueprintCallable)
     void OnRep_Deactivated();
     
+    UFUNCTION(BlueprintCallable)
+    void OnCharacterInventoryChanged();
+    
 public:
     UFUNCTION(BlueprintCallable)
     void OnCharacterDied(uint8 Reason, ACharacterGunfire* Character, AActor* Cause);
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void OnArchetypeRevoked();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsReviving() const;
@@ -216,13 +227,17 @@ public:
     bool HasUnlockedSecondaryArchetype() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetHealthClampMod() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ARangedWeapon* GetCurrentRangedWeapon() const;
     
-protected:
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetClampedMaxHealth() const;
+    
     UFUNCTION(BlueprintCallable)
     USavedCharacter* GetCharacterInfo();
     
-public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetAge() const;
     
@@ -265,7 +280,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void AddAggroProxyCharacter(ACharacterGunfire* Character);
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

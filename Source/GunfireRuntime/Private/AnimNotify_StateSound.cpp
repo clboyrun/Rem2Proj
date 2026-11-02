@@ -7,3 +7,4 @@ UAnimNotify_StateSound::UAnimNotify_StateSound() {
     this->bAllowLooping = true;
 }
 
+

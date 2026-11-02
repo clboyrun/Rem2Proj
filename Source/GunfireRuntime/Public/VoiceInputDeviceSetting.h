@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UVoiceInputDeviceSetting : public UEnumUserSetting {
     GENERATED_BODY()
 public:
     UVoiceInputDeviceSetting();
+
 };
 

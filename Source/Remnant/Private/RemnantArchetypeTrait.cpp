@@ -4,3 +4,4 @@ URemnantArchetypeTrait::URemnantArchetypeTrait() {
     this->RemnantArchetype = NULL;
 }
 
+

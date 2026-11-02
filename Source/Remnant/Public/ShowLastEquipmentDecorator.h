@@ -8,5 +8,6 @@ class REMNANT_API UShowLastEquipmentDecorator : public UShowEquipmentAbstractDec
     GENERATED_BODY()
 public:
     UShowLastEquipmentDecorator();
+
 };
 

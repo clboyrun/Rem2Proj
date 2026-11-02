@@ -37,6 +37,7 @@ public:
     FOnCinematicInstanceCompleteEvent OnInstanceComplete;
     
     UCinematicInstance_Base();
+
     UFUNCTION(BlueprintCallable)
     bool WasForceCompleted();
     

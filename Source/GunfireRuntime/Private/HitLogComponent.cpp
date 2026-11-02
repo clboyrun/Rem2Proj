@@ -1,6 +1,14 @@
 #include "HitLogComponent.h"
 #include "Net/UnrealNetwork.h"
 
+UHitLogComponent::UHitLogComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->WeakSpotDamageScalar = 1.50f;
+    this->ResistSpotDamageScalar = 0.50f;
+    this->RepDestroyedFlags = 0;
+    this->LastHitLocation = 0;
+    this->AnimInstance = NULL;
+}
+
 void UHitLogComponent::ResetAllHitLocationHealth() {
 }
 
@@ -19,6 +27,10 @@ bool UHitLogComponent::IsMaterialWeakspot(UPhysicalMaterial* PhysicsMaterial) {
 
 bool UHitLogComponent::IsMaterialResisted(UPhysicalMaterial* PhysicsMaterial) {
     return false;
+}
+
+UPhysicalMaterial* UHitLogComponent::GetMaterialForHitLocation(FName HitLocation) {
+    return NULL;
 }
 
 FDamageInfo UHitLogComponent::GetLastHitInfo() {
@@ -58,11 +70,4 @@ void UHitLogComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Out
     DOREPLIFETIME(UHitLogComponent, LastHitLocation);
 }
 
-UHitLogComponent::UHitLogComponent() {
-    this->WeakSpotDamageScalar = 1.50f;
-    this->ResistSpotDamageScalar = 0.50f;
-    this->RepDestroyedFlags = 0;
-    this->LastHitLocation = 0;
-    this->AnimInstance = NULL;
-}
 

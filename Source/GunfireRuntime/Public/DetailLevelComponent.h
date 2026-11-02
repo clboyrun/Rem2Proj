@@ -1,13 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/SceneComponent.h"
+#include "DetailLevelChangedDelegateDelegate.h"
 #include "EDetailPriority.h"
 #include "DetailLevelComponent.generated.h"
 
 class UGameUserSettingsGunfire;
 class UUserSetting;
-
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_SPARSE_DELEGATE_OneParam(FDetailLevelChangedDelegate, UDetailLevelComponent, OnDetailChanged, EDetailLevel, DetailLevel);
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class GUNFIRERUNTIME_API UDetailLevelComponent : public USceneComponent {
@@ -19,7 +18,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EDetailPriority Priority;
     
-    UDetailLevelComponent();
+    UDetailLevelComponent(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void UpdateDetailLevel(UUserSetting* AppliedSetting, UGameUserSettingsGunfire* UserSettings);

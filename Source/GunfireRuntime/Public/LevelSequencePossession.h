@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/EngineTypes.h"
+#include "ECollisionEnabled.h"
 #include "CachedMeshBoundsSettings.h"
 #include "LevelSequencePossession.generated.h"
 

@@ -5,6 +5,7 @@
 UENUM(BlueprintType)
 enum class EPlayerTravelState : uint8 {
     Idle,
+    SynchronizingData,
     PendingTravel,
     Traveling,
     PostTravel,
@@ -15,7 +16,9 @@ enum class EPlayerTravelState : uint8 {
     WaitingForClientToLoad,
     FinalizingTravel,
     WaitingForClient,
+    FindingSpawnLocation,
     LoadingRootQuest,
     LoadingDestinationZone,
+    MAX,
 };
 

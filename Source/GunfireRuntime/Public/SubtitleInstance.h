@@ -81,6 +81,7 @@ public:
     FSubtitleDelegate OnComplete;
     
     USubtitleInstance();
+
     UFUNCTION(BlueprintCallable)
     void OnSourceActorDestroyed(AActor* DestroyedActor);
     

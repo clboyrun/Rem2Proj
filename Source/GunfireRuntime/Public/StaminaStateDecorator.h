@@ -34,5 +34,6 @@ private:
     
 public:
     UDEPRECATED_StaminaStateDecorator();
+
 };
 

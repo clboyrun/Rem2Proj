@@ -8,5 +8,6 @@ class REMNANT_API UItemCategory_Quest : public UItemCategory {
     GENERATED_BODY()
 public:
     UItemCategory_Quest();
+
 };
 

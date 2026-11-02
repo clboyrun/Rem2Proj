@@ -22,7 +22,8 @@ protected:
     TMap<FGuid, UCraftingRecipe_Base*> RecipeLookup;
     
 public:
-    UCraftingRecipeManager();
+    UCraftingRecipeManager(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static UCraftingRecipeManager* GetInstance(UObject* WorldContextObject);
     

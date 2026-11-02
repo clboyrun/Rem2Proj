@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "Subsystems/GameInstanceSubsystem.h"
+#include "GameInstanceSubsystem.h"
 #include "ItemManager.generated.h"
 
 class AItem;
@@ -17,10 +17,11 @@ protected:
     TArray<AItem*> Items;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    TArray<TObjectPtr<UClass>> ItemTypes;
+    TArray<UClass*> ItemTypes;
     
 public:
     UItemManager();
+
     UFUNCTION(BlueprintCallable)
     void GetItemsInRangeByType(const FVector& Position, float Radius, TSoftClassPtr<AItem> Type, TArray<AItem*>& OutItems);
     

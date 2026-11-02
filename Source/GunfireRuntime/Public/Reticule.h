@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "Engine/Canvas.h"
+#include "CanvasIcon.h"
 #include "Engine/DataAsset.h"
 #include "HierarchicalEditInterface.h"
 #include "TargetingColorParams.h"
@@ -44,7 +44,8 @@ public:
     TArray<UReticulePiece*> Pieces;
     
     UReticule();
-    
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

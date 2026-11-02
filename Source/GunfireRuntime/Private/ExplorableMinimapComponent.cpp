@@ -1,13 +1,6 @@
 #include "ExplorableMinimapComponent.h"
 
-void UExplorableMinimapComponent::SetIsSecret(bool InIsSecret) {
-}
-
-AActor* UExplorableMinimapComponent::GetSpawnedActor() {
-    return NULL;
-}
-
-UExplorableMinimapComponent::UExplorableMinimapComponent() {
+UExplorableMinimapComponent::UExplorableMinimapComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->ActorClass = NULL;
     this->bFaceCamera = true;
     this->bIsSecret = false;
@@ -16,4 +9,12 @@ UExplorableMinimapComponent::UExplorableMinimapComponent() {
     this->MaterialParamCollection = NULL;
     this->MaterialParamCollectionInst = NULL;
 }
+
+void UExplorableMinimapComponent::SetIsSecret(bool InIsSecret) {
+}
+
+AActor* UExplorableMinimapComponent::GetSpawnedActor() {
+    return NULL;
+}
+
 

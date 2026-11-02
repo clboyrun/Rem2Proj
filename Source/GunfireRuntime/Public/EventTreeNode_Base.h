@@ -46,10 +46,11 @@ protected:
     
 public:
     UEventTreeNode_Base();
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     FString GetEditorLabel() const;
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

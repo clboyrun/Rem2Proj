@@ -34,7 +34,8 @@ public:
     int32 NextUniqueId;
     
     UEventTree();
-    
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

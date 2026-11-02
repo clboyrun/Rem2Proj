@@ -77,5 +77,6 @@ public:
     TArray<UMapTileInfoAsset*> MapTiles;
     
     UTileSet();
+
 };
 

@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UReloadCondition : public UCondition {
     GENERATED_BODY()
 public:
     UReloadCondition();
+
 };
 

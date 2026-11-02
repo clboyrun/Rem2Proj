@@ -21,5 +21,6 @@ public:
     TSubclassOf<UActionBase> Action;
     
     UHealingTypeGunfire();
+
 };
 

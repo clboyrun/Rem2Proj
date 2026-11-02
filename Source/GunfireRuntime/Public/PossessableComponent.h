@@ -7,6 +7,7 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class GUNFIRERUNTIME_API UPossessableComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UPossessableComponent();
+    UPossessableComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/EngineTypes.h"
+#include "ECollisionEnabled.h"
 #include "ActorStateDecorator.h"
 #include "ESoftCollisionMode.h"
 #include "CollisionModeStateDecorator.generated.h"
@@ -42,5 +42,6 @@ private:
     
 public:
     UCollisionModeStateDecorator();
+
 };
 

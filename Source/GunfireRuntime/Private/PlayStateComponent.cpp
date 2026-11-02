@@ -1,5 +1,10 @@
 #include "PlayStateComponent.h"
 
+UPlayStateComponent::UPlayStateComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->StateSet = NULL;
+    this->CurrentState = NULL;
+}
+
 bool UPlayStateComponent::IsLocallyControlled() const {
     return false;
 }
@@ -20,8 +25,4 @@ UPlayStateEffect* UPlayStateComponent::GetActiveEffect(UClass* Class) const {
     return NULL;
 }
 
-UPlayStateComponent::UPlayStateComponent() {
-    this->StateSet = NULL;
-    this->CurrentState = NULL;
-}
 

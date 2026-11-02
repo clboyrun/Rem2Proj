@@ -1,7 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "GameFramework/Actor.h"
 #include "Engine/HitResult.h"
 #include "SplineCameraVolume.generated.h"
@@ -134,7 +133,8 @@ protected:
     UStateCameraComponent* CameraManager;
     
 public:
-    ASplineCameraVolume();
+    ASplineCameraVolume(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool Validate(ACharacterGunfire* InCharacter) const;

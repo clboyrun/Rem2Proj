@@ -23,5 +23,6 @@ public:
     bool UseEquipmentCustomizationSet;
     
     UAnimNotifyState_ActorCustomization();
+
 };
 

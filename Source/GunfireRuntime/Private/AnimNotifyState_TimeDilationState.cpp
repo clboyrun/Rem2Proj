@@ -12,3 +12,4 @@ UAnimNotifyState_TimeDilationState::UAnimNotifyState_TimeDilationState() {
     this->bStateTransient = true;
 }
 
+

@@ -16,7 +16,9 @@ UAIFollowTargetStateDecorator::UAIFollowTargetStateDecorator() {
     this->NearTargetDistance = 75.00f;
     this->SpeedEaseOutScalar = 0.50f;
     this->AcceptanceRadius = 20.00f;
+    this->Use3DDistance = false;
     this->MovingAcceptanceRadius = -1.00f;
     this->bAllowDirectMoves = true;
 }
+
 

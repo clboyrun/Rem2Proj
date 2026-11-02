@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Rendering/RenderingCommon.h"
+#include "EColorVisionDeficiency.h"
 #include "EnumCVDUserSettingEntry.generated.h"
 
 USTRUCT(BlueprintType)

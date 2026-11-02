@@ -39,9 +39,10 @@ protected:
     UAnimInstanceGunfire* AnimInstance;
     
 public:
-    UHitLogComponent();
+    UHitLogComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void ResetAllHitLocationHealth();
     
@@ -61,6 +62,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     bool IsMaterialResisted(UPhysicalMaterial* PhysicsMaterial);
+    
+    UFUNCTION(BlueprintCallable)
+    UPhysicalMaterial* GetMaterialForHitLocation(FName HitLocation);
     
     UFUNCTION(BlueprintCallable)
     FDamageInfo GetLastHitInfo();

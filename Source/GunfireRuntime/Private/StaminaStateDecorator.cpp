@@ -11,3 +11,4 @@ UDEPRECATED_StaminaStateDecorator::UDEPRECATED_StaminaStateDecorator() {
     this->StaminaRegenScalar = 1.00f;
 }
 
+

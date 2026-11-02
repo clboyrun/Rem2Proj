@@ -18,6 +18,7 @@ public:
     FBlueprintSaveNoRetDelegate OnFailure;
     
     URestoreProfileBackupCallbackProxy();
+
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static URestoreProfileBackupCallbackProxy* RestoreProfileBackup(UObject* WorldContextObject);
     

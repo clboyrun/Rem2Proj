@@ -18,7 +18,8 @@ protected:
     UPrimitiveComponent* OverlapComponent;
     
 public:
-    UFlashlightLOSTaggingComponent();
+    UFlashlightLOSTaggingComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     bool LightEndOverlap(AActor* Actor);
     

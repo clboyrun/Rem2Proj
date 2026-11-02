@@ -4,6 +4,30 @@
 #include "Net/UnrealNetwork.h"
 #include "RemnantPlayerInventoryComponent.h"
 
+ARemnantCharacter::ARemnantCharacter(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->Customization = CreateDefaultSubobject<UActorCustomizationComponent>(TEXT("VisualComp"));
+    this->Inventory = CreateDefaultSubobject<URemnantPlayerInventoryComponent>(TEXT("Inventory"));
+    this->Emotes = CreateDefaultSubobject<UEmotesComponent>(TEXT("Emotes"));
+    this->FemaleAnimInstanceClass = NULL;
+    this->FemaleSkeletalMesh = NULL;
+    this->FemaleCustomizationSet = NULL;
+    this->Gender = EGender::Female;
+    this->bHasAggro = false;
+    this->bHasCloseAggro = false;
+    this->ControllerIndex = -1;
+    this->LastUsedItemId = -1;
+    this->ShowHelmet = true;
+    this->HelmetSlot = TEXT("Helmet");
+    this->ShowHelmetOption = TEXT("ShowHelmet");
+    this->GrabbedCheckpoint = NULL;
+    this->PrimaryWeaponType = NULL;
+    this->ObstructedAdditionalDistance = 10.00f;
+    this->ObstructedAdditionalRadius = 0.50f;
+    this->bDeactivated = false;
+    this->bOnlyExitDialogFromHostileDamage = true;
+    this->bManualIgnoreDamageExitingDialog = false;
+}
+
 void ARemnantCharacter::UpdatePlayerInfoTags() {
 }
 
@@ -61,8 +85,12 @@ void ARemnantCharacter::OnRep_GrabbedCheckpoint(ACheckpoint* Previous) {
 void ARemnantCharacter::OnRep_Deactivated() {
 }
 
+void ARemnantCharacter::OnCharacterInventoryChanged() {
+}
+
 void ARemnantCharacter::OnCharacterDied(uint8 Reason, ACharacterGunfire* Character, AActor* Cause) {
 }
+
 
 bool ARemnantCharacter::IsReviving() const {
     return false;
@@ -76,8 +104,16 @@ void ARemnantCharacter::InitializePersistentBuffs() {
 }
 
 
+float ARemnantCharacter::GetHealthClampMod() const {
+    return 0.0f;
+}
+
 ARangedWeapon* ARemnantCharacter::GetCurrentRangedWeapon() const {
     return NULL;
+}
+
+float ARemnantCharacter::GetClampedMaxHealth() const {
+    return 0.0f;
 }
 
 USavedCharacter* ARemnantCharacter::GetCharacterInfo() {
@@ -138,32 +174,11 @@ void ARemnantCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Ou
     
     DOREPLIFETIME(ARemnantCharacter, Gender);
     DOREPLIFETIME(ARemnantCharacter, bHasAggro);
+    DOREPLIFETIME(ARemnantCharacter, bHasCloseAggro);
     DOREPLIFETIME(ARemnantCharacter, ControllerIndex);
     DOREPLIFETIME(ARemnantCharacter, ShowHelmet);
     DOREPLIFETIME(ARemnantCharacter, GrabbedCheckpoint);
     DOREPLIFETIME(ARemnantCharacter, bDeactivated);
 }
 
-ARemnantCharacter::ARemnantCharacter() {
-    this->Customization = CreateDefaultSubobject<UActorCustomizationComponent>(TEXT("VisualComp"));
-    this->Inventory = CreateDefaultSubobject<URemnantPlayerInventoryComponent>(TEXT("Inventory"));
-    this->Emotes = CreateDefaultSubobject<UEmotesComponent>(TEXT("Emotes"));
-    this->FemaleAnimInstanceClass = NULL;
-    this->FemaleSkeletalMesh = NULL;
-    this->FemaleCustomizationSet = NULL;
-    this->Gender = EGender::Female;
-    this->bHasAggro = false;
-    this->ControllerIndex = -1;
-    this->LastUsedItemId = -1;
-    this->ShowHelmet = true;
-    this->HelmetSlot = TEXT("Helmet");
-    this->ShowHelmetOption = TEXT("ShowHelmet");
-    this->GrabbedCheckpoint = NULL;
-    this->PrimaryWeaponType = NULL;
-    this->ObstructedAdditionalDistance = 10.00f;
-    this->ObstructedAdditionalRadius = 0.50f;
-    this->bDeactivated = false;
-    this->bOnlyExitDialogFromHostileDamage = true;
-    this->bManualIgnoreDamageExitingDialog = false;
-}
 

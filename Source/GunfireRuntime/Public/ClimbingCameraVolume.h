@@ -30,7 +30,8 @@ protected:
     float CenterPitchYawArc;
     
 public:
-    AClimbingCameraVolume();
+    AClimbingCameraVolume(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnClimbSurfaceChanged(UClimbingComponent* ClimbingComponent, const FClimbableSurfaceResult& NewSurface, const FClimbableSurfaceResult& PreviousSurface);

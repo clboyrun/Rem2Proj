@@ -19,5 +19,6 @@ public:
     uint8 QuantityMax;
     
     UItemGeneratorItem();
+
 };
 

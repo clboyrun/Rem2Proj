@@ -1,4 +1,11 @@
 #include "VariableComponent.h"
+#include "Net/UnrealNetwork.h"
+
+UVariableComponent::UVariableComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->VariableDefinitions = NULL;
+    this->RegisterOwnerVariables = true;
+    this->DummyVar = false;
+}
 
 void UVariableComponent::SetVariableName(const FName& NameID, FName Value, float Expiration) {
 }
@@ -28,13 +35,20 @@ bool UVariableComponent::GetVariableBool(const FName& NameID) {
     return false;
 }
 
+void UVariableComponent::ExecuteStatements(AActor* ContextActor, const FVariableStatements& Statements) {
+}
+
 bool UVariableComponent::EvaluateStatements(AActor* ContextActor, const FVariableStatements& Statements) {
     return false;
 }
 
-UVariableComponent::UVariableComponent() {
-    this->VariableDefinitions = NULL;
-    this->RegisterOwnerVariables = true;
-    this->DummyVar = false;
+void UVariableComponent::ClientSetVariable_Implementation(int16 Index, const FVariableValue& NewValue) {
 }
+
+void UVariableComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {
+    Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+    
+    DOREPLIFETIME(UVariableComponent, Variables);
+}
+
 

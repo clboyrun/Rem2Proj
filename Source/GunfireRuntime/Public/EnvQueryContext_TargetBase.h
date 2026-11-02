@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UEnvQueryContext_TargetBase : public UEnvQueryContext {
     GENERATED_BODY()
 public:
     UEnvQueryContext_TargetBase();
+
 };
 

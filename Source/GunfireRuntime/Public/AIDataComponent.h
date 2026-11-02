@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "AI/Navigation/NavRelevantInterface.h"
+#include "Navigation/NavRelevantInterface.h"
 #include "NavLinkHostInterface.h"
 #include "AITacticalPointContainerInterface.h"
 #include "AIDataComponent.generated.h"
@@ -17,11 +17,12 @@ protected:
     AAIData* AIData;
     
 public:
-    UAIDataComponent();
+    UAIDataComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SetState(bool Enabled);
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

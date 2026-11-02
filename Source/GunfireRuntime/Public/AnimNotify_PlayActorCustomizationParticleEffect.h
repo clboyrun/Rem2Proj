@@ -1,7 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "ConditionalAnimNotify.h"
 #include "TagParticleEffectPair.h"
 #include "AnimNotify_PlayActorCustomizationParticleEffect.generated.h"
@@ -29,5 +28,6 @@ public:
     FName SocketName;
     
     UAnimNotify_PlayActorCustomizationParticleEffect();
+
 };
 

@@ -4,3 +4,4 @@ UEquippedItemChangedCondition::UEquippedItemChangedCondition() {
     this->ItemType = NULL;
 }
 
+

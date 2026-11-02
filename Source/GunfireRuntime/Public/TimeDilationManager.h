@@ -13,7 +13,8 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class GUNFIRERUNTIME_API UTimeDilationManager : public UActorComponent {
     GENERATED_BODY()
 public:
-    UTimeDilationManager();
+    UTimeDilationManager(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     static void SetTimeDilationMode(AActor* InActor, ETimeDilationMode NewMode);
     

@@ -4,3 +4,4 @@ UAnimatedCameraState::UAnimatedCameraState() {
     this->RefActor = NULL;
 }
 
+

@@ -27,7 +27,8 @@ protected:
     TArray<FLODVolumeInfo> Volumes;
     
 public:
-    ULODVolumeManager();
+    ULODVolumeManager(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void UpdateVolumesVisibility();
     

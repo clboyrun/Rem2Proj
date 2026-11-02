@@ -1,7 +1,20 @@
 #include "RopeActorBase.h"
 #include "PhysicsEngine/PhysicsConstraintComponent.h"
+#include "Components/SceneComponent.h"
 #include "PhysicsTweenComponent.h"
 #include "RopeComponent.h"
+
+ARopeActorBase::ARopeActorBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
+    this->EndpointConstraint = CreateDefaultSubobject<UPhysicsConstraintComponent>(TEXT("EndpointConstraint"));
+    this->EndpointRopeAttachment = NULL;
+    this->SourceConstraint = CreateDefaultSubobject<UPhysicsConstraintComponent>(TEXT("SourceConstraint"));
+    this->SourceRopeAttachment = NULL;
+    this->RopeComponent = CreateDefaultSubobject<URopeComponent>(TEXT("RopeComponent"));
+    this->PhysicsTween = CreateDefaultSubobject<UPhysicsTweenComponent>(TEXT("PhysicsTween"));
+    this->EndpointConstraint->SetupAttachment(RootComponent);
+    this->SourceConstraint->SetupAttachment(RootComponent);
+}
 
 void ARopeActorBase::OnAttachedSourceToComponent_Implementation(USceneComponent* Component, const FTransform& Transform, FName SocketName, bool bSimulatePhysics, float AttachTime, UPrimitiveComponent* AttachPrimitive) {
 }
@@ -49,12 +62,4 @@ bool ARopeActorBase::AttachEndpointToComponent(USceneComponent* Component, const
     return false;
 }
 
-ARopeActorBase::ARopeActorBase() {
-    this->EndpointConstraint = CreateDefaultSubobject<UPhysicsConstraintComponent>(TEXT("EndpointConstraint"));
-    this->EndpointRopeAttachment = NULL;
-    this->SourceConstraint = CreateDefaultSubobject<UPhysicsConstraintComponent>(TEXT("SourceConstraint"));
-    this->SourceRopeAttachment = NULL;
-    this->RopeComponent = CreateDefaultSubobject<URopeComponent>(TEXT("RopeComponent"));
-    this->PhysicsTween = CreateDefaultSubobject<UPhysicsTweenComponent>(TEXT("PhysicsTween"));
-}
 

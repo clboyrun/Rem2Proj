@@ -5,3 +5,4 @@ UAnimNotify_ApplyVitalityDelta::UAnimNotify_ApplyVitalityDelta() {
     this->bIsStateTransient = false;
 }
 
+

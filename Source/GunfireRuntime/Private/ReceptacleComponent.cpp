@@ -1,6 +1,10 @@
 #include "ReceptacleComponent.h"
 #include "Templates/SubclassOf.h"
 
+UReceptacleComponent::UReceptacleComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->Blocked = false;
+}
+
 void UReceptacleComponent::RequestReturnItemToInventory_Implementation(ACharacterGunfire* Subject) {
 }
 bool UReceptacleComponent::RequestReturnItemToInventory_Validate(ACharacterGunfire* Subject) {
@@ -55,7 +59,4 @@ bool UReceptacleComponent::CanAddItemOfClass(TSubclassOf<AItem> ItemClass) const
 void UReceptacleComponent::AddItem_Implementation(const int32 SlotID, TSubclassOf<AItem> ItemClass) {
 }
 
-UReceptacleComponent::UReceptacleComponent() {
-    this->Blocked = false;
-}
 

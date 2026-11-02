@@ -18,5 +18,6 @@ public:
     TSubclassOf<UClimbingTransitionSet> TransitionSet;
     
     UCanClimbCondition();
+
 };
 

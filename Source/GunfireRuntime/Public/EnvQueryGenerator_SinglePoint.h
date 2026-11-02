@@ -8,5 +8,6 @@ class UEnvQueryGenerator_SinglePoint : public UEnvQueryGenerator {
     GENERATED_BODY()
 public:
     UEnvQueryGenerator_SinglePoint();
+
 };
 

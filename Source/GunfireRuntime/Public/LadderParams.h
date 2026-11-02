@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
-#include "Engine/EngineTypes.h"
+#include "ECollisionChannel.h"
 #include "LadderParams.generated.h"
 
 UCLASS(Abstract, Blueprintable, Const)
@@ -60,5 +60,6 @@ public:
     int32 RungShift;
     
     ULadderParams();
+
 };
 

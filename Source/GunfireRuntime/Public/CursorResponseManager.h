@@ -24,7 +24,8 @@ protected:
     APlayerController* CachedController;
     
 public:
-    UCursorResponseManager();
+    UCursorResponseManager(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SetClickBehavior(ECursorInteractBehavior Behavior);
     

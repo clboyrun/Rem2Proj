@@ -23,9 +23,13 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnRegisterAttackDelegate OnRegisterAttack;
     
-    UAICoordinatorBase();
+    UAICoordinatorBase(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsTargeted(AActor* Actor) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsCloselyTargeted(AActor* Actor) const;
     
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static UAICoordinatorBase* GetAICoordinator(UObject* WorldContextObject);

@@ -1,7 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "CharacterFacing.h"
 #include "EInteractivePushForceLocation.h"
 #include "EPushMethod.h"
@@ -186,5 +185,6 @@ public:
     bool bForceDigitalInput;
     
     UPushState();
+
 };
 

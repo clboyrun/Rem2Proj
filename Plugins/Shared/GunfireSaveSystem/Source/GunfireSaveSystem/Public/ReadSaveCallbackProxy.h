@@ -18,6 +18,7 @@ public:
     FBlueprintLoadSaveResultDelegate OnFailure;
     
     UReadSaveCallbackProxy();
+
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static UReadSaveCallbackProxy* ReadSave(UObject* WorldContextObject, int32 Slot);
     

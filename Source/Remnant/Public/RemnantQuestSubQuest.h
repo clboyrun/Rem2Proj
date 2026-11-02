@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "EQuestResult.h"
-#include "QuestCompleteDelegateDelegate.h"
+#include "QuestCompleteDelegate__DelegateSignature.h"
 #include "ERemnantQuestType.h"
 #include "RemnantQuestComponent.h"
 #include "Templates/SubclassOf.h"
@@ -25,10 +25,19 @@ public:
     TArray<FName> QuestTags;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FName> QuestExclusionTags;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ChanceToSpawn;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool Optional;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool SubquestIgnoresTileExclusivity;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool SubquestIgnoresTileIDRequirement;
     
     UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 LevelMin;
@@ -56,7 +65,8 @@ protected:
     TSubclassOf<ARemnantQuest> CachedQuest;
     
 public:
-    URemnantQuestSubQuest();
+    URemnantQuestSubQuest(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void SubQuestComplete(AQuest* Quest, EQuestResult Result);

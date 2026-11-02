@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UCliffConditionParams_Default : public UCliffConditionP
     GENERATED_BODY()
 public:
     UCliffConditionParams_Default();
+
 };
 

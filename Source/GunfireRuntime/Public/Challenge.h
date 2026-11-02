@@ -45,6 +45,7 @@ public:
     TArray<UChallengeReward*> Rewards;
     
     UChallenge();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetTotalRanks() const;
     
@@ -54,7 +55,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetPoints(int32 MaxRank) const;
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

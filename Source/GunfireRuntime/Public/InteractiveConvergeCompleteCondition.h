@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UInteractiveConvergeCompleteCondition : public UConditi
     GENERATED_BODY()
 public:
     UInteractiveConvergeCompleteCondition();
+
 };
 

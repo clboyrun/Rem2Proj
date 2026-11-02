@@ -1,6 +1,7 @@
 #include "TraversalState.h"
 
 UTraversalState::UTraversalState() {
+    this->bUseExclusiveRootMotion = true;
     this->bDisableCollisionOnEntry = true;
     this->bMaintainOverlaps = false;
     this->LerpTime = 0.25f;
@@ -11,4 +12,5 @@ UTraversalState::UTraversalState() {
     this->bAttachToSurface = false;
     this->bCollideWithSurface = true;
 }
+
 

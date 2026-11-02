@@ -1,5 +1,23 @@
 #include "RopeComponent.h"
 
+URopeComponent::URopeComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->RopeMesh = NULL;
+    this->MaterialOverride = NULL;
+    this->bEnableQueryCollision = false;
+    this->PhysicsAssetOverride = NULL;
+    this->bUseManualBoneList = false;
+    this->bUseDynamicLength = false;
+    this->MassScale = 1.00f;
+    this->ProjectionLinearTolerance = 5.00f;
+    this->ProjectionAngularTolerance = 180.00f;
+    this->Swing1AngleLimit = 180.00f;
+    this->Swing2AngleLimit = 180.00f;
+    this->TwistAngleLimit = 180.00f;
+    this->ConstraintAngularMotorStrength = 500.00f;
+    this->MaximumLinearDamping = -1.00f;
+    this->MaximumAngularDamping = -1.00f;
+}
+
 void URopeComponent::UpdateSegmentLengths(int32 StartingIndex, float DeltaTime) {
 }
 
@@ -99,21 +117,4 @@ bool URopeComponent::AddAttachPoint(FRopeAttachPoint AttachPoint, bool bUpdateRo
     return false;
 }
 
-URopeComponent::URopeComponent() {
-    this->RopeMesh = NULL;
-    this->MaterialOverride = NULL;
-    this->bEnableQueryCollision = false;
-    this->PhysicsAssetOverride = NULL;
-    this->bUseManualBoneList = false;
-    this->bUseDynamicLength = false;
-    this->MassScale = 1.00f;
-    this->ProjectionLinearTolerance = 5.00f;
-    this->ProjectionAngularTolerance = 180.00f;
-    this->Swing1AngleLimit = 180.00f;
-    this->Swing2AngleLimit = 180.00f;
-    this->TwistAngleLimit = 180.00f;
-    this->ConstraintAngularMotorStrength = 500.00f;
-    this->MaximumLinearDamping = -1.00f;
-    this->MaximumAngularDamping = -1.00f;
-}
 

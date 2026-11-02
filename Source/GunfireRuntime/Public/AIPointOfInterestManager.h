@@ -20,7 +20,8 @@ protected:
     TArray<AAIPointOfInterest*> PointsOfInterest;
     
 public:
-    UAIPointOfInterestManager();
+    UAIPointOfInterestManager(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     bool HasPointsInNavRange(AActor* Actor, const FVector& SourceLocation, float NavRange, float SnapDistance, TSubclassOf<UAIPOIType> POIType);
     

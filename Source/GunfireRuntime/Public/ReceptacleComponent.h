@@ -37,7 +37,8 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FReceptacleSlotEvent AfterItemRemoved;
     
-    UReceptacleComponent();
+    UReceptacleComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void RequestReturnItemToInventory(ACharacterGunfire* Subject);
     
@@ -77,7 +78,7 @@ protected:
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void AddItem(const int32 SlotID, TSubclassOf<AItem> ItemClass);
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

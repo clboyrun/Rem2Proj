@@ -1,6 +1,20 @@
 #include "PlayerControllerGunfire.h"
+#include "CheatManagerGunfire.h"
+#include "DamageValidationComponent.h"
 #include "Net/UnrealNetwork.h"
 #include "PlayStateComponent.h"
+
+APlayerControllerGunfire::APlayerControllerGunfire(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bAutoManageActiveCameraTarget = false;
+    this->CheatClass = UCheatManagerGunfire::StaticClass();
+    this->ClickEventKeys.AddDefaulted(1);
+    this->bShouldPerformFullTickWhenPaused = true;
+    this->InputMappingContext = NULL;
+    this->RuntimeManagedMappingContext = NULL;
+    this->SpectateActor = NULL;
+    this->PlayState = CreateDefaultSubobject<UPlayStateComponent>(TEXT("PlayState"));
+    this->DamageValidationComponent = CreateDefaultSubobject<UDamageValidationComponent>(TEXT("DamageValidationComponent"));
+}
 
 void APlayerControllerGunfire::SpectateTarget(AActor* Actor) {
 }
@@ -130,6 +144,10 @@ bool APlayerControllerGunfire::IsJoiningAsSpectator() const {
     return false;
 }
 
+bool APlayerControllerGunfire::IsJoiningAsPlayer() const {
+    return false;
+}
+
 bool APlayerControllerGunfire::IsJoining() const {
     return false;
 }
@@ -147,6 +165,10 @@ bool APlayerControllerGunfire::IsFlaggedAsSpectator() const {
 }
 
 bool APlayerControllerGunfire::IsDisconnected() const {
+    return false;
+}
+
+bool APlayerControllerGunfire::HasLicense(const FString& License) {
     return false;
 }
 
@@ -204,10 +226,4 @@ void APlayerControllerGunfire::GetLifetimeReplicatedProps(TArray<FLifetimeProper
     DOREPLIFETIME(APlayerControllerGunfire, SpectateActor);
 }
 
-APlayerControllerGunfire::APlayerControllerGunfire() {
-    this->InputMappingContext = NULL;
-    this->RuntimeManagedMappingContext = NULL;
-    this->SpectateActor = NULL;
-    this->PlayState = CreateDefaultSubobject<UPlayStateComponent>(TEXT("PlayState"));
-}
 

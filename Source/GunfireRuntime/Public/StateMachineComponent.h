@@ -79,9 +79,10 @@ protected:
     USceneComponent* CachedInteractCullComponent;
     
 public:
-    UStateMachineComponent();
+    UStateMachineComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void SetWindow(const FName& Name);
     
@@ -119,10 +120,19 @@ protected:
     void OnRep_CurrentStateInfo();
     
     UFUNCTION(BlueprintCallable)
+    void OnPrimaryMeshAnimInitialized();
+    
+    UFUNCTION(BlueprintCallable)
     void OnPostComputeStats();
     
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
+    void MulticastDoFlinchWithHitLocationIgnoreClient(UHitReactionState* HitReaction, const FName& HitLocation);
+    
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void MulticastDoFlinchWithHitLocation(UHitReactionState* HitReaction, const FName& HitLocation);
+    
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
+    void MulticastDoFlinchIgnoreClient(UHitReactionState* HitReaction);
     
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void MulticastDoFlinch(UHitReactionState* HitReaction);
@@ -195,7 +205,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void BeginLerp(float Time, bool LerpPosition, bool LerpRotation, bool EaseIn, float EaseExponent, bool ForceClearPreviousLerp);
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

@@ -1,7 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "Templates/SubclassOf.h"
 #include "ZoneManagerZoneChangeDelegateDelegate.h"
 #include "ZoneVoidDelegateDelegate.h"
 #include "ZoneManager.generated.h"
@@ -39,12 +38,10 @@ protected:
     TMap<FName, AZoneRegion*> TempZoneRegions;
     
 public:
-    UZoneManager();
+    UZoneManager(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     int32 UnlockAllWaypoints();
-    
-    UFUNCTION(BlueprintCallable)
-    AZoneActor* GetZoneForSlot(int32 SlotID);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static AZoneActor* GetZoneForActor(AActor* Actor);
@@ -63,9 +60,6 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void DestroyZone(AZoneActor* Zone);
-    
-    UFUNCTION(BlueprintCallable)
-    AZoneActor* CreateZone(int32 SlotID, TSubclassOf<AZoneActor> ZoneActorBP, int32 SeedOverride);
     
 };
 

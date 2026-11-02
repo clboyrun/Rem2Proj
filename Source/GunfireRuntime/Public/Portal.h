@@ -1,12 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "GameFramework/Actor.h"
 #include "Engine/NetSerialization.h"
 #include "EPortalRenderState.h"
@@ -129,6 +123,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSoundGunfire DefaultHitscanExitSFX;
     
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bPoolRenderTarget;
+    
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnTargetPortalChangedEvent OnTargetPortalChanged;
     
@@ -152,9 +149,10 @@ protected:
     FTransform RelativeAttachTransform;
     
 public:
-    APortal();
+    APortal(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
 protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void UpdateVisuals(EPortalRenderState State, APortal* RenderingPortal);
@@ -251,7 +249,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool ApplyEjectionForce(AActor* Actor, APortal* EntryPortal, UPARAM(Ref) FVector& EjectionForce);
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

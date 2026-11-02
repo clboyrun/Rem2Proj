@@ -15,6 +15,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UTexture2D* Icon;
     
-    GUNFIRERUNTIME_API UItemCategory();
+    UItemCategory();
+
 };
 

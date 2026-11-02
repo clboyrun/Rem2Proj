@@ -21,5 +21,6 @@ public:
     bool Normalized;
     
     UVitalityCondition();
+
 };
 

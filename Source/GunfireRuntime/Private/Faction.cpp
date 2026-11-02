@@ -7,11 +7,11 @@ UFaction::UFaction() {
     this->ApplyFriendlyFireDamageScalar = true;
 }
 
-EAffiliation UFaction::GetAffiliationForActors(const AActor* Actor1, const AActor* Actor2) const {
+EAffiliation UFaction::GetAffiliationForActors(const AActor* Actor1, const AActor* Actor2) {
     return EAffiliation::SuperFriendly;
 }
 
-EAffiliation UFaction::GetAffiliation(TSubclassOf<UFaction> Faction1, TSubclassOf<UFaction> Faction2) const {
+EAffiliation UFaction::GetAffiliation(TSubclassOf<UFaction> Faction1, TSubclassOf<UFaction> Faction2) {
     return EAffiliation::SuperFriendly;
 }
 

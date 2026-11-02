@@ -10,3 +10,17 @@ USkyLightComponent* UPostProcessSkylightComponent::GetCurrentSkylight() {
 }
 
 
+void UPostProcessSkylightComponent::OnRegister()
+{
+
+}
+
+void UPostProcessSkylightComponent::OnUnregister()
+{
+
+}
+
+void UPostProcessSkylightComponent::Serialize(FArchive& Ar)
+{
+
+}

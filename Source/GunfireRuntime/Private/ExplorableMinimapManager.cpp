@@ -53,3 +53,9 @@ void UExplorableMinimapManager::EnableFogOfWar(bool bEnable) {
 }
 
 
+TStatId UExplorableMinimapManager::GetStatId() const
+{
+    TStatId statid = TStatId();
+    return statid;
+}
+

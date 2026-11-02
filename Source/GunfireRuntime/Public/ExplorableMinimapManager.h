@@ -72,6 +72,8 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void EnableFogOfWar(bool bEnable);
+
+    virtual TStatId GetStatId() const override;
     
 };
 

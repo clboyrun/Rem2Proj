@@ -1,8 +1,5 @@
 #include "GunfireGauntletController.h"
 
-UGunfireGauntletController::UGunfireGauntletController() {
-}
-
 void UGunfireGauntletController::StopTesting() {
 }
 
@@ -15,4 +12,6 @@ void UGunfireGauntletController::StartTesting() {
 void UGunfireGauntletController::StartProfiling() {
 }
 
+UGunfireGauntletController::UGunfireGauntletController(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+}
 

@@ -1,5 +1,10 @@
 #include "ContextualDialogComponent.h"
 
+UContextualDialogComponent::UContextualDialogComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->DialogSet = NULL;
+    this->DialogTree = NULL;
+}
+
 void UContextualDialogComponent::TriggerDialogResponseInProximity(const UObject* WorldContextObject, const FVector& Location, float Radius, FName DialogResponse) {
 }
 
@@ -35,8 +40,4 @@ AActor* UContextualDialogComponent::GetContextOwner_Implementation() {
 void UContextualDialogComponent::EventEnd() {
 }
 
-UContextualDialogComponent::UContextualDialogComponent() {
-    this->DialogSet = NULL;
-    this->DialogTree = NULL;
-}
 

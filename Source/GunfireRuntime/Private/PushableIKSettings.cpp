@@ -1,5 +1,6 @@
 #include "PushableIKSettings.h"
 
-UPushableIKSettings::UPushableIKSettings() {
+UPushableIKSettings::UPushableIKSettings(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

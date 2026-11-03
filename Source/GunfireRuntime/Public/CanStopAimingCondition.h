@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UCanStopAimingCondition : public UCondition {
     GENERATED_BODY()
 public:
     UCanStopAimingCondition();
+
 };
 

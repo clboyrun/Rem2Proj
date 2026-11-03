@@ -1,6 +1,18 @@
 #include "BoidComponent.h"
 #include "Net/UnrealNetwork.h"
 
+UBoidComponent::UBoidComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->Enabled = true;
+    this->World = NULL;
+    this->NavMesh = NULL;
+    this->NavData = NULL;
+    this->BoidMovementComponent = NULL;
+    this->MoveType = EBoidMoveType::Air;
+    this->Flapping = false;
+    this->FlapIntensity = 1.00f;
+    this->GoalActor = NULL;
+}
+
 void UBoidComponent::Wander(float WanderRadius) {
 }
 
@@ -38,15 +50,4 @@ void UBoidComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLi
     DOREPLIFETIME(UBoidComponent, FlapIntensity);
 }
 
-UBoidComponent::UBoidComponent() {
-    this->Enabled = true;
-    this->World = NULL;
-    this->NavMesh = NULL;
-    this->NavData = NULL;
-    this->BoidMovementComponent = NULL;
-    this->MoveType = EBoidMoveType::Air;
-    this->Flapping = false;
-    this->FlapIntensity = 1.00f;
-    this->GoalActor = NULL;
-}
 

@@ -11,7 +11,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVector Extent;
     
-    UNavDirtyBlockerComponent();
+    UNavDirtyBlockerComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void UnblockDirty(bool DirtyNav);
     

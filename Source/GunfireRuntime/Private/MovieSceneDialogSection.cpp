@@ -5,3 +5,4 @@ UMovieSceneDialogSection::UMovieSceneDialogSection() {
     this->IgnoreVocalRange = true;
 }
 
+

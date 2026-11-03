@@ -5,3 +5,4 @@ USaveGameWorld::USaveGameWorld() {
     this->UniqueIDGenerator = 9223372036854775808;
 }
 
+

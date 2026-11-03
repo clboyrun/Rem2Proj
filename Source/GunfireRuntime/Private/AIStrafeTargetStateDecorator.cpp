@@ -14,3 +14,4 @@ UAIStrafeTargetStateDecorator::UAIStrafeTargetStateDecorator() {
     this->OutOfRangeScalar = 2.00f;
 }
 
+

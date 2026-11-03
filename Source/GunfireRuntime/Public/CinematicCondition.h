@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UCinematicCondition : public UCondition {
     GENERATED_BODY()
 public:
     UCinematicCondition();
+
 };
 

@@ -21,6 +21,10 @@ public:
     UTexture2D* Icon;
     
     UChallengeReward();
+
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    bool HasBeenAwarded(AActor* Recepient);
+    
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool GiveReward(AActor* Recepient);
     
@@ -30,7 +34,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent, BlueprintPure)
     FText GetDescription() const;
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

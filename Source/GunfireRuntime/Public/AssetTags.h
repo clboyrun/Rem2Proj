@@ -14,6 +14,7 @@ public:
     TArray<FName> AssetTags;
     
     UAssetTags();
+
     UFUNCTION(BlueprintCallable)
     static bool SetAssetTag(UObject* Asset, FName Tag);
     

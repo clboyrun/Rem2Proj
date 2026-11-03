@@ -21,5 +21,6 @@ private:
     
 public:
     UAnimNotify_Awareness();
+
 };
 

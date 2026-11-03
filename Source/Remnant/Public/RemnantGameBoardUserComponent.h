@@ -18,9 +18,10 @@ protected:
     URemnantGameBoardComponent* GameBoard;
     
 public:
-    URemnantGameBoardUserComponent();
+    URemnantGameBoardUserComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
 protected:
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerHandleGamePieceFocusEvent(AActor* Actor, const FGraphPosition& TargetPosition, const FGraphPosition& RootPosition);

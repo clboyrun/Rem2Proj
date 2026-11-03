@@ -4,3 +4,4 @@ UAccountAwardRecipe::UAccountAwardRecipe() {
     this->Award = NULL;
 }
 
+

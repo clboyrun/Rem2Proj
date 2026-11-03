@@ -12,5 +12,6 @@ public:
     FChallengeLinkId ChallengeLink;
     
     UChallengeObjectiveLink();
+
 };
 

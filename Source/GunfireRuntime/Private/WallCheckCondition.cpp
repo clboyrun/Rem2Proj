@@ -5,3 +5,4 @@ UWallCheckCondition::UWallCheckCondition() {
     this->MaxHitAngle = 25.00f;
 }
 
+

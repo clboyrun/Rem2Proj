@@ -10,6 +10,7 @@ class GUNFIRETECHREQUIREMENTS_API UGunfireTechRequirementsImplWin64 : public UGu
     GENERATED_BODY()
 public:
     UGunfireTechRequirementsImplWin64();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void VoipHotkeyReleased(APlayerController* PlayerController);

@@ -1,6 +1,9 @@
 #include "RemnantCharacterManager.h"
 #include "Templates/SubclassOf.h"
 
+URemnantCharacterManager::URemnantCharacterManager() {
+}
+
 bool URemnantCharacterManager::ShouldAwardHardcoreRewards(const UObject* WorldContextObject) {
     return false;
 }
@@ -92,6 +95,4 @@ USavedCharacter* URemnantCharacterManager::CreateCharacter(const FString& Name, 
     return NULL;
 }
 
-URemnantCharacterManager::URemnantCharacterManager() {
-}
 

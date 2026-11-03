@@ -79,6 +79,7 @@ public:
     bool bForceDigitalInput;
     
     UAnimActorState();
+
     UFUNCTION(BlueprintCallable)
     void UpdateMovementParams(UStateMachineComponent* StateMachine);
     

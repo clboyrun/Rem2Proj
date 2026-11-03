@@ -60,9 +60,10 @@ protected:
     TArray<UObject*> StoredCinematicAssets;
     
 public:
-    USequencerManager();
+    USequencerManager(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void UpdateSkipStatus(UObject* InSequence, bool ShouldSkip);
     

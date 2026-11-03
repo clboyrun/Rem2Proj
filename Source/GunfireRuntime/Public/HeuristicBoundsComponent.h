@@ -1,8 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "Components/SceneComponent.h"
 #include "EHeuristicBoundsPanelAlignment.h"
 #include "EHeuristicBoundsShape.h"
@@ -42,7 +40,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float SlidingMinima;
     
-    UHeuristicBoundsComponent();
+    UHeuristicBoundsComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SetOuterExtent(const FVector& NewExtent);
     

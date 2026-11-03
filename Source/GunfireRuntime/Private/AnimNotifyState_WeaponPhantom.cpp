@@ -22,3 +22,4 @@ UAnimNotifyState_WeaponPhantom::UAnimNotifyState_WeaponPhantom() {
     this->bCacheDiscreteAnimation = true;
 }
 
+

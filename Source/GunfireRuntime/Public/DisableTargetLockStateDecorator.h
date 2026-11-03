@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UDisableTargetLockStateDecorator : public UActorStateDe
     GENERATED_BODY()
 public:
     UDisableTargetLockStateDecorator();
+
 };
 

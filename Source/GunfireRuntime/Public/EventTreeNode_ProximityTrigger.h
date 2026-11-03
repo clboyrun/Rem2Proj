@@ -27,5 +27,6 @@ public:
     EYesNo InView;
     
     UEventTreeNode_ProximityTrigger();
+
 };
 

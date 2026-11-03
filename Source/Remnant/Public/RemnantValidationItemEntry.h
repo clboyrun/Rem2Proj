@@ -27,5 +27,6 @@ public:
     int32 QuantityChangeTimeOutSeconds;
     
     URemnantValidationItemEntry();
+
 };
 

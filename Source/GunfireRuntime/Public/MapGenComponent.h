@@ -1,7 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "Components/ActorComponent.h"
 #include "VisualLogger/VisualLoggerDebugSnapshotInterface.h"
 #include "AudioVolumeClass.h"
@@ -149,9 +148,10 @@ protected:
     AVolume* MapAudioVolume;
     
 public:
-    UMapGenComponent();
+    UMapGenComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void SetTileVisibleOverride(int32 ID, bool Visible);
     
@@ -254,7 +254,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void AddAttribute(FMapGenAttribute Attribute);
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

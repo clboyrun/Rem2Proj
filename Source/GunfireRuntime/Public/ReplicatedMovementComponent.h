@@ -6,6 +6,8 @@
 #include "ReplicatedMovementInfo.h"
 #include "ReplicatedMovementComponent.generated.h"
 
+class UPrimitiveComponent;
+
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class GUNFIRERUNTIME_API UReplicatedMovementComponent : public UActorComponent {
     GENERATED_BODY()
@@ -62,9 +64,16 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_MovementInfo, meta=(AllowPrivateAccess=true))
     FReplicatedMovementInfo MovementInfo;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
+    UPrimitiveComponent* BaseMovementOverride;
+    
 public:
-    UReplicatedMovementComponent();
+    UReplicatedMovementComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+
+    UFUNCTION(BlueprintCallable)
+    void SetBaseMovementOverride(UPrimitiveComponent* Comp);
     
 protected:
     UFUNCTION(BlueprintCallable, Server, Unreliable, WithValidation)
@@ -78,8 +87,17 @@ protected:
     UFUNCTION(BlueprintCallable)
     void OnRep_MovementInfo();
     
+public:
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UPrimitiveComponent* GetBaseMovementOverride();
+    
+protected:
     UFUNCTION(Client, Unreliable)
     void ClientAckMove(uint16 MoveTime);
+    
+public:
+    UFUNCTION(BlueprintCallable)
+    void ClearBaseMovementOverride();
     
 };
 

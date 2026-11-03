@@ -3,7 +3,7 @@
 #include "UObject/Object.h"
 #include "SequenceRenderSettings.generated.h"
 
-UCLASS(Blueprintable, Config=Engine, DefaultConfig)
+UCLASS(Blueprintable, DefaultConfig, Config=Engine)
 class GUNFIRERUNTIME_API USequenceRenderSettings : public UObject {
     GENERATED_BODY()
 public:
@@ -11,5 +11,6 @@ public:
     TArray<FString> CVars;
     
     USequenceRenderSettings();
+
 };
 

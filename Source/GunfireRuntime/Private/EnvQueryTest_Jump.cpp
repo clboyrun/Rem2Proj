@@ -2,6 +2,9 @@
 #include "EnvironmentQuery/Contexts/EnvQueryContext_Querier.h"
 
 UEnvQueryTest_Jump::UEnvQueryTest_Jump() {
+    this->TestPurpose = EEnvTestPurpose::Filter;
+    this->FilterType = EEnvTestFilterType::Match;
+    this->ScoringEquation = EEnvTestScoreEquation::Constant;
     this->JumpOriginContext = UEnvQueryContext_Querier::StaticClass();
     this->GravityScale = 1.00f;
     this->ArcMethod = EAutoArcType::ArcHeight;
@@ -9,4 +12,5 @@ UEnvQueryTest_Jump::UEnvQueryTest_Jump() {
     this->JumpSpeed = 1000.00f;
     this->RetractDistance = 30.00f;
 }
+
 

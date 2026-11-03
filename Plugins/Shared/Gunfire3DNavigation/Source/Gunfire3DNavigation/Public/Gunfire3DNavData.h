@@ -4,7 +4,7 @@
 #include "ENav3DDrawType.h"
 #include "Gunfire3DNavData.generated.h"
 
-UCLASS(Blueprintable, NotPlaceable)
+UCLASS(Blueprintable, NotPlaceable, Config=Engine)
 class GUNFIRE3DNAVIGATION_API AGunfire3DNavData : public ANavigationData {
     GENERATED_BODY()
 public:
@@ -56,6 +56,7 @@ public:
     UPROPERTY(AdvancedDisplay, BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     float DefaultBaseTraversalCost;
     
-    AGunfire3DNavData();
+    AGunfire3DNavData(const FObjectInitializer& ObjectInitializer);
+
 };
 

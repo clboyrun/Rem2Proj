@@ -1,5 +1,8 @@
 #include "TargetManager.h"
 
+UTargetManager::UTargetManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+}
+
 void UTargetManager::QueryPotentialTargetsAlongAimVector(APawn* Source, float Range, float HorizontalArc, float VerticalArc, bool CullNotVisible, bool CullNotLockable, bool CullNotSoftTargetable, TArray<FTargetQueryResult>& Results, bool bSortResults) {
 }
 
@@ -22,6 +25,12 @@ float UTargetManager::K2_GetScoreForTargetActor(AActor* Source, AActor* Target, 
     return 0.0f;
 }
 
-UTargetManager::UTargetManager() {
+FVector UTargetManager::GetSoftTargetLocation(AActor* Target, const FVector& OriginLocation) {
+    return FVector{};
 }
+
+FVector UTargetManager::GetBestTargetingLocationOnActorForTarget(AActor* Source, const FVector& TargetLocation) {
+    return FVector{};
+}
+
 

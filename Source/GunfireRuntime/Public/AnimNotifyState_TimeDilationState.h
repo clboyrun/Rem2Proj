@@ -35,5 +35,6 @@ public:
     bool bStateTransient;
     
     UAnimNotifyState_TimeDilationState();
+
 };
 

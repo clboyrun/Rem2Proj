@@ -39,3 +39,4 @@ UClimbAnimData::UClimbAnimData() {
     this->LeadTime = 0.00f;
 }
 
+

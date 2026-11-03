@@ -31,5 +31,6 @@ public:
     TArray<TEnumAsByte<EPhysicalSurface>> ValidSurfaceTypes;
     
     UPhysCastCondition();
+
 };
 

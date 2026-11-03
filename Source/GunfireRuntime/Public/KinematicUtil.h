@@ -12,6 +12,7 @@ class GUNFIRERUNTIME_API UKinematicUtil : public UObject {
     GENERATED_BODY()
 public:
     UKinematicUtil();
+
     UFUNCTION(BlueprintCallable)
     static void AddSegmentToWeaponTracePath(UPARAM(Ref) FWeaponTracePath& InOutPath, const FVector& TraceStart, const FVector& TraceEnd, UPrimitiveComponent* StartComponent, FName StartBoneName);
     

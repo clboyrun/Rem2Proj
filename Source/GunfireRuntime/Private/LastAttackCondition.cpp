@@ -9,3 +9,4 @@ ULastAttackCondition::ULastAttackCondition() {
     this->RequiredResult = EYesNo::DontCare;
 }
 
+

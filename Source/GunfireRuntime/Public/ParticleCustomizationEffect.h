@@ -1,7 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "ActorCustomizationEffect.h"
 #include "ParticleCustomizationEffect.generated.h"
 
@@ -36,5 +35,6 @@ public:
     FVector Scale;
     
     UParticleCustomizationEffect();
+
 };
 

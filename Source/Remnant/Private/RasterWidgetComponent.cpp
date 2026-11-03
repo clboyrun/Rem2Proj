@@ -1,5 +1,9 @@
 #include "RasterWidgetComponent.h"
 
+URasterWidgetComponent::URasterWidgetComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->MaterialOverride = NULL;
+}
+
 UTexture* URasterWidgetComponent::GetWidgetTexture() {
     return NULL;
 }
@@ -11,7 +15,4 @@ UMaterialInstanceDynamic* URasterWidgetComponent::CreateWidgetMaterial(UPrimitiv
     return NULL;
 }
 
-URasterWidgetComponent::URasterWidgetComponent() {
-    this->MaterialOverride = NULL;
-}
 

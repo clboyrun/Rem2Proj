@@ -11,6 +11,7 @@ class GUNFIRERUNTIME_API UCinematicTransitionCameraState : public UCameraState {
     GENERATED_BODY()
 public:
     UCinematicTransitionCameraState();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnDamageEvent(const FDamageInfo& DamageInfo);

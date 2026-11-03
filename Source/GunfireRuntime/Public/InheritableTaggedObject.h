@@ -9,7 +9,8 @@ class GUNFIRERUNTIME_API UInheritableTaggedObject : public UInheritableObject, p
     GENERATED_BODY()
 public:
     UInheritableTaggedObject();
-    
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

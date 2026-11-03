@@ -1,5 +1,15 @@
 #include "AdvTextBlock.h"
 
+UAdvTextBlock::UAdvTextBlock() {
+    this->AutoWrapText = false;
+    this->Justification = ETextJustify::Left;
+    this->WrapTextAt = 0.00f;
+    this->LineHeightPercentage = 1.00f;
+    this->FillInSpeed = 0.00f;
+    this->RebuildAfterDeviceChange = true;
+    this->bAutoStartFillIn = true;
+}
+
 void UAdvTextBlock::StartTextFill(bool bStartFromBeginning) {
 }
 
@@ -43,13 +53,4 @@ void UAdvTextBlock::CompleteTextFill() {
 void UAdvTextBlock::ClearText() {
 }
 
-UAdvTextBlock::UAdvTextBlock() {
-    this->AutoWrapText = false;
-    this->Justification = ETextJustify::Left;
-    this->WrapTextAt = 0.00f;
-    this->LineHeightPercentage = 1.00f;
-    this->FillInSpeed = 0.00f;
-    this->RebuildAfterDeviceChange = true;
-    this->bAutoStartFillIn = true;
-}
 

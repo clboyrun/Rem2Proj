@@ -9,3 +9,4 @@ UAngleDiffCondition::UAngleDiffCondition() {
     this->Arc = 180.00f;
 }
 
+

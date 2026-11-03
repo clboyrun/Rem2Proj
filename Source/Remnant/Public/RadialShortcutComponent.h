@@ -7,6 +7,7 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class REMNANT_API URadialShortcutComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    URadialShortcutComponent();
+    URadialShortcutComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

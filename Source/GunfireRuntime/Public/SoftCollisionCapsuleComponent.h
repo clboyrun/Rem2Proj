@@ -17,7 +17,8 @@ protected:
     TArray<AActor*> IgnoreActors;
     
 public:
-    USoftCollisionCapsuleComponent();
+    USoftCollisionCapsuleComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool ShouldIgnoreActor(AActor* Actor) const;
     

@@ -35,7 +35,8 @@ protected:
     TArray<FTileAmbientSpawns> AmbientSpawns;
     
 public:
-    UAmbientSpawnManager();
+    UAmbientSpawnManager(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnUninitialize();

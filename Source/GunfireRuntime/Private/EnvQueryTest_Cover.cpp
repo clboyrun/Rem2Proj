@@ -1,6 +1,7 @@
 #include "EnvQueryTest_Cover.h"
 
 UEnvQueryTest_Cover::UEnvQueryTest_Cover() {
+    this->ScoringEquation = EEnvTestScoreEquation::InverseLinear;
     this->WeaponType = NULL;
     this->UseLastKnownPosition = false;
     this->OptimalDistance = 2500.00f;
@@ -15,4 +16,5 @@ UEnvQueryTest_Cover::UEnvQueryTest_Cover() {
     this->CoverBufferRadius = 100.00f;
     this->CoverBufferFactor = 2.00f;
 }
+
 

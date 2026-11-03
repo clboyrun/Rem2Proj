@@ -19,5 +19,6 @@ private:
     
 public:
     UAnimNotify_AnimatedCameraAbort();
+
 };
 

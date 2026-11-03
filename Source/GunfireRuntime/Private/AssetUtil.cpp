@@ -1,5 +1,8 @@
 #include "AssetUtil.h"
 
+UAssetUtil::UAssetUtil() {
+}
+
 UObject* UAssetUtil::LoadSoftReference(const TSoftObjectPtr<UObject>& SoftObjRef) {
     return NULL;
 }
@@ -32,6 +35,8 @@ UObject* UAssetUtil::GetAssetFromComponent(const UActorComponent* Component) {
     return NULL;
 }
 
-UAssetUtil::UAssetUtil() {
+bool UAssetUtil::AsyncLoadClassReference(FAsyncLoadClassesCompleteDelegate Delegate, const TArray<TSoftClassPtr<UObject>>& SoftClsRef) {
+    return false;
 }
+
 

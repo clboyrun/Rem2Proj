@@ -1,6 +1,14 @@
 #include "ItemType.h"
 #include "Templates/SubclassOf.h"
 
+UItemType::UItemType() {
+    this->BaseType = NULL;
+    this->ItemStats = NULL;
+    this->CharacterStats = NULL;
+    this->Icon = NULL;
+    this->SortPriority = -1;
+}
+
 void UItemType::SortQueryResults(const TArray<UInventoryComponent*>& Inventories, TArray<FItemQueryResult>& Results, const TArray<EItemQuerySortMethod>& SortMethods) {
 }
 
@@ -16,11 +24,4 @@ TArray<UInventoryComponent*> UItemType::GetRelevantInventoriesForType(AActor* Ac
     return TArray<UInventoryComponent*>();
 }
 
-UItemType::UItemType() {
-    this->BaseType = NULL;
-    this->ItemStats = NULL;
-    this->CharacterStats = NULL;
-    this->Icon = NULL;
-    this->SortPriority = -1;
-}
 

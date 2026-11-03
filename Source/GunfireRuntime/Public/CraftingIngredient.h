@@ -1,17 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EnumUserSettingEntry.generated.h"
+#include "CraftingIngredient.generated.h"
+
+class AItem;
 
 USTRUCT(BlueprintType)
-struct GUNFIRERUNTIME_API FEnumUserSettingEntry {
+struct FCraftingIngredient {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FText Label;
+    TSoftClassPtr<AItem> ItemBP;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    int32 Value;
+    int32 Quantity;
     
-    FEnumUserSettingEntry();
+    GUNFIRERUNTIME_API FCraftingIngredient();
 };
 

@@ -2,6 +2,23 @@
 #include "Components/CapsuleComponent.h"
 #include "Templates/SubclassOf.h"
 
+ACharacterSpawnPoint::ACharacterSpawnPoint(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->CapsuleComponent = CreateDefaultSubobject<UCapsuleComponent>(TEXT("CharacterMeshCapsule"));
+    this->EnemyType = NULL;
+    this->SpawnDelayMin = 0.00f;
+    this->SpawnDelayMax = 0.00f;
+    this->PerceptionScalar = 1.00f;
+    this->PatrolPath = NULL;
+    this->SpawnPath = NULL;
+    this->bApplyThreat = false;
+    this->ThreatToApply = 1.00f;
+    this->bUsesDeferredSpawnOptimization = true;
+    this->SpawnedCharacter = NULL;
+    this->bUseEditorVisuals = true;
+    this->SpawnPointManager = NULL;
+    this->CapsuleComponent->SetupAttachment(RootComponent);
+}
+
 void ACharacterSpawnPoint::Spawn(bool bUseDeferredOptimization) {
 }
 
@@ -31,19 +48,4 @@ bool ACharacterSpawnPoint::CanSpawn() const {
     return false;
 }
 
-ACharacterSpawnPoint::ACharacterSpawnPoint() {
-    this->CapsuleComponent = CreateDefaultSubobject<UCapsuleComponent>(TEXT("CharacterMeshCapsule"));
-    this->EnemyType = NULL;
-    this->SpawnDelayMin = 0.00f;
-    this->SpawnDelayMax = 0.00f;
-    this->PerceptionScalar = 1.00f;
-    this->PatrolPath = NULL;
-    this->SpawnPath = NULL;
-    this->bApplyThreat = false;
-    this->ThreatToApply = 1.00f;
-    this->bUsesDeferredSpawnOptimization = true;
-    this->SpawnedCharacter = NULL;
-    this->bUseEditorVisuals = true;
-    this->SpawnPointManager = NULL;
-}
 

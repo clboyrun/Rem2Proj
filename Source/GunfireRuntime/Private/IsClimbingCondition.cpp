@@ -11,3 +11,4 @@ UIsClimbingCondition::UIsClimbingCondition() {
     this->FacingTolerance = 30.00f;
 }
 
+

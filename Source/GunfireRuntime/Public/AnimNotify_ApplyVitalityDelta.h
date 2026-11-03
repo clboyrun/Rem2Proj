@@ -23,5 +23,6 @@ private:
     
 public:
     UAnimNotify_ApplyVitalityDelta();
+
 };
 

@@ -11,3 +11,4 @@ UAICompanionTargetSelector::UAICompanionTargetSelector() {
     this->LowPriorityTargetPenalty = 0.10f;
 }
 
+

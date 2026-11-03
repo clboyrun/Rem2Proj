@@ -13,5 +13,6 @@ public:
     TSoftClassPtr<UEmote> Emote;
     
     UEmoteAward();
+
 };
 

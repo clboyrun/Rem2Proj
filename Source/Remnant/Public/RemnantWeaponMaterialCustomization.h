@@ -12,5 +12,6 @@ public:
     TArray<FRemnantMaterialParam> MaterialChanges;
     
     URemnantWeaponMaterialCustomization();
+
 };
 

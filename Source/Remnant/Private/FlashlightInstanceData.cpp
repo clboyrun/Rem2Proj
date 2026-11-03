@@ -1,6 +1,12 @@
 #include "FlashlightInstanceData.h"
 #include "Net/UnrealNetwork.h"
 
+UFlashlightInstanceData::UFlashlightInstanceData() {
+    this->Charge = 1.00f;
+    this->Depleted = false;
+    this->On = false;
+}
+
 void UFlashlightInstanceData::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);
     
@@ -9,9 +15,4 @@ void UFlashlightInstanceData::GetLifetimeReplicatedProps(TArray<FLifetimePropert
     DOREPLIFETIME(UFlashlightInstanceData, On);
 }
 
-UFlashlightInstanceData::UFlashlightInstanceData() {
-    this->Charge = 1.00f;
-    this->Depleted = false;
-    this->On = false;
-}
 

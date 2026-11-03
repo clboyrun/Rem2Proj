@@ -1,5 +1,10 @@
 #include "ColorblindUserSetting.h"
 
+UColorblindUserSetting::UColorblindUserSetting() {
+    this->Entries.AddDefaulted(1);
+    this->bWraps = true;
+}
+
 bool UColorblindUserSetting::GetValueEnumCVD(FEnumCVDUserSettingEntry& OutEntry) {
     return false;
 }
@@ -16,8 +21,4 @@ bool UColorblindUserSetting::GetEnumCVDEntryByIndex(int32 Index, FEnumCVDUserSet
     return false;
 }
 
-UColorblindUserSetting::UColorblindUserSetting() {
-    this->Entries.AddDefaulted(1);
-    this->bWraps = true;
-}
 

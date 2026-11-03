@@ -43,7 +43,8 @@ protected:
     TArray<ACharacterGunfire*> AttachedCharacters;
     
 public:
-    UClimbableSplineComponent();
+    UClimbableSplineComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SetSurfaceTags(TArray<FName> NewSurfaceTags);
     

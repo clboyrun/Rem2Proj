@@ -46,6 +46,7 @@ protected:
     
 public:
     URemnantCursorTarget();
+
     UFUNCTION(BlueprintCallable)
     void ForceRefreshCachedVisibility();
     

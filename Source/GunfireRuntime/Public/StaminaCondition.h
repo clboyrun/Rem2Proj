@@ -17,5 +17,6 @@ private:
     
 public:
     UDEPRECATED_StaminaCondition();
+
 };
 

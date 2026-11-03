@@ -60,5 +60,6 @@ public:
     float WallCheckSlideAngle;
     
     UCliffConditionParams();
+
 };
 

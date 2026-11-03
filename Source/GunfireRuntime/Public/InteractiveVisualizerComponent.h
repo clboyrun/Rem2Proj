@@ -7,6 +7,7 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class GUNFIRERUNTIME_API UInteractiveVisualizerComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UInteractiveVisualizerComponent();
+    UInteractiveVisualizerComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

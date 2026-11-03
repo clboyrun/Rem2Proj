@@ -4,3 +4,4 @@ UItemGeneratorTable::UItemGeneratorTable() {
     this->TableType = EItemGenTableType::Standard;
 }
 
+

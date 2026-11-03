@@ -11,5 +11,6 @@ public:
     FName SoundIDName;
     
     UEventTreeNode_SoundSet();
+
 };
 

@@ -7,6 +7,7 @@ UCLASS(Blueprintable)
 class GUNFIRERUNTIME_API AProjectileBox : public AProjectileBase {
     GENERATED_BODY()
 public:
-    AProjectileBox();
+    AProjectileBox(const FObjectInitializer& ObjectInitializer);
+
 };
 

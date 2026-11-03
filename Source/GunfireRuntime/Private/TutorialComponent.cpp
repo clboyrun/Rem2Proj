@@ -1,5 +1,9 @@
 #include "TutorialComponent.h"
 
+UTutorialComponent::UTutorialComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->TutorialPrompts = NULL;
+}
+
 void UTutorialComponent::SetTutorialPromptOverride_Implementation(const FName& ID, AActor* Actor, const FText& Text, float DurationOverride) {
 }
 
@@ -23,7 +27,4 @@ bool UTutorialComponent::AreTutorialsEnabled() {
     return false;
 }
 
-UTutorialComponent::UTutorialComponent() {
-    this->TutorialPrompts = NULL;
-}
 

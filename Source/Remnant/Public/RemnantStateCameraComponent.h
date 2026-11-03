@@ -7,6 +7,7 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class REMNANT_API URemnantStateCameraComponent : public UStateCameraComponent {
     GENERATED_BODY()
 public:
-    URemnantStateCameraComponent();
+    URemnantStateCameraComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

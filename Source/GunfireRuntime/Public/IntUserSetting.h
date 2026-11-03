@@ -13,6 +13,7 @@ protected:
     
 public:
     UIntUserSetting();
+
     UFUNCTION(BlueprintCallable)
     void SetValue(int32 Value);
     

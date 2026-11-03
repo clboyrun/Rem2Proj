@@ -1,5 +1,8 @@
 #include "NamedActorManager.h"
 
+UNamedActorManager::UNamedActorManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+}
+
 void UNamedActorManager::RemoveActor(const FName& NameID, AActor* Actor) {
 }
 
@@ -17,6 +20,4 @@ AActor* UNamedActorManager::FindActorByName(const UObject* WorldContextObject, F
 void UNamedActorManager::AddActor(const FName& NameID, AActor* Actor) {
 }
 
-UNamedActorManager::UNamedActorManager() {
-}
 

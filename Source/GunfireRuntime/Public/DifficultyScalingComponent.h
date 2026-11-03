@@ -43,9 +43,10 @@ private:
     UDataTable* OverrideDifficultyScalingTable;
     
 public:
-    UDifficultyScalingComponent();
+    UDifficultyScalingComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void SetNumPlayers(int32 NewNumPlayers);
     

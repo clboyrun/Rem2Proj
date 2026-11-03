@@ -11,5 +11,7 @@ enum class EOnlineCanJoinResult : uint8 {
     NoSession,
     AlreadyJoined,
     Failed,
+    Full,
+    Crossplay,
 };
 

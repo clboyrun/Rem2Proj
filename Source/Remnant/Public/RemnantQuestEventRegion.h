@@ -44,7 +44,8 @@ protected:
     AEventRegion* EventRegion;
     
 public:
-    URemnantQuestEventRegion();
+    URemnantQuestEventRegion(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SetMusicState(EMusicState MusicState);
     

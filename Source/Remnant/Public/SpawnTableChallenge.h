@@ -12,5 +12,6 @@ public:
     FChallengeEvent Challenge;
     
     USpawnTableChallenge();
+
 };
 

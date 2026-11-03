@@ -1,6 +1,9 @@
 #include "AIPointOfInterestManager.h"
 #include "Templates/SubclassOf.h"
 
+UAIPointOfInterestManager::UAIPointOfInterestManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+}
+
 bool UAIPointOfInterestManager::HasPointsInNavRange(AActor* Actor, const FVector& SourceLocation, float NavRange, float SnapDistance, TSubclassOf<UAIPOIType> POIType) {
     return false;
 }
@@ -18,6 +21,4 @@ UAIPointOfInterestManager* UAIPointOfInterestManager::GetInstance(UObject* World
 void UAIPointOfInterestManager::EnablePointsOfInterestInGroup(FName GroupName, bool DeactivateOtherGroups) {
 }
 
-UAIPointOfInterestManager::UAIPointOfInterestManager() {
-}
 

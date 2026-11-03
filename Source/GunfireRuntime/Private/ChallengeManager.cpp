@@ -6,3 +6,4 @@ UChallengeManager::UChallengeManager() {
     this->bGameInstanceReadyToLoad = false;
 }
 
+

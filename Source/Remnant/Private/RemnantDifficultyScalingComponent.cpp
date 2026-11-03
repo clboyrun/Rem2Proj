@@ -1,5 +1,6 @@
 #include "RemnantDifficultyScalingComponent.h"
 
-URemnantDifficultyScalingComponent::URemnantDifficultyScalingComponent() {
+URemnantDifficultyScalingComponent::URemnantDifficultyScalingComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

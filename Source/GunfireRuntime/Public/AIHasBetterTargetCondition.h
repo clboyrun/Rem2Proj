@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UAIHasBetterTargetCondition : public UCondition {
     GENERATED_BODY()
 public:
     UAIHasBetterTargetCondition();
+
 };
 

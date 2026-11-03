@@ -17,7 +17,8 @@ public:
     TArray<UPlayStateEffect*> Effects;
     
     UPlayState();
-    
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

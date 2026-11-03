@@ -26,7 +26,8 @@ protected:
     bool IsGenerating;
     
 public:
-    ALootContainer();
+    ALootContainer(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnSpawnListLoaded();

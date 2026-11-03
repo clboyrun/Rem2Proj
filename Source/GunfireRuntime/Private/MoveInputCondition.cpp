@@ -8,3 +8,4 @@ UMoveInputCondition::UMoveInputCondition() {
     this->PersistNotValid = false;
 }
 
+

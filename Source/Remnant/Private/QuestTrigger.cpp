@@ -1,5 +1,10 @@
 #include "QuestTrigger.h"
 
+AQuestTrigger::AQuestTrigger(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->TriggerVolume = NULL;
+    this->bUseManualCollision = false;
+}
+
 bool AQuestTrigger::IsLocalPlayerInRegion() const {
     return false;
 }
@@ -15,8 +20,4 @@ TArray<ARemnantCharacter*> AQuestTrigger::GetCharacters() {
 void AQuestTrigger::EvaluateOverlaps() {
 }
 
-AQuestTrigger::AQuestTrigger() {
-    this->TriggerVolume = NULL;
-    this->bUseManualCollision = false;
-}
 

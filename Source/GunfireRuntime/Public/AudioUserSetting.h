@@ -16,6 +16,7 @@ public:
     bool bAllowBoostedVolume;
     
     UAudioUserSetting();
+
     UFUNCTION(BlueprintCallable)
     void SetSoundClassMultiplier(float InMultiplier);
     

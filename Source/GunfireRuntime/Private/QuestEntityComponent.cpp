@@ -1,5 +1,6 @@
 #include "QuestEntityComponent.h"
 
-UQuestEntityComponent::UQuestEntityComponent() {
+UQuestEntityComponent::UQuestEntityComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

@@ -35,6 +35,7 @@ public:
     FOnNavigationDelegate OnNavigate;
     
     UFocusWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetInactiveFocus();
     

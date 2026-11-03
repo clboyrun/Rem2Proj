@@ -2,10 +2,6 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "UObject/Object.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "ELineFittingMethod.h"
 #include "MathUtil.generated.h"
 
@@ -18,6 +14,7 @@ class GUNFIRERUNTIME_API UMathUtil : public UObject {
     GENERATED_BODY()
 public:
     UMathUtil();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 StableRandomInteger(AActor* Actor);
     

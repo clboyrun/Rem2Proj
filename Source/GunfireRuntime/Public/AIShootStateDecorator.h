@@ -61,5 +61,6 @@ private:
     
 public:
     UAIShootStateDecorator();
+
 };
 

@@ -17,5 +17,6 @@ public:
     FCinematicTransitionParams CinematicTransitionParams;
     
     UEventTreeNode_LevelSequence();
+
 };
 

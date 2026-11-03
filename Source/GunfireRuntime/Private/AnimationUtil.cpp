@@ -1,5 +1,8 @@
 #include "AnimationUtil.h"
 
+UAnimationUtil::UAnimationUtil() {
+}
+
 FRotator UAnimationUtil::UE4ToAutodeskRotation(const FRotator& Rotation) {
     return FRotator{};
 }
@@ -55,6 +58,4 @@ bool UAnimationUtil::GetBoneRefTransform(const USkeletalMeshComponent* SkeletalM
     return false;
 }
 
-UAnimationUtil::UAnimationUtil() {
-}
 

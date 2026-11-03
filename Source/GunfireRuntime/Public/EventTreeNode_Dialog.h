@@ -65,6 +65,7 @@ private:
     
 public:
     UEventTreeNode_Dialog();
+
     UFUNCTION(BlueprintCallable, BlueprintPure=false)
     void Complete(UEventTreeComponent* Component) const;
     

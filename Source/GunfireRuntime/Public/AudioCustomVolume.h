@@ -75,7 +75,8 @@ private:
     UWorldSoundComponent* WorldSoundComponent;
     
 public:
-    AAudioCustomVolume();
+    AAudioCustomVolume(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SetState(TSubclassOf<UAudioStateID> StateID, bool bPlayTransitions);
     

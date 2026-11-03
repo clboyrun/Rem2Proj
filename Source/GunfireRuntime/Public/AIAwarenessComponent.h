@@ -45,7 +45,8 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FRelevantActorEvent OnRelevantActorRemoved;
     
-    UAIAwarenessComponent();
+    UAIAwarenessComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void RelevantActorRemoved(const FRelevantActor& RelevantActor);
     

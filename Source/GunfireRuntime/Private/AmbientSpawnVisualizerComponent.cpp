@@ -1,5 +1,6 @@
 #include "AmbientSpawnVisualizerComponent.h"
 
-UAmbientSpawnVisualizerComponent::UAmbientSpawnVisualizerComponent() {
+UAmbientSpawnVisualizerComponent::UAmbientSpawnVisualizerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

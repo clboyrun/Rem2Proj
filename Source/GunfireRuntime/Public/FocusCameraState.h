@@ -68,5 +68,6 @@ public:
     bool LockNoTargetHeading;
     
     UFocusCameraState();
+
 };
 

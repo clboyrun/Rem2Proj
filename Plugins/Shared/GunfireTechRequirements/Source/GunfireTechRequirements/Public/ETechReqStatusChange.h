@@ -23,5 +23,7 @@ enum class ETechReqStatusChange : uint8 {
     ProfileAgeRestricted,
     PreOrderInstalled,
     CustomMessage,
+    EpicApiTimeout,
+    OnlinePlayRestricted,
 };
 

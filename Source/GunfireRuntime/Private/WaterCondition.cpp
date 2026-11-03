@@ -7,3 +7,4 @@ UWaterCondition::UWaterCondition() {
     this->WaterDepthCompare = CompareOp::GreaterThan;
 }
 
+

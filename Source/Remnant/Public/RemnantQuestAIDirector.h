@@ -37,7 +37,8 @@ private:
     FQuestAIDirectorNamedEvent OnEncounterEvent;
     
 public:
-    URemnantQuestAIDirector();
+    URemnantQuestAIDirector(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable)
     void StopAllGroups(bool DestroyActiveSpawns);
@@ -69,7 +70,7 @@ private:
     UFUNCTION(BlueprintCallable)
     void EventEncounterEvent(UEncounterGroupInstance* EncounterGroup, FName EventName);
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

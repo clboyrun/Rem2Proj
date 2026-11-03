@@ -2,6 +2,12 @@
 #include "Net/UnrealNetwork.h"
 #include "Templates/SubclassOf.h"
 
+UFactionComponent::UFactionComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bAutomaticallyTurnHostileOnDamaged = true;
+    this->HostileDamageThreshold = 0.25f;
+    this->CachedFaction = NULL;
+}
+
 void UFactionComponent::TakeDamage(const FDamageInfo& DamageInfo) {
 }
 
@@ -30,9 +36,4 @@ void UFactionComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Ou
     DOREPLIFETIME(UFactionComponent, FactionOverrides);
 }
 
-UFactionComponent::UFactionComponent() {
-    this->bAutomaticallyTurnHostileOnDamaged = true;
-    this->HostileDamageThreshold = 0.25f;
-    this->CachedFaction = NULL;
-}
 

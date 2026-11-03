@@ -20,5 +20,6 @@ public:
     bool bStateTransient;
     
     UAnimNotify_ActionEvent();
+
 };
 

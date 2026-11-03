@@ -5,3 +5,4 @@ USequencerShotGroup::USequencerShotGroup() {
     this->TargetTypes = 1;
 }
 
+

@@ -40,5 +40,6 @@ private:
     
 public:
     UAIResurrectTargetSelector();
+
 };
 

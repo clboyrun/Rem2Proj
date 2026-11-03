@@ -9,7 +9,8 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class GUNFIRERUNTIME_API UAnimatedCameraComponent : public UCameraComponent {
     GENERATED_BODY()
 public:
-    UAnimatedCameraComponent();
+    UAnimatedCameraComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SetCamera(APlayerController* TargetController);
     

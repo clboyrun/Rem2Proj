@@ -22,6 +22,7 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnPickedUpUpgradedUnique OnPickedUpUpgradedUnique;
     
-    UPlayerInventoryComponent();
+    UPlayerInventoryComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

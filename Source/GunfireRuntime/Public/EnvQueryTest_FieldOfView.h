@@ -35,5 +35,6 @@ private:
     
 public:
     UEnvQueryTest_FieldOfView();
+
 };
 

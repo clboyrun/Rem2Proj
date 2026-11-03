@@ -36,11 +36,12 @@ protected:
     bool IsEnabled;
     
 public:
-    UNavModifierGunfireComponent();
+    UNavModifierGunfireComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SetState(bool Enabled);
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

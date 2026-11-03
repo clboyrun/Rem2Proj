@@ -1,5 +1,17 @@
 #include "HeuristicBoundsComponent.h"
 
+UHeuristicBoundsComponent::UHeuristicBoundsComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->BoundsShape = EHeuristicBoundsShape::Disc;
+    this->bScaleWithDistance = true;
+    this->OuterRadius = 50.00f;
+    this->InnerRadius = 0.00f;
+    this->InnerExtentScale = 0.00f;
+    this->BracketScale = 1.00f;
+    this->bSlidingBoundsLocation = false;
+    this->SlidingMaxima = 0.00f;
+    this->SlidingMinima = 0.00f;
+}
+
 void UHeuristicBoundsComponent::SetOuterExtent(const FVector& NewExtent) {
 }
 
@@ -15,15 +27,4 @@ TArray<FVector> UHeuristicBoundsComponent::GetBoundsBracketOnPlane(const FVector
     return TArray<FVector>();
 }
 
-UHeuristicBoundsComponent::UHeuristicBoundsComponent() {
-    this->BoundsShape = EHeuristicBoundsShape::Disc;
-    this->bScaleWithDistance = true;
-    this->OuterRadius = 50.00f;
-    this->InnerRadius = 0.00f;
-    this->InnerExtentScale = 0.00f;
-    this->BracketScale = 1.00f;
-    this->bSlidingBoundsLocation = false;
-    this->SlidingMaxima = 0.00f;
-    this->SlidingMinima = 0.00f;
-}
 

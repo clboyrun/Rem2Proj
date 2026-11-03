@@ -10,6 +10,7 @@ class GUNFIRERUNTIME_API UDamageInfoFunctionLibrary : public UBlueprintFunctionL
     GENERATED_BODY()
 public:
     UDamageInfoFunctionLibrary();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FDamageInfo Conv_RepInfoToDamageInfo(const FReplicatedDamageInfo& InRepInfo);
     

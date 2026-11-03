@@ -6,3 +6,4 @@ UImageEntry::UImageEntry() {
     this->VerticalAlignmentOffset = 16;
 }
 
+

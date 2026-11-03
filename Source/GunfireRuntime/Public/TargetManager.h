@@ -18,7 +18,8 @@ private:
     TArray<UTargetableComponent*> RegisteredComponents;
     
 public:
-    UTargetManager();
+    UTargetManager(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     static void QueryPotentialTargetsAlongAimVector(APawn* Source, float Range, float HorizontalArc, float VerticalArc, bool CullNotVisible, bool CullNotLockable, bool CullNotSoftTargetable, TArray<FTargetQueryResult>& Results, bool bSortResults);
     
@@ -36,6 +37,12 @@ public:
     
     UFUNCTION(BlueprintCallable)
     static float K2_GetScoreForTargetActor(AActor* Source, AActor* Target, float Yaw, float Pitch, float Range, float HorizontalArc, float VerticalArc, bool CullNotVisible);
+    
+    UFUNCTION(BlueprintCallable)
+    static FVector GetSoftTargetLocation(AActor* Target, const FVector& OriginLocation);
+    
+    UFUNCTION(BlueprintCallable)
+    static FVector GetBestTargetingLocationOnActorForTarget(AActor* Source, const FVector& TargetLocation);
     
 };
 

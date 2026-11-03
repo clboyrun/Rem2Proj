@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UPathSharingManager : public UObject {
     GENERATED_BODY()
 public:
     UPathSharingManager();
+
 };
 

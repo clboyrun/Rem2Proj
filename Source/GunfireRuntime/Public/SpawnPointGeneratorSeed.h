@@ -7,6 +7,7 @@ UCLASS(Blueprintable)
 class GUNFIRERUNTIME_API ASpawnPointGeneratorSeed : public AActor {
     GENERATED_BODY()
 public:
-    ASpawnPointGeneratorSeed();
+    ASpawnPointGeneratorSeed(const FObjectInitializer& ObjectInitializer);
+
 };
 

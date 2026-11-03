@@ -31,7 +31,8 @@ protected:
     TMap<FName, UEventTreeNode_ContextualDialogTrigger*> CachedTriggers;
     
 public:
-    UContextualDialogComponent();
+    UContextualDialogComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static void TriggerDialogResponseInProximity(const UObject* WorldContextObject, const FVector& Location, float Radius, FName DialogResponse);
     

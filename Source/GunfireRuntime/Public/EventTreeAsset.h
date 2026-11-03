@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UEventTreeAsset : public UDataAsset {
     GENERATED_BODY()
 public:
     UEventTreeAsset();
+
 };
 

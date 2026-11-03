@@ -12,5 +12,6 @@ public:
     EInputDevice PrimaryDevice;
     
     UImageSet();
+
 };
 

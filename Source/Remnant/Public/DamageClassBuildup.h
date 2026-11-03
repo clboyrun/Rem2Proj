@@ -24,6 +24,7 @@ public:
     UCurveFloat* Curve;
     
     UDamageClassBuildup();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetBuildupValue(const FDamageInfo& DamageInfo, float CurrentBuildup) const;
     

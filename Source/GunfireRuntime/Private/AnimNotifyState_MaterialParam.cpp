@@ -8,3 +8,4 @@ UAnimNotifyState_MaterialParam::UAnimNotifyState_MaterialParam() {
     this->Exponent = 3.00f;
 }
 
+

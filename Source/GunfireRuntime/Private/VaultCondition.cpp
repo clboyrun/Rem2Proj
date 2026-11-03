@@ -5,3 +5,4 @@ UVaultCondition::UVaultCondition() {
     this->VaultType = EVaultType::VaultOver;
 }
 
+

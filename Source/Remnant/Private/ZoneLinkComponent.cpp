@@ -1,10 +1,19 @@
 #include "ZoneLinkComponent.h"
 #include "Net/UnrealNetwork.h"
 
-void UZoneLinkComponent::TravelToWaypoint(const FName& LinkNameID) {
+UZoneLinkComponent::UZoneLinkComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->Status = EZoneLinkStatus::None;
+    this->AutoRegister = false;
+    this->Type = EZoneLinkType::Link;
+    this->RequiredPlayerProximity = 1000.00f;
+    this->bIsRespawnZoneLink = false;
+    this->bHasWaypointAccess = false;
 }
 
-void UZoneLinkComponent::TravelToDestinationZone(bool Force, bool Instant) {
+void UZoneLinkComponent::TravelToWaypoint(FName Context, const FName& LinkNameID) {
+}
+
+void UZoneLinkComponent::TravelToDestinationZone(FName Context, bool Force, bool Instant) {
 }
 
 void UZoneLinkComponent::SetLinkDisabled(bool Disabled) {
@@ -74,12 +83,4 @@ void UZoneLinkComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& O
     DOREPLIFETIME(UZoneLinkComponent, bIsRespawnZoneLink);
 }
 
-UZoneLinkComponent::UZoneLinkComponent() {
-    this->Status = EZoneLinkStatus::None;
-    this->AutoRegister = false;
-    this->Type = EZoneLinkType::Link;
-    this->RequiredPlayerProximity = 1000.00f;
-    this->bIsRespawnZoneLink = false;
-    this->bHasWaypointAccess = false;
-}
 

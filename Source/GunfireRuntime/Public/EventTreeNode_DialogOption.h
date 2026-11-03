@@ -24,5 +24,6 @@ public:
     TArray<FEventTreeAttrib> Attributes;
     
     UEventTreeNode_DialogOption();
+
 };
 

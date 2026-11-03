@@ -5,6 +5,58 @@
 #include "ReplicatedMovementComponent.h"
 #include "Templates/SubclassOf.h"
 
+AProjectileBase::AProjectileBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bReplicates = true;
+    const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
+    (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
+    this->Cause = NULL;
+    this->MaxLifetime = 10.00f;
+    this->PostBounceMaxLifeTime = -1.00f;
+    this->Collision = NULL;
+    this->ProjectileMovement = CreateDefaultSubobject<UProjectileMovementComponentGunfire>(TEXT("ProjectileMovement"));
+    this->ProjectileReplication = CreateDefaultSubobject<UReplicatedMovementComponent>(TEXT("ProjectileReplication"));
+    this->ActionComp = CreateDefaultSubobject<UActionComponent>(TEXT("Action"));
+    this->DestroyAfterImpactEffects = true;
+    this->DisableCollisionOnStop = false;
+    this->AttachOnHit = false;
+    this->OrientPitchToSurfaceOnAttach = false;
+    this->AttachIgnoreBones = TEXT("_Head");
+    this->TargetCooldownTime = 0.00f;
+    this->bDelayDestroyUntilAfterActionsFinish = false;
+    this->DestroyBreakables = false;
+    this->bIgnorePenetratesOnValidHits = false;
+    this->bActivateNearbyCharacters = true;
+    this->AdditionalActivateRadius = 200.00f;
+    this->ActivateSimulationTime = 0.20f;
+    this->ApplyDamage = false;
+    this->DamageScalar = 1.00f;
+    this->DamageMod = 0.00f;
+    this->DamageType = NULL;
+    this->PowerOverride = -1;
+    this->Evadable = true;
+    this->SoftDeactivatePooledFXComponents = false;
+    this->bPenetrate = false;
+    this->MaxPenetrations = 1;
+    this->PenetrateDelay = 0.50f;
+    this->PenetrationDamageScalarInitial = 0.50f;
+    this->PenetrationDamageScalarIncrement = 1.00f;
+    this->CameraShake = NULL;
+    this->InnerRadius = 0.00f;
+    this->OuterRadius = 0.00f;
+    this->Falloff = 1.00f;
+    this->LoopFadeInDuration = 0.00f;
+    this->ImpactVFX = NULL;
+    this->bFFAOE = false;
+    this->ForceFeedback = NULL;
+    this->FFAttenuationSettings = NULL;
+    this->SimulationWorld = NULL;
+    this->bIsDamageable = false;
+    this->DestroyOnTakeDamage = false;
+    this->bHasGroupDoneHit = false;
+    this->bRequiresClientCameraTransform = false;
+    this->bAlignToClientCameraTransform = false;
+}
+
 bool AProjectileBase::ValidateHit_Implementation(const FHitResult& Hit, bool bSimulating) {
     return false;
 }
@@ -65,6 +117,10 @@ bool AProjectileBase::GetClientCameraTransform(FVector& CameraLocation, FRotator
     return false;
 }
 
+TArray<UFXSystemComponent*> AProjectileBase::GatherPooledProjectileComponentsForDeactivation_Implementation() {
+    return TArray<UFXSystemComponent*>();
+}
+
 void AProjectileBase::FilterIncomingDamage_Implementation(const FDamageInfo& DamageInfo, float& DamageOut, bool& ShouldApplyDamage) {
 }
 
@@ -77,50 +133,4 @@ void AProjectileBase::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutL
     DOREPLIFETIME(AProjectileBase, Cause);
 }
 
-AProjectileBase::AProjectileBase() {
-    this->Cause = NULL;
-    this->MaxLifetime = 10.00f;
-    this->PostBounceMaxLifeTime = -1.00f;
-    this->Collision = NULL;
-    this->ProjectileMovement = CreateDefaultSubobject<UProjectileMovementComponentGunfire>(TEXT("ProjectileMovement"));
-    this->ProjectileReplication = CreateDefaultSubobject<UReplicatedMovementComponent>(TEXT("ProjectileReplication"));
-    this->ActionComp = CreateDefaultSubobject<UActionComponent>(TEXT("Action"));
-    this->DestroyAfterImpactEffects = true;
-    this->DisableCollisionOnStop = false;
-    this->AttachOnHit = false;
-    this->OrientPitchToSurfaceOnAttach = false;
-    this->AttachIgnoreBones = TEXT("_Head");
-    this->TargetCooldownTime = 0.00f;
-    this->bDelayDestroyUntilAfterActionsFinish = false;
-    this->DestroyBreakables = false;
-    this->bIgnorePenetratesOnValidHits = false;
-    this->bActivateNearbyCharacters = true;
-    this->AdditionalActivateRadius = 200.00f;
-    this->ApplyDamage = false;
-    this->DamageScalar = 1.00f;
-    this->DamageMod = 0.00f;
-    this->DamageType = NULL;
-    this->PowerOverride = -1;
-    this->Evadable = true;
-    this->bPenetrate = false;
-    this->MaxPenetrations = 1;
-    this->PenetrateDelay = 0.50f;
-    this->PenetrationDamageScalarInitial = 0.50f;
-    this->PenetrationDamageScalarIncrement = 1.00f;
-    this->CameraShake = NULL;
-    this->InnerRadius = 0.00f;
-    this->OuterRadius = 0.00f;
-    this->Falloff = 1.00f;
-    this->LoopFadeInDuration = 0.00f;
-    this->ImpactVFX = NULL;
-    this->bFFAOE = false;
-    this->ForceFeedback = NULL;
-    this->FFAttenuationSettings = NULL;
-    this->SimulationWorld = NULL;
-    this->bIsDamageable = false;
-    this->DestroyOnTakeDamage = false;
-    this->bHasGroupDoneHit = false;
-    this->bRequiresClientCameraTransform = false;
-    this->bAlignToClientCameraTransform = false;
-}
 

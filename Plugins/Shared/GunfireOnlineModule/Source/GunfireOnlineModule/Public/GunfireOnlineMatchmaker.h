@@ -1,5 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "EMatchmakingRegions.h"
 #include "ESessionSearchType.h"
 #include "GunfireOnlineSubsystemBase.h"
 #include "OnMatchmakeDelegateDelegate.h"
@@ -24,14 +25,24 @@ public:
     FOnMatchmakeSuccessDelegate OnMatchmakeSuccess;
     
     UGunfireOnlineMatchmaker();
+
+    UFUNCTION(BlueprintCallable)
+    void SetMatchmakingRegion(EMatchmakingRegions Region);
+    
     UFUNCTION(BlueprintCallable)
     void Matchmake(ESessionSearchType NewSearchType, int32 MaxSessions, float Timeout);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsFindingSessions() const;
     
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    EMatchmakingRegions GetMatchmakingRegion() const;
+    
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
     static UGunfireOnlineMatchmaker* GetGunfireOnlineMatchmaker(const UObject* WorldContextObject);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    EMatchmakingRegions DetectMatchmakingRegion() const;
     
     UFUNCTION(BlueprintCallable)
     void CancelFindSessions();

@@ -52,7 +52,8 @@ protected:
     float IntensityStateChangeLockout;
     
 public:
-    UAIDirector();
+    UAIDirector(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void Suspend();
     

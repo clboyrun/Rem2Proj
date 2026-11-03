@@ -15,5 +15,6 @@ public:
     TArray<UActorState*> States;
     
     UCompoundState();
+
 };
 

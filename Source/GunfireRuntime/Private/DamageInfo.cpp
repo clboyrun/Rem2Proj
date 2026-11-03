@@ -10,6 +10,7 @@ FDamageInfo::FDamageInfo() {
     this->CritChance = 0.00f;
     this->CritDamageMod = 0.00f;
     this->WeakSpotDamageMod = 0.00f;
+    this->WeakSpotDamageScalar = 0.00f;
     this->PowerOverride = 0;
     this->DifficultyDamageScalar = 0.00f;
     this->UnmodifiedDamage = 0.00f;
@@ -18,6 +19,7 @@ FDamageInfo::FDamageInfo() {
     this->TotalSprayCount = 0;
     this->NoImpacts = false;
     this->SecondaryDamage = false;
+    this->CanBeLethal = false;
     this->Critical = false;
     this->AllowsCrits = false;
     this->WeakSpot = false;

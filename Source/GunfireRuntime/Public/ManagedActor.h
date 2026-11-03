@@ -29,7 +29,8 @@ protected:
     TArray<USkeletalMeshComponent*> SkeletalMeshes;
     
 public:
-    AManagedActor();
+    AManagedActor(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     FString GetDebugInfo(int32 DebugLevel);
     

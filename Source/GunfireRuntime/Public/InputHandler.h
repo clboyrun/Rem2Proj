@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UInputHandler : public UObject {
     GENERATED_BODY()
 public:
     UInputHandler();
+
 };
 

@@ -22,6 +22,7 @@ public:
     bool ApplyFriendlyFireDamageScalar;
     
     UFaction();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static EAffiliation GetAffiliationForActors(const AActor* Actor1, const AActor* Actor2);
     

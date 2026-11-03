@@ -26,6 +26,7 @@ public:
     UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FMapGenAttribute> Attributes;
     
-    AMapTileBase();
+    AMapTileBase(const FObjectInitializer& ObjectInitializer);
+
 };
 

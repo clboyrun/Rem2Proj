@@ -17,5 +17,6 @@ private:
     
 public:
     UAnimNotify_SetMovementMode();
+
 };
 

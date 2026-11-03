@@ -1,29 +1,7 @@
 #include "ReplicatedMovementComponent.h"
 #include "Net/UnrealNetwork.h"
 
-void UReplicatedMovementComponent::ServerMoveUpdate_Implementation(const FReplicatedMovementInfo& Info) {
-}
-bool UReplicatedMovementComponent::ServerMoveUpdate_Validate(const FReplicatedMovementInfo& Info) {
-    return true;
-}
-
-void UReplicatedMovementComponent::Reset() {
-}
-
-void UReplicatedMovementComponent::OnRep_MovementInfo() {
-}
-
-void UReplicatedMovementComponent::ClientAckMove_Implementation(uint16 MoveTime) {
-}
-
-void UReplicatedMovementComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {
-    Super::GetLifetimeReplicatedProps(OutLifetimeProps);
-    
-    DOREPLIFETIME(UReplicatedMovementComponent, InitialVelocityForExtrapolation);
-    DOREPLIFETIME(UReplicatedMovementComponent, MovementInfo);
-}
-
-UReplicatedMovementComponent::UReplicatedMovementComponent() {
+UReplicatedMovementComponent::UReplicatedMovementComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->BufferTime = 100;
     this->DistanceTolerance = 0.00f;
     this->RotationTolerance = 0.00f;
@@ -39,5 +17,39 @@ UReplicatedMovementComponent::UReplicatedMovementComponent() {
     this->ExtrapolationTeleportThresh = 500.00f;
     this->RotationSmoothingRateScale = 0.25f;
     this->ExtrapolateFromSinglePointWithVelocity = false;
+    this->BaseMovementOverride = NULL;
 }
+
+void UReplicatedMovementComponent::SetBaseMovementOverride(UPrimitiveComponent* Comp) {
+}
+
+void UReplicatedMovementComponent::ServerMoveUpdate_Implementation(const FReplicatedMovementInfo& Info) {
+}
+bool UReplicatedMovementComponent::ServerMoveUpdate_Validate(const FReplicatedMovementInfo& Info) {
+    return true;
+}
+
+void UReplicatedMovementComponent::Reset() {
+}
+
+void UReplicatedMovementComponent::OnRep_MovementInfo() {
+}
+
+UPrimitiveComponent* UReplicatedMovementComponent::GetBaseMovementOverride() {
+    return NULL;
+}
+
+void UReplicatedMovementComponent::ClientAckMove_Implementation(uint16 MoveTime) {
+}
+
+void UReplicatedMovementComponent::ClearBaseMovementOverride() {
+}
+
+void UReplicatedMovementComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {
+    Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+    
+    DOREPLIFETIME(UReplicatedMovementComponent, InitialVelocityForExtrapolation);
+    DOREPLIFETIME(UReplicatedMovementComponent, MovementInfo);
+}
+
 

@@ -32,5 +32,11 @@ enum class EGunfireOnlineEvent : uint8 {
     SessionInvalid,
     QuestMultiplayerDisabled,
     StartSessionFailed,
+    DataSynchronizationFailed,
+    EmptyFriendList,
+    OnlineRestricted,
+    CrossplayMismatch,
+    TravelFailed,
+    QuestTempDisabledMultiplayer,
 };
 

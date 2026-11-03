@@ -1,5 +1,8 @@
 #include "CheatManagerGunfire.h"
 
+UCheatManagerGunfire::UCheatManagerGunfire() {
+}
+
 void UCheatManagerGunfire::UnlockAllTraitsOfType(const FString& NameOfTypeBP, int32 StartingLevel) {
 }
 
@@ -42,6 +45,9 @@ void UCheatManagerGunfire::SendCommandToConsole(const FString& Command) {
 void UCheatManagerGunfire::ResyncChallenges() {
 }
 
+void UCheatManagerGunfire::ResetTimedEvents() const {
+}
+
 void UCheatManagerGunfire::ResetChallenges() {
 }
 
@@ -52,6 +58,12 @@ void UCheatManagerGunfire::RemoveItem(const FString& NameOfBP, int32 Quantity) {
 }
 
 void UCheatManagerGunfire::RemoveAllItems() {
+}
+
+void UCheatManagerGunfire::PrintActiveTimedEvents() const {
+}
+
+void UCheatManagerGunfire::LogChallengeProgress() {
 }
 
 void UCheatManagerGunfire::KillNearbyEnemies() {
@@ -85,7 +97,13 @@ TArray<FString> UCheatManagerGunfire::GetConsoleCommandCategories() {
     return TArray<FString>();
 }
 
+void UCheatManagerGunfire::ForceHitch(float Seconds) {
+}
+
 void UCheatManagerGunfire::ForceCrash() {
+}
+
+void UCheatManagerGunfire::FlushNetDriverReferences() {
 }
 
 void UCheatManagerGunfire::EnablePrimaryFlyCamera() {
@@ -103,6 +121,7 @@ void UCheatManagerGunfire::ClearAllDialogs() {
 void UCheatManagerGunfire::AddTrait(const FString& NameOfBP, int32 Level) {
 }
 
-UCheatManagerGunfire::UCheatManagerGunfire() {
+void UCheatManagerGunfire::AddTimedEvent(FName EventName, const FString& Tags) const {
 }
+
 

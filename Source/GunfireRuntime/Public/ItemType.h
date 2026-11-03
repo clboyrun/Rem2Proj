@@ -42,6 +42,7 @@ public:
     int32 SortPriority;
     
     UItemType();
+
     UFUNCTION(BlueprintCallable, BlueprintPure=false)
     static void SortQueryResults(const TArray<UInventoryComponent*>& Inventories, TArray<FItemQueryResult>& Results, const TArray<EItemQuerySortMethod>& SortMethods);
     

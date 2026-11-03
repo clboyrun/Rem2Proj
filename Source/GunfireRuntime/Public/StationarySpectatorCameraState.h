@@ -17,5 +17,6 @@ public:
     bool LockRoll;
     
     UStationarySpectatorCameraState();
+
 };
 

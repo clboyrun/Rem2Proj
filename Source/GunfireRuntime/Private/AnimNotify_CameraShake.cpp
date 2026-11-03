@@ -10,3 +10,4 @@ UAnimNotify_CameraShake::UAnimNotify_CameraShake() {
     this->bIgnoreBlendOut = true;
 }
 
+

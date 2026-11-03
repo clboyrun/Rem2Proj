@@ -52,5 +52,6 @@ private:
     
 public:
     UEnvQueryTest_Cover();
+
 };
 

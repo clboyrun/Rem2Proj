@@ -21,5 +21,6 @@ public:
     FVector RelativeImpulse;
     
     UAnimNotify_Impulse();
+
 };
 

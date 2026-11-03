@@ -1,21 +1,7 @@
 #include "ProjectileVisualization.h"
 #include "Templates/SubclassOf.h"
 
-void AProjectileVisualization::VisualizeProjectileFromClass(AActor* Cause, TSubclassOf<AActor> ProjectileClass, FVector StartLocation, FRotator StartDirection, const FProjectileVisualizationParams& Params, FProjectileVisualizationContext& Context) {
-}
-
-void AProjectileVisualization::VisualizeProjectile(AActor* Cause, AActor* Projectile, FVector StartLocation, FRotator StartDirection, const FProjectileVisualizationParams& Params, FProjectileVisualizationContext& Context) {
-}
-
-bool AProjectileVisualization::PreDraw_Implementation(const FProjectileVisualizationParams& Params, FProjectileVisualizationContext& Context) {
-    return false;
-}
-
-
-void AProjectileVisualization::ClearProjectileVisualization(FProjectileVisualizationContext& Context) {
-}
-
-AProjectileVisualization::AProjectileVisualization() {
+AProjectileVisualization::AProjectileVisualization(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->PathMesh = NULL;
     this->PathMaterial = NULL;
     this->MeshScale = 1.00f;
@@ -31,4 +17,19 @@ AProjectileVisualization::AProjectileVisualization() {
     this->FullAlphaDistance = 0.00f;
     this->ImpactActor = NULL;
 }
+
+void AProjectileVisualization::VisualizeProjectileFromClass(AActor* Cause, TSubclassOf<AActor> ProjectileClass, FVector StartLocation, FRotator StartDirection, const FProjectileVisualizationParams& Params, FProjectileVisualizationContext& Context) {
+}
+
+void AProjectileVisualization::VisualizeProjectile(AActor* Cause, AActor* Projectile, FVector StartLocation, FRotator StartDirection, const FProjectileVisualizationParams& Params, FProjectileVisualizationContext& Context) {
+}
+
+bool AProjectileVisualization::PreDraw_Implementation(const FProjectileVisualizationParams& Params, FProjectileVisualizationContext& Context) {
+    return false;
+}
+
+
+void AProjectileVisualization::ClearProjectileVisualization(FProjectileVisualizationContext& Context) {
+}
+
 

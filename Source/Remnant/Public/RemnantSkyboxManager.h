@@ -26,7 +26,8 @@ protected:
     AActor* SkyboxRefActor;
     
 public:
-    URemnantSkyboxManager();
+    URemnantSkyboxManager(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void RegisterSkyboxModifierVolume(AActor* SkyboxModVolume);
     

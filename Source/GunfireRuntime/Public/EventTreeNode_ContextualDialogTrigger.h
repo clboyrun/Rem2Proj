@@ -16,5 +16,6 @@ public:
     TArray<UBranch_ContextualDialogEntry*> Entries;
     
     UEventTreeNode_ContextualDialogTrigger();
+
 };
 

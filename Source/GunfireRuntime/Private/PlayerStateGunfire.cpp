@@ -1,6 +1,13 @@
 #include "PlayerStateGunfire.h"
 #include "Net/UnrealNetwork.h"
 
+APlayerStateGunfire::APlayerStateGunfire(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->CachedPawn = NULL;
+    this->bIsHost = false;
+    this->bIsChatRestricted = false;
+    this->JoinState = EPlayerJoinState::Disconnected;
+}
+
 void APlayerStateGunfire::ServerSetChatRestricted_Implementation(bool ChatRestricted) {
 }
 bool APlayerStateGunfire::ServerSetChatRestricted_Validate(bool ChatRestricted) {
@@ -48,10 +55,4 @@ void APlayerStateGunfire::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& 
     DOREPLIFETIME(APlayerStateGunfire, JoinState);
 }
 
-APlayerStateGunfire::APlayerStateGunfire() {
-    this->CachedPawn = NULL;
-    this->bIsHost = false;
-    this->bIsChatRestricted = false;
-    this->JoinState = EPlayerJoinState::Disconnected;
-}
 

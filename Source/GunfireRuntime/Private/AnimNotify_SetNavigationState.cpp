@@ -5,3 +5,4 @@ UAnimNotify_SetNavigationState::UAnimNotify_SetNavigationState() {
     this->bIsStateTransient = false;
 }
 
+

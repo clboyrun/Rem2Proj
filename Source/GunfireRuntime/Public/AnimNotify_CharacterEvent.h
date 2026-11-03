@@ -17,5 +17,6 @@ public:
     bool bStateTransient;
     
     UAnimNotify_CharacterEvent();
+
 };
 

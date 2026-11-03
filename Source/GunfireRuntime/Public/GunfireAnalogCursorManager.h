@@ -7,7 +7,8 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class GUNFIRERUNTIME_API UGunfireAnalogCursorManager : public UActorComponent {
     GENERATED_BODY()
 public:
-    UGunfireAnalogCursorManager();
+    UGunfireAnalogCursorManager(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void OnControllerConnectionChanged(bool bConnected);
     

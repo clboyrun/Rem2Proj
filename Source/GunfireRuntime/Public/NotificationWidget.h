@@ -14,6 +14,7 @@ class GUNFIRERUNTIME_API UNotificationWidget : public UUserWidget {
     GENERATED_BODY()
 public:
     UNotificationWidget();
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void SetMessageTextEvent(const FText& Heading, const FText& Body);
     

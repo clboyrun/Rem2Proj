@@ -6,3 +6,4 @@ UAnimNotify_Awareness::UAnimNotify_Awareness() {
     this->Radius = 500.00f;
 }
 
+

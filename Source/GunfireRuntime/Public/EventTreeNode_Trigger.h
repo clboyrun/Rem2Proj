@@ -11,5 +11,6 @@ public:
     FName TriggerName;
     
     UEventTreeNode_Trigger();
+
 };
 

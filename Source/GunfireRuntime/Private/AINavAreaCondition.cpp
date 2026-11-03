@@ -5,3 +5,4 @@ UAINavAreaCondition::UAINavAreaCondition() {
     this->LookAheadDistance = 50.00f;
 }
 
+

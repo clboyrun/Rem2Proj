@@ -1,10 +1,24 @@
 #include "RemnantQuestManager.h"
 
+URemnantQuestManager::URemnantQuestManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->RootQuestVariables = NULL;
+}
+
 TArray<FRemnantQuestEntry> URemnantQuestManager::SortQuestList(const TArray<FRemnantQuestEntry>& QuestList) {
     return TArray<FRemnantQuestEntry>();
 }
 
+void URemnantQuestManager::ResetTransientRootQuests() {
+}
+
+void URemnantQuestManager::MarkOneShotRolled(const FRemnantQuestEntry& Quest) {
+}
+
 bool URemnantQuestManager::IsQuestValid(ARemnantQuest* Quest, AActor* Actor) {
+    return false;
+}
+
+bool URemnantQuestManager::IsOneShotRolled(const FRemnantQuestEntry& Quest) {
     return false;
 }
 
@@ -32,6 +46,10 @@ FRemnantQuestEntry URemnantQuestManager::GetRegisteredQuestByID(const FString& Q
     return FRemnantQuestEntry{};
 }
 
+FRemnantQuestEntry URemnantQuestManager::GetRegisteredQuestByClass(TSoftClassPtr<ARemnantQuest> QuestBP) {
+    return FRemnantQuestEntry{};
+}
+
 void URemnantQuestManager::GetQuestsForActor(AActor* Actor, bool IncludeInjectedQuests, TArray<ARemnantQuest*>& Rtn) {
 }
 
@@ -54,7 +72,4 @@ bool URemnantQuestManager::ActivateRootQuest(ARemnantQuest* Quest) const {
     return false;
 }
 
-URemnantQuestManager::URemnantQuestManager() {
-    this->RootQuestVariables = NULL;
-}
 

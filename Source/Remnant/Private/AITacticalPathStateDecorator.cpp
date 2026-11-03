@@ -7,3 +7,4 @@ UAITacticalPathStateDecorator::UAITacticalPathStateDecorator() {
     this->bNavigatePath = false;
 }
 
+

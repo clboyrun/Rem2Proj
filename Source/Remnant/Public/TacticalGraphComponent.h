@@ -11,7 +11,8 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class REMNANT_API UTacticalGraphComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UTacticalGraphComponent();
+    UTacticalGraphComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void Stop();
     

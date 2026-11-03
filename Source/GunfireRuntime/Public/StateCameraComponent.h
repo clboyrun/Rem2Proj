@@ -1,11 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "Camera/CameraComponent.h"
 #include "Engine/EngineTypes.h"
 #include "Camera/CameraTypes.h"
+#include "ButtonEvent.h"
 #include "OnCameraStateChangedDelegateDelegate.h"
 #include "Templates/SubclassOf.h"
 #include "StateCameraComponent.generated.h"
@@ -104,7 +103,8 @@ protected:
     AActor* AnimatedCameraActor;
     
 public:
-    UStateCameraComponent();
+    UStateCameraComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void UnlockCameraState(float BlendTime);
     
@@ -136,6 +136,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void OnCinematicExitMoveEvent();
+    
+    UFUNCTION(BlueprintCallable)
+    void OnCinematicExitInputEvent(const FName& ButtonName, ButtonEvent Event);
     
     UFUNCTION(BlueprintCallable)
     void LockCameraState();

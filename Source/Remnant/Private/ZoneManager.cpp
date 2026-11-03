@@ -1,12 +1,10 @@
 #include "ZoneManager.h"
-#include "Templates/SubclassOf.h"
+
+UZoneManager::UZoneManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+}
 
 int32 UZoneManager::UnlockAllWaypoints() {
     return 0;
-}
-
-AZoneActor* UZoneManager::GetZoneForSlot(int32 SlotID) {
-    return NULL;
 }
 
 AZoneActor* UZoneManager::GetZoneForActor(AActor* Actor) {
@@ -32,10 +30,4 @@ FString UZoneManager::GetBiomeForActor(AActor* Actor) {
 void UZoneManager::DestroyZone(AZoneActor* Zone) {
 }
 
-AZoneActor* UZoneManager::CreateZone(int32 SlotID, TSubclassOf<AZoneActor> ZoneActorBP, int32 SeedOverride) {
-    return NULL;
-}
-
-UZoneManager::UZoneManager() {
-}
 

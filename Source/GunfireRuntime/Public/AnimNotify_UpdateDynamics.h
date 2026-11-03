@@ -17,5 +17,6 @@ public:
     bool Teleport;
     
     UAnimNotify_UpdateDynamics();
+
 };
 

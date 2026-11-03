@@ -9,3 +9,4 @@ UCooldownStateDecorator::UCooldownStateDecorator() {
     this->CooldownMax = 1.50f;
 }
 
+

@@ -32,7 +32,8 @@ protected:
     UPlayState* CurrentState;
     
 public:
-    UPlayStateComponent();
+    UPlayStateComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsLocallyControlled() const;
     

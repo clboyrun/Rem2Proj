@@ -30,5 +30,6 @@ public:
     FName EventName;
     
     USpawnTableEncounterParams();
+
 };
 

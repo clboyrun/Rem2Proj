@@ -13,5 +13,6 @@ enum class EOnlineSessionManagerState : uint8 {
     ReCreatingSession,
     DestroyingSession,
     StartingSession,
+    SwitchingSession,
 };
 

@@ -19,7 +19,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EDetailPriority Priority;
     
-    UDetailLevelComponent();
+    UDetailLevelComponent(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void UpdateDetailLevel(UUserSetting* AppliedSetting, UGameUserSettingsGunfire* UserSettings);

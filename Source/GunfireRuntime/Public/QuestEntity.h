@@ -21,6 +21,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<UEventTree> EventTree;
     
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool ShouldBeContextProviderForDefaultTree;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EQuestEntityOwnerContext OwnerContext;
     
@@ -36,7 +39,8 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FQuestActorDelegate OnDestroyed;
     
-    UQuestEntity();
+    UQuestEntity(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void StartEventTree(UEventTree* NewEventTree);
     
@@ -61,7 +65,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void BeginDialog(AActor* Initiator);
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

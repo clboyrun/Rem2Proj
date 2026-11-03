@@ -26,7 +26,8 @@ private:
     TArray<UActorComponent*> ActiveComponents;
     
 public:
-    UFxActorDestroyerComponent();
+    UFxActorDestroyerComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void SoftDestroyOwner();
     

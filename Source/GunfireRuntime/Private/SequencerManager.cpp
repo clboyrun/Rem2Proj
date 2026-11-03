@@ -1,6 +1,11 @@
 #include "SequencerManager.h"
 #include "Net/UnrealNetwork.h"
 
+USequencerManager::USequencerManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->NumRunningInstancesOnServer = 0;
+    this->PossessedObjectAction = NULL;
+}
+
 void USequencerManager::UpdateSkipStatus_Implementation(UObject* InSequence, bool ShouldSkip) {
 }
 
@@ -57,8 +62,4 @@ void USequencerManager::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Ou
     DOREPLIFETIME(USequencerManager, NumRunningInstancesOnServer);
 }
 
-USequencerManager::USequencerManager() {
-    this->NumRunningInstancesOnServer = 0;
-    this->PossessedObjectAction = NULL;
-}
 

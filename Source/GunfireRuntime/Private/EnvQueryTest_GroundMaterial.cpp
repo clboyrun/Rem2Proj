@@ -1,6 +1,9 @@
 #include "EnvQueryTest_GroundMaterial.h"
 
 UEnvQueryTest_GroundMaterial::UEnvQueryTest_GroundMaterial() {
+    this->TestPurpose = EEnvTestPurpose::Filter;
+    this->FilterType = EEnvTestFilterType::Match;
+    this->ScoringEquation = EEnvTestScoreEquation::Constant;
     this->TraceChannel = ECC_WorldStatic;
     this->TraceComplex = true;
     this->TraceOffset = 50.00f;
@@ -12,4 +15,5 @@ UEnvQueryTest_GroundMaterial::UEnvQueryTest_GroundMaterial() {
     this->SampleOffset = 10.00f;
     this->SampleDistance = 30.00f;
 }
+
 

@@ -13,5 +13,6 @@ public:
     TSoftObjectPtr<UChallenge> Challenge;
     
     UChallengeCompleteCondition();
+
 };
 

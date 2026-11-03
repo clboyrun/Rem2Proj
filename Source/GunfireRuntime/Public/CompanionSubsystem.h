@@ -22,6 +22,7 @@ protected:
     
 public:
     UCompanionSubsystem();
+
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static void RemoveCompanionListener(const UObject* WorldContextObject, const FCompanionDelegate& Event);
     

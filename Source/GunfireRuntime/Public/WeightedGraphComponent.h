@@ -23,6 +23,7 @@ protected:
     TArray<FGraphPosition> CachedGraphPositions;
     
 public:
-    UWeightedGraphComponent();
+    UWeightedGraphComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

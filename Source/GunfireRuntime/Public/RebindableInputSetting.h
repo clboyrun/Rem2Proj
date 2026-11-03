@@ -41,6 +41,7 @@ public:
     TArray<FName> IgnoreInputs;
     
     URebindableInputSetting();
+
     UFUNCTION(BlueprintCallable)
     void SetValue(FGenericInput NewKey);
     

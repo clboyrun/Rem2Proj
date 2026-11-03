@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UAITacticalPointManager : public UWorldSubsystem {
     GENERATED_BODY()
 public:
     UAITacticalPointManager();
+
 };
 

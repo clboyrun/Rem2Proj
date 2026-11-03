@@ -25,7 +25,8 @@ protected:
     TArray<FTileResources> Resources;
     
 public:
-    UResourceSpawnManager();
+    UResourceSpawnManager(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnUninitialize();

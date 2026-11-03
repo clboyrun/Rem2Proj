@@ -25,7 +25,8 @@ public:
     int32 VerticalAlignmentOffset;
     
     UImageEntry();
-    
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

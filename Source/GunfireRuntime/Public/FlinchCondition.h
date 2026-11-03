@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UFlinchCondition : public UCondition {
     GENERATED_BODY()
 public:
     UFlinchCondition();
+
 };
 

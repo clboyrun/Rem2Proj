@@ -13,3 +13,4 @@ UAIPathToStateDecorator::UAIPathToStateDecorator() {
     this->ProjectDestinationToNavMesh = false;
 }
 
+

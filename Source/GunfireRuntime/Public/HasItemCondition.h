@@ -32,7 +32,11 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EYesNo InHand;
     
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool IncludeOwningCharacterInventory;
+    
 public:
     UHasItemCondition();
+
 };
 

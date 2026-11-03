@@ -32,8 +32,12 @@ public:
     FOnOnlineFriendUpdated OnFriendUpdated;
     
     UGunfireOnlineFriends();
+
     UFUNCTION(BlueprintCallable)
     void UpdateFriendsList();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure=false)
+    void ShowFriendsOverlay() const;
     
     UFUNCTION(BlueprintCallable)
     void RejectInvite(const FString& FriendId);

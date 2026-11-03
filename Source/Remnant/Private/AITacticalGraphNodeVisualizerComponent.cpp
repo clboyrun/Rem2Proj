@@ -1,5 +1,6 @@
 #include "AITacticalGraphNodeVisualizerComponent.h"
 
-UAITacticalGraphNodeVisualizerComponent::UAITacticalGraphNodeVisualizerComponent() {
+UAITacticalGraphNodeVisualizerComponent::UAITacticalGraphNodeVisualizerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

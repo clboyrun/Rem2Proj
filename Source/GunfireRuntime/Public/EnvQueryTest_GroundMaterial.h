@@ -45,5 +45,6 @@ private:
     
 public:
     UEnvQueryTest_GroundMaterial();
+
 };
 

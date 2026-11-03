@@ -4,3 +4,4 @@ UNavSvoStreamingData::UNavSvoStreamingData() {
     this->Level = NULL;
 }
 
+

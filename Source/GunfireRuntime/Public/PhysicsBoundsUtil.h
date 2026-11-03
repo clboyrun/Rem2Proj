@@ -13,6 +13,7 @@ class GUNFIRERUNTIME_API UPhysicsBoundsUtil : public UObject {
     GENERATED_BODY()
 public:
     UPhysicsBoundsUtil();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsWaterBounds(AActor* Bounds);
     

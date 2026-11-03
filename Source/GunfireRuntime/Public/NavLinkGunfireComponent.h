@@ -16,7 +16,8 @@ protected:
     AActor* EndpointActor;
     
 public:
-    UNavLinkGunfireComponent();
+    UNavLinkGunfireComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SetLinkEnabledArea(TSubclassOf<UNavArea> AreaClass);
     

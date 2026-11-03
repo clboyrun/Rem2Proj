@@ -14,5 +14,6 @@ public:
     bool bRemoveAtEnd;
     
     UAnimNotifyState_SoundTag();
+
 };
 

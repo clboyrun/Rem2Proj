@@ -19,7 +19,8 @@ public:
     TArray<UWorldSoundEntry*> Entries;
     
     UWorldSoundID();
-    
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

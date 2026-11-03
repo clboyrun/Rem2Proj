@@ -1,5 +1,9 @@
 #include "RemnantQuestTrigger.h"
 
+URemnantQuestTrigger::URemnantQuestTrigger(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->Trigger = NULL;
+}
+
 void URemnantQuestTrigger::OnActorRegistered(AActor* Actor) {
 }
 
@@ -21,7 +25,4 @@ void URemnantQuestTrigger::EventPlayerExit(ARemnantCharacter* Player) {
 void URemnantQuestTrigger::EventPlayerEnter(ARemnantCharacter* Player) {
 }
 
-URemnantQuestTrigger::URemnantQuestTrigger() {
-    this->Trigger = NULL;
-}
 

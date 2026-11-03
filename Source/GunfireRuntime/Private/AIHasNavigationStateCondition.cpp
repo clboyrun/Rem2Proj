@@ -4,3 +4,4 @@ UAIHasNavigationStateCondition::UAIHasNavigationStateCondition() {
     this->NavigationType = ENavigationType::Ground;
 }
 
+

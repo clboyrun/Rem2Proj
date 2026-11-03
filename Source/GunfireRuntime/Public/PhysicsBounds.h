@@ -139,7 +139,8 @@ public:
     UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ZMaxVelocity;
     
-    APhysicsBounds();
+    APhysicsBounds(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void OnEndAffectCharacter(ACharacter* Character, AActor* NewBounds);
     
@@ -149,7 +150,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     float GetForceToApplyScale(ACharacter* Character);
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

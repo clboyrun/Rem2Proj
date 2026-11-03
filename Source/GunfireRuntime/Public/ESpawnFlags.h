@@ -7,8 +7,8 @@ enum class ESpawnFlags : uint8 {
     None,
     NavMesh,
     NavAccessible,
-    OutOfSight = 0x4,
-    InView = 0x8,
-    InFieldOfView = 0x10,
+    OutOfSight = 4,
+    InView = 8,
+    InFieldOfView = 16,
 };
 

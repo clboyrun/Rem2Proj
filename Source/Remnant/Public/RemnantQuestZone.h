@@ -63,6 +63,12 @@ public:
     UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 LevelMin;
     
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FName AutoLinkStartTileID;
+    
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FName AutoLinkStartTransitionLinkID;
+    
     UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     TArray<FName> Slots;
     
@@ -95,7 +101,8 @@ protected:
     bool AssetsGathered;
     
 public:
-    URemnantQuestZone();
+    URemnantQuestZone(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void ZoneUnloaded();
     
@@ -103,7 +110,7 @@ public:
     void ZoneLoaded();
     
     UFUNCTION(BlueprintCallable)
-    void TravelToParent();
+    void TravelToParent(FName Context);
     
     UFUNCTION(BlueprintCallable)
     void SetSpawnTableOverride(USpawnTable* SpawnTable);

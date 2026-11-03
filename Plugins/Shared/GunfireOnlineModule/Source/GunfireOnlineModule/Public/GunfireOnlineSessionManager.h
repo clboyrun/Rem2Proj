@@ -3,6 +3,7 @@
 #include "Net/OnlineBlueprintCallProxyBase.h"
 #include "GameFramework/OnlineReplStructs.h"
 #include "FindSessionsCallbackProxy.h"
+#include "EGunfireOnlineEvent.h"
 #include "EOnlineCanJoinResult.h"
 #include "EOnlineSessionType.h"
 #include "EOnlineSubsystemServiceType.h"
@@ -53,6 +54,7 @@ protected:
     
 public:
     UGunfireOnlineSessionManager();
+
     UFUNCTION(BlueprintCallable)
     void UpdateSession();
     
@@ -60,7 +62,7 @@ public:
     void ShowSessionGamertagInfo(FBlueprintSessionResult SessionInfo);
     
     UFUNCTION(BlueprintCallable)
-    void SetSessionJoinability(bool IsJoinable);
+    void SetSessionJoinability(bool IsJoinable, EGunfireOnlineEvent CustomOnlineEvent, bool ShowAsMinorNotify);
     
     UFUNCTION(BlueprintCallable)
     void OnPostGameplayMainMenuLoaded();
@@ -87,10 +89,16 @@ public:
     bool HasPlayerBeenBanned(const FUniqueNetIdRepl& UniqueNetId);
     
     UFUNCTION(BlueprintCallable)
+    bool GetSessionJoinability();
+    
+    UFUNCTION(BlueprintCallable)
     FSessionDetails GetSessionDetails(const FBlueprintSessionResult& Session);
     
     UFUNCTION(BlueprintCallable)
     TArray<FSessionDetails> GetRecentlyJoinedSessions();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static void GetNatType(FText& OutName, FText& OutDescription);
     
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
     static UGunfireOnlineSessionManager* GetGunfireOnlineSessionManager(const UObject* WorldContextObject);

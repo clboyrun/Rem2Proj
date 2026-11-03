@@ -4,3 +4,4 @@ UParticleCustomizationEffect::UParticleCustomizationEffect() {
     this->Attached = false;
 }
 
+

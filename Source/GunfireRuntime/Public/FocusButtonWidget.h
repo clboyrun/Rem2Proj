@@ -1,9 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "Types/SlateEnums.h"
-#include "Types/SlateEnums.h"
 #include "Types/SlateEnums.h"
 #include "Components/ContentWidget.h"
 #include "AdvButtonStyle.h"
@@ -125,6 +122,12 @@ public:
     FOnAdvButtonClickedEvent OnMouseLeave;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FOnAdvButtonClickedEvent OnTooltipShow;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FOnAdvButtonClickedEvent OnTooltipHide;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnFocusMouseEventDelegate OnMouseMove;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -139,6 +142,7 @@ protected:
     
 public:
     UFocusButtonWidget();
+
     UFUNCTION(BlueprintCallable)
     void SetTexture(UTexture2D* Texture);
     

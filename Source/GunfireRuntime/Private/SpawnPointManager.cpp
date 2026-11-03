@@ -1,6 +1,10 @@
 #include "SpawnPointManager.h"
 #include "Templates/SubclassOf.h"
 
+USpawnPointManager::USpawnPointManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->NavMesh = NULL;
+}
+
 void USpawnPointManager::SpawnCharacter(const FSpawnEntry& Entry, AActor* Owner, const FVector& SpawnPos, bool Transient) {
 }
 
@@ -26,7 +30,4 @@ bool USpawnPointManager::FindNearbySpawnPosition(AActor* Actor, FVector& OutPosi
 void USpawnPointManager::FinalizeSpawnActor(AActor* Actor, const FTransform& Transform) {
 }
 
-USpawnPointManager::USpawnPointManager() {
-    this->NavMesh = NULL;
-}
 

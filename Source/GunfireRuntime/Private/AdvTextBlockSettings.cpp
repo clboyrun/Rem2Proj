@@ -4,3 +4,4 @@ UAdvTextBlockSettings::UAdvTextBlockSettings() {
     this->FontStyles.AddDefaulted(1);
 }
 
+

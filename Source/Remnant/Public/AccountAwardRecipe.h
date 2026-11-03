@@ -14,5 +14,6 @@ public:
     TSubclassOf<UAccountAward> Award;
     
     UAccountAwardRecipe();
+
 };
 

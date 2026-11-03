@@ -22,3 +22,4 @@ UClimbingSettings::UClimbingSettings() {
     this->SinglePointExpandLength = 40.00f;
 }
 
+

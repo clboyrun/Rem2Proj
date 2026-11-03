@@ -8,5 +8,6 @@ class GUNFIRETECHREQUIREMENTSEOS_API UGunfireTechRequirementsImplEOS : public UG
     GENERATED_BODY()
 public:
     UGunfireTechRequirementsImplEOS();
+
 };
 

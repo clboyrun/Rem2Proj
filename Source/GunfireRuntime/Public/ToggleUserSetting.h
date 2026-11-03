@@ -23,6 +23,7 @@ public:
     bool DefaultValue;
     
     UToggleUserSetting();
+
     UFUNCTION(BlueprintCallable)
     void SetValue(bool Value);
     

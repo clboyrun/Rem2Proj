@@ -28,5 +28,6 @@ public:
     bool SpawnAccessibleOnly;
     
     USpawnTableActor();
+
 };
 

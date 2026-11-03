@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UAIPathResultCondition : public UCondition {
     GENERATED_BODY()
 public:
     UAIPathResultCondition();
+
 };
 

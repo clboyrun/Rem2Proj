@@ -1,5 +1,9 @@
 #include "FxActorDestroyerComponent.h"
 
+UFxActorDestroyerComponent::UFxActorDestroyerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->ForceDestroyTimer = 10.00f;
+}
+
 void UFxActorDestroyerComponent::SoftDestroyOwner() {
 }
 
@@ -11,7 +15,4 @@ bool UFxActorDestroyerComponent::IsSoftDestroying() const {
     return false;
 }
 
-UFxActorDestroyerComponent::UFxActorDestroyerComponent() {
-    this->ForceDestroyTimer = 10.00f;
-}
 

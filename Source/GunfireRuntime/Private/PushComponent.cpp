@@ -1,6 +1,16 @@
 #include "PushComponent.h"
 #include "Net/UnrealNetwork.h"
 
+UPushComponent::UPushComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bAlternateMovementModeRequiresHold = true;
+    this->ClientDistanceTolerance = 30.00f;
+    this->ClientRotationTolerance = 5.00f;
+    this->ClientRotationSpeed = 180.00f;
+    this->ExitSmoothTime = 0.30f;
+    this->ActorBeingPushed = NULL;
+    this->CurrentPushState = NULL;
+}
+
 void UPushComponent::ServerStreamClientInput_Implementation(const FVector_NetQuantizeNormal& Input, const FVector_NetQuantizeNormal& Facing, bool bMovementMode) {
 }
 bool UPushComponent::ServerStreamClientInput_Validate(const FVector_NetQuantizeNormal& Input, const FVector_NetQuantizeNormal& Facing, bool bMovementMode) {
@@ -42,13 +52,4 @@ void UPushComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLi
     DOREPLIFETIME(UPushComponent, PlayerFacing);
 }
 
-UPushComponent::UPushComponent() {
-    this->bAlternateMovementModeRequiresHold = true;
-    this->ClientDistanceTolerance = 30.00f;
-    this->ClientRotationTolerance = 5.00f;
-    this->ClientRotationSpeed = 180.00f;
-    this->ExitSmoothTime = 0.30f;
-    this->ActorBeingPushed = NULL;
-    this->CurrentPushState = NULL;
-}
 

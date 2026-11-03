@@ -2,7 +2,6 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "UObject/Object.h"
-#include "UObject/NoExportTypes.h"
 #include "Engine/EngineTypes.h"
 #include "InputCoreTypes.h"
 #include "Chaos/ChaosEngineInterface.h"
@@ -19,7 +18,7 @@ class UActorComponent;
 class UBlueprint;
 class UUserDefinedStruct;
 
-UCLASS(Blueprintable, Config=Engine, DefaultConfig)
+UCLASS(Blueprintable, DefaultConfig, Config=Engine)
 class GUNFIRERUNTIME_API UGunfireSettings : public UObject {
     GENERATED_BODY()
 public:
@@ -70,6 +69,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
     TArray<FString> SublevelsKeywordsToIgnore;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    TArray<FString> HighDetailSublevelKeywords;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
     EHitPauseMode HitPauseMode;
@@ -234,6 +236,9 @@ public:
     FSoftObjectPath ImpactEffectsOverlayTable;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    FSoftObjectPath SpawnTableOverrides;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
     TArray<FSoftObjectPath> Challenges;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
@@ -252,14 +257,24 @@ public:
     FSoftObjectPath CinematicStopEvent;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    FSoftObjectPath MainMenuEvent;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
     float MaxAimSnapAngle;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
     int32 MaxPiercingTargets;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    float AITargetingRelevancyDistance;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
     FSoftObjectPath DefaultInteractAction;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    TArray<FName> RelevantCharacterStatsForTwitch;
+    
     UGunfireSettings();
+
 };
 

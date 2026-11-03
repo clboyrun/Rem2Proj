@@ -5,3 +5,4 @@ UStatInfo::UStatInfo() {
     this->ApplyMod = false;
 }
 
+

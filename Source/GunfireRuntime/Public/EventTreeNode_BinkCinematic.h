@@ -21,5 +21,6 @@ public:
     FSoftSoundGunfire MediaSound;
     
     UEventTreeNode_BinkCinematic();
+
 };
 

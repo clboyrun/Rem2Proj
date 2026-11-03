@@ -1,11 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "UObject/Object.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "DebugDrawUtil.generated.h"
 
 class UPrimitiveComponent;
@@ -16,6 +12,7 @@ class GUNFIRERUNTIME_API UDebugDrawUtil : public UObject {
     GENERATED_BODY()
 public:
     UDebugDrawUtil();
+
     UFUNCTION(BlueprintCallable)
     static FColor GetUniqueColor(int32 ColorIndex);
     

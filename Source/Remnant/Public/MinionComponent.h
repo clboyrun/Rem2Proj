@@ -24,7 +24,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UTexture2D* DisplayIcon;
     
-    UMinionComponent();
+    UMinionComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SetValid(bool IsMinionValid);
     
@@ -45,6 +46,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void DestroyMinion();
+    
+    UFUNCTION(BlueprintCallable)
+    void BroadcastSummonEvent(FName EventName, AActor* RelevantEventTarget);
     
 };
 

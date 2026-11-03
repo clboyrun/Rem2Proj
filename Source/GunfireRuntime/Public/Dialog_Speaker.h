@@ -24,5 +24,6 @@ public:
     bool Speaks;
     
     UDialog_Speaker();
+
 };
 

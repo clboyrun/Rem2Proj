@@ -4,3 +4,4 @@ UMovieSceneEquipmentTrack::UMovieSceneEquipmentTrack() {
     this->EventPosition = EFireEventsAtPosition::AtStartOfEvaluation;
 }
 
+

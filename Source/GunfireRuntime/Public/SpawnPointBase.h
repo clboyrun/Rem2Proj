@@ -17,7 +17,8 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnSpawnFinished OnSpawnFinished;
     
-    ASpawnPointBase();
+    ASpawnPointBase(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void Warp(AActor* Actor);
     

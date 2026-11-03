@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "AudioEffect.h"
+#include "Sound/SoundMix.h"
 #include "InterpolatedSoundClassAdjuster.h"
 #include "InterpolatedSoundMix.generated.h"
 
@@ -27,6 +28,7 @@ protected:
     
 public:
     UInterpolatedSoundMix();
+
     UFUNCTION(BlueprintCallable)
     void SetInterpolatePos(float Pos);
 

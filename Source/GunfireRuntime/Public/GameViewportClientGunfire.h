@@ -14,6 +14,7 @@ public:
     FGameViewportFocusDelegate OnGameViewportFocusEvent;
     
     UGameViewportClientGunfire();
+
     UFUNCTION(BlueprintCallable)
     void AdjustCameraFoVForAspect(bool bIgnoreFovSlider, UCameraComponent* CameraComponent);
     

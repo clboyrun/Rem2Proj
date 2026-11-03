@@ -9,3 +9,4 @@ UAIPatrolStateDecorator::UAIPatrolStateDecorator() {
     this->OverrideFacing = true;
 }
 
+

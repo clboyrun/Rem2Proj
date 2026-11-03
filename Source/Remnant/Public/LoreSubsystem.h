@@ -26,6 +26,7 @@ protected:
     
 public:
     ULoreSubsystem();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnImageSetLoaded(AActor* ContextActor, FSoftObjectPath ImageSetPath);

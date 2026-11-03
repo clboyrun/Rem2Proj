@@ -10,6 +10,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float QueryDelay;
     
-    UTextDebugComponent();
+    UTextDebugComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

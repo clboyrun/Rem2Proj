@@ -2,9 +2,6 @@
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "Engine/EngineTypes.h"
-#include "Engine/EngineTypes.h"
 #include "Engine/EngineTypes.h"
 #include "Components/SceneComponent.h"
 #include "AnimationUtil.generated.h"
@@ -20,6 +17,7 @@ class GUNFIRERUNTIME_API UAnimationUtil : public UObject {
     GENERATED_BODY()
 public:
     UAnimationUtil();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FRotator UE4ToAutodeskRotation(const FRotator& Rotation);
     

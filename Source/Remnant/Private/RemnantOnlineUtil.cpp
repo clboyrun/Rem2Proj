@@ -1,5 +1,11 @@
 #include "RemnantOnlineUtil.h"
 
+URemnantOnlineUtil::URemnantOnlineUtil() {
+}
+
+void URemnantOnlineUtil::UpdateSessionCrossplayPlatformSetting(const UObject* WorldContextObject) {
+}
+
 void URemnantOnlineUtil::SetModeFilter(int32 Mode) {
 }
 
@@ -14,6 +20,4 @@ FBlueprintSessionResult URemnantOnlineUtil::GetLocalSession(const UObject* World
     return FBlueprintSessionResult{};
 }
 
-URemnantOnlineUtil::URemnantOnlineUtil() {
-}
 

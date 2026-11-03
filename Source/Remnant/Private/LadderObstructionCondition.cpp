@@ -7,3 +7,4 @@ ULadderObstructionCondition::ULadderObstructionCondition() {
     this->CheckDirection = ELadderDirection::EVERYWHERE;
 }
 
+

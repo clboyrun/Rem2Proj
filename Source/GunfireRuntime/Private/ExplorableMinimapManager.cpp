@@ -1,5 +1,10 @@
 #include "ExplorableMinimapManager.h"
 
+UExplorableMinimapManager::UExplorableMinimapManager() {
+    this->CameraSceneComponent = NULL;
+    this->ExplorableMinimapModel = NULL;
+}
+
 void UExplorableMinimapManager::ShutdownMinimap() {
 }
 
@@ -47,10 +52,6 @@ void UExplorableMinimapManager::EnableMinimap(bool bEnable) {
 void UExplorableMinimapManager::EnableFogOfWar(bool bEnable) {
 }
 
-UExplorableMinimapManager::UExplorableMinimapManager() {
-    this->CameraSceneComponent = NULL;
-    this->ExplorableMinimapModel = NULL;
-}
 
 TStatId UExplorableMinimapManager::GetStatId() const
 {

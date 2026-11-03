@@ -7,3 +7,4 @@ UTimeDilationDecorator::UTimeDilationDecorator() {
     this->EaseOutTime = 1.00f;
 }
 
+

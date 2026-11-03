@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UDisableInputDecorator : public UActorStateDecorator {
     GENERATED_BODY()
 public:
     UDisableInputDecorator();
+
 };
 

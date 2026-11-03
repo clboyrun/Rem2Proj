@@ -11,6 +11,7 @@ public:
     bool AllowInactiveFocus;
     
     UFocusGroup();
+
     UFUNCTION(BlueprintCallable)
     void ShowInactiveFocus(bool Show);
     

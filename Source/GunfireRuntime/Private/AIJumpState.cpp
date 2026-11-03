@@ -1,9 +1,5 @@
 #include "AIJumpState.h"
 
-bool UAIJumpState::IsAIJumpComplete(UStateMachineComponent* StateMachine) {
-    return false;
-}
-
 UAIJumpState::UAIJumpState() {
     this->Type = EJumpType::NavLink;
     this->DestinationOffset = 0.00f;
@@ -18,4 +14,9 @@ UAIJumpState::UAIJumpState() {
     this->LerpEaseExponent = 2.00f;
     this->bLockPositionToArc = false;
 }
+
+bool UAIJumpState::IsAIJumpComplete(UStateMachineComponent* StateMachine) {
+    return false;
+}
+
 

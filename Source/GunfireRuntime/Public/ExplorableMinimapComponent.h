@@ -22,6 +22,9 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FName> RequiredTags;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FName> SecretTags;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     bool bIsSecret;
     
@@ -41,7 +44,8 @@ protected:
     UMaterialParameterCollectionInstance* MaterialParamCollectionInst;
     
 public:
-    UExplorableMinimapComponent();
+    UExplorableMinimapComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SetIsSecret(bool InIsSecret);
     

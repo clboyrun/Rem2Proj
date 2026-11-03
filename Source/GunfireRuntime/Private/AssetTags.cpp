@@ -1,5 +1,8 @@
 #include "AssetTags.h"
 
+UAssetTags::UAssetTags() {
+}
+
 bool UAssetTags::SetAssetTag(UObject* Asset, FName Tag) {
     return false;
 }
@@ -16,6 +19,4 @@ bool UAssetTags::CheckAssetTag(UObject* Asset, FName Tag) {
     return false;
 }
 
-UAssetTags::UAssetTags() {
-}
 

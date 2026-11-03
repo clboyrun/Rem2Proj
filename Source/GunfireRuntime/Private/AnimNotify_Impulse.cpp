@@ -6,3 +6,4 @@ UAnimNotify_Impulse::UAnimNotify_Impulse() {
     this->JumpImpulse = 100.00f;
 }
 
+

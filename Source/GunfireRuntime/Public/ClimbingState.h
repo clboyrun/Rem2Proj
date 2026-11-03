@@ -12,5 +12,6 @@ public:
     EClimbStateType Type;
     
     UClimbingState();
+
 };
 

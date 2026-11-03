@@ -24,5 +24,6 @@ public:
     int32 ExperienceChangeTimeOutSeconds;
     
     URemnantValidationProgressEntry();
+
 };
 

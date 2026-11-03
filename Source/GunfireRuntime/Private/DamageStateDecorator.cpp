@@ -8,3 +8,4 @@ UDamageStateDecorator::UDamageStateDecorator() {
     this->ImpactDirection = NULL;
 }
 
+

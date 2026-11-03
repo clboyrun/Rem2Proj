@@ -21,5 +21,6 @@ public:
     TSoftClassPtr<UTrait> TraitClass;
     
     URemnantValidationTraitEntry();
+
 };
 

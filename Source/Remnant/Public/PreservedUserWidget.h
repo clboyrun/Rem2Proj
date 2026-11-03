@@ -8,5 +8,6 @@ class REMNANT_API UPreservedUserWidget : public UUserWidget {
     GENERATED_BODY()
 public:
     UPreservedUserWidget();
+
 };
 

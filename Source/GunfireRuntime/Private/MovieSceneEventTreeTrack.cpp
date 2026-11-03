@@ -6,3 +6,4 @@ UMovieSceneEventTreeTrack::UMovieSceneEventTreeTrack() {
     this->EventPosition = EFireEventsAtPosition::AfterSpawn;
 }
 
+

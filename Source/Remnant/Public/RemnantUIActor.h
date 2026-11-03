@@ -19,7 +19,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bEnableControllerCursor;
     
-    ARemnantUIActor();
+    ARemnantUIActor(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SetCursorStateOnInstance(ECursorOverrideState CursorActiveState);
     

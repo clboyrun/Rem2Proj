@@ -2,6 +2,11 @@
 #include "Net/UnrealNetwork.h"
 #include "Templates/SubclassOf.h"
 
+UItemSocketComponent::UItemSocketComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->Blocked = false;
+    this->SocketedItem = NULL;
+}
+
 void UItemSocketComponent::RequestReturnItemToInventory_Implementation(ACharacterGunfire* Subject) {
 }
 bool UItemSocketComponent::RequestReturnItemToInventory_Validate(ACharacterGunfire* Subject) {
@@ -82,8 +87,4 @@ void UItemSocketComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>&
     DOREPLIFETIME(UItemSocketComponent, SocketedItem);
 }
 
-UItemSocketComponent::UItemSocketComponent() {
-    this->Blocked = false;
-    this->SocketedItem = NULL;
-}
 

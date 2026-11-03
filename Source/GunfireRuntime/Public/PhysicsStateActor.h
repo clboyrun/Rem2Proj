@@ -89,7 +89,8 @@ private:
     UStateMachineComponent* CachedStateMachine;
     
 public:
-    APhysicsStateActor();
+    APhysicsStateActor(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void UpdateOrientationReset(float TotalTime, float ElapsedTime, float SlamForceScale);
@@ -139,7 +140,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void ApplyShoveForce(float PushingForce, float LiftingForce, bool bScaleForceToMass);
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

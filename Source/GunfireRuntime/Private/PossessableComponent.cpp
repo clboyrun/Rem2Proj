@@ -1,5 +1,6 @@
 #include "PossessableComponent.h"
 
-UPossessableComponent::UPossessableComponent() {
+UPossessableComponent::UPossessableComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

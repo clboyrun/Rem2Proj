@@ -4,3 +4,4 @@ UPersistenceCallbackProxy::UPersistenceCallbackProxy() {
     this->PersistenceManager = NULL;
 }
 
+

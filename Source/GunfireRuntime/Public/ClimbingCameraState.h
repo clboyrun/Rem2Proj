@@ -112,5 +112,6 @@ protected:
     
 public:
     UClimbingCameraState();
+
 };
 

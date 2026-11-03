@@ -1,8 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "AnimMetaDataGunfire.h"
 #include "RootMotionAnimData.generated.h"
 
@@ -50,5 +48,6 @@ public:
     float RootMotionStopTime;
     
     URootMotionAnimData();
+
 };
 

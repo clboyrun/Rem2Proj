@@ -16,3 +16,4 @@ UCombatClass::UCombatClass() {
     this->MaxOutsiderRange = 750.00f;
 }
 
+

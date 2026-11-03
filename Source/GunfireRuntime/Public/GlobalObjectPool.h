@@ -21,7 +21,8 @@ private:
     TMap<FSoftObjectPath, USingleObjectPool*> Pools;
     
 public:
-    UGlobalObjectPool();
+    UGlobalObjectPool(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     static UGlobalObjectPool* GetInstance(UWorld* World);
     

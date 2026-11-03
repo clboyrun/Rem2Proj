@@ -100,9 +100,10 @@ private:
     TMap<EBoardUser, FCachedUserPiecePositions> CachedUserPieces;
     
 public:
-    URemnantGameBoardComponent();
+    URemnantGameBoardComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void UpdatePieceActorLocations();
     

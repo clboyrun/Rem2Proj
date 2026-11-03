@@ -16,3 +16,4 @@ UTurretTargetSelector::UTurretTargetSelector() {
     this->PriorityTargetMaxProximityScalar = 2.00f;
 }
 
+

@@ -14,5 +14,6 @@ public:
     bool AutoCompleteActiveObjectives;
     
     UEventTreeNode_ActivateObjective();
+
 };
 

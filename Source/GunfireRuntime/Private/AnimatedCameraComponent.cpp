@@ -1,5 +1,8 @@
 #include "AnimatedCameraComponent.h"
 
+UAnimatedCameraComponent::UAnimatedCameraComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+}
+
 void UAnimatedCameraComponent::SetCamera(APlayerController* TargetController) {
 }
 
@@ -24,6 +27,4 @@ void UAnimatedCameraComponent::Enter_Implementation() {
 void UAnimatedCameraComponent::AnimatedCameraCut(const FName& CameraBone, float CameraFOV) {
 }
 
-UAnimatedCameraComponent::UAnimatedCameraComponent() {
-}
 

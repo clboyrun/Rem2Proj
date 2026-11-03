@@ -1,6 +1,10 @@
 #include "NavLinkGunfireComponent.h"
 #include "Templates/SubclassOf.h"
 
+UNavLinkGunfireComponent::UNavLinkGunfireComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->EndpointActor = NULL;
+}
+
 void UNavLinkGunfireComponent::SetLinkEnabledArea(TSubclassOf<UNavArea> AreaClass) {
 }
 
@@ -22,7 +26,4 @@ TSubclassOf<UNavArea> UNavLinkGunfireComponent::GetLinkDisabledArea() const {
     return NULL;
 }
 
-UNavLinkGunfireComponent::UNavLinkGunfireComponent() {
-    this->EndpointActor = NULL;
-}
 

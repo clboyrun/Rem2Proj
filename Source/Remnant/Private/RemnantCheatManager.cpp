@@ -1,5 +1,8 @@
 #include "RemnantCheatManager.h"
 
+URemnantCheatManager::URemnantCheatManager() {
+}
+
 void URemnantCheatManager::UnlockAllWaypoints() {
 }
 
@@ -37,6 +40,9 @@ bool URemnantCheatManager::IsSettingArchetypeFromCheat(const UObject* WorldConte
     return false;
 }
 
+void URemnantCheatManager::GivePrismSegment(const FString& NameOfSegment, int32 LevelOverride) {
+}
+
 void URemnantCheatManager::GiveAccountAward(const FString& NameOfBP) {
 }
 
@@ -46,6 +52,4 @@ void URemnantCheatManager::AddScrap(int32 Amount) {
 void URemnantCheatManager::AddExperience(int32 Amount) {
 }
 
-URemnantCheatManager::URemnantCheatManager() {
-}
 

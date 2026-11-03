@@ -44,7 +44,8 @@ public:
     TArray<UReticulePiece*> Pieces;
     
     UReticule();
-    
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

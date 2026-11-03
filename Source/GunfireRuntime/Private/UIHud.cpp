@@ -1,6 +1,14 @@
 #include "UIHud.h"
 #include "Templates/SubclassOf.h"
 
+AUIHud::AUIHud(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->DebugDisplay.AddDefaulted(1);
+    this->DisablePlayerInput = true;
+    this->bAutoHideUMGWidgetsOnHidden = true;
+    this->bFixedCameraFoV = false;
+    this->PlayerPawn = NULL;
+}
+
 void AUIHud::UnloadLargeIcons() {
 }
 
@@ -32,10 +40,21 @@ void AUIHud::OnDialogEnd_Implementation(AUIActor* Dialog) {
 void AUIHud::OnDialogBegin_Implementation(AUIActor* Dialog) {
 }
 
+void AUIHud::OnCinematicEvent(APlayerControllerGunfire* Player, bool bIsInCinematic) {
+}
+
 void AUIHud::LoadLargeIcons(FOnIconsLoaded OnIconsLoaded, FLatentActionInfo LatentInfo) {
 }
 
 bool AUIHud::IsVisible() const {
+    return false;
+}
+
+bool AUIHud::IsExternalOverlayTakingInput() const {
+    return false;
+}
+
+bool AUIHud::IsExternalOverlayActive() const {
     return false;
 }
 
@@ -78,10 +97,4 @@ AUIActor* AUIHud::BeginDialog(TSubclassOf<AUIActor> DialogBP, EDialogLocation Lo
 void AUIHud::AddUIToActorStack(const AUIActor* UIActor) {
 }
 
-AUIHud::AUIHud() {
-    this->DisablePlayerInput = true;
-    this->bAutoHideUMGWidgetsOnHidden = true;
-    this->bFixedCameraFoV = false;
-    this->PlayerPawn = NULL;
-}
 

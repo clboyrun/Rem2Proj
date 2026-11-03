@@ -1,5 +1,8 @@
 #include "UIUtil.h"
 
+UUIUtil::UUIUtil() {
+}
+
 bool UUIUtil::ShouldBeVisible(UWidget* Widget) {
     return false;
 }
@@ -19,6 +22,4 @@ void UUIUtil::GetWidgetsByClass(UWidget* Widget, UClass* Class, TArray<UWidget*>
 void UUIUtil::FormatText(FText& OutText, const TArray<FTextFormatTokenPair>& FormatTokens) {
 }
 
-UUIUtil::UUIUtil() {
-}
 

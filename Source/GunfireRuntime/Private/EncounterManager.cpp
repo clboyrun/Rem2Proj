@@ -1,5 +1,9 @@
 #include "EncounterManager.h"
 
+UEncounterManager::UEncounterManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->DebugInstance = NULL;
+}
+
 void UEncounterManager::StopEncounter(int32 encounterid) {
 }
 
@@ -53,6 +57,4 @@ UEncounterInstance* UEncounterManager::DoEncounter(USpawnTable* SpawnTable, int3
     return NULL;
 }
 
-UEncounterManager::UEncounterManager() {
-}
 

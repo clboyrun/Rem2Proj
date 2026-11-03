@@ -60,6 +60,8 @@ public class GunfireRuntime : ModuleRules {
             "TypedElementFramework",
             "TypedElementRuntime",
             "UMG",
+            "AnimationBudgetAllocator",
+            "StructUtils",
         });
     }
 }

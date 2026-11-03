@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API ULandingPredictionConditionParams_Default : public ULan
     GENERATED_BODY()
 public:
     ULandingPredictionConditionParams_Default();
+
 };
 

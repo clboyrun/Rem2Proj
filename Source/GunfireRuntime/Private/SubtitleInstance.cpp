@@ -1,14 +1,5 @@
 #include "SubtitleInstance.h"
 
-void USubtitleInstance::OnSourceActorDestroyed(AActor* DestroyedActor) {
-}
-
-void USubtitleInstance::OnAudioComponentFinished(FGunfireAudioPlayingID PlayingID, int32 ErrorCode) {
-}
-
-void USubtitleInstance::CompleteAndRemove() {
-}
-
 USubtitleInstance::USubtitleInstance() {
     this->Component = NULL;
     this->ID = 0;
@@ -19,4 +10,14 @@ USubtitleInstance::USubtitleInstance() {
     this->Added = false;
     this->Completed = false;
 }
+
+void USubtitleInstance::OnSourceActorDestroyed(AActor* DestroyedActor) {
+}
+
+void USubtitleInstance::OnAudioComponentFinished(FGunfireAudioPlayingID PlayingID, int32 ErrorCode) {
+}
+
+void USubtitleInstance::CompleteAndRemove() {
+}
+
 

@@ -1,6 +1,9 @@
 #include "StatsComponent.h"
 #include "Templates/SubclassOf.h"
 
+UStatsComponent::UStatsComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+}
+
 void UStatsComponent::SetComputedStats(TSubclassOf<UComputedStats> NewComputedStats) {
 }
 
@@ -41,12 +44,13 @@ TSubclassOf<UComputedStats> UStatsComponent::GetComputedStats() {
 void UStatsComponent::ComputeStatsIfDirty() {
 }
 
+void UStatsComponent::ClampStat(float& Value, FName Stat) {
+}
+
 void UStatsComponent::ApplyStats(const FDataTableRowHandle& DataTable, int32 Level) {
 }
 
-void UStatsComponent::ApplyStatModsTo(float& Value, FName Stat) {
+void UStatsComponent::ApplyStatModsTo(float& Value, FName Stat, bool NewClampStat) {
 }
 
-UStatsComponent::UStatsComponent() {
-}
 

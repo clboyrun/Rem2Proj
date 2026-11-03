@@ -23,7 +23,8 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FTutorialPromptDelegate OnClearTutorialPrompt;
     
-    UTutorialComponent();
+    UTutorialComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, Client, Reliable)
     void SetTutorialPromptOverride(const FName& ID, AActor* Actor, const FText& Text, float DurationOverride);
     

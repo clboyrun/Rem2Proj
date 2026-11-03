@@ -7,6 +7,7 @@ UCLASS(Blueprintable, HideDropdown)
 class GUNFIRERUNTIME_API AFlyCameraController : public APlayerController {
     GENERATED_BODY()
 public:
-    AFlyCameraController();
+    AFlyCameraController(const FObjectInitializer& ObjectInitializer);
+
 };
 

@@ -1,9 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "GameFramework/Actor.h"
 #include "ProjectileVisualizationContext.h"
 #include "ProjectileVisualizationParams.h"
@@ -75,7 +72,8 @@ protected:
     TArray<USplineMeshComponent*> SplineMeshes;
     
 public:
-    AProjectileVisualization();
+    AProjectileVisualization(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     static void VisualizeProjectileFromClass(AActor* Cause, TSubclassOf<AActor> ProjectileClass, FVector StartLocation, FRotator StartDirection, const FProjectileVisualizationParams& Params, FProjectileVisualizationContext& Context);
     

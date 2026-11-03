@@ -9,7 +9,8 @@ class GUNFIRERUNTIME_API UUserSetting_Base : public UObject, public IHierarchica
     GENERATED_BODY()
 public:
     UUserSetting_Base();
-    
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

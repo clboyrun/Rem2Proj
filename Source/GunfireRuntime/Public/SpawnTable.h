@@ -25,6 +25,7 @@ public:
     int32 TableGroupRollMax;
     
     USpawnTable();
+
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     void GenerateWithSeed(UObject* WorldContextObject, int32 Level, int32 Rating, const TArray<FName>& InTags, FSpawnList& SpawnList, ESpawnType Type, int32 RandomSeed);
     

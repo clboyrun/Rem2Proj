@@ -7,3 +7,4 @@ UAnimNotify_StowWeapon::UAnimNotify_StowWeapon() {
     this->bIsStateTransient = false;
 }
 
+

@@ -8,5 +8,6 @@ class UPooledSceneComponent : public UPooledItem {
     GENERATED_BODY()
 public:
     UPooledSceneComponent();
+
 };
 

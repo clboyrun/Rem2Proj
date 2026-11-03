@@ -11,6 +11,7 @@ class REMNANT_API URemnantTutorial : public UPrimaryDataAsset {
     GENERATED_BODY()
 public:
     URemnantTutorial();
+
     UFUNCTION(BlueprintCallable)
     void ShowTutorial(APawn* Player, AActor* ContextActor, bool bForceShow);
     

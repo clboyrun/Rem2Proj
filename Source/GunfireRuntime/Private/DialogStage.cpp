@@ -1,5 +1,10 @@
 #include "DialogStage.h"
 
+ADialogStage::ADialogStage(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->DialogComponent = NULL;
+    this->StageActive = false;
+}
+
 void ADialogStage::SetupStage_Implementation(const FEventTreeStage& Stage) {
 }
 
@@ -41,8 +46,4 @@ void ADialogStage::DetermineCameraShotDetails(FEventTreeStage& Stage, FName Shot
 void ADialogStage::Begin_Implementation() {
 }
 
-ADialogStage::ADialogStage() {
-    this->DialogComponent = NULL;
-    this->StageActive = false;
-}
 

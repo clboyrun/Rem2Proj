@@ -21,6 +21,7 @@ protected:
     
 public:
     UDebrisManager();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnBreakingFinished(UBreakableComponent* Breakable);

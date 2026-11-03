@@ -19,7 +19,8 @@ public:
     FName Response;
     
     UContextualDialogResponse();
-    
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

@@ -6,3 +6,4 @@ UAIFollowTargetSelector::UAIFollowTargetSelector() {
     this->HostWeightScalar = 4.00f;
 }
 
+

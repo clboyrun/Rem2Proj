@@ -14,5 +14,6 @@ public:
     float PlayerRange;
     
     UBranch_ContextualDialogEntry();
+
 };
 

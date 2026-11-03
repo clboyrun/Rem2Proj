@@ -7,3 +7,4 @@ UAnimNotify_StateParticleEffect::UAnimNotify_StateParticleEffect() {
     this->bShowInPreview = true;
 }
 
+

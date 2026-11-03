@@ -15,5 +15,6 @@ public:
     TArray<UItemGenerator*> Entries;
     
     UItemGeneratorTable();
+
 };
 

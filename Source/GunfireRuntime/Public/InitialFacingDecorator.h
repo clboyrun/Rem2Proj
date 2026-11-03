@@ -24,5 +24,6 @@ public:
     float EaseExponent;
     
     UInitialFacingDecorator();
+
 };
 

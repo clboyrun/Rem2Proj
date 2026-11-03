@@ -16,5 +16,6 @@ public:
     TArray<FLODVolumeDistanceFilter> DistanceFilters;
     
     ULODVolumeFilter();
+
 };
 

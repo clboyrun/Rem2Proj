@@ -11,6 +11,7 @@ class GUNFIRERUNTIME_API UAITargetSelector : public UObject {
     GENERATED_BODY()
 public:
     UAITargetSelector();
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     float Score(const AAIControllerGunfire* AIController, const FRelevantActor& Target);
     

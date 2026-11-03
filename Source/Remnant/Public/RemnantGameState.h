@@ -14,6 +14,7 @@ class ACheckpoint;
 class APlayerState;
 class UObject;
 class URemnantPingManager;
+class UTwitchIntegrationManager;
 
 UCLASS(Blueprintable)
 class REMNANT_API ARemnantGameState : public AGameStateGunfire {
@@ -50,6 +51,9 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     ACheckpoint* DeactivatingCheckpoint;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UTwitchIntegrationManager* TwitchIntegrationManager;
+    
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     ACheckpoint* PreviouslyActivatingCheckpoint;
@@ -58,9 +62,10 @@ private:
     AActor* TravelCountdownSource;
     
 public:
-    ARemnantGameState();
+    ARemnantGameState(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnRep_ZoneTravelState();

@@ -37,7 +37,8 @@ protected:
     int32 QuestIDGen;
     
 public:
-    UQuestManager();
+    UQuestManager(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SetupQuestVariables(UEventTreeComponent* EventTreeComponent);
     

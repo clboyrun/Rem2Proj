@@ -17,7 +17,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<FQueuedExceptionInfo> QueuedExceptions;
     
-    URemnantValidationManager();
+    URemnantValidationManager(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void QueueSoftTraitException(TSoftClassPtr<UTrait> SoftTraitBP, int32 LevelChange, bool bIsRemovingTrait);
     

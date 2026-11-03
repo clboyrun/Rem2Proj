@@ -71,7 +71,8 @@ protected:
     TArray<UNiagaraComponent*> DissolveFXComps;
     
 public:
-    UDissolveComponent();
+    UDissolveComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void DissolveOut(float Time);
     

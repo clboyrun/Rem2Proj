@@ -11,5 +11,6 @@ public:
     FName CharacterTag;
     
     UAnimNotifyState_TagWindow();
+
 };
 

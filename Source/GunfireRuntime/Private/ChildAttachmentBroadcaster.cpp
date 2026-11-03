@@ -1,5 +1,6 @@
 #include "ChildAttachmentBroadcaster.h"
 
-UChildAttachmentBroadcaster::UChildAttachmentBroadcaster() {
+UChildAttachmentBroadcaster::UChildAttachmentBroadcaster(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

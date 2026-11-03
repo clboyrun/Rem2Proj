@@ -16,5 +16,6 @@ public:
     TSoftObjectPtr<UMaterialInterface> Material;
     
     UMaterialOverrideCustomization();
+
 };
 

@@ -17,7 +17,8 @@ protected:
     UBoxComponent* KinematicCollisionBox;
     
 public:
-    APhysicsStateActorBoxBase();
+    APhysicsStateActorBoxBase(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UBoxComponent* GetBoxComponent() const;
     

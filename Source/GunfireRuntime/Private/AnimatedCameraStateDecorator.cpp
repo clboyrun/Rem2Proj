@@ -12,3 +12,4 @@ UAnimatedCameraStateDecorator::UAnimatedCameraStateDecorator() {
     this->bAffectsHUD = true;
 }
 
+

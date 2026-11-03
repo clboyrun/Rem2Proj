@@ -1,7 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "Framework/Text/TextLayout.h"
 #include "Layout/Margin.h"
 #include "Fonts/SlateFontInfo.h"
@@ -64,6 +63,7 @@ public:
     bool bAutoStartFillIn;
     
     UAdvTextBlock();
+
     UFUNCTION(BlueprintCallable)
     void StartTextFill(bool bStartFromBeginning);
     

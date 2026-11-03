@@ -6,3 +6,4 @@ USpawnTableLink::USpawnTableLink() {
     this->QuantityMax = 1;
 }
 
+

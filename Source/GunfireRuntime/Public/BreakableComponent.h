@@ -69,7 +69,8 @@ protected:
     FTimerHandle HideHandle;
     
 public:
-    UBreakableComponent();
+    UBreakableComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void Reset(bool bForceResetClientState);
     

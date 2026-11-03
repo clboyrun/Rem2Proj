@@ -32,5 +32,6 @@ private:
     
 public:
     UEnvQueryTest_Jump();
+
 };
 

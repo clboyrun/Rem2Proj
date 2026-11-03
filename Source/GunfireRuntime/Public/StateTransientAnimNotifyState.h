@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UStateTransientAnimNotifyState : public UConditionalAni
     GENERATED_BODY()
 public:
     UStateTransientAnimNotifyState();
+
 };
 

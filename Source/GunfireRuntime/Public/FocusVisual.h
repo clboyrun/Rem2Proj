@@ -26,6 +26,7 @@ protected:
     
 public:
     UFocusVisual();
+
     UFUNCTION(BlueprintCallable)
     void SetTexture(UTexture2D* Texture);
     

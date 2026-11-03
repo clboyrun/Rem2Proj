@@ -4,3 +4,4 @@ URandomStaticMeshCustomization::URandomStaticMeshCustomization() {
     this->bResetMaterialsOnApply = true;
 }
 
+

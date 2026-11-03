@@ -22,5 +22,17 @@ protected:
     
 public:
     UFocusTooltipWidget();
+
+protected:
+    UFUNCTION(BlueprintCallable)
+    void OnParentShowTooltip(UWidget* SourceWidget);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnParentHideTooltip(UWidget* SourceWidget);
+    
+public:
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsTooltipShowing() const;
+    
 };
 

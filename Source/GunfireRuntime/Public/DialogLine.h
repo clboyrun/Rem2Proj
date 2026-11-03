@@ -21,7 +21,8 @@ public:
     TSoftObjectPtr<UAnimationAsset> FacialAnimation;
     
     UDialogLine();
-    
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

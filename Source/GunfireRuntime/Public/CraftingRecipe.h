@@ -26,7 +26,11 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool SharedCraftedItem;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool MatchToHighestLevelIngredient;
+    
     UCraftingRecipe();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnItemLoaded(AActor* Owner, UInventoryComponent* Inventory);

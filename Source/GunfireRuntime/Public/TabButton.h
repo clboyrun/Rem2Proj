@@ -3,7 +3,6 @@
 #include "UObject/NoExportTypes.h"
 #include "Components/ContentWidget.h"
 #include "Components/Button.h"
-#include "Components/Button.h"
 #include "AdvButtonStyle.h"
 #include "OnTabFocusDelegateDelegate.h"
 #include "TabButton.generated.h"
@@ -56,6 +55,7 @@ protected:
     
 public:
     UTabButton();
+
     UFUNCTION(BlueprintCallable)
     void SetTexture(UTexture2D* Texture);
     

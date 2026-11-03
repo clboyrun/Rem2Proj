@@ -7,8 +7,10 @@
 #include "ActionBuff.h"
 #include "OnShieldDeltaDelegateDelegate.h"
 #include "OnShieldHitDelegateDelegate.h"
+#include "OnShieldPctDeltaDelegateDelegate.h"
 #include "ActionShield.generated.h"
 
+class UObject;
 class UPhysicalMaterial;
 
 UCLASS(Blueprintable)
@@ -20,6 +22,12 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_ShieldValue, meta=(AllowPrivateAccess=true))
     float ShieldValue;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, meta=(AllowPrivateAccess=true))
+    bool ShieldMaxIsPercentageOfMaxHP;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UObject* InitialApplierObject;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float IncomingDamageScalar;
@@ -76,7 +84,7 @@ public:
     FOnShieldHitDelegate OnHit;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FOnShieldDeltaDelegate OnShieldValueChanged;
+    FOnShieldPctDeltaDelegate OnShieldValueChanged;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnShieldDeltaDelegate OnShieldMaxChanged;
@@ -84,9 +92,13 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnShieldHitDelegate OnShieldBroken;
     
-    UActionShield();
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FOnShieldDeltaDelegate OnShieldValueClampedFromStats;
     
+    UActionShield();
+
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+
     UFUNCTION(BlueprintCallable)
     void ShieldBreak();
     
@@ -116,6 +128,9 @@ public:
     
     UFUNCTION(BlueprintCallable, Client, Reliable)
     void ClientShieldHit();
+    
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent, BlueprintPure)
+    float ClampShieldValue();
     
     UFUNCTION(BlueprintCallable)
     void ApplyShieldDelta(float Delta);

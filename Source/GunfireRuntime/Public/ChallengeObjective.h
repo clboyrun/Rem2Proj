@@ -3,7 +3,10 @@
 #include "ChallengeObjectiveBase.h"
 #include "EChallengeAuthorityType.h"
 #include "EChallengeObjectType.h"
+#include "Templates/SubclassOf.h"
 #include "ChallengeObjective.generated.h"
+
+class UEntitlementType;
 
 UCLASS(Blueprintable)
 class GUNFIRERUNTIME_API UChallengeObjective : public UChallengeObjectiveBase {
@@ -30,6 +33,10 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EChallengeAuthorityType Authority;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSubclassOf<UEntitlementType> RequiredEntitlement;
+    
     UChallengeObjective();
+
 };
 

@@ -15,6 +15,7 @@ class GUNFIRERUNTIME_API UReplicatedHitUtil : public UObject {
     GENERATED_BODY()
 public:
     UReplicatedHitUtil();
+
     UFUNCTION(BlueprintCallable)
     static FReplicatedTrace MakeReplicatedTraceFromHit(const FHitResult& Hit);
     

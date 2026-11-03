@@ -5,3 +5,4 @@ UGunObstructionCondition::UGunObstructionCondition() {
     this->bInObstructedState = false;
 }
 
+

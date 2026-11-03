@@ -13,6 +13,7 @@ class GUNFIRERUNTIME_API UInteractableUtil : public UObject {
     GENERATED_BODY()
 public:
     UInteractableUtil();
+
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static void TriggerInteractableActors(const UObject* WorldContextObject, const TArray<FInteractableActorReference>& Interactables, TSubclassOf<UInteractableStateBase> DefaultState);
     

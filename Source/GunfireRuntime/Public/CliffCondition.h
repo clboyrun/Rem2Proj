@@ -14,5 +14,6 @@ public:
     TSubclassOf<UCliffConditionParams> Params;
     
     UCliffCondition();
+
 };
 

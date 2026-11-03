@@ -1,5 +1,10 @@
 #include "ClimbableSplineComponent.h"
 
+UClimbableSplineComponent::UClimbableSplineComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bExclusiveSurface = false;
+    this->bDisabled = false;
+}
+
 void UClimbableSplineComponent::SetSurfaceTags(TArray<FName> NewSurfaceTags) {
 }
 
@@ -35,8 +40,4 @@ bool UClimbableSplineComponent::CanCharacterClimb(ACharacterGunfire* Character) 
 void UClimbableSplineComponent::AttachPointToComponent(int32 SplinePoint, USceneComponent* AttachComponent, const FTransform& RelativeTransform, FName AttachSocket, bool bMoveImmediately, bool bUpdateSpline) {
 }
 
-UClimbableSplineComponent::UClimbableSplineComponent() {
-    this->bExclusiveSurface = false;
-    this->bDisabled = false;
-}
 

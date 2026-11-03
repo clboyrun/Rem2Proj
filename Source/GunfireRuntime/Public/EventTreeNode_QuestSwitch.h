@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UEventTreeNode_QuestSwitch : public UEventTreeNode_Bran
     GENERATED_BODY()
 public:
     UEventTreeNode_QuestSwitch();
+
 };
 

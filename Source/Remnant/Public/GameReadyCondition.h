@@ -8,5 +8,6 @@ class REMNANT_API UGameReadyCondition : public UCondition {
     GENERATED_BODY()
 public:
     UGameReadyCondition();
+
 };
 

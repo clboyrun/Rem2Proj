@@ -5,6 +5,7 @@
 #include "DamageInfo.h"
 #include "ManagedTickInterface.h"
 #include "OnActionDelegateDelegate.h"
+#include "OnAnyActionAppliedDelegateDelegate.h"
 #include "Templates/SubclassOf.h"
 #include "ActionComponent.generated.h"
 
@@ -33,14 +34,18 @@ protected:
     TArray<UActionBase*> OldActions;
     
 public:
-    UActionComponent();
+    UActionComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void StopActionByType(TSubclassOf<UActionBase> ActionBP);
     
     UFUNCTION(BlueprintCallable)
     void StopAction(int32 ActionID);
+    
+    UFUNCTION(BlueprintCallable)
+    static void RemoveAnyActionAppliedListener(const FOnAnyActionAppliedDelegate& Event);
     
 protected:
     UFUNCTION(BlueprintCallable)
@@ -61,6 +66,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void InvokeEvent(TSubclassOf<UActionBase> ActionType, FName EventName);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UActionBase* GetSoftActionOfType(TSoftClassPtr<UActionBase> ActionBP) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetNumActionsOfType(TSubclassOf<UActionBase> ActionBP) const;
@@ -86,7 +94,11 @@ protected:
     UFUNCTION(BlueprintCallable)
     bool CanDoActionInternal(TSubclassOf<UActionBase> ActionBP, const FDamageInfo& DamageInfo, UActionBase* NewAction);
     
+public:
+    UFUNCTION(BlueprintCallable)
+    static void AddAnyActionAppliedListener(const FOnAnyActionAppliedDelegate& Event);
     
+
     // Fix for true pure virtual functions not being implemented
 };
 

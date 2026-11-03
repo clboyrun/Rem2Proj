@@ -1,7 +1,8 @@
 #include "MapGenSettings.h"
 
-AMapGenSettings::AMapGenSettings() {
+AMapGenSettings::AMapGenSettings(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->TileSet = NULL;
     this->bOverrideAudioVolume = false;
 }
+
 

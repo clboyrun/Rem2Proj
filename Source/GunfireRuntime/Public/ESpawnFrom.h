@@ -8,5 +8,6 @@ enum class ESpawnFrom : uint8 {
     Cardinal,
     Front,
     Behind,
+    FrontThenRandom,
 };
 

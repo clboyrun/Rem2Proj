@@ -1,5 +1,10 @@
 #include "DialogInstance.h"
 
+UDialogInstance::UDialogInstance() {
+    this->ID = 0;
+    this->DialogManager = NULL;
+}
+
 void UDialogInstance::OnSubtitleComplete(USubtitleInstance* Subtitle) {
 }
 
@@ -16,8 +21,4 @@ void UDialogInstance::ForceComplete() {
 void UDialogInstance::Complete() {
 }
 
-UDialogInstance::UDialogInstance() {
-    this->ID = 0;
-    this->DialogManager = NULL;
-}
 

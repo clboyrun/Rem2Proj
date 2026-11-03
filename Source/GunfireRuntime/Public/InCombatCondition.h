@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UInCombatCondition : public UCondition {
     GENERATED_BODY()
 public:
     UInCombatCondition();
+
 };
 

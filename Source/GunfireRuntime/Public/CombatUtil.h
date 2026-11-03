@@ -1,17 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
 #include "UObject/Object.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "Engine/EngineTypes.h"
+#include "Kismet/KismetSystemLibrary.h"
 #include "Engine/HitResult.h"
 #include "Engine/LatentActionManager.h"
 #include "CustomWeaponSpread.h"
 #include "DamageInfo.h"
 #include "EAffiliation.h"
 #include "EAutoArcType.h"
+#include "EEquipmentTarget.h"
 #include "EFireOutExec.h"
 #include "GunfireAudioPlayParams.h"
 #include "ImpactEffectDescriptor.h"
@@ -25,7 +24,9 @@
 class AActor;
 class ACharacter;
 class ACharacterGunfire;
+class AEquipment;
 class APawn;
+class ARangedWeapon;
 class UCurveFloat;
 class UDamageClass;
 class UDamageType;
@@ -39,6 +40,7 @@ class GUNFIRERUNTIME_API UCombatUtil : public UObject {
     GENERATED_BODY()
 public:
     UCombatUtil();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static void WeaponTraceEx(AActor* Cause, const FVector& StartTrace, const FVector& EndTrace, FWeaponTracePath& OutPath);
     
@@ -72,6 +74,12 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FVector PredictLocation(ACharacter* Querier, ACharacter* Target, float Time, float Offset);
     
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
+    static bool IsViewTargetedPlayerInRangeOf(UObject* WorldContextObject, const FVector& ReferencePoint, float Range, bool UseNavDistance, APawn* OptionalNavAgentOverride);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
+    static bool IsViewTargetedPlayerInBoundsOf(UObject* WorldContextObject, const FVector& ReferencePoint, const FVector& BoundsExtent);
+    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsValidAimTarget(AActor* TestTarget, const AActor* AimingOwner);
     
@@ -102,8 +110,11 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool GetReticuleLocation(APawn* Pawn, float Range, float Radius, FRotator& Direction, FVector& Location);
     
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static TArray<ARangedWeapon*> GetRangedWeaponsForCharacter(AActor* Target, EEquipmentTarget WeaponTarget, FName TargetSlotNameID);
+    
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
-    static FName GetRandomHitPhantomThatIsntInvulnerable(const UObject* WorldContextObject, const AActor* Actor, const FVector& ImpactPoint, float Radius);
+    static FName GetRandomHitPhantomThatIsntInvulnerable(const UObject* WorldContextObject, const AActor* Actor, const FVector& ImpactPoint, const FVector& Origin, float Radius);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static AActor* GetPlayerCameraAimTarget(APawn* Cause, float Range);
@@ -125,6 +136,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FVector GetEyePos(ACharacter* Character);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static AEquipment* GetEquippedItemForCharacter(AActor* Target, FName EquipmentSlot);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static float GetDamageReductionFromResistanceByDamageClass(const UDamageClass* DamageClass, float DamageResistance, float AttackerLevel);
@@ -168,6 +182,78 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static float ComputeDamageFalloff(const FVector& Source, AActor* Target, float InnerRadius, float OuterRadius, float Damage, float DamageMin, UCurveFloat* FalloffCurve);
     
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
+    static bool CharActivation_SphereTraceSingleForObjects(const UObject* WorldContextObject, const FVector& Start, const FVector& End, float Radius, const TArray<TEnumAsByte<EObjectTypeQuery>>& ObjectTypes, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
+    static bool CharActivation_SphereTraceSingleByProfile(const UObject* WorldContextObject, const FVector& Start, const FVector& End, float Radius, FName ProfileName, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
+    static bool CharActivation_SphereTraceSingle(const UObject* WorldContextObject, const FVector& Start, const FVector& End, float Radius, TEnumAsByte<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
+    static bool CharActivation_SphereTraceMultiForObjects(const UObject* WorldContextObject, const FVector& Start, const FVector& End, float Radius, const TArray<TEnumAsByte<EObjectTypeQuery>>& ObjectTypes, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
+    static bool CharActivation_SphereTraceMultiByProfile(const UObject* WorldContextObject, const FVector& Start, const FVector& End, float Radius, FName ProfileName, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
+    static bool CharActivation_SphereTraceMulti(const UObject* WorldContextObject, const FVector& Start, const FVector& End, float Radius, TEnumAsByte<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
+    static bool CharActivation_LineTraceSingleForObjects(const UObject* WorldContextObject, const FVector& Start, const FVector& End, const TArray<TEnumAsByte<EObjectTypeQuery>>& ObjectTypes, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
+    static bool CharActivation_LineTraceSingleByProfile(const UObject* WorldContextObject, const FVector& Start, const FVector& End, FName ProfileName, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
+    static bool CharActivation_LineTraceSingle(const UObject* WorldContextObject, const FVector& Start, const FVector& End, TEnumAsByte<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
+    static bool CharActivation_LineTraceMultiForObjects(const UObject* WorldContextObject, const FVector& Start, const FVector& End, const TArray<TEnumAsByte<EObjectTypeQuery>>& ObjectTypes, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
+    static bool CharActivation_LineTraceMultiByProfile(const UObject* WorldContextObject, const FVector& Start, const FVector& End, FName ProfileName, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
+    static bool CharActivation_LineTraceMulti(const UObject* WorldContextObject, const FVector& Start, const FVector& End, TEnumAsByte<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
+    static bool CharActivation_CapsuleTraceSingleForObjects(const UObject* WorldContextObject, const FVector& Start, const FVector& End, float Radius, float HalfHeight, const TArray<TEnumAsByte<EObjectTypeQuery>>& ObjectTypes, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
+    static bool CharActivation_CapsuleTraceSingleByProfile(const UObject* WorldContextObject, const FVector& Start, const FVector& End, float Radius, float HalfHeight, FName ProfileName, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
+    static bool CharActivation_CapsuleTraceSingle(const UObject* WorldContextObject, const FVector& Start, const FVector& End, float Radius, float HalfHeight, TEnumAsByte<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
+    static bool CharActivation_CapsuleTraceMultiForObjects(const UObject* WorldContextObject, const FVector& Start, const FVector& End, float Radius, float HalfHeight, const TArray<TEnumAsByte<EObjectTypeQuery>>& ObjectTypes, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
+    static bool CharActivation_CapsuleTraceMultiByProfile(const UObject* WorldContextObject, const FVector& Start, const FVector& End, float Radius, float HalfHeight, FName ProfileName, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
+    static bool CharActivation_CapsuleTraceMulti(const UObject* WorldContextObject, const FVector& Start, const FVector& End, float Radius, float HalfHeight, TEnumAsByte<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
+    static bool CharActivation_BoxTraceSingleForObjects(const UObject* WorldContextObject, const FVector& Start, const FVector& End, const FVector HalfSize, const FRotator Orientation, const TArray<TEnumAsByte<EObjectTypeQuery>>& ObjectTypes, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
+    static bool CharActivation_BoxTraceSingleByProfile(const UObject* WorldContextObject, const FVector& Start, const FVector& End, const FVector HalfSize, const FRotator Orientation, FName ProfileName, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
+    static bool CharActivation_BoxTraceSingle(const UObject* WorldContextObject, const FVector& Start, const FVector& End, const FVector HalfSize, const FRotator Orientation, TEnumAsByte<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
+    static bool CharActivation_BoxTraceMultiForObjects(const UObject* WorldContextObject, const FVector& Start, const FVector& End, const FVector HalfSize, const FRotator Orientation, const TArray<TEnumAsByte<EObjectTypeQuery>>& ObjectTypes, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
+    static bool CharActivation_BoxTraceMultiByProfile(const UObject* WorldContextObject, const FVector& Start, const FVector& End, FVector HalfSize, const FRotator Orientation, FName ProfileName, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
+    static bool CharActivation_BoxTraceMulti(const UObject* WorldContextObject, const FVector& Start, const FVector& End, FVector HalfSize, const FRotator Orientation, TEnumAsByte<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    
     UFUNCTION(BlueprintCallable)
     static FVector CalculateArcVelocity(const FVector& Start, const FVector& End, float Gravity, float Speed, float ArcHeight, float& TravelTime, EAutoArcType Type);
     
@@ -187,7 +273,7 @@ public:
     static void ApplyDamage(AActor* CauseActor, AActor* TargetActor, float Damage, float DamageMod, float DamageScalar, int32 PowerOverride, TSubclassOf<UDamageTypeGunfire> DamageType);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    static TArray<FVector> ApplyCustomWeaponSpread(AActor* Cause, const FVector& Origin, const FVector& End, int32 SprayCount, float Spread, UPARAM(Ref) FRandomStream& RandomStream, UPARAM(Ref) FCustomWeaponSpread& CustomSpread);
+    static TArray<FVector> ApplyCustomWeaponSpread(AActor* Cause, const FVector& Origin, const FVector& End, int32 SprayCount, float Spread, UPARAM(Ref) FRandomStream& RandomStream, const FCustomWeaponSpread& CustomSpread);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool AllowsWeakSpots(TSubclassOf<UDamageType> DamageType);
@@ -200,6 +286,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool AllowAction(ACharacterGunfire* Character);
+    
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
+    static void ActivateCharactersAlongSegment(const UObject* WorldContextObject, const FVector& Start, const FVector& End);
     
 };
 

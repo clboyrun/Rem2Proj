@@ -1,5 +1,11 @@
 #include "TabButton.h"
 
+UTabButton::UTabButton() {
+    this->TabPanelCached = NULL;
+    this->CachedFocusManager = NULL;
+    this->UserFocusWidget = NULL;
+}
+
 void UTabButton::SetTexture(UTexture2D* Texture) {
 }
 
@@ -23,9 +29,4 @@ UWidget* UTabButton::GetTabPanel() {
 void UTabButton::FocusTab() {
 }
 
-UTabButton::UTabButton() {
-    this->TabPanelCached = NULL;
-    this->CachedFocusManager = NULL;
-    this->UserFocusWidget = NULL;
-}
 

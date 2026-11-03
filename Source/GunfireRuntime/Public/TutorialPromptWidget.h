@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UTutorialPromptWidget : public UUserWidget {
     GENERATED_BODY()
 public:
     UTutorialPromptWidget();
+
 };
 

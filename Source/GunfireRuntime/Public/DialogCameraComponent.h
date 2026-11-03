@@ -23,6 +23,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName FocusTarget;
     
-    UDialogCameraComponent();
+    UDialogCameraComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

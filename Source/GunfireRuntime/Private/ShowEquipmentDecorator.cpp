@@ -7,3 +7,4 @@ UShowEquipmentDecorator::UShowEquipmentDecorator() {
     this->bCanEditEquipmentType = true;
 }
 
+

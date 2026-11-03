@@ -4,3 +4,4 @@ UInteractiveStateTransition::UInteractiveStateTransition() {
     this->CachedStateOther = NULL;
 }
 
+

@@ -14,5 +14,6 @@ public:
     bool RemoveAtEnd;
     
     UAnimNotifyState_AnimTag();
+
 };
 

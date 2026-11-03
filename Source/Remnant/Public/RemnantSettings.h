@@ -4,11 +4,13 @@
 #include "UObject/Object.h"
 #include "Engine/EngineBaseTypes.h"
 #include "CursorSettings.h"
+#include "EPlayerTravelState.h"
 #include "RemnantSettings.generated.h"
 
 class UDamageClass;
+class UDataTable;
 
-UCLASS(Blueprintable, Config=Engine, DefaultConfig)
+UCLASS(Blueprintable, DefaultConfig, Config=Engine)
 class REMNANT_API URemnantSettings : public UObject {
     GENERATED_BODY()
 public:
@@ -36,6 +38,25 @@ public:
     UPROPERTY(AdvancedDisplay, BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FDirectoryPath> QuestDirectoryBlacklist;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    float PingDistance;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    TMap<EPlayerTravelState, float> TravelStateTimeouts;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    TArray<TSoftObjectPtr<UDataTable>> PrismSegmentDataTables;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    FDateTime ReleaseDate;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    FDateTime StudioDate;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    int32 LanyardNumber;
+    
     URemnantSettings();
+
 };
 

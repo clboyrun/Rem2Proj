@@ -16,6 +16,7 @@ public:
     int32 Priority;
     
     UMusicSetAsset();
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void Stop(UMusicManager* MusicManager, UPARAM(Ref) FMusicSetInstanceData& InstanceData, const FName& StingerName);
     

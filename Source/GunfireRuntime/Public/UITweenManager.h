@@ -1,7 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "Components/ActorComponent.h"
 #include "EUIEaseType.h"
 #include "UITweenFinishedEventDelegate.h"
@@ -20,7 +19,8 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FUITweenFinishedEvent OnTweenFinished;
     
-    UUITweenManager();
+    UUITweenManager(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     bool StopTween(int32 TweenID);
     

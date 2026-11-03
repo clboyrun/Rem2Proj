@@ -3,3 +3,4 @@
 UEnvQueryItemType_AITacticalPoint::UEnvQueryItemType_AITacticalPoint() {
 }
 
+

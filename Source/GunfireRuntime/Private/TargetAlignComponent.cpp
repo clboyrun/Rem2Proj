@@ -1,10 +1,6 @@
 #include "TargetAlignComponent.h"
 
-FRotator UTargetAlignComponent::GetAdjustNodeRotation() const {
-    return FRotator{};
-}
-
-UTargetAlignComponent::UTargetAlignComponent() {
+UTargetAlignComponent::UTargetAlignComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->CapsuleConvergeDistance = 0.00f;
     this->PitchLowerAngle = 45.00f;
     this->PitchUpperAngle = 60.00f;
@@ -14,4 +10,9 @@ UTargetAlignComponent::UTargetAlignComponent() {
     this->LastTarget = NULL;
     this->LastCapsule = NULL;
 }
+
+FRotator UTargetAlignComponent::GetAdjustNodeRotation() const {
+    return FRotator{};
+}
+
 

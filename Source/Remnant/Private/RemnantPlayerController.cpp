@@ -2,10 +2,44 @@
 #include "Net/UnrealNetwork.h"
 #include "Templates/SubclassOf.h"
 
+ARemnantPlayerController::ARemnantPlayerController(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->ClickEventKeys.AddDefaulted(1);
+    this->TravelAction = NULL;
+    this->LevelsOnDuplicateTrait = 1;
+    this->bKeepPawnWhenTraveling = true;
+    this->TravelCleanupDelay = 1.50f;
+    this->IntroQuestStartLink = TEXT("Start");
+    this->bPrimaryWeaponToggled = false;
+    this->CrossplayPlatform = 0;
+    this->CachedArchetype = NULL;
+    this->CachedSecondaryArchetype = NULL;
+    this->TravelState = EPlayerTravelState::Idle;
+    this->MusicState = EMusicState::Ambient;
+    this->Respawning = false;
+    this->bSupportsSpawnAtHost = true;
+    this->DeathScreenContextOverride = NULL;
+    this->LoadingState = TEXT("Loading");
+    this->PendingTravelState = TEXT("PendingTravel");
+    this->CinematicState = TEXT("Cinematic");
+    this->FinalizeResetState = TEXT("FinalizeWorldReset");
+    this->AliveResetState = TEXT("AliveWorldReset");
+    this->RespawnedResetState = TEXT("RespawnedResetState");
+    this->DeadResetState = TEXT("DeadResetState");
+    this->SpectatingState = TEXT("Spectating");
+    this->DyingState = TEXT("Dying");
+    this->JoiningState = TEXT("Joining");
+    this->CinematicFromWorldReset = TEXT("CinematicFromWorldReset");
+    this->AudioListenerPlayerCamLerp = 0.30f;
+    this->AudioListenerPlayerOffset = 0.00f;
+    this->DeadPawn = NULL;
+    this->CachedPawn = NULL;
+}
+
 void ARemnantPlayerController::UpdatePlayState() {
 }
 
-void ARemnantPlayerController::TravelPlayerTo(int32 DestZoneID, const FName& DestLink, bool bForce, bool bInstant) {
+EPlayerTravelResult ARemnantPlayerController::TravelPlayerTo(FName Context, int32 DestZoneID, const FName& DestLink, bool bForce, bool bInstant) {
+    return EPlayerTravelResult::Unknown;
 }
 
 void ARemnantPlayerController::SwapCharacter(const FZoneLinkInfo& StartingWaypoint) {
@@ -15,10 +49,16 @@ void ARemnantPlayerController::StreamActiveCharacterToServer() {
 }
 
 
+void ARemnantPlayerController::ShowGameModeScreen_Implementation(TSubclassOf<AUIActor> Dialog) {
+}
+
 void ARemnantPlayerController::SetReadyToTravel() {
 }
 
 void ARemnantPlayerController::SetIntroComplete() {
+}
+
+void ARemnantPlayerController::SetEntitlementLock(bool Locked) {
 }
 
 void ARemnantPlayerController::SetDeathScreenLock(bool Locked) {
@@ -66,16 +106,19 @@ bool ARemnantPlayerController::ServerUnlockAccountCurrency_Validate(TSubclassOf<
 void ARemnantPlayerController::ServerStreamCharacterFinalize_Implementation() {
 }
 
-void ARemnantPlayerController::ServerStreamCharacterChunk_Implementation(const TArray<uint8>& CharacterData) {
+void ARemnantPlayerController::ServerStreamCharacterChunk_Implementation(const TArray<uint8>& Chunk) {
 }
 
-void ARemnantPlayerController::ServerStreamCharacterBegin_Implementation(int32 CharacterBlobSize) {
+void ARemnantPlayerController::ServerStreamCharacterBegin_Implementation(int32 DataSize, int32 DataSize_Compressed) {
 }
 
 void ARemnantPlayerController::ServerSetCurrentLock_Implementation(EZoneTravelLock NewLock, bool bNewIsSaving, bool bNewWantsTravelMenuAccess) {
 }
 bool ARemnantPlayerController::ServerSetCurrentLock_Validate(EZoneTravelLock NewLock, bool bNewIsSaving, bool bNewWantsTravelMenuAccess) {
     return true;
+}
+
+void ARemnantPlayerController::ServerSetCrossplayPlatform_Implementation(uint8 ClientCrossplayPlatform) {
 }
 
 void ARemnantPlayerController::ServerSetArchetype_Implementation(const FString& NameOfBP, int32 ArchetypeLevel, int32 GearLevel, int32 Slot) {
@@ -191,11 +234,16 @@ void ARemnantPlayerController::RefreshAccountAwards() {
 void ARemnantPlayerController::QueueManualQuestReward(ARemnantQuest* Quest, const TArray<TSoftClassPtr<AItem>>& Items, bool bSkipDuplicates, bool bAutoEquip, ERemnantQuestRewardType RewardType, int32 Quantity, int32 LevelOverride, bool bIsArchetype, bool bWantsSaveOnAward) {
 }
 
+
+
 void ARemnantPlayerController::OnSessionDisconnected(UWorld* InWorld, UNetDriver* NetDriver) {
 }
 
 
 void ARemnantPlayerController::OnRootQuestLoaded(AQuest* Quest) {
+}
+
+void ARemnantPlayerController::OnRootQuestFailedToLoad(AQuest* Quest) {
 }
 
 
@@ -241,10 +289,6 @@ bool ARemnantPlayerController::IsDeathScreenLocked() {
 }
 
 bool ARemnantPlayerController::IsAwardingArchetype() const {
-    return false;
-}
-
-bool ARemnantPlayerController::HasLicense(const FString& License) {
     return false;
 }
 
@@ -298,6 +342,10 @@ UInventoryComponent* ARemnantPlayerController::GetPlayerInventory() const {
     return NULL;
 }
 
+bool ARemnantPlayerController::GetIsAwaitingSpawnLocation() const {
+    return false;
+}
+
 TSubclassOf<UUserWidget> ARemnantPlayerController::GetDeathScreenContextClass() {
     return NULL;
 }
@@ -339,6 +387,9 @@ void ARemnantPlayerController::ClientUpdateFogOfWar_Implementation(int32 ZoneID,
 void ARemnantPlayerController::ClientUpdateDeathScreenContextClass_Implementation(TSubclassOf<UUserWidget> ContextClass) {
 }
 
+void ARemnantPlayerController::ClientUpdateAwaitingStartLocation_Implementation(bool bIsFindingSpawnLocation) {
+}
+
 void ARemnantPlayerController::ClientUpdateArchetype_Implementation(TSubclassOf<URemnantArchetype> Archetype, bool bSecondary) {
 }
 
@@ -357,13 +408,19 @@ void ARemnantPlayerController::ClientRequestPendingPlayState_Implementation(FNam
 void ARemnantPlayerController::ClientRequestCinematicFromWorldReset_Implementation(bool Request) {
 }
 
+void ARemnantPlayerController::ClientPrepareForTravel_Implementation(bool bRespawning, FPlayerTravelContext TravelContext) {
+}
+
 void ARemnantPlayerController::ClientOnSessionChanged_Implementation() {
+}
+
+void ARemnantPlayerController::ClientNotifySpawned_Implementation() {
 }
 
 void ARemnantPlayerController::ClientNotifyQuestReward_Implementation(const FRemnantQuestReward& QuestReward) {
 }
 
-void ARemnantPlayerController::ClientLoadDestinationZone_Implementation(int32 DestZoneID) {
+void ARemnantPlayerController::ClientLoadDestinationZone_Implementation() {
 }
 
 void ARemnantPlayerController::ClientIncrementBossCounter_Implementation() {
@@ -382,9 +439,6 @@ void ARemnantPlayerController::ClientFinishTravel_Implementation(FTransform Dest
 }
 
 void ARemnantPlayerController::ClientBeginWorldReset_Implementation(ACheckpoint* ActivatedCheckpoint, bool bWasDead) {
-}
-
-void ARemnantPlayerController::ClientBeginTravel_Implementation(bool bRespawning, int32 PendingZoneID) {
 }
 
 void ARemnantPlayerController::ClearTravelLock(EZoneTravelLock Lock) {
@@ -441,40 +495,9 @@ void ARemnantPlayerController::GetLifetimeReplicatedProps(TArray<FLifetimeProper
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);
     
     DOREPLIFETIME(ARemnantPlayerController, bPrimaryWeaponToggled);
+    DOREPLIFETIME(ARemnantPlayerController, CrossplayPlatform);
     DOREPLIFETIME(ARemnantPlayerController, MusicState);
     DOREPLIFETIME(ARemnantPlayerController, DeadPawn);
 }
 
-ARemnantPlayerController::ARemnantPlayerController() {
-    this->TravelAction = NULL;
-    this->LevelsOnDuplicateTrait = 1;
-    this->bKeepPawnWhenTraveling = true;
-    this->TravelState = EPlayerTravelState::Idle;
-    this->TravelCleanupDelay = 1.50f;
-    this->IntroQuestStartLink = TEXT("Start");
-    this->bPrimaryWeaponToggled = false;
-    this->CachedArchetype = NULL;
-    this->CachedSecondaryArchetype = NULL;
-    this->CurrentZoneID = -1;
-    this->PendingDestinationZoneID = -1;
-    this->DestinationZoneID = -1;
-    this->MusicState = EMusicState::Ambient;
-    this->Respawning = false;
-    this->DeathScreenContextOverride = NULL;
-    this->LoadingState = TEXT("Loading");
-    this->PendingTravelState = TEXT("PendingTravel");
-    this->CinematicState = TEXT("Cinematic");
-    this->FinalizeResetState = TEXT("FinalizeWorldReset");
-    this->AliveResetState = TEXT("AliveWorldReset");
-    this->RespawnedResetState = TEXT("RespawnedResetState");
-    this->DeadResetState = TEXT("DeadResetState");
-    this->SpectatingState = TEXT("Spectating");
-    this->DyingState = TEXT("Dying");
-    this->JoiningState = TEXT("Joining");
-    this->CinematicFromWorldReset = TEXT("CinematicFromWorldReset");
-    this->AudioListenerPlayerCamLerp = 0.30f;
-    this->AudioListenerPlayerOffset = 0.00f;
-    this->DeadPawn = NULL;
-    this->CachedPawn = NULL;
-}
 

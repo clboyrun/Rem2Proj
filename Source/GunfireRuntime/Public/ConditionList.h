@@ -14,6 +14,7 @@ public:
     FConditions Conditions;
     
     UConditionList();
+
     UFUNCTION(BlueprintCallable)
     bool EvaluateConditions(AActor* Actor);
     

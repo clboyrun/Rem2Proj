@@ -1,5 +1,10 @@
 #include "MinionComponent.h"
 
+UMinionComponent::UMinionComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->Summoner = NULL;
+    this->DisplayIcon = NULL;
+}
+
 void UMinionComponent::SetValid(bool IsMinionValid) {
 }
 
@@ -25,8 +30,7 @@ int32 UMinionComponent::GetMaxMinionsForCause(AActor* Cause, int32 Bonus) {
 void UMinionComponent::DestroyMinion() {
 }
 
-UMinionComponent::UMinionComponent() {
-    this->Summoner = NULL;
-    this->DisplayIcon = NULL;
+void UMinionComponent::BroadcastSummonEvent(FName EventName, AActor* RelevantEventTarget) {
 }
+
 

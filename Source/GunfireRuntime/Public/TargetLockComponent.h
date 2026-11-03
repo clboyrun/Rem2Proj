@@ -63,9 +63,10 @@ protected:
     AActor* CameraTarget;
     
 public:
-    UTargetLockComponent();
+    UTargetLockComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsTargetLockEnabled() const;
     

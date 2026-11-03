@@ -28,11 +28,12 @@ public:
     FString StringValue;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TObjectPtr<UClass> ClassValue;
+    UClass* ClassValue;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UClass* ObjectType;
     
     UVariableConditionBase();
+
 };
 

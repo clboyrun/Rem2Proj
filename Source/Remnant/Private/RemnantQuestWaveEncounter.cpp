@@ -1,5 +1,12 @@
 #include "RemnantQuestWaveEncounter.h"
 
+URemnantQuestWaveEncounter::URemnantQuestWaveEncounter(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->SpawnTable = NULL;
+    this->EncounterTarget = NULL;
+    this->EventRegion = NULL;
+    this->EncounterInstance = NULL;
+}
+
 void URemnantQuestWaveEncounter::WaveComplete(UEncounterInstance* Instance) {
 }
 
@@ -31,10 +38,4 @@ void URemnantQuestWaveEncounter::EventOnEnd() {
 void URemnantQuestWaveEncounter::Begin(AActor* Target) {
 }
 
-URemnantQuestWaveEncounter::URemnantQuestWaveEncounter() {
-    this->SpawnTable = NULL;
-    this->EncounterTarget = NULL;
-    this->EventRegion = NULL;
-    this->EncounterInstance = NULL;
-}
 

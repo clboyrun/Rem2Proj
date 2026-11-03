@@ -1,9 +1,6 @@
 #include "SilhouetteComponent.h"
 
-void USilhouetteComponent::OnInventoryChanged() {
-}
-
-USilhouetteComponent::USilhouetteComponent() {
+USilhouetteComponent::USilhouetteComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->RequiredTagCanBeAnyActor = false;
     this->Visibility = ESilhouetteVisibility::WhenNotVisible;
     this->MaxDistance = 5000.00f;
@@ -11,4 +8,8 @@ USilhouetteComponent::USilhouetteComponent() {
     this->WoundedSilhouetteColorIdx = 254;
     this->bAutoUpdateEquipment = true;
 }
+
+void USilhouetteComponent::OnInventoryChanged() {
+}
+
 

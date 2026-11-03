@@ -1,5 +1,12 @@
 #include "RebindableInputSetting.h"
 
+URebindableInputSetting::URebindableInputSetting() {
+    this->InputAction = NULL;
+    this->bIsInputAction = true;
+    this->AxisScale = 1.00f;
+    this->ConflictGroup = 1;
+}
+
 void URebindableInputSetting::SetValue(FGenericInput NewKey) {
 }
 
@@ -11,10 +18,4 @@ FGenericInput URebindableInputSetting::GetValue() {
     return FGenericInput{};
 }
 
-URebindableInputSetting::URebindableInputSetting() {
-    this->InputAction = NULL;
-    this->bIsInputAction = true;
-    this->AxisScale = 1.00f;
-    this->ConflictGroup = 1;
-}
 

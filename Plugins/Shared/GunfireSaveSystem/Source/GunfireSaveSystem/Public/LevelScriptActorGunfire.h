@@ -12,6 +12,7 @@ private:
     uint64 UniqueIDGenerator;
     
 public:
-    ALevelScriptActorGunfire();
+    ALevelScriptActorGunfire(const FObjectInitializer& ObjectInitializer);
+
 };
 

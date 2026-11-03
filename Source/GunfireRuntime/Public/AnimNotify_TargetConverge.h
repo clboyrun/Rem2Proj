@@ -12,5 +12,6 @@ public:
     FTargetConvergeSettings Settings;
     
     UAnimNotify_TargetConverge();
+
 };
 

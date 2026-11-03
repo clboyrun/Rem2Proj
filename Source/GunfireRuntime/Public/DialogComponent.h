@@ -37,6 +37,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool EnableProximityTriggers;
     
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool TriggersCanEvaluateWhileHidden;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName SpeakerID;
     
@@ -114,9 +117,10 @@ protected:
     TMap<UEventTreeNode_ProximityTrigger*, float> ProximityCooldowns;
     
 public:
-    UDialogComponent();
+    UDialogComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
 protected:
     UFUNCTION(BlueprintCallable)
     void TokenValueSet(const FName& NameID, const FText& Value);
@@ -177,6 +181,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasAttributeValue(FName Key);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool HasActiveDialog();
     
     UFUNCTION(BlueprintCallable)
     void HandleEvent(FName EventName);

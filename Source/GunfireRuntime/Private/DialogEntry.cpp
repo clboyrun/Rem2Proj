@@ -6,3 +6,4 @@ UDialogEntry::UDialogEntry() {
     this->IsCinematic = false;
 }
 
+

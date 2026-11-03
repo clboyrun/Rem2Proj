@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
+#include "AsyncLoadClassesCompleteDelegateDelegate.h"
 #include "AssetUtil.generated.h"
 
 class AActor;
@@ -13,6 +14,7 @@ class GUNFIRERUNTIME_API UAssetUtil : public UObject {
     GENERATED_BODY()
 public:
     UAssetUtil();
+
     UFUNCTION(BlueprintCallable)
     static UObject* LoadSoftReference(const TSoftObjectPtr<UObject>& SoftObjRef);
     
@@ -36,6 +38,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static UObject* GetAssetFromComponent(const UActorComponent* Component);
+    
+    UFUNCTION(BlueprintCallable)
+    static bool AsyncLoadClassReference(FAsyncLoadClassesCompleteDelegate Delegate, const TArray<TSoftClassPtr<UObject>>& SoftClsRef);
     
 };
 

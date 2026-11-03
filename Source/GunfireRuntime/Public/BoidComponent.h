@@ -55,9 +55,10 @@ protected:
     AActor* GoalActor;
     
 public:
-    UBoidComponent();
+    UBoidComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void Wander(float WanderRadius);
     

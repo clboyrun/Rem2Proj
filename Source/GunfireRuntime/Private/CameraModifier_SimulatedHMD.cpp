@@ -8,3 +8,4 @@ UCameraModifier_SimulatedHMD::UCameraModifier_SimulatedHMD() {
     this->InputComponent = NULL;
 }
 
+

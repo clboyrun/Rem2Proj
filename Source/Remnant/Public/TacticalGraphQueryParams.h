@@ -28,5 +28,6 @@ public:
     FFloatRange RangeRestriction;
     
     UTacticalGraphQueryParams();
+
 };
 

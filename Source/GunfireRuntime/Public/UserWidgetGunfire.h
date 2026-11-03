@@ -16,5 +16,6 @@ public:
     FOnRemovedFromParent OnRemovedFromParent;
     
     UUserWidgetGunfire();
+
 };
 

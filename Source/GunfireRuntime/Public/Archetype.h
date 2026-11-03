@@ -22,6 +22,7 @@ public:
     int32 RequiredExperienceRound;
     
     UArchetype();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnExperience(int32 Experience);

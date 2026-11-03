@@ -1,5 +1,6 @@
 #include "CustomSphereComponent.h"
 
-UCustomSphereComponent::UCustomSphereComponent() {
+UCustomSphereComponent::UCustomSphereComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

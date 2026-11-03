@@ -12,5 +12,6 @@ public:
     TArray<FFollowTargetData> FollowTargets;
     
     UAIFollowSubsystem();
+
 };
 

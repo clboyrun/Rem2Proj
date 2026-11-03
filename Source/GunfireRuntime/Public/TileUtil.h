@@ -9,6 +9,7 @@ class GUNFIRERUNTIME_API UTileUtil : public UObject {
     GENERATED_BODY()
 public:
     UTileUtil();
+
     UFUNCTION(BlueprintCallable)
     static bool IsVisible(const FTile& Tile);
     

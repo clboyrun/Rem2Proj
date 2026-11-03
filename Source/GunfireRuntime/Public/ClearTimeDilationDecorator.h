@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UClearTimeDilationDecorator : public UActorStateDecorat
     GENERATED_BODY()
 public:
     UClearTimeDilationDecorator();
+
 };
 

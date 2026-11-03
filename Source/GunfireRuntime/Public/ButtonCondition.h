@@ -36,5 +36,6 @@ public:
     bool PersistNotValid;
     
     UButtonCondition();
+
 };
 

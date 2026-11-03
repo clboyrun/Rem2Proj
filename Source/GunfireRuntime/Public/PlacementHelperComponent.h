@@ -22,7 +22,8 @@ public:
     UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bUpdateOnLevelLoad;
     
-    UPlacementHelperComponent();
+    UPlacementHelperComponent(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnPostEditMove(bool bFinished);

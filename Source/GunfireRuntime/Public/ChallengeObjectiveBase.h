@@ -14,6 +14,9 @@ class GUNFIRERUNTIME_API UChallengeObjectiveBase : public UObject, public IHiera
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FName NameID;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText Label;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
@@ -31,6 +34,7 @@ protected:
     
 public:
     UChallengeObjectiveBase();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     EObjectiveType GetObjectiveType() const;
     
@@ -43,7 +47,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool CanIncrement() const;
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

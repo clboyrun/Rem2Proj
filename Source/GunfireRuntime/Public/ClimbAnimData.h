@@ -1,7 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "AppendageData.h"
 #include "Conditions.h"
 #include "EClimbAnimationType.h"
@@ -166,5 +165,6 @@ public:
     TArray<FAppendageData> Appendages;
     
     UClimbAnimData();
+
 };
 

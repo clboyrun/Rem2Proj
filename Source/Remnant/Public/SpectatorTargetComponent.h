@@ -11,7 +11,8 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSpectatorTargetUnavailDelegate OnNotifySpectatorTargetUnavail;
     
-    USpectatorTargetComponent();
+    USpectatorTargetComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void OnSpectatorTargetUnavailable();
     

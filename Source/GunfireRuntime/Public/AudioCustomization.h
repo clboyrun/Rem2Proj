@@ -42,5 +42,6 @@ public:
     FGunfireAudioAttachParams EndSoundAttachParams;
     
     UAudioCustomization();
+
 };
 

@@ -1,5 +1,6 @@
 #include "MapTileNav.h"
 
-AMapTileNav::AMapTileNav() {
+AMapTileNav::AMapTileNav(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

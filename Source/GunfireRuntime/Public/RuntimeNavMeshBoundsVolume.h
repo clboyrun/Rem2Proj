@@ -13,6 +13,7 @@ protected:
     FBox Bounds;
     
 public:
-    ARuntimeNavMeshBoundsVolume();
+    ARuntimeNavMeshBoundsVolume(const FObjectInitializer& ObjectInitializer);
+
 };
 

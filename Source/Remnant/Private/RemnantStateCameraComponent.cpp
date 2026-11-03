@@ -1,5 +1,6 @@
 #include "RemnantStateCameraComponent.h"
 
-URemnantStateCameraComponent::URemnantStateCameraComponent() {
+URemnantStateCameraComponent::URemnantStateCameraComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

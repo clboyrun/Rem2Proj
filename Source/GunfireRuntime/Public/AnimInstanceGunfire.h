@@ -1,8 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "Animation/AnimInstance.h"
 #include "AnimationHandle.h"
 #include "AnimationLayer.h"
@@ -159,6 +157,7 @@ private:
     
 public:
     UAnimInstanceGunfire();
+
     UFUNCTION(BlueprintCallable)
     void UpdateIkEffector(const FIkEffector& Effector);
     
@@ -215,6 +214,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetMoveDir() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static USkeletalMeshComponent* GetMasterSkeletalMesh(AActor* Actor);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static UAnimInstanceGunfire* GetMasterAnimInstance(AActor* Actor);

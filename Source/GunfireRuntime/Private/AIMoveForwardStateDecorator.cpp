@@ -6,3 +6,4 @@ UAIMoveForwardStateDecorator::UAIMoveForwardStateDecorator() {
     this->KeepVelocityOnEnter = false;
 }
 
+

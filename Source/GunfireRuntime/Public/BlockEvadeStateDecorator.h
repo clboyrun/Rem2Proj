@@ -2,10 +2,11 @@
 #include "CoreMinimal.h"
 #include "ActorStateDecorator.h"
 #include "DamageInfo.h"
+#include "EvadeSourceInterface.h"
 #include "BlockEvadeStateDecorator.generated.h"
 
 UCLASS(Blueprintable)
-class GUNFIRERUNTIME_API UBlockEvadeStateDecorator : public UActorStateDecorator {
+class GUNFIRERUNTIME_API UBlockEvadeStateDecorator : public UActorStateDecorator, public IEvadeSourceInterface {
     GENERATED_BODY()
 public:
 private:
@@ -44,8 +45,11 @@ private:
     
 public:
     UBlockEvadeStateDecorator();
+
     UFUNCTION(BlueprintCallable)
     static void SimulateDodge(const FDamageInfo& DamageInfo);
     
+
+    // Fix for true pure virtual functions not being implemented
 };
 

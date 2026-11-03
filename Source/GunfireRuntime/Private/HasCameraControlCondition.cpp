@@ -4,3 +4,4 @@ UHasCameraControlCondition::UHasCameraControlCondition() {
     this->bRequiresFullControl = false;
 }
 
+

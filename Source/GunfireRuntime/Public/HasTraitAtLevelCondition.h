@@ -19,5 +19,6 @@ public:
     bool FilterOnlyArchetypes;
     
     UHasTraitAtLevelCondition();
+
 };
 

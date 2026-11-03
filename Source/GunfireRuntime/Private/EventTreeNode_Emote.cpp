@@ -8,3 +8,4 @@ UEventTreeNode_Emote::UEventTreeNode_Emote() {
     this->Emote = UDialog_Emote::StaticClass();
 }
 
+

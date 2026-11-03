@@ -1,6 +1,20 @@
 #include "ExplorableMinimapModel.h"
 #include "Components/SceneComponent.h"
 
+AExplorableMinimapModel::AExplorableMinimapModel(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("RootSceneComponent"));
+    this->VisibilityRadius = 3000.00f;
+    this->VisibilityHeight = 350.00f;
+    this->VisibilityCurveHoriz = NULL;
+    this->VisibilityCurveVertical = NULL;
+    this->GridResolution = 50.00f;
+    this->WidgetSize = 64.00f;
+    this->WidgetMinSize = 16.00f;
+    this->WidgetMaxSize = 32.00f;
+    this->FullScreenOverlayWidget = NULL;
+    this->MinimapScene = CreateDefaultSubobject<USceneComponent>(TEXT("MinimapSceneComponent"));
+}
+
 void AExplorableMinimapModel::SetFullscreenOverlayWidget(UUserWidget* OverlayWidget) {
 }
 
@@ -33,16 +47,4 @@ AExplorableMinimapModel* AExplorableMinimapModel::GetExplorableMinimapModel(cons
     return NULL;
 }
 
-AExplorableMinimapModel::AExplorableMinimapModel() {
-    this->VisibilityRadius = 3000.00f;
-    this->VisibilityHeight = 350.00f;
-    this->VisibilityCurveHoriz = NULL;
-    this->VisibilityCurveVertical = NULL;
-    this->GridResolution = 50.00f;
-    this->WidgetSize = 64.00f;
-    this->WidgetMinSize = 16.00f;
-    this->WidgetMaxSize = 32.00f;
-    this->FullScreenOverlayWidget = NULL;
-    this->MinimapScene = CreateDefaultSubobject<USceneComponent>(TEXT("MinimapSceneComponent"));
-}
 

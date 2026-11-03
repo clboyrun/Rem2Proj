@@ -12,5 +12,6 @@ public:
     FAIDataProviderFloatValue ZOffset;
     
     UEnvQueryGenerator_SimpleGridOffset();
+
 };
 

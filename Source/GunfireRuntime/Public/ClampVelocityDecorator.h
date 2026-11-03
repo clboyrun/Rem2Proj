@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "ActorStateDecorator.h"
+#include "EClampVelocityBrakeType.h"
 #include "EClampVelocityHorizontalDirection.h"
 #include "ClampVelocityDecorator.generated.h"
 
@@ -39,7 +40,17 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bClampOnUpdate;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float AdditionalBrakeFriction;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float AdditionalBrakeDeceleration;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    EClampVelocityBrakeType BrakeFrictionType;
+    
 public:
     UClampVelocityDecorator();
+
 };
 

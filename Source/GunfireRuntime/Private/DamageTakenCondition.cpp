@@ -9,3 +9,4 @@ UDamageTakenCondition::UDamageTakenCondition() {
     this->Arc = 180.00f;
 }
 
+

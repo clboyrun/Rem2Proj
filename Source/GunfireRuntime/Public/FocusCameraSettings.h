@@ -25,6 +25,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float LeftRightOffset;
     
-    UFocusCameraSettings();
+    UFocusCameraSettings(const FObjectInitializer& ObjectInitializer);
+
 };
 

@@ -48,9 +48,10 @@ protected:
     FVector_NetQuantizeNormal PlayerFacing;
     
 public:
-    UPushComponent();
+    UPushComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
 protected:
     UFUNCTION(BlueprintCallable, Server, Unreliable, WithValidation)
     void ServerStreamClientInput(const FVector_NetQuantizeNormal& Input, const FVector_NetQuantizeNormal& Facing, bool bMovementMode);

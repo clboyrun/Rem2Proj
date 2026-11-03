@@ -1,5 +1,6 @@
 #include "AICoordinatorRanged.h"
 
-UAICoordinatorRanged::UAICoordinatorRanged() {
+UAICoordinatorRanged::UAICoordinatorRanged(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

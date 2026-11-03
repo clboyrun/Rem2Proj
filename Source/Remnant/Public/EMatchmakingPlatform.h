@@ -4,9 +4,11 @@
 
 UENUM(BlueprintType)
 enum class EMatchmakingPlatform : uint8 {
-    Steam,
+    None = 0 UMETA(Hidden),
+    Steam = 1,
     Epic,
-    XBox,
-    Playstation,
+    XBox = 4,
+    Playstation = 8,
+    Windows = 16,
 };
 

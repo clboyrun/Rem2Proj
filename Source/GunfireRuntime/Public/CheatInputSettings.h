@@ -9,7 +9,7 @@
 class AUIActor;
 class UUserWidget;
 
-UCLASS(Blueprintable, Config=Engine, DefaultConfig, Config=Input)
+UCLASS(Blueprintable, DefaultConfig, Config=Input)
 class GUNFIRERUNTIME_API UCheatInputSettings : public UObject {
     GENERATED_BODY()
 public:
@@ -38,5 +38,6 @@ public:
     TArray<FCheatInputAction> ActionMappings;
     
     UCheatInputSettings();
+
 };
 

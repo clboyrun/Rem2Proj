@@ -1,5 +1,10 @@
 #include "SoundSetComponent.h"
 
+USoundSetComponent::USoundSetComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->SoundSet = NULL;
+    this->MeshComp = NULL;
+}
+
 void USoundSetComponent::RemoveSoundTag(FName SoundTag) {
 }
 
@@ -30,8 +35,4 @@ FSoundGunfire USoundSetComponent::GetSound(FName SoundIDName) {
 void USoundSetComponent::AddUniqueSoundTag(FName SoundTag) {
 }
 
-USoundSetComponent::USoundSetComponent() {
-    this->SoundSet = NULL;
-    this->MeshComp = NULL;
-}
 

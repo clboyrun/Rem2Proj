@@ -4,9 +4,9 @@
 
 UENUM()
 enum class ETileFlags : uint8 {
-    AllowSpawns = 0x1,
+    AllowSpawns = 1,
     AllowQuests,
-    NoNavValidate = 0x4,
-    AllFlags = 0xFF,
+    NoNavValidate = 4,
+    AllFlags = 255,
 };
 

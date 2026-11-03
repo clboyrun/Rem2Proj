@@ -30,7 +30,8 @@ protected:
     TMap<AActor*, UEmoteInstance*> EmoteInstances;
     
 public:
-    USubtitlesComponent();
+    USubtitlesComponent(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerRemoveSubtitle(int32 ID);

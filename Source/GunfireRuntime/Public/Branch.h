@@ -13,5 +13,6 @@ public:
     TArray<UEventTreeNode*> Nodes;
     
     UBranch();
+
 };
 

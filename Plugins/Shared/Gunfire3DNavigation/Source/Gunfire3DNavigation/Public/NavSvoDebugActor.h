@@ -128,6 +128,7 @@ private:
     UBillboardComponent* EndSprite;
     
 public:
-    ANavSvoDebugActor();
+    ANavSvoDebugActor(const FObjectInitializer& ObjectInitializer);
+
 };
 

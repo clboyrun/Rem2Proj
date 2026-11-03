@@ -1,5 +1,11 @@
 #include "GunfireTechRequirementsImpl.h"
 
+UGunfireTechRequirementsImpl::UGunfireTechRequirementsImpl() {
+    this->NetworkFailReason = ETechReqStatusChange::Normal;
+    this->PrivilegeFailReason = ETechReqStatusChange::Normal;
+    this->bHasSeenLegalScreen = false;
+}
+
 void UGunfireTechRequirementsImpl::ShowSwitchPlatformGameProfile() {
 }
 
@@ -54,11 +60,23 @@ bool UGunfireTechRequirementsImpl::IsPremiumServiceAvailable() {
     return false;
 }
 
+bool UGunfireTechRequirementsImpl::IsOnlinePlayAvailable() {
+    return false;
+}
+
+bool UGunfireTechRequirementsImpl::IsOnline() {
+    return false;
+}
+
 bool UGunfireTechRequirementsImpl::IsLoggedIn() const {
     return false;
 }
 
 bool UGunfireTechRequirementsImpl::IsFullGameAvailable() const {
+    return false;
+}
+
+bool UGunfireTechRequirementsImpl::IsCustomLoggedIn() const {
     return false;
 }
 
@@ -101,10 +119,17 @@ UGunfireTechRequirementsImpl* UGunfireTechRequirementsImpl::GetGunfireTechRequir
 void UGunfireTechRequirementsImpl::EnableVoipPTT(bool Enabled) {
 }
 
+void UGunfireTechRequirementsImpl::CustomLogin(EAlternateLoginType Type) {
+}
+
 void UGunfireTechRequirementsImpl::CheckOnlinePrivilege() {
 }
 
 void UGunfireTechRequirementsImpl::CheckOnlineCommunicationPrivilege() {
+}
+
+bool UGunfireTechRequirementsImpl::CanRequestCustomLogin() {
+    return false;
 }
 
 void UGunfireTechRequirementsImpl::AddStatusChangedEvent(ETechReqStatusChange Event, const FString& CustomMessage) {
@@ -125,9 +150,4 @@ void UGunfireTechRequirementsImpl::ActivityResetAll() {
 void UGunfireTechRequirementsImpl::ActivityEnd(const FString& ActivityId, EOnlineActivityOutcomeBP Outcome) {
 }
 
-UGunfireTechRequirementsImpl::UGunfireTechRequirementsImpl() {
-    this->NetworkFailReason = ETechReqStatusChange::Normal;
-    this->PrivilegeFailReason = ETechReqStatusChange::Normal;
-    this->bHasSeenLegalScreen = false;
-}
 

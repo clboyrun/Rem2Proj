@@ -27,9 +27,10 @@ public:
     TArray<FEventTreeAttrib> Attributes;
     
     UEventTreeNode_SoundBase();
+
 protected:
-    UFUNCTION(BlueprintCallable)
-    void OnFinishedWaiting(UEventTreeComponent* Component) const;
+    UFUNCTION()
+    void OnFinishedWaiting(TWeakObjectPtr<UEventTreeComponent> Component) const;
     
 };
 

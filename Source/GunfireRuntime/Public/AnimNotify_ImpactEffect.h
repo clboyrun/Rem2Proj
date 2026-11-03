@@ -26,5 +26,6 @@ public:
     float UpTraceOffset;
     
     UAnimNotify_ImpactEffect();
+
 };
 

@@ -56,7 +56,8 @@ protected:
     TArray<FLookTarget> Targets;
     
 public:
-    UNPCHeadTrackingComponent();
+    UNPCHeadTrackingComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SetTrackingMode(ETrackingMode NewMode);
     

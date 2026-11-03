@@ -23,6 +23,7 @@ class GUNFIRERUNTIME_API UBlueprintFunctionLibraryGunfire : public UBlueprintFun
     GENERATED_BODY()
 public:
     UBlueprintFunctionLibraryGunfire();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static UAkGameObject* Conv_AudioComponentGunfireToAkGameObject(FAudioComponentGunfire AudioComponentGunfire);
     

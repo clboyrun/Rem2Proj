@@ -5,7 +5,7 @@
 #include "HardwareCursorStyles.h"
 #include "GunfireUserInterfaceSettings.generated.h"
 
-UCLASS(Blueprintable, Config=Engine, DefaultConfig)
+UCLASS(Blueprintable, DefaultConfig, Config=Engine)
 class GUNFIRERUNTIME_API UGunfireUserInterfaceSettings : public UObject {
     GENERATED_BODY()
 public:
@@ -19,5 +19,6 @@ public:
     float MinResolutionForHighResCursor;
     
     UGunfireUserInterfaceSettings();
+
 };
 

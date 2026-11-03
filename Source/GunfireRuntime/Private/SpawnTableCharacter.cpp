@@ -23,3 +23,4 @@ USpawnTableCharacter::USpawnTableCharacter() {
     this->SpawnPointSpawnDistanceMax = 6400.00f;
 }
 
+

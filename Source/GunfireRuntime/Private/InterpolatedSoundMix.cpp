@@ -7,12 +7,12 @@
 #include "Sound/SoundClass.h"
 #include "Widgets/Notifications/SNotificationList.h"
 
-void UInterpolatedSoundMix::SetInterpolatePos(float Pos) {
-}
-
 UInterpolatedSoundMix::UInterpolatedSoundMix() {
     this->EQCurve = NULL;
     this->InitialInterpolatePos = 1.00f;
+}
+
+void UInterpolatedSoundMix::SetInterpolatePos(float Pos) {
 }
 
 void UInterpolatedSoundMix::BeginDestroy()

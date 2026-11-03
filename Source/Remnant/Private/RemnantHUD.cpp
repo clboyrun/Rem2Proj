@@ -1,5 +1,10 @@
 #include "RemnantHUD.h"
 
+ARemnantHUD::ARemnantHUD(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->DebugDisplay.AddDefaulted(1);
+    this->ContextActor = NULL;
+}
+
 
 
 
@@ -33,7 +38,4 @@ bool ARemnantHUD::HasInvalidDialog() const {
 
 
 
-ARemnantHUD::ARemnantHUD() {
-    this->ContextActor = NULL;
-}
 

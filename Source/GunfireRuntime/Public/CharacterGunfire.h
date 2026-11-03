@@ -1,7 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "GameFramework/Character.h"
 #include "Engine/DataTable.h"
 #include "Engine/HitResult.h"
@@ -28,6 +27,7 @@
 #include "OnTargetChangedDelegateDelegate.h"
 #include "OnTargetedDelegateDelegate.h"
 #include "ReplicatedDamageInfo.h"
+#include "SpawnRelevanceInfo.h"
 #include "SpectateChangeEventDelegate.h"
 #include "Templates/SubclassOf.h"
 #include "WeaponPhantomInfo.h"
@@ -120,6 +120,12 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, SaveGame, meta=(AllowPrivateAccess=true))
     int32 Seed;
     
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSpawnRelevanceInfo SpawnRelevanceInfo;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, meta=(AllowPrivateAccess=true))
+    TArray<FName> InitialCharacterTags;
+    
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, ReplicatedUsing=OnRep_Health, meta=(AllowPrivateAccess=true))
     float HealthNormalized;
@@ -209,6 +215,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MinimumTimeDilation;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool RemoveNetRepReferencesOnDestroy;
+    
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     UStateMachineComponent* CachedStateMachine;
@@ -254,9 +263,10 @@ protected:
     TArray<TSoftClassPtr<AItem>> ConsumedEntitlements;
     
 public:
-    ACharacterGunfire();
+    ACharacterGunfire(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void StopWeaponPhantom(UPrimitiveComponent* Shape);
     
@@ -322,6 +332,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void ReinitializeCloth();
+    
+    UFUNCTION(BlueprintCallable)
+    void RegenerateHealth(float Delta);
     
     UFUNCTION(BlueprintCallable)
     bool ReduceCooldown(FName Cooldown, float Time);
@@ -398,6 +411,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     AActor* GetTarget();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetStatIfExists(FName Stat, bool ApplyMod, bool& OutStatExists, float FallbackValueIfNotExists);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UStateMachineComponent* GetStateMachine() const;
@@ -508,7 +524,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void AddAggroGroup(FName NewAggroGroup, bool bUniqueOnly);
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

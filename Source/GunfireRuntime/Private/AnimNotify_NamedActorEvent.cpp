@@ -6,3 +6,4 @@ UAnimNotify_NamedActorEvent::UAnimNotify_NamedActorEvent() {
     this->bStateTransient = false;
 }
 
+

@@ -1,6 +1,9 @@
 #include "PhysicsUtil.h"
 #include "Templates/SubclassOf.h"
 
+UPhysicsUtil::UPhysicsUtil() {
+}
+
 void UPhysicsUtil::RestoreRigidBodies(TArray<FCachedPhysicsComponent>& CachedComponents) {
 }
 
@@ -32,6 +35,4 @@ void UPhysicsUtil::ApplyLinearImpulseToActorAtLocation(AActor* Actor, TSubclassO
 void UPhysicsUtil::ApplyLinearImpulseToActor(AActor* Actor, TSubclassOf<UDamageTypeGunfire> DType, const FVector& Direction) {
 }
 
-UPhysicsUtil::UPhysicsUtil() {
-}
 

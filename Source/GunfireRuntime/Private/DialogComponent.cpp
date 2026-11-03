@@ -1,6 +1,19 @@
 #include "DialogComponent.h"
 #include "Net/UnrealNetwork.h"
 
+UDialogComponent::UDialogComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->EventTree = NULL;
+    this->AutoPlayDialog = false;
+    this->EnableProximityTriggers = false;
+    this->TriggersCanEvaluateWhileHidden = false;
+    this->StageBP = NULL;
+    this->Stage = NULL;
+    this->AllowMultipleSpeakers = false;
+    this->DialogInitiator = NULL;
+    this->DialogActive = false;
+    this->CurrentDialog = NULL;
+}
+
 void UDialogComponent::TokenValueSet(const FName& NameID, const FText& Value) {
 }
 
@@ -59,6 +72,10 @@ bool UDialogComponent::HasAttributeValueForOption(const FDialogOption& Option, F
 }
 
 bool UDialogComponent::HasAttributeValue(FName Key) {
+    return false;
+}
+
+bool UDialogComponent::HasActiveDialog() {
     return false;
 }
 
@@ -136,15 +153,4 @@ void UDialogComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Out
     DOREPLIFETIME(UDialogComponent, TokenValuePairs);
 }
 
-UDialogComponent::UDialogComponent() {
-    this->EventTree = NULL;
-    this->AutoPlayDialog = false;
-    this->EnableProximityTriggers = false;
-    this->StageBP = NULL;
-    this->Stage = NULL;
-    this->AllowMultipleSpeakers = false;
-    this->DialogInitiator = NULL;
-    this->DialogActive = false;
-    this->CurrentDialog = NULL;
-}
 

@@ -1,5 +1,6 @@
 #include "RuntimeNavMeshBoundsVolume.h"
 
-ARuntimeNavMeshBoundsVolume::ARuntimeNavMeshBoundsVolume() {
+ARuntimeNavMeshBoundsVolume::ARuntimeNavMeshBoundsVolume(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

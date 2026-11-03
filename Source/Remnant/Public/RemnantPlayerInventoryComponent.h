@@ -15,7 +15,7 @@ class REMNANT_API URemnantPlayerInventoryComponent : public UPlayerInventoryComp
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool AutoTransferWeaponMods;
+    TArray<TSubclassOf<AItem>> AutoTransferModsClasses;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<TSoftClassPtr<AActor>> LimitInitialLevelClasses;
@@ -34,9 +34,13 @@ protected:
     TMap<TSubclassOf<AItem>, TSubclassOf<UItemType>> ItemTypeOverrideMap;
     
 public:
-    URemnantPlayerInventoryComponent();
+    URemnantPlayerInventoryComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void RemoveItemTypeOverride(TSubclassOf<AItem> ItemBP);
+    
+    UFUNCTION(BlueprintCallable)
+    void RemoveItemsOnDeath();
     
     UFUNCTION(BlueprintCallable)
     int32 ModifyLevelForNewItem(TSubclassOf<AItem> ItemBP, int32 ItemLevel);

@@ -12,5 +12,6 @@ public:
     TArray<FKey> AxisNames;
     
     UInputAxisPropertiesSetting();
+
 };
 

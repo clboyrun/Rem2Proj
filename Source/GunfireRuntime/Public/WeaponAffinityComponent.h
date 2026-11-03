@@ -13,7 +13,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UWeaponAffinities> Affinities;
     
-    UWeaponAffinityComponent();
+    UWeaponAffinityComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float ComputeScalar();
     

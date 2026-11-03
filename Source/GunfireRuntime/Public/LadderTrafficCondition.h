@@ -25,5 +25,6 @@ public:
     float Value;
     
     ULadderTrafficCondition();
+
 };
 

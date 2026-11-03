@@ -15,5 +15,6 @@ public:
     TEnumAsByte<EPhysicalSurface> WaterSurfaceType;
     
     UPhysicsBoundsType();
+
 };
 

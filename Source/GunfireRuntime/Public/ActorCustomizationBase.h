@@ -9,7 +9,8 @@ class GUNFIRERUNTIME_API UActorCustomizationBase : public UInheritableObject, pu
     GENERATED_BODY()
 public:
     UActorCustomizationBase();
-    
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

@@ -30,5 +30,6 @@ public:
     bool bResetMaterialsOnApply;
     
     UStaticMeshCustomization();
+
 };
 

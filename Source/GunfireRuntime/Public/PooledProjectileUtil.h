@@ -9,6 +9,7 @@ class GUNFIRERUNTIME_API UPooledProjectileUtil : public UObject {
     GENERATED_BODY()
 public:
     UPooledProjectileUtil();
+
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static bool InitializeProjectilePool(const UObject* WorldContextObject, UPARAM(Ref) FPooledProjectileParams& PoolParams, bool bSetInitialSizeOnly);
     

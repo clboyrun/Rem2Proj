@@ -12,5 +12,6 @@ public:
     FBoardPositionInfo BoardSlotInfo;
     
     UBoardPositionState();
+
 };
 

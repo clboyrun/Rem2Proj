@@ -22,7 +22,8 @@ protected:
     
 public:
     UConditionalAnimNotifyState();
-    
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

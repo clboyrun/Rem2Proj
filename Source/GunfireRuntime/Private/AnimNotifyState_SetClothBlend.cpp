@@ -6,3 +6,4 @@ UAnimNotifyState_SetClothBlend::UAnimNotifyState_SetClothBlend() {
     this->ShouldReenableClothSimOnStart = false;
 }
 
+

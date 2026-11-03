@@ -5,3 +5,4 @@ UImpactEffectSubsystem::UImpactEffectSubsystem() {
     this->ImpactEffectsOverlay = NULL;
 }
 
+

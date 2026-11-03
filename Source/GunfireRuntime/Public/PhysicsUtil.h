@@ -18,6 +18,7 @@ class GUNFIRERUNTIME_API UPhysicsUtil : public UObject {
     GENERATED_BODY()
 public:
     UPhysicsUtil();
+
     UFUNCTION(BlueprintCallable)
     static void RestoreRigidBodies(UPARAM(Ref) TArray<FCachedPhysicsComponent>& CachedComponents);
     

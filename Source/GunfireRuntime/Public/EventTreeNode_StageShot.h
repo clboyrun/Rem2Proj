@@ -12,5 +12,6 @@ public:
     FCameraShotNodeEntryData CameraShotDetails;
     
     UEventTreeNode_StageShot();
+
 };
 

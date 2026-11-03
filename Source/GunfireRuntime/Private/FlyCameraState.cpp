@@ -12,3 +12,4 @@ UFlyCameraState::UFlyCameraState() {
     this->LastRequestedExternalCameraActor = NULL;
 }
 
+

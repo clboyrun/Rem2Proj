@@ -35,9 +35,10 @@ protected:
     AItem* SocketedItem;
     
 public:
-    UItemSocketComponent();
+    UItemSocketComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void RequestReturnItemToInventory(ACharacterGunfire* Subject);
     
@@ -89,7 +90,7 @@ protected:
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void AddItem(TSubclassOf<AItem> ItemClass);
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

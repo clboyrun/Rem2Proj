@@ -1,5 +1,13 @@
 #include "GameInstanceGunfire.h"
 
+UGameInstanceGunfire::UGameInstanceGunfire() {
+    this->AssetCacheClass = NULL;
+    this->NotificationOkDialog = NULL;
+    this->LocalPlayerPawn = NULL;
+    this->AmbientAudioManager = NULL;
+    this->PathSharingManager = NULL;
+}
+
 void UGameInstanceGunfire::QuitToMainMenu() {
 }
 
@@ -43,11 +51,4 @@ bool UGameInstanceGunfire::CanSave() const {
     return false;
 }
 
-UGameInstanceGunfire::UGameInstanceGunfire() {
-    this->AssetCacheClass = NULL;
-    this->NotificationOkDialog = NULL;
-    this->LocalPlayerPawn = NULL;
-    this->AmbientAudioManager = NULL;
-    this->PathSharingManager = NULL;
-}
 

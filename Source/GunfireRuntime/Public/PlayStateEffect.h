@@ -12,6 +12,7 @@ class GUNFIRERUNTIME_API UPlayStateEffect : public UObject, public IHierarchical
     GENERATED_BODY()
 public:
     UPlayStateEffect();
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool TickTransition(UPlayStateComponent* Component, float DeltaSeconds) const;
     
@@ -21,7 +22,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void Apply(UPlayStateComponent* Component, const UPlayStateEffect* Previous) const;
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

@@ -6,3 +6,4 @@ UVelocityCondition::UVelocityCondition() {
     this->Value = 0.00f;
 }
 
+

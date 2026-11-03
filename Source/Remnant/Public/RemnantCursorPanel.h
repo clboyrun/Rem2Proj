@@ -38,6 +38,7 @@ protected:
     
 public:
     URemnantCursorPanel();
+
     UFUNCTION(BlueprintCallable)
     void DeregisterCursorTarget(URemnantCursorTarget* Target);
     

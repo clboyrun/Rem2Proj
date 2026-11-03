@@ -14,6 +14,7 @@ protected:
     TArray<USilhouetteComponent*> SilhouetteComponents;
     
 public:
-    USilhouetteManager();
+    USilhouetteManager(const FObjectInitializer& ObjectInitializer);
+
 };
 

@@ -32,6 +32,9 @@ public:
     UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool ForceSpawnIfNotFound;
     
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool WarpToSpawnPointOnLoad;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool PersistDestroyed;
     
@@ -58,7 +61,8 @@ protected:
     TArray<FRemnantQuestEntityInfo> Spawns;
     
 public:
-    URemnantQuestEntity();
+    URemnantQuestEntity(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void ZoneUnloaded();

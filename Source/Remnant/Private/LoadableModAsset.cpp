@@ -2,5 +2,6 @@
 
 FLoadableModAsset::FLoadableModAsset() {
     this->Reference = NULL;
+    this->ClassReference = NULL;
 }
 

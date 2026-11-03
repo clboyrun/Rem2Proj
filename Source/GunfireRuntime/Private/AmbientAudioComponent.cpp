@@ -1,5 +1,6 @@
 #include "AmbientAudioComponent.h"
 
-UAmbientAudioComponent::UAmbientAudioComponent() {
+UAmbientAudioComponent::UAmbientAudioComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

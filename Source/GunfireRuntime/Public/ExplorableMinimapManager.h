@@ -33,6 +33,7 @@ protected:
     
 public:
     UExplorableMinimapManager();
+
     UFUNCTION(BlueprintCallable)
     void ShutdownMinimap();
     

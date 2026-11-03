@@ -3,9 +3,9 @@
 #include "Subsystems/GameInstanceSubsystem.h"
 #include "GameFramework/OnlineReplStructs.h"
 #include "ActiveControllerSetDelegate.h"
-#include "ActiveProfileLostDelegate.h"
 #include "ActiveProfileSetDelegate.h"
 #include "ControllerConnChangedDelegate.h"
+#include "EAlternateLoginType.h"
 #include "EOnlineActivityOutcomeBP.h"
 #include "EPresenceContent.h"
 #include "ETechReqStatusChange.h"
@@ -44,6 +44,12 @@ public:
     FActiveProfileSet OnActiveProfileSet;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FActiveProfileSet OnActiveProfileCleared;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FNetworkConnChanged OnOnlineAvailable;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FNetworkConnChanged OnOnlineUnavailable;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -57,9 +63,6 @@ public:
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnWaitDialog OnWaitDialog;
-    
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FActiveProfileLost OnActiveProfileLost;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnDLCInstallFinished OnDLCInstallFinished;
@@ -98,6 +101,7 @@ public:
     bool bHasSeenLegalScreen;
     
     UGunfireTechRequirementsImpl();
+
     UFUNCTION(BlueprintCallable)
     void ShowSwitchPlatformGameProfile();
     
@@ -147,10 +151,19 @@ public:
     bool IsPremiumServiceAvailable();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsOnlinePlayAvailable();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsOnline();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsLoggedIn() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsFullGameAvailable() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsCustomLoggedIn() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsCrossplayEnabled();
@@ -183,10 +196,16 @@ public:
     void EnableVoipPTT(bool Enabled);
     
     UFUNCTION(BlueprintCallable)
+    void CustomLogin(EAlternateLoginType Type);
+    
+    UFUNCTION(BlueprintCallable)
     void CheckOnlinePrivilege();
     
     UFUNCTION(BlueprintCallable)
     void CheckOnlineCommunicationPrivilege();
+    
+    UFUNCTION(BlueprintCallable)
+    bool CanRequestCustomLogin();
     
     UFUNCTION(BlueprintCallable)
     void AddStatusChangedEvent(ETechReqStatusChange Event, const FString& CustomMessage);

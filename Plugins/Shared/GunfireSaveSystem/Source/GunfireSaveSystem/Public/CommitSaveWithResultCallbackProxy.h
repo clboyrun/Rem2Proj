@@ -18,6 +18,7 @@ public:
     FBlueprintCommitSaveResultDelegate OnFailure;
     
     UCommitSaveWithResultCallbackProxy();
+
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static UCommitSaveWithResultCallbackProxy* CommitSaveWithResult(UObject* WorldContextObject, const FString& Reason);
     

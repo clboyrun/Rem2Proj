@@ -6,3 +6,4 @@ UAINavLinkCondition::UAINavLinkCondition() {
     this->LookAheadDistance = 50.00f;
 }
 
+

@@ -20,3 +20,4 @@ UDirectionalAnimData::UDirectionalAnimData() {
     this->LeadDistanceScalar = 0.10f;
 }
 
+

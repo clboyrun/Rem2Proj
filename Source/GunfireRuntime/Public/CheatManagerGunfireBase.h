@@ -44,6 +44,7 @@ protected:
     
 public:
     UCheatManagerGunfireBase();
+
     UFUNCTION(BlueprintCallable)
     void ToggleFlyCheatWaypointDisplay();
     

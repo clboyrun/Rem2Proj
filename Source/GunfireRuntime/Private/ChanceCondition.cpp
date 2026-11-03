@@ -6,3 +6,4 @@ UChanceCondition::UChanceCondition() {
     this->StoreConditionState = true;
 }
 
+

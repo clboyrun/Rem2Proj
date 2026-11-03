@@ -1,5 +1,6 @@
 #include "RemnantProgressionComponent.h"
 
-URemnantProgressionComponent::URemnantProgressionComponent() {
+URemnantProgressionComponent::URemnantProgressionComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

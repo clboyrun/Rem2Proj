@@ -1,8 +1,5 @@
 #include "AnimActorState.h"
 
-void UAnimActorState::UpdateMovementParams(UStateMachineComponent* StateMachine) {
-}
-
 UAnimActorState::UAnimActorState() {
     this->Facing = CharacterFacing::MoveDir;
     this->FacingOffset = 0.00f;
@@ -24,4 +21,8 @@ UAnimActorState::UAnimActorState() {
     this->bAllowVerticalInputAcceleration = true;
     this->bForceDigitalInput = false;
 }
+
+void UAnimActorState::UpdateMovementParams(UStateMachineComponent* StateMachine) {
+}
+
 

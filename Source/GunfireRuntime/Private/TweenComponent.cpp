@@ -1,5 +1,8 @@
 #include "TweenComponent.h"
 
+UTweenComponent::UTweenComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+}
+
 void UTweenComponent::StopTween(int32 ID) {
 }
 
@@ -98,6 +101,4 @@ int32 UTweenComponent::AnimateFloatProperty(UObject* Object, FName PropertyName,
     return 0;
 }
 
-UTweenComponent::UTweenComponent() {
-}
 

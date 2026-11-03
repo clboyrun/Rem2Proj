@@ -14,7 +14,7 @@ public:
     FName NameID;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FName RegionID;
+    FName RegionId;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName TileTag;
@@ -40,6 +40,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FTileSpawnList> SpawnLists;
     
-    AMapTileTemplate();
+    AMapTileTemplate(const FObjectInitializer& ObjectInitializer);
+
 };
 

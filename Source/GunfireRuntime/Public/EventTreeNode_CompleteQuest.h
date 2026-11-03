@@ -12,5 +12,6 @@ public:
     EQuestResult Result;
     
     UEventTreeNode_CompleteQuest();
+
 };
 

@@ -42,5 +42,6 @@ public:
     float OverdrawnAlpha;
     
     UGunnerAnimInstance();
+
 };
 

@@ -1,6 +1,9 @@
 #include "ItemUtil.h"
 #include "Templates/SubclassOf.h"
 
+UItemUtil::UItemUtil() {
+}
+
 bool UItemUtil::ValidateDropPosition(AActor* Source, const FVector& Position, FVector& OutPosition, bool SnapToGround, bool TestStaticCollision) {
     return false;
 }
@@ -32,6 +35,18 @@ FInspectInfo UItemUtil::GetInspectInfo(AActor* InspectActor, TSubclassOf<AItem> 
     return FInspectInfo{};
 }
 
+FItemFilterRowData UItemUtil::GetFilterInfoForFilterID(UDataTable* Table, FName FilterID) {
+    return FItemFilterRowData{};
+}
+
+TArray<UClass*> UItemUtil::GetAllItemClasses() {
+    return TArray<UClass*>();
+}
+
+TArray<FName> UItemUtil::GetAllFilterIDsForTable(UDataTable* Table) {
+    return TArray<FName>();
+}
+
 void UItemUtil::DropLootAtLocation(AActor* Source, AActor* Cause, USpawnTable* SpawnTable, const FVector& Location, const TArray<FName>& Tags, int32 Rating, bool bAsync, bool bForce, bool Transient) {
 }
 
@@ -42,6 +57,4 @@ bool UItemUtil::DropItem(AActor* Source, TSubclassOf<AItem> ItemBP, uint8 Quanti
     return false;
 }
 
-UItemUtil::UItemUtil() {
-}
 

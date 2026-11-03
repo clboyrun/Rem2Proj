@@ -67,7 +67,8 @@ protected:
     TArray<TSubclassOf<UTargetingComponent>> TargetableByClassList;
     
 public:
-    UTargetableComponent();
+    UTargetableComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SetCanBeTargeted(bool bNewCanBeTargeted);
     

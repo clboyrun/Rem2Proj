@@ -28,5 +28,6 @@ private:
     
 public:
     UAnimNotifyState_SetCameraState();
+
 };
 

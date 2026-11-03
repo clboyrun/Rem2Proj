@@ -7,6 +7,7 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class REMNANT_API URemnantDifficultyScalingComponent : public UDifficultyScalingComponent {
     GENERATED_BODY()
 public:
-    URemnantDifficultyScalingComponent();
+    URemnantDifficultyScalingComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

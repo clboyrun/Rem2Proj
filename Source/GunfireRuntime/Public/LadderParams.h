@@ -60,5 +60,6 @@ public:
     int32 RungShift;
     
     ULadderParams();
+
 };
 

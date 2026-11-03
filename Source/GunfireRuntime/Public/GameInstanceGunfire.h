@@ -72,6 +72,7 @@ private:
     
 public:
     UGameInstanceGunfire();
+
     UFUNCTION(BlueprintCallable)
     void QuitToMainMenu();
     

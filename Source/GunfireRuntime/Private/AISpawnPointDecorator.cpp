@@ -5,3 +5,4 @@ UAISpawnPointDecorator::UAISpawnPointDecorator() {
     this->MaxRangeToPlayers = 1000.00f;
 }
 
+

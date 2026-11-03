@@ -3,3 +3,4 @@
 UInCombatCondition::UInCombatCondition() {
 }
 
+

@@ -200,6 +200,14 @@
 		{
 			"Name": "XeSS",
 			"Enabled": true
+		},
+		{
+			"Name": "StructUtils",
+			"Enabled": true
+		},
+		{
+			"Name": "OnlineSubsystemUtils",
+			"Enabled": true
 		}
 	],
 	"TargetPlatforms": [

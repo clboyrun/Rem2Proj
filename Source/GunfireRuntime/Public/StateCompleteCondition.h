@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UStateCompleteCondition : public UCondition {
     GENERATED_BODY()
 public:
     UStateCompleteCondition();
+
 };
 

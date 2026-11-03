@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UInheritableAsset : public UInheritableObject {
     GENERATED_BODY()
 public:
     UInheritableAsset();
+
 };
 

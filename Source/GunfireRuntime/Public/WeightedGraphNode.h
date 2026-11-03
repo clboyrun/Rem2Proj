@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UWeightedGraphNode : public UObject {
     GENERATED_BODY()
 public:
     UWeightedGraphNode();
+
 };
 

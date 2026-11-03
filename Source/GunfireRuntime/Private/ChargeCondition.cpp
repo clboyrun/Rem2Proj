@@ -6,3 +6,4 @@ UChargeCondition::UChargeCondition() {
     this->bIgnoreTimeDilation = false;
 }
 
+

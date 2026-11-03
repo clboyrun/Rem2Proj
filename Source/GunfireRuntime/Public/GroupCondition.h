@@ -12,5 +12,6 @@ public:
     FConditions Conditions;
     
     UGroupCondition();
+
 };
 

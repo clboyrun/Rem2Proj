@@ -1,6 +1,9 @@
 #include "SummonerComponent.h"
 #include "Templates/SubclassOf.h"
 
+USummonerComponent::USummonerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+}
+
 void USummonerComponent::RemoveSummon(AActor* Summon) {
 }
 
@@ -26,6 +29,7 @@ int32 USummonerComponent::GetNumSummonsOfType(TSubclassOf<AActor> SummonClass) {
     return 0;
 }
 
-USummonerComponent::USummonerComponent() {
+void USummonerComponent::BroadcastSummonActionEvent(AActor* Summon, FName EventName, AActor* RelevantEventTarget) {
 }
+
 

@@ -8,3 +8,4 @@ UInitialFacingDecorator::UInitialFacingDecorator() {
     this->EaseExponent = 2.00f;
 }
 
+

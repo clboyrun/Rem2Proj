@@ -1,5 +1,6 @@
 #include "PlayerInventoryComponent.h"
 
-UPlayerInventoryComponent::UPlayerInventoryComponent() {
+UPlayerInventoryComponent::UPlayerInventoryComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

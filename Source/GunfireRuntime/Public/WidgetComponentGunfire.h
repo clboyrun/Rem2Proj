@@ -18,6 +18,7 @@ private:
     bool bManualDestroyOnExit;
     
 public:
-    UWidgetComponentGunfire();
+    UWidgetComponentGunfire(const FObjectInitializer& ObjectInitializer);
+
 };
 

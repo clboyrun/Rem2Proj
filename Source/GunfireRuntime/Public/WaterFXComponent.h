@@ -52,7 +52,8 @@ protected:
     FAudioComponentGunfire WakeSFX;
     
 public:
-    UWaterFXComponent();
+    UWaterFXComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsInWater() const;
     
@@ -68,7 +69,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetSubmergeDepth() const;
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

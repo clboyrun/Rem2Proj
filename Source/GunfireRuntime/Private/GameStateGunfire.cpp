@@ -1,6 +1,13 @@
 #include "GameStateGunfire.h"
+#include "InstancedObjectReplicationManager.h"
 #include "SequencerManager.h"
 #include "TimeDilationManager.h"
+
+AGameStateGunfire::AGameStateGunfire(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->TimeDilationManager = CreateDefaultSubobject<UTimeDilationManager>(TEXT("TimeDilatonManager"));
+    this->SequencerManager = CreateDefaultSubobject<USequencerManager>(TEXT("SequencerManager"));
+    this->InstancedObjectRepManager = CreateDefaultSubobject<UInstancedObjectReplicationManager>(TEXT("IORepManager"));
+}
 
 void AGameStateGunfire::StartMatch() {
 }
@@ -15,8 +22,4 @@ AGameStateGunfire* AGameStateGunfire::GetGunfireGameState(const UObject* WorldCo
 void AGameStateGunfire::AddGameStateInitializedListener(const FOnGameStateDelegate& Event) {
 }
 
-AGameStateGunfire::AGameStateGunfire() {
-    this->TimeDilationManager = CreateDefaultSubobject<UTimeDilationManager>(TEXT("TimeDilatonManager"));
-    this->SequencerManager = CreateDefaultSubobject<USequencerManager>(TEXT("SequencerManager"));
-}
 

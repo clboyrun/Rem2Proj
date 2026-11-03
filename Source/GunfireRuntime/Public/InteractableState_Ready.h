@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UInteractableState_Ready : public UInteractableStateBas
     GENERATED_BODY()
 public:
     UInteractableState_Ready();
+
 };
 

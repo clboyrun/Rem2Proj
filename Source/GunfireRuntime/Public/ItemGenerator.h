@@ -20,10 +20,11 @@ public:
     int32 LevelMax;
     
     UItemGenerator();
+
     UFUNCTION(BlueprintCallable)
     void GenerateItems(FItemGenRequest Request, TArray<FItemGenResult>& Results);
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

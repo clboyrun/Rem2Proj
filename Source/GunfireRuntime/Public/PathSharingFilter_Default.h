@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UPathSharingFilter_Default : public UPathSharingFilter 
     GENERATED_BODY()
 public:
     UPathSharingFilter_Default();
+
 };
 

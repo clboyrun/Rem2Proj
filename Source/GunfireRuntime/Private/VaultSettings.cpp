@@ -34,3 +34,4 @@ UVaultSettings::UVaultSettings() {
     this->bRequiresClimbingData = false;
 }
 
+

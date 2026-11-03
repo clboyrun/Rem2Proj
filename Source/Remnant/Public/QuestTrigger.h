@@ -31,7 +31,8 @@ protected:
     TArray<ARemnantCharacter*> Characters;
     
 public:
-    AQuestTrigger();
+    AQuestTrigger(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsLocalPlayerInRegion() const;
     

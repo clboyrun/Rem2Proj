@@ -23,3 +23,4 @@ UFocusCameraState::UFocusCameraState() {
     this->LockNoTargetHeading = true;
 }
 
+

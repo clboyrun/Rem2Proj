@@ -35,5 +35,6 @@ public:
     bool bIgnoreBlendOut;
     
     UAnimNotify_CameraShake();
+
 };
 

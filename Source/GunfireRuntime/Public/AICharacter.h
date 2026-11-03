@@ -43,9 +43,10 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_CurrentPOIAnimTags, meta=(AllowPrivateAccess=true))
     TArray<FName> CurrentPOIAnimationTags;
     
-    AAICharacter();
+    AAICharacter(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnRep_CurrentPOIAnimTags();
@@ -53,7 +54,7 @@ protected:
     UFUNCTION(BlueprintCallable)
     void DifficultyChanged();
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

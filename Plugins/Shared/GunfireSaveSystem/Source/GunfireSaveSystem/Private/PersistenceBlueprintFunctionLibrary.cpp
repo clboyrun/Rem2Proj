@@ -1,5 +1,8 @@
 #include "PersistenceBlueprintFunctionLibrary.h"
 
+UPersistenceBlueprintFunctionLibrary::UPersistenceBlueprintFunctionLibrary() {
+}
+
 void UPersistenceBlueprintFunctionLibrary::SetReference(FPersistentReference& Reference, AActor* InActor) {
 }
 
@@ -31,6 +34,7 @@ void UPersistenceBlueprintFunctionLibrary::CommitSave(const UObject* WorldContex
 void UPersistenceBlueprintFunctionLibrary::ClearReference(FPersistentReference& Reference) {
 }
 
-UPersistenceBlueprintFunctionLibrary::UPersistenceBlueprintFunctionLibrary() {
+void UPersistenceBlueprintFunctionLibrary::ClearAllCommitLocks(const UObject* WorldContextObject) {
 }
+
 

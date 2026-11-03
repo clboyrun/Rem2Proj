@@ -1,5 +1,6 @@
 #include "SilhouetteManager.h"
 
-USilhouetteManager::USilhouetteManager() {
+USilhouetteManager::USilhouetteManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

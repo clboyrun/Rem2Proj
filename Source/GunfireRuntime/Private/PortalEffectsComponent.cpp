@@ -1,6 +1,6 @@
 #include "PortalEffectsComponent.h"
 
-UPortalEffectsComponent::UPortalEffectsComponent() {
+UPortalEffectsComponent::UPortalEffectsComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->bOverrideEnterTime = false;
     this->EnterTime = 0.00f;
     this->bOverrideExitTime = false;
@@ -20,4 +20,5 @@ UPortalEffectsComponent::UPortalEffectsComponent() {
     this->bOverrideExitSFX = false;
     this->bOverrideUprightPortalEnterState = false;
 }
+
 

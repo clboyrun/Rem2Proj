@@ -5,3 +5,4 @@ UHasTraitCondition::UHasTraitCondition() {
     this->RequiredLevel = 0;
 }
 
+

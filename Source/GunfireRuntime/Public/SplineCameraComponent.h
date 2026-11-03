@@ -7,6 +7,7 @@ UCLASS(Blueprintable, ClassGroup=Custom, Config=Game, meta=(BlueprintSpawnableCo
 class GUNFIRERUNTIME_API USplineCameraComponent : public USceneComponent {
     GENERATED_BODY()
 public:
-    USplineCameraComponent();
+    USplineCameraComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

@@ -21,5 +21,6 @@ private:
     
 public:
     UEnvQueryTest_WaterHeight();
+
 };
 

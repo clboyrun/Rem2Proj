@@ -80,9 +80,6 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, SaveGame, meta=(AllowPrivateAccess=true))
     int32 Seed;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, SaveGame, meta=(AllowPrivateAccess=true))
-    int32 SlotID;
-    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     UTileSet* TileSet;
     
@@ -145,9 +142,10 @@ protected:
     FZoneState ServerState;
     
 public:
-    AZoneActor();
+    AZoneActor(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
 protected:
     UFUNCTION(BlueprintCallable)
     void UpdateLevelScaling(bool Force);
@@ -155,6 +153,9 @@ protected:
 public:
     UFUNCTION(BlueprintCallable)
     void UnloadZone();
+    
+    UFUNCTION(BlueprintCallable)
+    void SetZoneLabel(FText NewLabel);
     
 protected:
     UFUNCTION(BlueprintCallable)
@@ -189,7 +190,7 @@ public:
     bool IsFullyUnloaded() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    bool IsChildZone();
+    bool IsChildZone() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasFailedLoad() const;
@@ -220,7 +221,7 @@ public:
     UFUNCTION(BlueprintCallable)
     bool ContainsActor(AActor* Actor);
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

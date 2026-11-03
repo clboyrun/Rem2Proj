@@ -22,5 +22,6 @@ private:
     
 public:
     UEventTreeNode_SetCooldown();
+
 };
 

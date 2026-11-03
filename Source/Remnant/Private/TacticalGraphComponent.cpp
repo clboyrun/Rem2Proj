@@ -1,6 +1,9 @@
 #include "TacticalGraphComponent.h"
 #include "Templates/SubclassOf.h"
 
+UTacticalGraphComponent::UTacticalGraphComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+}
+
 void UTacticalGraphComponent::Stop() {
 }
 
@@ -24,6 +27,4 @@ bool UTacticalGraphComponent::FindPath(TSubclassOf<UTacticalGraphQueryParams> Pa
     return false;
 }
 
-UTacticalGraphComponent::UTacticalGraphComponent() {
-}
 

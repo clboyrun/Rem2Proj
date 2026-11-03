@@ -1,9 +1,6 @@
 #include "UIHudHitIndicatorComponent.h"
 
-void UUIHudHitIndicatorComponent::OnNotifyTakeDamage(const FDamageInfo& DamageInfo) {
-}
-
-UUIHudHitIndicatorComponent::UUIHudHitIndicatorComponent() {
+UUIHudHitIndicatorComponent::UUIHudHitIndicatorComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->HitIndicator = NULL;
     this->HitIndicatorAlpha = 1.00f;
     this->HitIndicatorScale = 1.00f;
@@ -14,4 +11,8 @@ UUIHudHitIndicatorComponent::UUIHudHitIndicatorComponent() {
     this->HitFlashTimeout = 0.25f;
     this->CachedCharacter = NULL;
 }
+
+void UUIHudHitIndicatorComponent::OnNotifyTakeDamage(const FDamageInfo& DamageInfo) {
+}
+
 

@@ -1,5 +1,9 @@
 #include "CharacterManager.h"
 
+UCharacterManager::UCharacterManager() {
+    this->TickManager = NULL;
+}
+
 void UCharacterManager::KillAllCharactersForOwner(AActor* Owner) {
 }
 
@@ -40,7 +44,4 @@ void UCharacterManager::ActivateCharactersOnSegment(const FVector& From, const F
 void UCharacterManager::ActivateCharactersInSphere(const FVector& Origin, float Radius, bool bBonesOnly) {
 }
 
-UCharacterManager::UCharacterManager() {
-    this->TickManager = NULL;
-}
 

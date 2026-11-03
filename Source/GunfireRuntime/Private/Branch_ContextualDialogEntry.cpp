@@ -5,3 +5,4 @@ UBranch_ContextualDialogEntry::UBranch_ContextualDialogEntry() {
     this->PlayerRange = 500.00f;
 }
 
+

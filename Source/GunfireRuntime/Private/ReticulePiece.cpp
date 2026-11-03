@@ -27,3 +27,4 @@ UReticulePiece::UReticulePiece() {
     this->MaxDistanceScale = -1.00f;
 }
 
+

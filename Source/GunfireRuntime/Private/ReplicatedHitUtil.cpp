@@ -1,5 +1,8 @@
 #include "ReplicatedHitUtil.h"
 
+UReplicatedHitUtil::UReplicatedHitUtil() {
+}
+
 FReplicatedTrace UReplicatedHitUtil::MakeReplicatedTraceFromHit(const FHitResult& Hit) {
     return FReplicatedTrace{};
 }
@@ -27,6 +30,4 @@ bool UReplicatedHitUtil::GetHitFromReplicatedHit(const FReplicatedHit& Replicate
 void UReplicatedHitUtil::BreakReplicatedLocation(const FReplicatedLocation& Location, UPrimitiveComponent*& Component, FName& BoneName, FVector& WorldLocation) {
 }
 
-UReplicatedHitUtil::UReplicatedHitUtil() {
-}
 

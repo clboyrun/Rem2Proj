@@ -19,7 +19,8 @@ protected:
     TArray<FTracerPathSegment> TracerPath;
     
 public:
-    ATracer();
+    ATracer(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void InitFromCause(AActor* Cause);
     

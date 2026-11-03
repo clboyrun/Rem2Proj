@@ -1,5 +1,9 @@
 #include "RemnantSkyboxManager.h"
 
+URemnantSkyboxManager::URemnantSkyboxManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->SkyboxRefActor = NULL;
+}
+
 void URemnantSkyboxManager::RegisterSkyboxModifierVolume(AActor* SkyboxModVolume) {
 }
 
@@ -23,7 +27,4 @@ URemnantSkyboxManager* URemnantSkyboxManager::GetInstance(const UObject* WorldCo
     return NULL;
 }
 
-URemnantSkyboxManager::URemnantSkyboxManager() {
-    this->SkyboxRefActor = NULL;
-}
 

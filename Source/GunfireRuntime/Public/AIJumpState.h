@@ -57,6 +57,7 @@ private:
     
 public:
     UAIJumpState();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsAIJumpComplete(UStateMachineComponent* StateMachine);
     

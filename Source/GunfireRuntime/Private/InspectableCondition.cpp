@@ -4,3 +4,4 @@ UInspectableCondition::UInspectableCondition() {
     this->CheckBy = EInspectableConditionCheck::IsOccupied;
 }
 
+

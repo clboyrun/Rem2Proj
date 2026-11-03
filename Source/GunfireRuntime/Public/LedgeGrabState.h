@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API ULedgeGrabState : public UTraversalState {
     GENERATED_BODY()
 public:
     ULedgeGrabState();
+
 };
 

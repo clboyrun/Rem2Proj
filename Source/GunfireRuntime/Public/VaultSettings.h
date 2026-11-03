@@ -111,5 +111,6 @@ public:
     bool bRequiresClimbingData;
     
     UVaultSettings();
+
 };
 

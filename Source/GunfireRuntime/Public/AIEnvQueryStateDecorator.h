@@ -3,6 +3,7 @@
 #include "EnvironmentQuery/EnvQueryTypes.h"
 #include "ActorStateDecorator.h"
 #include "Conditions.h"
+#include "EEnvQueryCancelBehavior.h"
 #include "EEnvQueryDecoratorAction.h"
 #include "AIEnvQueryStateDecorator.generated.h"
 
@@ -35,6 +36,9 @@ private:
     float RetryInterval;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    EEnvQueryCancelBehavior EnvCancelBehavior;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float NewPointScoreThreshold;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -61,5 +65,6 @@ protected:
     
 public:
     UAIEnvQueryStateDecorator();
+
 };
 

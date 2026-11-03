@@ -7,3 +7,4 @@ UAIDistanceCondition::UAIDistanceCondition() {
     this->TwoDimensional = true;
 }
 
+

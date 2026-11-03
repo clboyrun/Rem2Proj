@@ -1,5 +1,10 @@
 #include "RemnantQuestAIDirector.h"
 
+URemnantQuestAIDirector::URemnantQuestAIDirector(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bQuestAutoActivate = false;
+    this->IncludeZoneGroups = false;
+}
+
 void URemnantQuestAIDirector::StopAllGroups(bool DestroyActiveSpawns) {
 }
 
@@ -32,7 +37,4 @@ void URemnantQuestAIDirector::EventPlayerEnter(FEventRegionCharacter Character) 
 void URemnantQuestAIDirector::EventEncounterEvent(UEncounterGroupInstance* EncounterGroup, FName EventName) {
 }
 
-URemnantQuestAIDirector::URemnantQuestAIDirector() {
-    this->IncludeZoneGroups = false;
-}
 

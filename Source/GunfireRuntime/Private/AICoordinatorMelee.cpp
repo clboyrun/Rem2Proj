@@ -1,5 +1,6 @@
 #include "AICoordinatorMelee.h"
 
-UAICoordinatorMelee::UAICoordinatorMelee() {
+UAICoordinatorMelee::UAICoordinatorMelee(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

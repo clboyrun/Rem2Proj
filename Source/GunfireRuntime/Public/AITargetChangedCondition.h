@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UAITargetChangedCondition : public UCondition {
     GENERATED_BODY()
 public:
     UAITargetChangedCondition();
+
 };
 

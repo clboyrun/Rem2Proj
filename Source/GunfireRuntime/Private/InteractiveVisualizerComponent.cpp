@@ -1,5 +1,7 @@
 #include "InteractiveVisualizerComponent.h"
 
-UInteractiveVisualizerComponent::UInteractiveVisualizerComponent() {
+UInteractiveVisualizerComponent::UInteractiveVisualizerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bIsEditorOnly = true;
 }
+
 

@@ -64,5 +64,6 @@ public:
     float DismountCameraBlendTime;
     
     UClimbableSurfaceFilter();
+
 };
 

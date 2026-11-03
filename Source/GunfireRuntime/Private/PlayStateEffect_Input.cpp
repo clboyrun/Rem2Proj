@@ -4,3 +4,4 @@ UPlayStateEffect_Input::UPlayStateEffect_Input() {
     this->bAllowsGameInput = true;
 }
 
+

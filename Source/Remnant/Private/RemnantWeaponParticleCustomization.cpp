@@ -5,3 +5,4 @@ URemnantWeaponParticleCustomization::URemnantWeaponParticleCustomization() {
     this->bUpdateChargesChaged = true;
 }
 
+

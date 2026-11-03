@@ -15,6 +15,7 @@ protected:
     
 public:
     UGunfireHardwareCursor();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void UpdateHardwareCursorOnDeviceChange();

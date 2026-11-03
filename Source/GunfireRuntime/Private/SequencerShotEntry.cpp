@@ -8,3 +8,4 @@ USequencerShotEntry::USequencerShotEntry() {
     this->PlaybackStartTimeEndRange = 0.00f;
 }
 
+

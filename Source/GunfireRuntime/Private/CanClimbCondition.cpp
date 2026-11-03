@@ -4,3 +4,4 @@ UCanClimbCondition::UCanClimbCondition() {
     this->TransitionSet = NULL;
 }
 
+

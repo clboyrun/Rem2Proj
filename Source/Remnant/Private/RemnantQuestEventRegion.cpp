@@ -1,5 +1,11 @@
 #include "RemnantQuestEventRegion.h"
 
+URemnantQuestEventRegion::URemnantQuestEventRegion(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->MusicSet = NULL;
+    this->bOverrideExistingSet = true;
+    this->EventRegion = NULL;
+}
+
 void URemnantQuestEventRegion::SetMusicState(EMusicState MusicState) {
 }
 
@@ -67,9 +73,4 @@ void URemnantQuestEventRegion::CompleteEvent() {
 void URemnantQuestEventRegion::Begin() {
 }
 
-URemnantQuestEventRegion::URemnantQuestEventRegion() {
-    this->MusicSet = NULL;
-    this->bOverrideExistingSet = true;
-    this->EventRegion = NULL;
-}
 

@@ -5,3 +5,4 @@ UNavMeshTestCondition::UNavMeshTestCondition() {
     this->Distance = 300.00f;
 }
 
+

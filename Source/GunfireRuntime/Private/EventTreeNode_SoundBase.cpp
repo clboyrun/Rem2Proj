@@ -1,11 +1,12 @@
 #include "EventTreeNode_SoundBase.h"
 
-void UEventTreeNode_SoundBase::OnFinishedWaiting(UEventTreeComponent* Component) const {
-}
-
 UEventTreeNode_SoundBase::UEventTreeNode_SoundBase() {
     this->AutoComplete = false;
     this->CompleteAfterDialog = false;
     this->WaitTimeAfterComplete = 0.10f;
 }
+
+void UEventTreeNode_SoundBase::OnFinishedWaiting(TWeakObjectPtr<UEventTreeComponent> Component) const {
+}
+
 

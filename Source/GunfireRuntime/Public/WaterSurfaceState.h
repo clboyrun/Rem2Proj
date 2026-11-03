@@ -12,5 +12,6 @@ public:
     EWaterSurfaceTraversalType TraversalType;
     
     UWaterSurfaceState();
+
 };
 

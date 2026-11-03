@@ -34,7 +34,8 @@ protected:
     bool bAutoUpdateEquipment;
     
 public:
-    USilhouetteComponent();
+    USilhouetteComponent(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnInventoryChanged();

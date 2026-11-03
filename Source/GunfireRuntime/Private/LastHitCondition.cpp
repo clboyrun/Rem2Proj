@@ -5,3 +5,4 @@ ULastHitCondition::ULastHitCondition() {
     this->MaxPower = 10;
 }
 
+

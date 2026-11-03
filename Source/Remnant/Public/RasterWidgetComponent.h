@@ -15,7 +15,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UMaterialInterface* MaterialOverride;
     
-    URasterWidgetComponent();
+    URasterWidgetComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     UTexture* GetWidgetTexture();
     

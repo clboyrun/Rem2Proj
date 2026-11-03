@@ -88,11 +88,12 @@ private:
     USceneComponent* OrientRoot;
     
 public:
-    USurfaceOrientComponent();
+    USurfaceOrientComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SetEnableIK(bool bEnable, bool bReset);
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

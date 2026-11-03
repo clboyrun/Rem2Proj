@@ -27,6 +27,7 @@ protected:
     
 public:
     UDialogInstance();
+
     UFUNCTION(BlueprintCallable)
     void OnSubtitleComplete(USubtitleInstance* Subtitle);
     

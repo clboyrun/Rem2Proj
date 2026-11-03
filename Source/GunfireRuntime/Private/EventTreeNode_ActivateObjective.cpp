@@ -4,3 +4,4 @@ UEventTreeNode_ActivateObjective::UEventTreeNode_ActivateObjective() {
     this->AutoCompleteActiveObjectives = true;
 }
 
+

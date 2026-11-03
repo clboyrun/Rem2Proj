@@ -40,7 +40,8 @@ protected:
     UEncounterInstance* EncounterInstance;
     
 public:
-    URemnantQuestWaveEncounter();
+    URemnantQuestWaveEncounter(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void WaveComplete(UEncounterInstance* Instance);

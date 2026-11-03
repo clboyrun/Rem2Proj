@@ -204,6 +204,7 @@ protected:
     
 public:
     UThirdPersonCameraState();
+
     UFUNCTION(BlueprintCallable)
     void LookAt(USceneComponent* Target, float BlendTime);
     

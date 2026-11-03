@@ -34,7 +34,8 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FComputeStatsDelegate OnPostComputeStats;
     
-    UStatsComponent();
+    UStatsComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SetComputedStats(TSubclassOf<UComputedStats> NewComputedStats);
     
@@ -69,10 +70,13 @@ public:
     void ComputeStatsIfDirty();
     
     UFUNCTION(BlueprintCallable)
+    void ClampStat(UPARAM(Ref) float& Value, FName Stat);
+    
+    UFUNCTION(BlueprintCallable)
     void ApplyStats(const FDataTableRowHandle& DataTable, int32 Level);
     
     UFUNCTION(BlueprintCallable)
-    void ApplyStatModsTo(UPARAM(Ref) float& Value, FName Stat);
+    void ApplyStatModsTo(UPARAM(Ref) float& Value, FName Stat, bool NewClampStat);
     
 };
 

@@ -6,3 +6,4 @@ UInViewCondition::UInViewCondition() {
     this->ActorBoundsScale = 1.00f;
 }
 
+

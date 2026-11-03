@@ -1,9 +1,6 @@
 #include "SurfaceOrientComponent.h"
 
-void USurfaceOrientComponent::SetEnableIK(bool bEnable, bool bReset) {
-}
-
-USurfaceOrientComponent::USurfaceOrientComponent() {
+USurfaceOrientComponent::USurfaceOrientComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->bSurfaceOrientEnabled = true;
     this->ComponentToOrient = TEXT("CharacterMesh0");
     this->LeanLimit = 90.00f;
@@ -28,4 +25,8 @@ USurfaceOrientComponent::USurfaceOrientComponent() {
     this->FrameFrequencyOffset = 1;
     this->OrientRoot = NULL;
 }
+
+void USurfaceOrientComponent::SetEnableIK(bool bEnable, bool bReset) {
+}
+
 

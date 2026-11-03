@@ -1,6 +1,7 @@
 #include "SplineBase.h"
 
-ASplineBase::ASplineBase() {
+ASplineBase::ASplineBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->bInstanceToBeMerged = false;
 }
+
 

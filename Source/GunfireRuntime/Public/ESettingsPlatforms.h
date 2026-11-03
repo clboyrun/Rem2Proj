@@ -4,9 +4,10 @@
 
 UENUM()
 enum class ESettingsPlatforms : int8 {
-    PC = 0x1,
+    PC = 1,
     XboxSeriesX,
-    XboxSeriesS = 0x4,
-    PS5 = 0x8,
+    XboxSeriesS = 4,
+    PS5 = 8,
+    SteamDeck = 16,
 };
 

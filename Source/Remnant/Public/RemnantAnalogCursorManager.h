@@ -22,7 +22,8 @@ protected:
     UWidget* CachedSnapWidget;
     
 public:
-    URemnantAnalogCursorManager();
+    URemnantAnalogCursorManager(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void UpdateCachedCursorLockMode();

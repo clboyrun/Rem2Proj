@@ -13,5 +13,6 @@ public:
     ULevel* Level;
     
     UNavSvoStreamingData();
+
 };
 

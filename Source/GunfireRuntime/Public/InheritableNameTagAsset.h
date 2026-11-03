@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UInheritableNameTagAsset : public UInheritableNamedAsse
     GENERATED_BODY()
 public:
     UInheritableNameTagAsset();
+
 };
 

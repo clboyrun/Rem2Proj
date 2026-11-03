@@ -34,6 +34,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool Exclusive;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool IsOptionalForPlacement;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     FName OverrideTileTag;
     
@@ -49,12 +52,21 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FQuestTileActiveDelegate OnSetTileActive;
     
-    URemnantQuestTile();
+protected:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
+    bool TileNotGenerated;
+    
+public:
+    URemnantQuestTile(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void SetTileActive(int32 ID, bool Active);
     
 public:
+    UFUNCTION(BlueprintCallable)
+    AActor* GetZoneLinkWithSubstring(const FString& SubString, bool bRequireMatch);
+    
     UFUNCTION(BlueprintCallable)
     AActor* GetZoneLink(FName ZoneLinkNameID);
     

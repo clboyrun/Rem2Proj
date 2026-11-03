@@ -11,5 +11,6 @@ public:
     FName Objective;
     
     UEventTreeNode_CompleteObjective();
+
 };
 

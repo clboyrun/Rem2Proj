@@ -16,6 +16,7 @@ protected:
     
 public:
     UComputedStats();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float ScaleValueByLevel(int32 Level, float Value, float Inc, float Exp) const;
     

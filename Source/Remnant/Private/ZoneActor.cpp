@@ -7,10 +7,41 @@
 #include "PersistenceComponent.h"
 #include "Net/UnrealNetwork.h"
 
+AZoneActor::AZoneActor(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bAlwaysRelevant = true;
+    this->bReplicates = true;
+    const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
+    (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
+    this->NetDormancy = DORM_DormantAll;
+    this->MapGen = CreateDefaultSubobject<UMapGenComponent>(TEXT("MapGen"));
+    this->AIDirector = CreateDefaultSubobject<UAIDirector>(TEXT("AIDirector"));
+    this->EncounterManager = CreateDefaultSubobject<UEncounterManager>(TEXT("EncounterManager"));
+    this->AmbientSpawnManager = CreateDefaultSubobject<UAmbientSpawnManager>(TEXT("AmbientSpawnManager"));
+    this->ResourceSpawnManager = CreateDefaultSubobject<UResourceSpawnManager>(TEXT("ResourceSpawnManager"));
+    this->PersistenceComponent = CreateDefaultSubobject<UPersistenceComponent>(TEXT("Persistence"));
+    this->ID = -1;
+    this->Level = 1;
+    this->LevelMin = 0;
+    this->LevelMax = 100;
+    this->ZoneLevel = 1;
+    this->ItemLevel = 1;
+    this->ParentZoneID = -1;
+    this->QuestID = -1;
+    this->Seed = -1;
+    this->TileSet = NULL;
+    this->DayLength = 1.00f;
+    this->DayOffset = 0.00f;
+    this->Static = false;
+    this->ZoneLevelInitialized = false;
+}
+
 void AZoneActor::UpdateLevelScaling(bool Force) {
 }
 
 void AZoneActor::UnloadZone() {
+}
+
+void AZoneActor::SetZoneLabel(FText NewLabel) {
 }
 
 void AZoneActor::OnResourcesLoad() {
@@ -45,7 +76,7 @@ bool AZoneActor::IsFullyUnloaded() const {
     return false;
 }
 
-bool AZoneActor::IsChildZone() {
+bool AZoneActor::IsChildZone() const {
     return false;
 }
 
@@ -94,34 +125,10 @@ void AZoneActor::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifeti
     DOREPLIFETIME(AZoneActor, NameID);
     DOREPLIFETIME(AZoneActor, Label);
     DOREPLIFETIME(AZoneActor, Seed);
-    DOREPLIFETIME(AZoneActor, SlotID);
     DOREPLIFETIME(AZoneActor, Static);
     DOREPLIFETIME(AZoneActor, ZoneLinks);
     DOREPLIFETIME(AZoneActor, DynamicResources);
     DOREPLIFETIME(AZoneActor, ServerState);
 }
 
-AZoneActor::AZoneActor() {
-    this->MapGen = CreateDefaultSubobject<UMapGenComponent>(TEXT("MapGen"));
-    this->AIDirector = CreateDefaultSubobject<UAIDirector>(TEXT("AIDirector"));
-    this->EncounterManager = CreateDefaultSubobject<UEncounterManager>(TEXT("EncounterManager"));
-    this->AmbientSpawnManager = CreateDefaultSubobject<UAmbientSpawnManager>(TEXT("AmbientSpawnManager"));
-    this->ResourceSpawnManager = CreateDefaultSubobject<UResourceSpawnManager>(TEXT("ResourceSpawnManager"));
-    this->PersistenceComponent = CreateDefaultSubobject<UPersistenceComponent>(TEXT("Persistence"));
-    this->ID = -1;
-    this->Level = 1;
-    this->LevelMin = 0;
-    this->LevelMax = 100;
-    this->ZoneLevel = 1;
-    this->ItemLevel = 1;
-    this->ParentZoneID = -1;
-    this->QuestID = -1;
-    this->Seed = -1;
-    this->SlotID = -1;
-    this->TileSet = NULL;
-    this->DayLength = 1.00f;
-    this->DayOffset = 0.00f;
-    this->Static = false;
-    this->ZoneLevelInitialized = false;
-}
 

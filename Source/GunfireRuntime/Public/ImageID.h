@@ -13,5 +13,6 @@ public:
     TArray<UImageEntry*> ImageEntries;
     
     UImageID();
+
 };
 

@@ -8,5 +8,6 @@ class UEnvQueryTest_AITacticalPoint : public UEnvQueryTest {
     GENERATED_BODY()
 public:
     UEnvQueryTest_AITacticalPoint();
+
 };
 

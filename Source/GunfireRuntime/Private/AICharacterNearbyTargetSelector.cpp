@@ -7,3 +7,4 @@ UAICharacterNearbyTargetSelector::UAICharacterNearbyTargetSelector() {
     this->bIgnoreCooldownForCurrentTarget = false;
 }
 
+

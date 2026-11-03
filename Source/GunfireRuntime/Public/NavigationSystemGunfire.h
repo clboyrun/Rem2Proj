@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UNavigationSystemGunfire : public UNavigationSystemV1 {
     GENERATED_BODY()
 public:
     UNavigationSystemGunfire();
+
 };
 

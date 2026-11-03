@@ -45,9 +45,10 @@ protected:
     EPlayerJoinState JoinState;
     
 public:
-    APlayerStateGunfire();
+    APlayerStateGunfire(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerSetChatRestricted(bool ChatRestricted);
     

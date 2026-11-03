@@ -37,8 +37,9 @@ protected:
     TMap<int32, float> InterestCache;
     
 public:
-    ULadderCacheComponent();
+    ULadderCacheComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
 };
 

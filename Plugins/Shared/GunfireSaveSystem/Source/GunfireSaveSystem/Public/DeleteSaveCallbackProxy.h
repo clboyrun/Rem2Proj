@@ -18,6 +18,7 @@ public:
     FBlueprintSaveNoRetDelegate OnFailure;
     
     UDeleteSaveCallbackProxy();
+
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static UDeleteSaveCallbackProxy* DeleteSave(UObject* WorldContextObject, int32 Slot);
     

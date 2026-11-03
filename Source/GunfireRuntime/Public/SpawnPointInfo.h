@@ -5,6 +5,7 @@
 #include "SpawnPointInfo.generated.h"
 
 class ASpawnPoint;
+class ULevel;
 
 USTRUCT(BlueprintType)
 struct GUNFIRERUNTIME_API FSpawnPointInfo {
@@ -21,6 +22,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     ASpawnPoint* SpawnPoint;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    ULevel* SpawnPointInfoOverrideLevel;
     
     FSpawnPointInfo();
 };

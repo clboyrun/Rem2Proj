@@ -16,7 +16,8 @@ private:
     
 public:
     UMovieSceneSoundSetTrack();
-    
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

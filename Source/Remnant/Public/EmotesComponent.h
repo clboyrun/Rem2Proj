@@ -27,9 +27,10 @@ protected:
     TArray<FEmoteIconState> IconStates;
     
 public:
-    UEmotesComponent();
+    UEmotesComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void UnlockEmote(TSubclassOf<UEmote> NewEmote);
     

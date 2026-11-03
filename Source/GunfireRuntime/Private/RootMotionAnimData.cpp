@@ -11,3 +11,4 @@ URootMotionAnimData::URootMotionAnimData() {
     this->RootMotionStopTime = 0.00f;
 }
 
+

@@ -43,7 +43,8 @@ protected:
     UCapsuleComponent* LastCapsule;
     
 public:
-    UTargetAlignComponent();
+    UTargetAlignComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FRotator GetAdjustNodeRotation() const;
     

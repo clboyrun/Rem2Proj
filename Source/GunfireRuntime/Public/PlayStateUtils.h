@@ -10,6 +10,7 @@ class UPlayStateUtils : public UObject {
     GENERATED_BODY()
 public:
     UPlayStateUtils();
+
     UFUNCTION(BlueprintCallable)
     static void RequestPlayStates(const TArray<FName>& StateNames, UObject* Context, FName Reason);
     

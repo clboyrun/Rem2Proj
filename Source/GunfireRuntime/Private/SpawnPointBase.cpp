@@ -1,6 +1,9 @@
 #include "SpawnPointBase.h"
 #include "Templates/SubclassOf.h"
 
+ASpawnPointBase::ASpawnPointBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+}
+
 void ASpawnPointBase::Warp(AActor* Actor) {
 }
 
@@ -29,6 +32,4 @@ AActor* ASpawnPointBase::BeginSpawn(AActor* OwningActor, TSubclassOf<AActor> Act
     return NULL;
 }
 
-ASpawnPointBase::ASpawnPointBase() {
-}
 

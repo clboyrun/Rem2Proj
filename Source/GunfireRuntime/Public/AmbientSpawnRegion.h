@@ -23,6 +23,7 @@ protected:
     UAmbientSpawnManager* AmbientSpawnManager;
     
 public:
-    AAmbientSpawnRegion();
+    AAmbientSpawnRegion(const FObjectInitializer& ObjectInitializer);
+
 };
 

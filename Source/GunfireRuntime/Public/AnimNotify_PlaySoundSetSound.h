@@ -40,5 +40,6 @@ public:
     int32 EquipmentSocketIndex;
     
     UAnimNotify_PlaySoundSetSound();
+
 };
 

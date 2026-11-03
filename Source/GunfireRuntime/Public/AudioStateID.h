@@ -8,5 +8,6 @@ class UAudioStateID : public UObject {
     GENERATED_BODY()
 public:
     UAudioStateID();
+
 };
 

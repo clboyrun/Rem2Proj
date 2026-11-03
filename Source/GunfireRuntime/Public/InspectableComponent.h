@@ -68,9 +68,10 @@ protected:
     APlayerController* ActivePlayer;
     
 public:
-    UInspectableComponent();
+    UInspectableComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void StartInspect(APlayerController* PlayerController);
     

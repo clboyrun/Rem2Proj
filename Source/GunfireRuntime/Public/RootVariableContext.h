@@ -17,7 +17,8 @@ protected:
     TArray<UConditionalVariables*> SourceConditions;
     
 public:
-    URootVariableContext();
+    URootVariableContext(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void UnregisterContext(FName Name, UVariableComponent* Variables);
     
@@ -28,7 +29,7 @@ public:
     void K2_GetContextVariables(FName Name, TArray<UVariableComponent*>& VariablesOut) const;
     
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
-    static URootVariableContext* GetInstance(const UObject* WorldContextObject);
+    static URootVariableContext* GetInstance(const UObject* WorldContextObject, bool bCreateIfMissing);
     
 };
 

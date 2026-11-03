@@ -21,5 +21,6 @@ public:
     TSubclassOf<UDialog_Emote> Emote;
     
     UEventTreeNode_Emote();
+
 };
 

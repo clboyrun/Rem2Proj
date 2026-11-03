@@ -1,6 +1,25 @@
 #include "MapGenComponent.h"
 #include "Net/UnrealNetwork.h"
 
+UMapGenComponent::UMapGenComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bAutoActivate = true;
+    this->Seed = -1;
+    this->Level = 1;
+    this->TilesetOverride = NULL;
+    this->UseLoadedLevelAsTemplate = false;
+    this->AutoInitialize = false;
+    this->MapInstanceName = TEXT("Map");
+    this->Settings = NULL;
+    this->TemplateLevel = NULL;
+    this->SkyBoxLevel = NULL;
+    this->NavBounds = NULL;
+    this->Generated = false;
+    this->NoTiles = false;
+    this->ServerState = EMapGenState::Uninitialized;
+    this->MapMusicSet = NULL;
+    this->MapAudioVolume = NULL;
+}
+
 void UMapGenComponent::SetTileVisibleOverride(int32 ID, bool Visible) {
 }
 
@@ -139,21 +158,4 @@ void UMapGenComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Out
     DOREPLIFETIME(UMapGenComponent, MapMusicSet);
 }
 
-UMapGenComponent::UMapGenComponent() {
-    this->Seed = -1;
-    this->Level = 1;
-    this->TilesetOverride = NULL;
-    this->UseLoadedLevelAsTemplate = false;
-    this->AutoInitialize = false;
-    this->MapInstanceName = TEXT("Map");
-    this->Settings = NULL;
-    this->TemplateLevel = NULL;
-    this->SkyBoxLevel = NULL;
-    this->NavBounds = NULL;
-    this->Generated = false;
-    this->NoTiles = false;
-    this->ServerState = EMapGenState::Uninitialized;
-    this->MapMusicSet = NULL;
-    this->MapAudioVolume = NULL;
-}
 

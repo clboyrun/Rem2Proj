@@ -7,3 +7,4 @@ UAnimNotify_CameraEffect::UAnimNotify_CameraEffect() {
     this->OnlyFireInWater = true;
 }
 
+

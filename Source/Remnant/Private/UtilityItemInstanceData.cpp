@@ -1,6 +1,11 @@
 #include "UtilityItemInstanceData.h"
 #include "Net/UnrealNetwork.h"
 
+UUtilityItemInstanceData::UUtilityItemInstanceData() {
+    this->Charges = 0;
+    this->Cooldown = 0.00f;
+}
+
 void UUtilityItemInstanceData::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);
     
@@ -8,8 +13,4 @@ void UUtilityItemInstanceData::GetLifetimeReplicatedProps(TArray<FLifetimeProper
     DOREPLIFETIME(UUtilityItemInstanceData, Cooldown);
 }
 
-UUtilityItemInstanceData::UUtilityItemInstanceData() {
-    this->Charges = 0;
-    this->Cooldown = 0.00f;
-}
 

@@ -8,6 +8,8 @@ enum class ERemnantQuestStatus : uint8 {
     Loading,
     Creating,
     Initializing,
+    NewComponentsLoading,
+    NewComponentsCreating,
     Loaded,
     Error,
 };

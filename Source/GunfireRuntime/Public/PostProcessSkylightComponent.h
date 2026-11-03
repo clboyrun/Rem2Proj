@@ -17,7 +17,8 @@ protected:
     USkyLightComponent* SkyLight;
     
 public:
-    UPostProcessSkylightComponent();
+    UPostProcessSkylightComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     USkyLightComponent* GetCurrentSkylight();
 

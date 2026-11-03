@@ -18,6 +18,7 @@ public:
     FBlueprintSaveNoRetDelegate NoBackup;
     
     UHasProfileBackupCallbackProxy();
+
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static UHasProfileBackupCallbackProxy* HasProfileBackup(UObject* WorldContextObject);
     

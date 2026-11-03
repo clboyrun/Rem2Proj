@@ -7,3 +7,4 @@ UAnimNotify_ForceFeedback::UAnimNotify_ForceFeedback() {
     this->bStateTransient = false;
 }
 
+

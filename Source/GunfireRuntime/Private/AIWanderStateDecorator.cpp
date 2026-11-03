@@ -9,3 +9,4 @@ UAIWanderStateDecorator::UAIWanderStateDecorator() {
     this->WaitTimeMax = 5.00f;
 }
 
+

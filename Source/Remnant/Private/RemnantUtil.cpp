@@ -1,6 +1,13 @@
 #include "RemnantUtil.h"
 
+URemnantUtil::URemnantUtil() {
+}
+
 bool URemnantUtil::IsZoneLinkValid(const FZoneLinkInfo& ZoneLink) {
+    return false;
+}
+
+bool URemnantUtil::IsValueEncodedReleaseHours(int32 Value, int32 SigDigits) {
     return false;
 }
 
@@ -16,7 +23,27 @@ AActor* URemnantUtil::GetZoneLinkActor(const FZoneLinkInfo& ZoneLink) {
     return NULL;
 }
 
+FTimespan URemnantUtil::GetYearsSinceStudioOpen() {
+    return FTimespan{};
+}
+
+FTimespan URemnantUtil::GetTimeSinceRelease(int32 AdditionalHourDelta) {
+    return FTimespan{};
+}
+
+ULevel* URemnantUtil::GetRemnantMapGenLevelForActor(AActor* Actor) {
+    return NULL;
+}
+
+UMapGenComponent* URemnantUtil::GetRemnantMapGenComponentForActor(AActor* Actor) {
+    return NULL;
+}
+
 int32 URemnantUtil::GetGameSeed() {
+    return 0;
+}
+
+int32 URemnantUtil::GetEncodingForTimespan(FTimespan Timespan, int32 SigDigits) {
     return 0;
 }
 
@@ -36,10 +63,12 @@ AZoneActor* URemnantUtil::GetBaseZoneActor(const UObject* WorldContextObject) {
     return NULL;
 }
 
+int32 URemnantUtil::EncodeHoursSinceRelease(int32 SigDigits) {
+    return 0;
+}
+
 bool URemnantUtil::CanPlayerExitGame(const UObject* WorldContextObject) {
     return false;
 }
 
-URemnantUtil::URemnantUtil() {
-}
 

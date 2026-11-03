@@ -4,3 +4,4 @@ UAnimNotify_EnableHitLocation::UAnimNotify_EnableHitLocation() {
     this->bEnable = true;
 }
 
+

@@ -5,10 +5,11 @@
 #include "PersistenceManager.generated.h"
 
 class ULevel;
+class UObject;
 class USaveGameProfile;
 class USaveGameWorld;
 
-UCLASS(Blueprintable, Config=Engine, DefaultConfig)
+UCLASS(Blueprintable, DefaultConfig, Config=Engine)
 class GUNFIRESAVESYSTEM_API UPersistenceManager : public UGameInstanceSubsystem {
     GENERATED_BODY()
 public:
@@ -34,7 +35,11 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<ULevel*> CachedLoads;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<UObject*> CommitLockObjects;
+    
 public:
     UPersistenceManager();
+
 };
 

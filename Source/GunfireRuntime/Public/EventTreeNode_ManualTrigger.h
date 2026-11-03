@@ -8,5 +8,6 @@ class GUNFIRERUNTIME_API UEventTreeNode_ManualTrigger : public UEventTreeNode_Li
     GENERATED_BODY()
 public:
     UEventTreeNode_ManualTrigger();
+
 };
 

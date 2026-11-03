@@ -1,9 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "Components/ActorComponent.h"
 #include "ESplineAttachType.h"
 #include "ESplineAttachmentRule.h"
@@ -54,7 +51,8 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSplineFollowCompleteEvent OnSplineFollowComplete;
     
-    USplineFollowingComponent();
+    USplineFollowingComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void SetSpline(USplineComponent* Spline, TEnumAsByte<ESplineAttachmentRule::Type> Location, float CustomTime);
     

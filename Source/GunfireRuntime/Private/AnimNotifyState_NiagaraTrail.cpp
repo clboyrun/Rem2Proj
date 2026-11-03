@@ -11,3 +11,4 @@ UAnimNotifyState_NiagaraTrail::UAnimNotifyState_NiagaraTrail() {
     this->NiagaraComponent = NULL;
 }
 
+

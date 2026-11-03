@@ -1,6 +1,25 @@
 #include "ProgressionComponent.h"
 #include "Net/UnrealNetwork.h"
 
+UProgressionComponent::UProgressionComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->ExperienceTable = NULL;
+    this->StartingLevel = 1;
+    this->RequiredExperience = 500.00f;
+    this->RequiredExperienceInc = 500.00f;
+    this->RequiredExperienceExp = 1.00f;
+    this->RequiredExperienceRound = 100;
+    this->IncomingExperienceScalar = 1.00f;
+    this->MaxLevel = 50;
+    this->Level = 1;
+    this->Experience = 0;
+    this->QueuedExperience = 0;
+    this->AutoAcquireExperience = true;
+    this->QueueExperience = false;
+    this->SharedExperience = true;
+    this->SharedExperienceRange = 4000.00f;
+    this->StopExpGainAtMaxLevel = true;
+}
+
 bool UProgressionComponent::SetLevel(int32 LevelToSet) {
     return false;
 }
@@ -43,22 +62,4 @@ void UProgressionComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>
     DOREPLIFETIME(UProgressionComponent, QueuedExperience);
 }
 
-UProgressionComponent::UProgressionComponent() {
-    this->ExperienceTable = NULL;
-    this->StartingLevel = 1;
-    this->RequiredExperience = 500.00f;
-    this->RequiredExperienceInc = 500.00f;
-    this->RequiredExperienceExp = 1.00f;
-    this->RequiredExperienceRound = 100;
-    this->IncomingExperienceScalar = 1.00f;
-    this->MaxLevel = 50;
-    this->Level = 1;
-    this->Experience = 0;
-    this->QueuedExperience = 0;
-    this->AutoAcquireExperience = true;
-    this->QueueExperience = false;
-    this->SharedExperience = true;
-    this->SharedExperienceRange = 4000.00f;
-    this->StopExpGainAtMaxLevel = true;
-}
 

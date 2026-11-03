@@ -4,3 +4,4 @@ UInInteractiveCondition::UInInteractiveCondition() {
     this->bValidateInteractive = false;
 }
 
+

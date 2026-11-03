@@ -5,3 +5,4 @@ UAnimNotifyState_TargetAlign::UAnimNotifyState_TargetAlign() {
     this->YawOffset = 0.00f;
 }
 
+

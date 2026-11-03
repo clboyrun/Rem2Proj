@@ -1,6 +1,16 @@
 #include "DifficultyScalingComponent.h"
 #include "Net/UnrealNetwork.h"
 
+UDifficultyScalingComponent::UDifficultyScalingComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->NumPlayersScalingTable = NULL;
+    this->LevelScalingTable = NULL;
+    this->DifficultyScalingTable = NULL;
+    this->NumPlayers = 0;
+    this->LevelOverride = -1;
+    this->Difficulty = 1;
+    this->OverrideDifficultyScalingTable = NULL;
+}
+
 void UDifficultyScalingComponent::SetNumPlayers(int32 NewNumPlayers) {
 }
 
@@ -95,13 +105,4 @@ void UDifficultyScalingComponent::GetLifetimeReplicatedProps(TArray<FLifetimePro
     DOREPLIFETIME(UDifficultyScalingComponent, Difficulty);
 }
 
-UDifficultyScalingComponent::UDifficultyScalingComponent() {
-    this->NumPlayersScalingTable = NULL;
-    this->LevelScalingTable = NULL;
-    this->DifficultyScalingTable = NULL;
-    this->NumPlayers = 0;
-    this->LevelOverride = -1;
-    this->Difficulty = 1;
-    this->OverrideDifficultyScalingTable = NULL;
-}
 

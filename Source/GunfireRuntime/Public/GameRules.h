@@ -10,7 +10,8 @@ UCLASS(Blueprintable)
 class GUNFIRERUNTIME_API AGameRules : public AActor {
     GENERATED_BODY()
 public:
-    AGameRules();
+    AGameRules(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     float GetWeaponDamage(AActor* ItemOwner, AWeaponBase* Item, bool ApplyModifiers);
     

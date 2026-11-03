@@ -7,5 +7,7 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class REMNANT_API UAITacticalGraphNodeVisualizerComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UAITacticalGraphNodeVisualizerComponent();
+    UAITacticalGraphNodeVisualizerComponent(const FObjectInitializer& ObjectInitializer);
+
 };
+

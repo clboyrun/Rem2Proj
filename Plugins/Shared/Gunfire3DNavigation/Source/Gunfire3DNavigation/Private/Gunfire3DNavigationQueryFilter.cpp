@@ -6,3 +6,4 @@ UGunfire3DNavigationQueryFilter::UGunfire3DNavigationQueryFilter() {
     this->NodeBaseTraversalCost = 1.00f;
 }
 
+

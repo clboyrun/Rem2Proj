@@ -13,7 +13,8 @@ UCLASS(Blueprintable)
 class REMNANT_API ARemnantPingActor : public AActor {
     GENERATED_BODY()
 public:
-    ARemnantPingActor();
+    ARemnantPingActor(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void SetPingDetails(float Duration, UTexture2D* Icon, FColor Color, ETailType Tail, const FActionPing PingDetails);
     

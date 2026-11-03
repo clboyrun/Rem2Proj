@@ -18,5 +18,6 @@ public:
     FSequencerUIEventPayload UIEventPayload;
     
     UMovieSceneUIEventSection();
+
 };
 

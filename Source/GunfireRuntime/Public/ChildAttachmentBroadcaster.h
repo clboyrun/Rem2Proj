@@ -20,6 +20,7 @@ private:
     TArray<FAttachedChild> AttachedChildren;
     
 public:
-    UChildAttachmentBroadcaster();
+    UChildAttachmentBroadcaster(const FObjectInitializer& ObjectInitializer);
+
 };
 

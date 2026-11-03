@@ -1,7 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "Components/ActorComponent.h"
 #include "ButtonEvent.h"
 #include "EMoveInputMethod.h"
@@ -57,9 +56,10 @@ protected:
     float LastCameraRelativeVerticalInputDirection;
     
 public:
-    UInputStateComponent();
+    UInputStateComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void SetWalking(bool InIsWalking);
     
@@ -127,6 +127,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     ButtonEvent GetButtonStateByName(const FName& Name) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool CheckForEventByName(const FName& Name, ButtonEvent Event, float Window) const;
     
     UFUNCTION(BlueprintCallable)
     void AddButtonListener(const FName& Name, const FInputButtonDelegate& Event);

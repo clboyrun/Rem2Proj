@@ -7,6 +7,7 @@ enum class EPersistenceLoadResult : uint8 {
     Success,
     DoesNotExist,
     Corrupt,
+    Restored,
     TooNew,
     Unknown,
 };

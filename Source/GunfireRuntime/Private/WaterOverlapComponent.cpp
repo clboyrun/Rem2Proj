@@ -1,5 +1,12 @@
 #include "WaterOverlapComponent.h"
 
+UWaterOverlapComponent::UWaterOverlapComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->WaterBounds = NULL;
+    this->bOnlyValidIfCharacterInWater = false;
+    this->bDoRedundantCheckWhileInWater = false;
+    this->CachedComponent = NULL;
+}
+
 void UWaterOverlapComponent::OnEndOverlap(AActor* OverlappedActor, AActor* OtherActor) {
 }
 
@@ -16,10 +23,4 @@ bool UWaterOverlapComponent::InWater() const {
     return false;
 }
 
-UWaterOverlapComponent::UWaterOverlapComponent() {
-    this->WaterBounds = NULL;
-    this->bOnlyValidIfCharacterInWater = false;
-    this->bDoRedundantCheckWhileInWater = false;
-    this->CachedComponent = NULL;
-}
 

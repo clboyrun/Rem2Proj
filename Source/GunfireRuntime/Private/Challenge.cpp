@@ -1,5 +1,12 @@
 #include "Challenge.h"
 
+UChallenge::UChallenge() {
+    this->Scope = EChallengeScope::LocalOnly;
+    this->Icon = NULL;
+    this->Locked = false;
+    this->VisibleByDefault = true;
+}
+
 int32 UChallenge::GetTotalRanks() const {
     return 0;
 }
@@ -12,10 +19,4 @@ int32 UChallenge::GetPoints(int32 MaxRank) const {
     return 0;
 }
 
-UChallenge::UChallenge() {
-    this->Scope = EChallengeScope::LocalOnly;
-    this->Icon = NULL;
-    this->Locked = false;
-    this->VisibleByDefault = true;
-}
 

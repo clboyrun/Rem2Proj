@@ -7,7 +7,7 @@
 
 class UFaction;
 
-UCLASS(Blueprintable, Config=Engine, DefaultConfig)
+UCLASS(Blueprintable, DefaultConfig, Config=Engine)
 class GUNFIRERUNTIME_API UFactionSettings : public UObject {
     GENERATED_BODY()
 public:
@@ -18,5 +18,6 @@ public:
     TArray<FFactionAffiliation> Affiliatons;
     
     UFactionSettings();
+
 };
 

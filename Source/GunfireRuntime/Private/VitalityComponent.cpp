@@ -1,6 +1,12 @@
 #include "VitalityComponent.h"
 #include "Net/UnrealNetwork.h"
 
+UVitalityComponent::UVitalityComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->DefaultRegenDelay = 0.00f;
+    this->InitialValue = EVitalityInitialValue::Max;
+    this->Value = -1.00f;
+}
+
 void UVitalityComponent::Reset(bool Notify) {
 }
 
@@ -46,9 +52,4 @@ void UVitalityComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& O
     DOREPLIFETIME(UVitalityComponent, Value);
 }
 
-UVitalityComponent::UVitalityComponent() {
-    this->DefaultRegenDelay = 0.00f;
-    this->InitialValue = EVitalityInitialValue::Max;
-    this->Value = -1.00f;
-}
 

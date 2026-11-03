@@ -29,5 +29,6 @@ private:
     
 public:
     UEnvQueryGenerator_PathingGrid3D();
+
 };
 

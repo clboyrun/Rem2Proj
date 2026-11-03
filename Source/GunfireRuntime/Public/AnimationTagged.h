@@ -16,5 +16,6 @@ public:
     TArray<UAnimSequenceBase*> SlaveAnimations;
     
     UAnimationTagged();
+
 };
 

@@ -7,5 +7,7 @@ UHasItemCondition::UHasItemCondition() {
     this->Equipped = EYesNo::DontCare;
     this->Active = EYesNo::DontCare;
     this->InHand = EYesNo::DontCare;
+    this->IncludeOwningCharacterInventory = false;
 }
+
 

@@ -14,5 +14,6 @@ public:
     TSubclassOf<UTacticalGraphQueryParams> Params;
     
     UAITacticalPathCondition();
+
 };
 

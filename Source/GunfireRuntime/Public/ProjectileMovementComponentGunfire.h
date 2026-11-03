@@ -1,7 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "Engine/EngineTypes.h"
 #include "Engine/HitResult.h"
 #include "GameFramework/ProjectileMovementComponent.h"
@@ -13,6 +12,9 @@ class GUNFIRERUNTIME_API UProjectileMovementComponentGunfire : public UProjectil
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool Penetrate;
+    
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool ZeroPenetrationAdjustment;
     
     UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float AntiPenetrateSpeed;
@@ -47,7 +49,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<TEnumAsByte<ECollisionChannel>> QueryOnlyBlockingChannels;
     
-    UProjectileMovementComponentGunfire();
+    UProjectileMovementComponentGunfire(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector SimulateBounce(FVector CurrentVelocity, const FHitResult& Hit, float& OutGravityScale);
     

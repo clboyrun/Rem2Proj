@@ -17,5 +17,6 @@ public:
     TSubclassOf<UActionBase> Action;
     
     UHealingClass();
+
 };
 

@@ -43,7 +43,8 @@ protected:
     ACharacterGunfire* CachedCharacter;
     
 public:
-    UUIHudHitIndicatorComponent();
+    UUIHudHitIndicatorComponent(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnNotifyTakeDamage(const FDamageInfo& DamageInfo);

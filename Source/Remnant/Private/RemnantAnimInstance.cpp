@@ -1,6 +1,7 @@
 #include "RemnantAnimInstance.h"
 
 URemnantAnimInstance::URemnantAnimInstance() {
+    this->AnimationLayers.AddDefaulted(1);
     this->bIsStopped = false;
     this->bIsJogging = false;
     this->bIsSprinting = false;
@@ -13,4 +14,5 @@ URemnantAnimInstance::URemnantAnimInstance() {
     this->bNeedsLookPose = false;
     this->NoLookPoseTag = TEXT("NoLookPoses");
 }
+
 

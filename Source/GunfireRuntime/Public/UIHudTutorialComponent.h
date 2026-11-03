@@ -1,8 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "Widgets/Layout/Anchors.h"
 #include "Fonts/SlateFontInfo.h"
 #include "TutorialPrompt.h"
@@ -59,7 +57,8 @@ protected:
     UTutorialComponent* CachedTutorialComponent;
     
 public:
-    UUIHudTutorialComponent();
+    UUIHudTutorialComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void OnShowPrompt(FName ID, AActor* Actor, const FTutorialPrompt& Prompt, float ExpirationTime);
     

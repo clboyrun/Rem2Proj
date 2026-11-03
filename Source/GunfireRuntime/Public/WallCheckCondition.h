@@ -15,5 +15,6 @@ public:
     float MaxHitAngle;
     
     UWallCheckCondition();
+
 };
 

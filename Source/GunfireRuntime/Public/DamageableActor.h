@@ -86,9 +86,10 @@ protected:
     TArray<UMaterialInterface*> RepairMaterials;
     
 public:
-    ADamageableActor();
+    ADamageableActor(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void UpdateVisualState(FName TransitionTag);
     
@@ -141,7 +142,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void ApplyHealthDelta(float Delta);
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

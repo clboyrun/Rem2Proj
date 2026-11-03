@@ -35,7 +35,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FColor PathColor;
     
-    AAIPathPoint();
+    AAIPathPoint(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     AAIPathPoint* GetNext(AAIPathPoint* Prev);
     

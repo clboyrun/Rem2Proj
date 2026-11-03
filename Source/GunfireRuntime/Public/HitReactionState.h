@@ -80,5 +80,6 @@ public:
     bool IgnoreMPHealthScaling;
     
     UHitReactionState();
+
 };
 

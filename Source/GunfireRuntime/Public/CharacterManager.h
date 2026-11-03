@@ -24,6 +24,7 @@ protected:
     
 public:
     UCharacterManager();
+
     UFUNCTION(BlueprintCallable)
     void KillAllCharactersForOwner(AActor* Owner);
     

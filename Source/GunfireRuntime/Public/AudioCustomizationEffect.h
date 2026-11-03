@@ -23,5 +23,6 @@ public:
     FName Component;
     
     UAudioCustomizationEffect();
+
 };
 
